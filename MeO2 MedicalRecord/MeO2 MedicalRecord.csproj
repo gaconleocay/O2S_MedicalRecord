@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F177399C-4E98-4A8A-912D-77D7F77F5E6E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MeO2_MedicalRecord</RootNamespace>
+    <AssemblyName>MeO2 MedicalRecord</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>medical-records_2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\Library\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\Library\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\Library\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v15.2.Drawing, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v15.2.Extensions, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=3.1.1.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.3.1.1\lib\net45\EntityFramework6.Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Library\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Library\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Library\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Library\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\Library\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.2.2.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.2.2\lib\net45\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\netstandard1.0\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\bienTrongBaoCao.cs" />
+    <Compile Include="Base\CheckInputString.cs" />
+    <Compile Include="Base\CheckPermission.cs" />
+    <Compile Include="Base\ConnectDatabase.cs" />
+    <Compile Include="Base\EncryptAndDecrypt.cs" />
+    <Compile Include="Base\ExportDataToFile.cs" />
+    <Compile Include="Base\KeyTrongPhanMem.cs" />
+    <Compile Include="Base\listChucNang.cs" />
+    <Compile Include="Base\Logging.cs" />
+    <Compile Include="Base\ReadExcelFile.cs" />
+    <Compile Include="Base\SessionLogin.cs" />
+    <Compile Include="Base\ThongBaoLable.cs" />
+    <Compile Include="Base\UtilsTable.cs" />
+    <Compile Include="ClassCommon\BCDashboardBenhNhanNgoaiTru.cs" />
+    <Compile Include="ClassCommon\BCDashboardQLTongTheKhoa.cs" />
+    <Compile Include="ClassCommon\BCDashboardTongHopToanVien.cs" />
+    <Compile Include="ClassCommon\classBCBHYT21Chenh.cs" />
+    <Compile Include="ClassCommon\classBCBHYT21ChenhNew.cs" />
+    <Compile Include="ClassCommon\classBCChiDinhPTTT.cs" />
+    <Compile Include="ClassCommon\classBCChiDinhPTTT_User.cs" />
+    <Compile Include="ClassCommon\classBCQLTongTheKhoaBNDetail.cs" />
+    <Compile Include="ClassCommon\classDanhMucDichVu.cs" />
+    <Compile Include="ClassCommon\classDanhMucPhong.cs" />
+    <Compile Include="ClassCommon\classDMDVKTBHYTChenh.cs" />
+    <Compile Include="ClassCommon\classDMDVKTBHYTChenhNew.cs" />
+    <Compile Include="ClassCommon\classDoiTuongThanhToan.cs" />
+    <Compile Include="ClassCommon\classLichSuNhapXuatThuoc.cs" />
+    <Compile Include="ClassCommon\classMedicineRef.cs" />
+    <Compile Include="ClassCommon\classMedicineStore.cs" />
+    <Compile Include="ClassCommon\classPermission.cs" />
+    <Compile Include="ClassCommon\classUserDepartment.cs" />
+    <Compile Include="ClassCommon\classUserMedicineNhomThuoc.cs" />
+    <Compile Include="ClassCommon\classUserMedicinePhongLuu.cs" />
+    <Compile Include="ClassCommon\classUserMedicineStore.cs" />
+    <Compile Include="ClassCommon\classVienPhiBHYT.cs" />
+    <Compile Include="ClassCommon\reportDTO.cs" />
+    <Compile Include="ClassCommon\reportExcelDTO.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\DangKyBanQuyen\ClassEncoding.cs" />
+    <Compile Include="FormCommon\DangKyBanQuyen\HardwareInfo.cs" />
+    <Compile Include="FormCommon\DangKyBanQuyen\KiemTraLicense.cs" />
+    <Compile Include="FormCommon\frmConnectDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommon\frmConnectDB.Designer.cs">
+      <DependentUpon>frmConnectDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommon\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommon\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\frmMain_Plus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommon\frmMain_Service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommon\KetNoiSCDLProcess.cs" />
+    <Compile Include="FormCommon\TabCaiDat\ucCauHinhHeThong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormCommon\TabCaiDat\ucCauHinhHeThong.Designer.cs">
+      <DependentUpon>ucCauHinhHeThong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\TabCaiDat\ucDanhSachNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormCommon\TabCaiDat\ucDanhSachNhanVien.Designer.cs">
+      <DependentUpon>ucDanhSachNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\TabCaiDat\ucMaHoaVaGiaiMa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormCommon\TabCaiDat\ucMaHoaVaGiaiMa.Designer.cs">
+      <DependentUpon>ucMaHoaVaGiaiMa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\TabCaiDat\ucQuanLyNguoiDung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormCommon\TabCaiDat\ucQuanLyNguoiDung.Designer.cs">
+      <DependentUpon>ucQuanLyNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\TabControlProcess.cs" />
+    <Compile Include="FormCommon\TabTrangChu\frmThayPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCommon\TabTrangChu\frmThayPass.Designer.cs">
+      <DependentUpon>frmThayPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\TabTrangChu\ucSettingDatabase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormCommon\TabTrangChu\ucSettingDatabase.Designer.cs">
+      <DependentUpon>ucSettingDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\TabTrangChu\ucSettingLicense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormCommon\TabTrangChu\ucSettingLicense.Designer.cs">
+      <DependentUpon>ucSettingLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\ucChucNang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormCommon\ucChucNang.Designer.cs">
+      <DependentUpon>ucChucNang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\ucDashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormCommon\ucDashboard.Designer.cs">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\ucTrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormCommon\ucTrangChu.Designer.cs">
+      <DependentUpon>ucTrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCommon\ucTrangChu_TabCaiDat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GlobalStore.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThongBao\frmThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongBao\frmThongBao.Designer.cs">
+      <DependentUpon>frmThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongBao\SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongBao\SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongBao\WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongBao\WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Common.Excel\ExcelExport.cs" />
+    <Compile Include="Utilities\Util_DateTime.cs" />
+    <Compile Include="Utilities\Util_NumberConvert.cs" />
+    <Compile Include="Utilities\Util_TypeConvertParse.cs" />
+    <EmbeddedResource Include="FormCommon\frmConnectDB.resx">
+      <DependentUpon>frmConnectDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\TabCaiDat\ucCauHinhHeThong.resx">
+      <DependentUpon>ucCauHinhHeThong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\TabCaiDat\ucDanhSachNhanVien.resx">
+      <DependentUpon>ucDanhSachNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\TabCaiDat\ucMaHoaVaGiaiMa.resx">
+      <DependentUpon>ucMaHoaVaGiaiMa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\TabCaiDat\ucQuanLyNguoiDung.resx">
+      <DependentUpon>ucQuanLyNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\TabTrangChu\frmThayPass.resx">
+      <DependentUpon>frmThayPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\TabTrangChu\ucSettingDatabase.resx">
+      <DependentUpon>ucSettingDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\TabTrangChu\ucSettingLicense.resx">
+      <DependentUpon>ucSettingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\ucChucNang.resx">
+      <DependentUpon>ucChucNang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\ucDashboard.resx">
+      <DependentUpon>ucDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCommon\ucTrangChu.resx">
+      <DependentUpon>ucTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ThongBao\frmThongBao.resx">
+      <DependentUpon>frmThongBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongBao\SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongBao\WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Library\Aspose.Cells.lic" />
+    <None Include="bin\Library\Aspose.Words.lic" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Library\Aspose.Cells.dll" />
+    <Content Include="bin\Library\Aspose.Words.dll" />
+    <Content Include="medical-records_2.ico" />
+    <None Include="Resources\refresh-2-16.png" />
+    <None Include="Resources\pie-16.png" />
+    <None Include="Resources\quote-16.png" />
+    <None Include="Resources\edit-11-16.png" />
+    <None Include="Resources\delete-row-24.png" />
+    <None Include="Resources\delete-row-16.png" />
+    <None Include="Resources\categorize-24.png" />
+    <None Include="Resources\categorize-16.png" />
+    <None Include="Resources\folder-2-24.png" />
+    <None Include="Resources\folder-2-16.png" />
+    <None Include="Resources\edit-user-24.png" />
+    <None Include="Resources\edit-user-16.png" />
+    <None Include="Resources\edit-11-24.png" />
+    <None Include="Resources\house-24.png" />
+    <None Include="Resources\house-16.png" />
+    <None Include="Resources\list-view-24.png" />
+    <None Include="Resources\list-view-16.png" />
+    <None Include="Resources\list-rich-24.png" />
+    <None Include="Resources\list-rich-16.png" />
+    <None Include="Resources\list-2-24.png" />
+    <None Include="Resources\list-2-16.png" />
+    <None Include="Resources\inbox-5-24.png" />
+    <None Include="Resources\inbox-5-16.png" />
+    <None Include="Resources\pages-4-24.png" />
+    <None Include="Resources\pages-4-16.png" />
+    <None Include="Resources\redo-16.png" />
+    <None Include="Resources\redo-24.png" />
+    <None Include="Resources\sun-2-24.png" />
+    <None Include="Resources\sun-2-16.png" />
+    <None Include="Resources\star-2-24.png" />
+    <None Include="Resources\star-2-16.png" />
+    <None Include="Resources\snow-storm-24.png" />
+    <None Include="Resources\snow-storm-16.png" />
+    <None Include="Resources\sitemap-24.png" />
+    <None Include="Resources\sitemap-16.png" />
+    <None Include="Resources\sinchronize-24.png" />
+    <None Include="Resources\sinchronize-16.png" />
+    <None Include="Resources\side-right-view-24.png" />
+    <None Include="Resources\side-right-view-16.png" />
+    <None Include="Resources\settings-24-24.png" />
+    <None Include="Resources\settings-24-16.png" />
+    <None Include="Resources\settings-19-24.png" />
+    <None Include="Resources\settings-19-16.png" />
+    <None Include="Resources\settings-12-24.png" />
+    <None Include="Resources\settings-12-16.png" />
+    <None Include="Resources\settings-11-24.png" />
+    <None Include="Resources\settings-11-16.png" />
+    <None Include="Resources\settings-7-24.png" />
+    <None Include="Resources\settings-7-16.png" />
+    <None Include="Resources\search-3-24.png" />
+    <None Include="Resources\search-3-16.png" />
+    <None Include="Resources\unlock-24.png" />
+    <None Include="Resources\unlock-16.png" />
+    <None Include="Resources\text-file-4-24.png" />
+    <None Include="Resources\text-file-4-16.png" />
+    <None Include="Resources\timeline-16.png" />
+    <None Include="Resources\timeline-24.png" />
+    <None Include="Resources\undo-16.png" />
+    <None Include="Resources\undo-24.png" />
+    <None Include="Resources\user-2-16.png" />
+    <None Include="Resources\user-2-24.png" />
+    <None Include="Resources\zoom-out-321.png" />
+    <None Include="Resources\zoom-in-321.png" />
+    <None Include="Resources\x-mark-321.png" />
+    <None Include="Resources\save-as-321.png" />
+    <None Include="Resources\save-321.png" />
+    <None Include="Resources\plus-2-321.png" />
+    <None Include="Resources\microsoft-word-321.png" />
+    <None Include="Resources\zoom-out-24.png" />
+    <None Include="Resources\zoom-out-16.png" />
+    <None Include="Resources\zoom-in-32.png" />
+    <None Include="Resources\zoom-in-24.png" />
+    <None Include="Resources\zoom-in-16.png" />
+    <None Include="Resources\zoom-out-32.png" />
+    <None Include="Resources\x-mark-24.png" />
+    <None Include="Resources\x-mark-16.png" />
+    <None Include="Resources\x-mark-32.png" />
+    <None Include="Resources\plus-2-32.png" />
+    <None Include="Resources\plus-2-24.png" />
+    <None Include="Resources\plus-2-16.png" />
+    <None Include="Resources\minus-32.png" />
+    <None Include="Resources\minus-24.png" />
+    <None Include="Resources\minus-16.png" />
+    <None Include="Resources\microsoft-word-16.png" />
+    <None Include="Resources\microsoft-word-24.png" />
+    <None Include="Resources\microsoft-word-32.png" />
+    <None Include="Resources\edit-5-32.png" />
+    <None Include="Resources\edit-5-24.png" />
+    <None Include="Resources\edit-5-16.png" />
+    <None Include="Resources\excel-3-32.png" />
+    <None Include="Resources\excel-3-24.png" />
+    <None Include="Resources\excel-3-16.png" />
+    <None Include="Resources\save-32.png" />
+    <None Include="Resources\save-24.png" />
+    <None Include="Resources\save-16.png" />
+    <None Include="Resources\medical-records_2.png" />
+    <None Include="Resources\checkmark-16.png" />
+    <None Include="Resources\checkmark-24.png" />
+    <None Include="Resources\checkmark-32.png" />
+    <None Include="Resources\save-as-24.png" />
+    <None Include="Resources\save-as-16.png" />
+    <None Include="Resources\save-as-32.png" />
+    <None Include="Resources\delete-2-16.png" />
+    <None Include="Resources\delete-2-32.png" />
+    <None Include="Resources\delete-2-24.png" />
+    <None Include="Resources\arrow-32-32.png" />
+    <None Include="Resources\arrow-32-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Templates\" />
+    <Folder Include="Utilities\PrintPreview\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
