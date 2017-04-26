@@ -1,14 +1,18 @@
 ---table 
-
-CREATE TABLE tools_license
+CREATE TABLE mrd_license
 (
   licenseid serial NOT NULL,
   datakey text,
   licensekey text,
-  CONSTRAINT tools_license_pkey PRIMARY KEY (licenseid)
+  CONSTRAINT mrd_license_pkey PRIMARY KEY (licenseid)
 )
 
-CREATE TABLE tools_option
+CREATE INDEX mrd_license_licenseid_idx
+  ON mrd_license
+  USING btree
+  (licenseid);
+----------
+CREATE TABLE mrd_option
 (
   toolsoptionid serial NOT NULL,
   toolsoptioncode text,
@@ -18,10 +22,15 @@ CREATE TABLE tools_option
   toolsoptionlook integer,
   toolsoptiondate timestamp without time zone,
   toolsoptioncreateuser text,
-  CONSTRAINT tools_option_pkey PRIMARY KEY (toolsoptionid)
+  CONSTRAINT mrd_option_pkey PRIMARY KEY (toolsoptionid)
 )
 
-CREATE TABLE tools_tbllog
+CREATE INDEX mrd_option_toolsoptionid_idx
+  ON mrd_option
+  USING btree
+  (toolsoptionid);
+---------
+CREATE TABLE mrd_tbllog
 (
   logid serial NOT NULL,
   loguser text,
@@ -30,10 +39,10 @@ CREATE TABLE tools_tbllog
   computername text,
   softversion text,
   logtime timestamp without time zone,
-  CONSTRAINT tools_tbllog_pkey PRIMARY KEY (logid)
+  CONSTRAINT mrd_tbllog_pkey PRIMARY KEY (logid)
 )
 
-CREATE TABLE tools_tbluser
+CREATE TABLE mrd_tbluser
 (
   userid serial NOT NULL,
   usercode text NOT NULL,
@@ -43,10 +52,15 @@ CREATE TABLE tools_tbluser
   usergnhom integer,
   usernote text,
   userhisid integer,
-  CONSTRAINT tools_tbluser_pkey PRIMARY KEY (userid)
+  CONSTRAINT mrd_tbluser_pkey PRIMARY KEY (userid)
 )
 
-CREATE TABLE tools_tbluser_departmentgroup
+CREATE INDEX mrd_tbluser_usercode_idx
+  ON mrd_tbluser
+  USING btree
+  (usercode);
+---------
+CREATE TABLE mrd_tbluser_departmentgroup
 (
   userdepgid serial NOT NULL,
   departmentgroupid integer,
@@ -57,27 +71,54 @@ CREATE TABLE tools_tbluser_departmentgroup
   CONSTRAINT tbluser_departmentgroup_pkey PRIMARY KEY (userdepgid)
 )
 
-CREATE TABLE tools_tbluser_medicinephongluu
+CREATE INDEX mrd_tbluserdep_userdepgid_idx
+  ON mrd_tbluser_departmentgroup
+  USING btree
+  (userdepgid);
+CREATE INDEX mrd_tbluserdep_usercode_idx
+  ON mrd_tbluser_departmentgroup
+  USING btree
+  (usercode);
+---------
+CREATE TABLE mrd_tbluser_medicinephongluu
 (
   userphongluutid serial NOT NULL,
   medicinephongluuid integer,
   medicinestoreid integer,
   usercode text,
   userdepgidnote text,
-  CONSTRAINT tools_tbluser_medicinephongluu_pkey PRIMARY KEY (userphongluutid)
+  CONSTRAINT mrd_tbluser_medicinephongluu_pkey PRIMARY KEY (userphongluutid)
 )
 
-CREATE TABLE tools_tbluser_medicinestore
+CREATE INDEX mrd_tbluserphongluu_medicinephongluuid_idx
+  ON mrd_tbluser_medicinephongluu
+  USING btree
+  (medicinephongluuid);
+CREATE INDEX mrd_tbluserphongluu_usercode_idx
+  ON mrd_tbluser_medicinephongluu
+  USING btree
+  (usercode);  
+----------
+CREATE TABLE mrd_tbluser_medicinestore
 (
   usermestid serial NOT NULL,
   medicinestoreid integer,
   medicinestoretype integer,
   usercode text,
   userdepgidnote text,
-  CONSTRAINT tools_tbluser_medicinestore_pkey PRIMARY KEY (usermestid)
+  CONSTRAINT mrd_tbluser_medicinestore_pkey PRIMARY KEY (usermestid)
 )
 
-CREATE TABLE tools_tbluser_permission
+CREATE INDEX mrd_tblusermedi_medicinestoreid_idx
+  ON mrd_tbluser_medicinestore
+  USING btree
+  (medicinestoreid);  
+CREATE INDEX mrd_tblusermedi_usercode_idx
+  ON mrd_tbluser_medicinestore
+  USING btree
+  (usercode);  
+----------
+CREATE TABLE mrd_tbluser_permission
 (
   userpermissionid serial NOT NULL,
   permissionid integer,
@@ -90,7 +131,7 @@ CREATE TABLE tools_tbluser_permission
   CONSTRAINT userpermissionid_pkey PRIMARY KEY (userpermissionid)
 )
 
-CREATE TABLE tools_version
+CREATE TABLE mrd_version
 (
   versionid serial NOT NULL,
   appversion text,
@@ -103,7 +144,7 @@ CREATE TABLE tools_version
   sqlsize integer,
   sync_flag integer,
   update_flag integer,
-  CONSTRAINT tools_version_pkey PRIMARY KEY (versionid)
+  CONSTRAINT mrd_version_pkey PRIMARY KEY (versionid)
 )
 
 
