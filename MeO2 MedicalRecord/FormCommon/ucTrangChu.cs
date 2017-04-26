@@ -10,13 +10,13 @@ using System.Windows.Forms;
 using System.Configuration;
 using DevExpress.XtraEditors;
 using System.Globalization;
-using MeO2_MedicalRecord.Base;
+using MSO2_MedicalRecord.Base;
 using Npgsql;
 using DevExpress.XtraTab;
 using System.Diagnostics;
 using DevExpress.XtraSplashScreen;
 
-namespace MeO2_MedicalRecord.FormCommon
+namespace MSO2_MedicalRecord.FormCommon
 {
     public partial class ucTrangChu : UserControl
     {
@@ -24,13 +24,11 @@ namespace MeO2_MedicalRecord.FormCommon
         public string CurrentTabPage { get; set; }
         public int SelectedTabPageIndex { get; set; }
         internal frmMain frmMain;
-        MeO2_MedicalRecord.Base.ConnectDatabase condb = new MeO2_MedicalRecord.Base.ConnectDatabase();
-        private string MaDatabase = String.Empty;
-
-        public string serverhost = ConfigurationManager.AppSettings["ServerHost"].ToString();
-        public string serveruser = ConfigurationManager.AppSettings["Username"].ToString();
-        public string serverpass = ConfigurationManager.AppSettings["Password"].ToString();
-        public string serverdb = ConfigurationManager.AppSettings["Database"].ToString();
+        MSO2_MedicalRecord.Base.ConnectDatabase condb = new MSO2_MedicalRecord.Base.ConnectDatabase();
+        //public string serverhost = ConfigurationManager.AppSettings["ServerHost"].ToString();
+        //public string serveruser = ConfigurationManager.AppSettings["Username"].ToString();
+        //public string serverpass = ConfigurationManager.AppSettings["Password"].ToString();
+        //public string serverdb = ConfigurationManager.AppSettings["Database"].ToString();
 
         // khai báo 1 hàm delegate
         public delegate void GetString(string thoigian);
@@ -57,7 +55,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -76,7 +74,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -85,17 +83,17 @@ namespace MeO2_MedicalRecord.FormCommon
             try
             {
                 //Kiểm tra phân quyền
-                if (SessionLogin.SessionUsercode != MeO2_MedicalRecord.Base.KeyTrongPhanMem.AdminUser_key)
+                if (SessionLogin.SessionUsercode != MSO2_MedicalRecord.Base.KeyTrongPhanMem.AdminUser_key)
                 {
                     if (SessionLogin.KiemTraLicenseSuDung)
                     {
-                        if (MeO2_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_05"))
+                        if (MSO2_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_05"))
                         {
                             xtraTabCaiDat.PageVisible = true;
-                            navBarItemConnectDB.Visible = MeO2_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_01");
-                            navBarItemListNguoiDung.Visible = MeO2_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_02");
-                            navBarItemListNhanVien.Visible = MeO2_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_03");
-                            navBarItemListOption.Visible = MeO2_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_04");
+                            navBarItemConnectDB.Visible = MSO2_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_01");
+                            navBarItemListNguoiDung.Visible = MSO2_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_02");
+                            navBarItemListNhanVien.Visible = MSO2_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_03");
+                            navBarItemListOption.Visible = MSO2_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_04");
 
                         }
                         else
@@ -118,7 +116,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -128,21 +126,21 @@ namespace MeO2_MedicalRecord.FormCommon
             {
                 HienThiThongTinVeLicense();
                 //Thong tin ve Database
-                linkLabelTenDatabase.Text = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost"].ToString().Trim(), true) + " [" + MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database"].ToString().Trim(), true) + "]";
+                linkLabelTenDatabase.Text = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost"].ToString().Trim(), true) + " [" + MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database"].ToString().Trim(), true) + "]";
 
                 //THong tin ve tai khoan dang nhap
-                if (MeO2_MedicalRecord.Base.SessionLogin.SessionUsername == "" || MeO2_MedicalRecord.Base.SessionLogin.SessionUsername == null)
+                if (MSO2_MedicalRecord.Base.SessionLogin.SessionUsername == "" || MSO2_MedicalRecord.Base.SessionLogin.SessionUsername == null)
                 {
                     linkLabelTenNguoiDung.Text = ".........";
                 }
                 else
                 {
-                    linkLabelTenNguoiDung.Text = MeO2_MedicalRecord.Base.SessionLogin.SessionUsername;
+                    linkLabelTenNguoiDung.Text = MSO2_MedicalRecord.Base.SessionLogin.SessionUsername;
                 }
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -156,16 +154,16 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void HienThiThongTinVeLicense()
         {
             try
             {
-                string MaDatabase = MeO2_MedicalRecord.FormCommon.DangKyBanQuyen.KiemTraLicense.LayThongTinMaDatabase();
+                string MaDatabase = MSO2_MedicalRecord.FormCommon.DangKyBanQuyen.KiemTraLicense.LayThongTinMaDatabase();
                 //Load License tu DB ra
-                string kiemtra_licensetag = "SELECT datakey, licensekey FROM tools_license WHERE datakey='" + MaDatabase + "' limit 1;";
+                string kiemtra_licensetag = "SELECT datakey, licensekey FROM mrd_license WHERE datakey='" + MaDatabase + "' limit 1;";
                 DataView dataLicense = new DataView(condb.getDataTable(kiemtra_licensetag));
                 if (dataLicense != null && dataLicense.Count > 0)
                 {
@@ -178,7 +176,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void LoadLogoThongTin()
@@ -189,7 +187,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void LoadThongTinVeCSYT()
@@ -208,7 +206,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -227,7 +225,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         #endregion
@@ -241,7 +239,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -267,7 +265,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void xtraTabControlHome_SelectedPageChanged(object sender, TabPageChangedEventArgs e)
@@ -290,7 +288,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         #endregion
@@ -305,7 +303,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 

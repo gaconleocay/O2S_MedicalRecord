@@ -5,7 +5,7 @@ using System.Text;
 using System.Data.OleDb;
 using System.Data;
 
-namespace MeO2_MedicalRecord.Base
+namespace MSO2_MedicalRecord.Base
 {
     public class ReadExcelFile
     {

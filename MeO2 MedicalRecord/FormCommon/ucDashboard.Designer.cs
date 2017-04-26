@@ -1,4 +1,4 @@
-﻿namespace MeO2_MedicalRecord.FormCommon
+﻿namespace MSO2_MedicalRecord.FormCommon
 {
     partial class ucDashboard
     {
@@ -126,7 +126,7 @@
             this.navBarBCTongHopToanVien.AppearancePressed.Options.UseFont = true;
             this.navBarBCTongHopToanVien.Caption = "Tổng hợp toàn viện";
             this.navBarBCTongHopToanVien.Name = "navBarBCTongHopToanVien";
-            this.navBarBCTongHopToanVien.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarBCTongHopToanVien.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarBCTongHopToanVien.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarBCTongHopToanVien_LinkClicked);
             // 
             // navBarBCTHDTKhoa
@@ -143,7 +143,7 @@
             this.navBarBCTHDTKhoa.AppearancePressed.Options.UseFont = true;
             this.navBarBCTHDTKhoa.Caption = "Tổng hợp doanh thu khoa";
             this.navBarBCTHDTKhoa.Name = "navBarBCTHDTKhoa";
-            this.navBarBCTHDTKhoa.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarBCTHDTKhoa.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarBCTHDTKhoa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarBCTHDTKhoa_LinkClicked);
             // 
             // navBarGroup3
@@ -173,7 +173,7 @@
             this.navBarBCBenhNhanNgoaiTru.AppearancePressed.Options.UseFont = true;
             this.navBarBCBenhNhanNgoaiTru.Caption = "BC bệnh nhân ngoại trú";
             this.navBarBCBenhNhanNgoaiTru.Name = "navBarBCBenhNhanNgoaiTru";
-            this.navBarBCBenhNhanNgoaiTru.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarBCBenhNhanNgoaiTru.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarBCBenhNhanNgoaiTru.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarBCBenhNhanNgoaiTru_LinkClicked);
             // 
             // navBarItem6
@@ -190,7 +190,7 @@
             this.navBarItem6.AppearancePressed.Options.UseFont = true;
             this.navBarItem6.Caption = "navBarItem6";
             this.navBarItem6.Name = "navBarItem6";
-            this.navBarItem6.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarItem6.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarItem6.Visible = false;
             // 
             // navBarGroup4
@@ -222,7 +222,7 @@
             this.navBarBCQLTongTheKhoa.AppearancePressed.Options.UseFont = true;
             this.navBarBCQLTongTheKhoa.Caption = "BC QL tổng thể khoa";
             this.navBarBCQLTongTheKhoa.Name = "navBarBCQLTongTheKhoa";
-            this.navBarBCQLTongTheKhoa.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarBCQLTongTheKhoa.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarBCQLTongTheKhoa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarBCQLTongTheKhoa_LinkClicked);
             // 
             // navBarBCBenhNhanNoiTru
@@ -239,7 +239,7 @@
             this.navBarBCBenhNhanNoiTru.AppearancePressed.Options.UseFont = true;
             this.navBarBCBenhNhanNoiTru.Caption = "BC bệnh nhân nội trú";
             this.navBarBCBenhNhanNoiTru.Name = "navBarBCBenhNhanNoiTru";
-            this.navBarBCBenhNhanNoiTru.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarBCBenhNhanNoiTru.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarBCBenhNhanNoiTru.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarBCBenhNhanNoiTru_LinkClicked);
             // 
             // navBarDBDTTungKhoa
@@ -256,7 +256,7 @@
             this.navBarDBDTTungKhoa.AppearancePressed.Options.UseFont = true;
             this.navBarDBDTTungKhoa.Caption = "Biểu đồ doanh thu khoa";
             this.navBarDBDTTungKhoa.Name = "navBarDBDTTungKhoa";
-            this.navBarDBDTTungKhoa.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarDBDTTungKhoa.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarDBDTTungKhoa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarDBDTTungKhoa_LinkClicked);
             // 
             // navBarDBBenhNhanNoiTru
@@ -273,7 +273,7 @@
             this.navBarDBBenhNhanNoiTru.AppearancePressed.Options.UseFont = true;
             this.navBarDBBenhNhanNoiTru.Caption = "Biểu đồ doanh thu BN nội trú";
             this.navBarDBBenhNhanNoiTru.Name = "navBarDBBenhNhanNoiTru";
-            this.navBarDBBenhNhanNoiTru.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarDBBenhNhanNoiTru.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarDBBenhNhanNoiTru.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarDBBenhNhanNoiTru_LinkClicked);
             // 
             // navBarGroup5
@@ -303,7 +303,7 @@
             this.navBarBCDTCLS.AppearancePressed.Options.UseFont = true;
             this.navBarBCDTCLS.Caption = "BC doanh thu Cận lâm sàng";
             this.navBarBCDTCLS.Name = "navBarBCDTCLS";
-            this.navBarBCDTCLS.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarBCDTCLS.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarBCDTCLS.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarBCDTCLS_LinkClicked);
             // 
             // navBarItem10
@@ -320,7 +320,7 @@
             this.navBarItem10.AppearancePressed.Options.UseFont = true;
             this.navBarItem10.Caption = "navBarItem10";
             this.navBarItem10.Name = "navBarItem10";
-            this.navBarItem10.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarItem10.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarItem10.Visible = false;
             // 
             // navBarGroup2
@@ -350,7 +350,7 @@
             this.navBarBCXNTTuTruc.AppearancePressed.Options.UseFont = true;
             this.navBarBCXNTTuTruc.Caption = "BC xuất nhập tồn tủ trực";
             this.navBarBCXNTTuTruc.Name = "navBarBCXNTTuTruc";
-            this.navBarBCXNTTuTruc.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarBCXNTTuTruc.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarBCXNTTuTruc.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarBCXNTTuTruc_LinkClicked);
             // 
             // navBarBCBNSDThuocTaiKhoa
@@ -367,7 +367,7 @@
             this.navBarBCBNSDThuocTaiKhoa.AppearancePressed.Options.UseFont = true;
             this.navBarBCBNSDThuocTaiKhoa.Caption = "BC BN sử dụng thuốc tại khoa";
             this.navBarBCBNSDThuocTaiKhoa.Name = "navBarBCBNSDThuocTaiKhoa";
-            this.navBarBCBNSDThuocTaiKhoa.SmallImage = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.navBarBCBNSDThuocTaiKhoa.SmallImage = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.navBarBCBNSDThuocTaiKhoa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarBCBNSDThuocTaiKhoa_LinkClicked);
             // 
             // xtraTabControlChucNang

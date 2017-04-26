@@ -1,5 +1,5 @@
-﻿using MeO2_MedicalRecord.FormCommon.TabCaiDat;
-using MeO2_MedicalRecord.FormCommon.TabTrangChu;
+﻿using MSO2_MedicalRecord.FormCommon.TabCaiDat;
+using MSO2_MedicalRecord.FormCommon.TabTrangChu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord.FormCommon
+namespace MSO2_MedicalRecord.FormCommon
 {
     public partial class ucTrangChu : UserControl
     {
@@ -22,7 +22,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -37,7 +37,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -52,7 +52,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -67,7 +67,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -82,7 +82,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -97,7 +97,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void navBarItemNhatKySuKien_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -111,7 +111,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void navBarItemQLMayTram_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -125,7 +125,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 

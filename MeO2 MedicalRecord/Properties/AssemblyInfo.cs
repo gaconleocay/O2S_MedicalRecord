@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MeO2 MedicalRecord")]
+[assembly: AssemblyTitle("MSO2 MedicalRecord")]
 [assembly: AssemblyDescription("Phần mềm quản lý Hồ sơ bệnh án điện tử")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Medical Sulution One One")]
-[assembly: AssemblyProduct("MeO2_MedicalRecord")]
+[assembly: AssemblyProduct("MSO2_MedicalRecord")]
 [assembly: AssemblyCopyright("Copyright © 2017 Medical Sulution One One Co.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

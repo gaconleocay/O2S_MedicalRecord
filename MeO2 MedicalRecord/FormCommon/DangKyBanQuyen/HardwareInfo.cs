@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Management;
 
-namespace MeO2_MedicalRecord.FormCommon.DangKyBanQuyen
+namespace MSO2_MedicalRecord.FormCommon.DangKyBanQuyen
 {
     public static class HardwareInfo
     {

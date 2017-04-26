@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraTab;
-using MeO2_MedicalRecord.FormCommon.TabCaiDat;
+using MSO2_MedicalRecord.FormCommon.TabCaiDat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord.FormCommon
+namespace MSO2_MedicalRecord.FormCommon
 {
     internal static class TabControlProcess
     {
@@ -29,7 +29,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -56,7 +56,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -95,7 +95,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -120,7 +120,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
             return result;
         }
@@ -129,9 +129,9 @@ namespace MeO2_MedicalRecord.FormCommon
         {
             try
             {
-                if (tabControlName.TabPages.Count >= MeO2_MedicalRecord.Base.KeyTrongPhanMem.SoLuongTabPageChucNang)
+                if (tabControlName.TabPages.Count >= MSO2_MedicalRecord.Base.KeyTrongPhanMem.SoLuongTabPageChucNang)
                 {
-                    for (int i = 1; i < tabControlName.TabPages.Count - (MeO2_MedicalRecord.Base.KeyTrongPhanMem.SoLuongTabPageChucNang - 1); i++)
+                    for (int i = 1; i < tabControlName.TabPages.Count - (MSO2_MedicalRecord.Base.KeyTrongPhanMem.SoLuongTabPageChucNang - 1); i++)
                     {
                         tabControlName.TabPages.Remove(tabControlName.TabPages[i]);
                         //tabControlName.SelectedTabPageIndex = tabControlName.TabPages.Count - 1;
@@ -141,7 +141,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -304,7 +304,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error(ex);
+                MSO2_MedicalRecord.Base.Logging.Error(ex);
             }
             return ucResult;
         }

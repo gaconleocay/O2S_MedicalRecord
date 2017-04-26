@@ -1,4 +1,4 @@
-﻿using MeO2_MedicalRecord.Base;
+﻿using MSO2_MedicalRecord.Base;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeO2_MedicalRecord.FormCommon.DangKyBanQuyen
+namespace MSO2_MedicalRecord.FormCommon.DangKyBanQuyen
 {
     internal static class KiemTraLicense
     {
-        static MeO2_MedicalRecord.Base.ConnectDatabase condb = new MeO2_MedicalRecord.Base.ConnectDatabase();
+        static MSO2_MedicalRecord.Base.ConnectDatabase condb = new MSO2_MedicalRecord.Base.ConnectDatabase();
         //private static string license_keydb = "";
 
         internal static void KiemTraLicenseHopLe()
@@ -21,7 +21,7 @@ namespace MeO2_MedicalRecord.FormCommon.DangKyBanQuyen
                 SessionLogin.KiemTraLicenseSuDung = false;
                 string license_keydb = "";
                 //Load License tu DB ra
-                string kiemtra_licensetag = "SELECT datakey,licensekey FROM tools_license WHERE datakey='" + SessionLogin.MaDatabase + "' ;";
+                string kiemtra_licensetag = "SELECT datakey,licensekey FROM mrd_license WHERE datakey='" + SessionLogin.MaDatabase + "' ;";
                 DataView dataLicense = new DataView(condb.getDataTable(kiemtra_licensetag));
                 if (dataLicense != null && dataLicense.Count > 0)
                 {
@@ -80,7 +80,7 @@ namespace MeO2_MedicalRecord.FormCommon.DangKyBanQuyen
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn("Kiem tra license " + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Warn("Kiem tra license " + ex.ToString());
             }
         }
 
@@ -98,7 +98,7 @@ namespace MeO2_MedicalRecord.FormCommon.DangKyBanQuyen
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn("Lay thong tin ma database " + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Warn("Lay thong tin ma database " + ex.ToString());
             }
             return MaDatabase;
         }
@@ -156,7 +156,7 @@ namespace MeO2_MedicalRecord.FormCommon.DangKyBanQuyen
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn("Kiem tra license " + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Warn("Kiem tra license " + ex.ToString());
             }
             return thoiGianSuDung;
         }

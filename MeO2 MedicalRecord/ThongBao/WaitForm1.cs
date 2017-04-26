@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraWaitForm;
 
-namespace MeO2_MedicalRecord.ThongBao
+namespace MSO2_MedicalRecord.ThongBao
 {
     public partial class WaitForm1 : WaitForm
     {

@@ -1,4 +1,4 @@
-﻿namespace MeO2_MedicalRecord.FormCommon.TabCaiDat
+﻿namespace MSO2_MedicalRecord.FormCommon.TabCaiDat
 {
     partial class ucDanhSachNhanVien
     {
@@ -147,7 +147,7 @@
             this.btnThemTuExcel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnThemTuExcel.Appearance.Options.UseFont = true;
             this.btnThemTuExcel.Appearance.Options.UseForeColor = true;
-            this.btnThemTuExcel.Image = global::MeO2_MedicalRecord.Properties.Resources.pages_4_24;
+            this.btnThemTuExcel.Image = global::MSO2_MedicalRecord.Properties.Resources.pages_4_24;
             this.btnThemTuExcel.Location = new System.Drawing.Point(723, 22);
             this.btnThemTuExcel.Name = "btnThemTuExcel";
             this.btnThemTuExcel.Size = new System.Drawing.Size(130, 40);
@@ -161,7 +161,7 @@
             this.btnNVOK.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnNVOK.Appearance.Options.UseFont = true;
             this.btnNVOK.Appearance.Options.UseForeColor = true;
-            this.btnNVOK.Image = global::MeO2_MedicalRecord.Properties.Resources.checkmark_24;
+            this.btnNVOK.Image = global::MSO2_MedicalRecord.Properties.Resources.checkmark_24;
             this.btnNVOK.Location = new System.Drawing.Point(584, 22);
             this.btnNVOK.Name = "btnNVOK";
             this.btnNVOK.Size = new System.Drawing.Size(100, 40);

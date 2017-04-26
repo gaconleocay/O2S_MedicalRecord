@@ -1,4 +1,4 @@
-﻿namespace MeO2_MedicalRecord.FormCommon
+﻿namespace MSO2_MedicalRecord.FormCommon
 {
     partial class frmLogin
     {

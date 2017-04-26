@@ -5,11 +5,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeO2_MedicalRecord.Base
+namespace MSO2_MedicalRecord.Base
 {
     static internal class EncryptAndDecrypt
     {
-        static string key = MeO2_MedicalRecord.Base.KeyTrongPhanMem.MaHoaVaGiaiMa_key;
+        static string key = MSO2_MedicalRecord.Base.KeyTrongPhanMem.MaHoaVaGiaiMa_key;
         /// <summary>
         /// Mã hóa 1 chuỗi có pass
         /// </summary>
@@ -45,7 +45,7 @@ namespace MeO2_MedicalRecord.Base
             catch (Exception ex)
             {
                 return "";
-                MeO2_MedicalRecord.Base.Logging.Warn("Ham ma hoa " + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Warn("Ham ma hoa " + ex.ToString());
             }
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace MeO2_MedicalRecord.Base
             catch (Exception ex)
             {
                 return "";
-                MeO2_MedicalRecord.Base.Logging.Warn("Ham giai ma " + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Warn("Ham giai ma " + ex.ToString());
             }
         }
 

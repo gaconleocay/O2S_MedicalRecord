@@ -6,47 +6,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord.FormCommon
+namespace MSO2_MedicalRecord.FormCommon
 {
     internal static class KetNoiSCDLProcess
     {
-        private static MeO2_MedicalRecord.Base.ConnectDatabase condb = new MeO2_MedicalRecord.Base.ConnectDatabase();
+        private static MSO2_MedicalRecord.Base.ConnectDatabase condb = new MSO2_MedicalRecord.Base.ConnectDatabase();
 
         internal static bool CapNhatCoSoDuLieu()
         {
             bool result = true;
             try
             {
-                result = KetNoiSCDLProcess.CreateTableTblUser();
-                result = KetNoiSCDLProcess.CreateTableTblPermission();
-                result = KetNoiSCDLProcess.CreateTableTblDepartment();
-                result = KetNoiSCDLProcess.CreateTableTblLog();
-                result = KetNoiSCDLProcess.CreateTableTblUpdateKhaDung();
-                result = KetNoiSCDLProcess.CreateTableTblServiceFull();
-                result = KetNoiSCDLProcess.CreateTableLicense();
-                result = KetNoiSCDLProcess.CreateTableTblDVKTBHYTChenh();
-                result = KetNoiSCDLProcess.CreateTableTblDVKTBHYTChenhNew();
-                result = KetNoiSCDLProcess.CreateTable_DangDT_Tmp();
-                result = KetNoiSCDLProcess.CreateTable_RaVienChuaTT_Tmp();
-                result = KetNoiSCDLProcess.CreateTable_RaVienDaTT_Tmp();
-                result = KetNoiSCDLProcess.CreateTableOption();
-                result = KetNoiSCDLProcess.CreateTableTblNhanVien();
-                result = KetNoiSCDLProcess.CreateTableUserMedicineStore();
-                result = KetNoiSCDLProcess.CreateTableUserMedicinePhongLuu();
-                result = KetNoiSCDLProcess.CreateTableToolsServicepricePttt();
+                //result = KetNoiSCDLProcess.CreateTableTblUser();
+                //result = KetNoiSCDLProcess.CreateTableTblPermission();
+                //result = KetNoiSCDLProcess.CreateTableTblDepartment();
+                //result = KetNoiSCDLProcess.CreateTableTblLog();
+                //result = KetNoiSCDLProcess.CreateTableTblUpdateKhaDung();
+                //result = KetNoiSCDLProcess.CreateTableTblServiceFull();
+                //result = KetNoiSCDLProcess.CreateTableLicense();
+                //result = KetNoiSCDLProcess.CreateTableTblDVKTBHYTChenh();
+                //result = KetNoiSCDLProcess.CreateTableTblDVKTBHYTChenhNew();
+                //result = KetNoiSCDLProcess.CreateTable_DangDT_Tmp();
+                //result = KetNoiSCDLProcess.CreateTable_RaVienChuaTT_Tmp();
+                //result = KetNoiSCDLProcess.CreateTable_RaVienDaTT_Tmp();
+                //result = KetNoiSCDLProcess.CreateTableOption();
+                //result = KetNoiSCDLProcess.CreateTableTblNhanVien();
+                //result = KetNoiSCDLProcess.CreateTableUserMedicineStore();
+                //result = KetNoiSCDLProcess.CreateTableUserMedicinePhongLuu();
+                //result = KetNoiSCDLProcess.CreateTableToolsServicepricePttt();
 
 
-                result = KetNoiSCDLProcess.CreateView_VienphiMoney();
-                result = KetNoiSCDLProcess.CreateView_ServicepriceDepartment();
-                result = KetNoiSCDLProcess.CreateView_Serviceprice_Pttt();
-                //result= KetNoiSCDLProcess.UpdateTableUser();
-                result = KetNoiSCDLProcess.CreateTableUserDepartmentgroup();
-                result = KetNoiSCDLProcess.CreateTableVersion();
-                result = KetNoiSCDLProcess.CreateFunctionByteaImport();
+                //result = KetNoiSCDLProcess.CreateView_VienphiMoney();
+                //result = KetNoiSCDLProcess.CreateView_ServicepriceDepartment();
+                //result = KetNoiSCDLProcess.CreateView_Serviceprice_Pttt();
+                ////result= KetNoiSCDLProcess.UpdateTableUser();
+                //result = KetNoiSCDLProcess.CreateTableUserDepartmentgroup();
+                //result = KetNoiSCDLProcess.CreateTableVersion();
+                //result = KetNoiSCDLProcess.CreateFunctionByteaImport();
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi Update DB" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi Update DB" + ex.ToString());
             }
             return result;
         }
@@ -57,7 +57,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sql_tbluser = "CREATE TABLE IF NOT EXISTS tools_tbluser ( userid serial NOT NULL, usercode text NOT NULL, username text, userpassword text, userstatus integer, usergnhom integer, usernote text, userhisid integer, CONSTRAINT tools_tbluser_pkey PRIMARY KEY (userid));";
+                string sql_tbluser = "CREATE TABLE IF NOT EXISTS mrd_tbluser ( userid serial NOT NULL, usercode text NOT NULL, username text, userpassword text, userstatus integer, usergnhom integer, usernote text, userhisid integer, CONSTRAINT tools_tbluser_pkey PRIMARY KEY (userid));";
                 if (condb.ExecuteNonQuery(sql_tbluser))
                 {
                     result = true;
@@ -65,7 +65,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblUser" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblUser" + ex.ToString());
             }
             return result;
         }
@@ -74,7 +74,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sql_tblper = "CREATE TABLE IF NOT EXISTS tools_tbluser_permission ( userpermissionid serial NOT NULL, permissionid integer, permissioncode text, permissionname text, userid integer, usercode text, permissioncheck boolean, userpermissionnote text, CONSTRAINT userpermissionid_pkey PRIMARY KEY (userpermissionid));";
+                string sql_tblper = "CREATE TABLE IF NOT EXISTS mrd_tbluser_permission ( userpermissionid serial NOT NULL, permissionid integer, permissioncode text, permissionname text, userid integer, usercode text, permissioncheck boolean, userpermissionnote text, CONSTRAINT userpermissionid_pkey PRIMARY KEY (userpermissionid));";
                 if (condb.ExecuteNonQuery(sql_tblper))
                 {
                     result = true;
@@ -82,7 +82,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblPermission" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblPermission" + ex.ToString());
             }
             return result;
         }
@@ -102,7 +102,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblDepartment" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblDepartment" + ex.ToString());
             }
             return result;
         }
@@ -111,7 +111,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sql_tbllog = "CREATE TABLE IF NOT EXISTS tools_tbllog (logid serial NOT NULL,loguser text, logvalue text,ipaddress text,computername text,softversion text,logtime timestamp without time zone,CONSTRAINT tools_tbllog_pkey PRIMARY KEY (logid));";
+                string sql_tbllog = "CREATE TABLE IF NOT EXISTS mrd_tbllog (logid serial NOT NULL,loguser text, logvalue text,ipaddress text,computername text,softversion text,logtime timestamp without time zone,CONSTRAINT tools_tbllog_pkey PRIMARY KEY (logid));";
                 if (condb.ExecuteNonQuery(sql_tbllog))
                 {
                     result = true;
@@ -119,7 +119,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblLog" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblLog" + ex.ToString());
             }
             return result;
         }
@@ -136,7 +136,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblUpdateKhaDung" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblUpdateKhaDung" + ex.ToString());
             }
             return result;
         }
@@ -156,7 +156,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblServiceFull" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblServiceFull" + ex.ToString());
             }
             return result;
         }
@@ -175,7 +175,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableColumeBackupDichVu" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableColumeBackupDichVu" + ex.ToString());
             }
             return result;
         }
@@ -192,7 +192,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblDVKTBHYTChenh" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblDVKTBHYTChenh" + ex.ToString());
             }
             return result;
         }
@@ -209,7 +209,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblDVKTBHYTChenhNew" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblDVKTBHYTChenhNew" + ex.ToString());
             }
             return result;
         }
@@ -226,7 +226,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTable_DangDT_Tmp" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTable_DangDT_Tmp" + ex.ToString());
             }
             return result;
         }
@@ -243,7 +243,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTable_RaVienChuaTT_Tmp" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTable_RaVienChuaTT_Tmp" + ex.ToString());
             }
             return result;
         }
@@ -260,7 +260,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTable_RaVienDaTT_Tmp" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTable_RaVienDaTT_Tmp" + ex.ToString());
             }
             return result;
         }
@@ -269,7 +269,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sqloption = "CREATE TABLE IF NOT EXISTS tools_option(toolsoptionid serial NOT NULL, toolsoptioncode text, toolsoptionname text, toolsoptionvalue text, toolsoptionnote text, toolsoptionlook integer, toolsoptiondate timestamp without time zone, toolsoptioncreateuser text, CONSTRAINT tools_option_pkey PRIMARY KEY (toolsoptionid));";
+                string sqloption = "CREATE TABLE IF NOT EXISTS mrd_option(toolsoptionid serial NOT NULL, toolsoptioncode text, toolsoptionname text, toolsoptionvalue text, toolsoptionnote text, toolsoptionlook integer, toolsoptiondate timestamp without time zone, toolsoptioncreateuser text, CONSTRAINT tools_option_pkey PRIMARY KEY (toolsoptionid));";
                 if (condb.ExecuteNonQuery(sqloption))
                 {
                     result = true;
@@ -277,7 +277,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableOption" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableOption" + ex.ToString());
             }
             return result;
         }
@@ -286,7 +286,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sqloption = "CREATE TABLE IF NOT EXISTS tools_tbluser_departmentgroup(userdepgid serial NOT NULL, departmentgroupid integer, departmentid integer, departmenttype integer, usercode text,  userdepgidnote text, CONSTRAINT tbluser_departmentgroup_pkey PRIMARY KEY (userdepgid));";
+                string sqloption = "CREATE TABLE IF NOT EXISTS mrd_tbluser_departmentgroup(userdepgid serial NOT NULL, departmentgroupid integer, departmentid integer, departmenttype integer, usercode text,  userdepgidnote text, CONSTRAINT tbluser_departmentgroup_pkey PRIMARY KEY (userdepgid));";
                 if (condb.ExecuteNonQuery(sqloption))
                 {
                     result = true;
@@ -294,7 +294,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableUserDepartmentgroup" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableUserDepartmentgroup" + ex.ToString());
             }
             return result;
         }
@@ -303,7 +303,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sqloption = "CREATE TABLE IF NOT EXISTS tools_version (versionid serial NOT NULL, appversion text, app_link text,  app_type integer, updateapp bytea, appsize integer, sqlversion text, updatesql bytea, sqlsize integer, sync_flag integer,  update_flag integer,  CONSTRAINT tools_version_pkey PRIMARY KEY (versionid));   ";
+                string sqloption = "CREATE TABLE IF NOT EXISTS mrd_version (versionid serial NOT NULL, appversion text, app_link text,  app_type integer, updateapp bytea, appsize integer, sqlversion text, updatesql bytea, sqlsize integer, sync_flag integer,  update_flag integer,  CONSTRAINT tools_version_pkey PRIMARY KEY (versionid));   ";
                 if (condb.ExecuteNonQuery(sqloption))
                 {
                     result = true;
@@ -311,7 +311,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableSersion" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableSersion" + ex.ToString());
             }
             return result;
         }
@@ -320,7 +320,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sql_tbltools_license = "CREATE TABLE IF NOT EXISTS tools_license (licenseid serial NOT NULL, datakey text, licensekey text, CONSTRAINT tools_license_pkey PRIMARY KEY (licenseid));";
+                string sql_tbltools_license = "CREATE TABLE IF NOT EXISTS mrd_license (licenseid serial NOT NULL, datakey text, licensekey text, CONSTRAINT tools_license_pkey PRIMARY KEY (licenseid));";
                 if (condb.ExecuteNonQuery(sql_tbltools_license))
                 {
                     result = true;
@@ -328,7 +328,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableLicense" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableLicense" + ex.ToString());
             }
             return result;
         }
@@ -337,7 +337,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sql_tbluser = "CREATE TABLE IF NOT EXISTS tools_tblnhanvien ( nhanvienid serial NOT NULL, usercode text NOT NULL, username text, userpassword text, userstatus integer, usergnhom integer, usernote text, userhisid integer, CONSTRAINT tools_tblnhanvien_pkey PRIMARY KEY (nhanvienid));";
+                string sql_tbluser = "CREATE TABLE IF NOT EXISTS mrd_tblnhanvien ( nhanvienid serial NOT NULL, usercode text NOT NULL, username text, userpassword text, userstatus integer, usergnhom integer, usernote text, userhisid integer, CONSTRAINT tools_tblnhanvien_pkey PRIMARY KEY (nhanvienid));";
                 if (condb.ExecuteNonQuery(sql_tbluser))
                 {
                     result = true;
@@ -345,7 +345,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblNhanVien" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblNhanVien" + ex.ToString());
             }
             return result;
         }
@@ -354,7 +354,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sql_tbluser = "CREATE TABLE IF NOT EXISTS tools_tbluser_medicinestore( usermestid serial NOT NULL, medicinestoreid integer, medicinestoretype integer, usercode text, userdepgidnote text, CONSTRAINT tools_tbluser_medicinestore_pkey PRIMARY KEY (usermestid) );";
+                string sql_tbluser = "CREATE TABLE IF NOT EXISTS mrd_tbluser_medicinestore( usermestid serial NOT NULL, medicinestoreid integer, medicinestoretype integer, usercode text, userdepgidnote text, CONSTRAINT tools_tbluser_medicinestore_pkey PRIMARY KEY (usermestid) );";
                 if (condb.ExecuteNonQuery(sql_tbluser))
                 {
                     result = true;
@@ -362,7 +362,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableUserMedicineStore" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableUserMedicineStore" + ex.ToString());
             }
             return result;
         }
@@ -371,7 +371,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sql_tbluser = "CREATE TABLE IF NOT EXISTS tools_tbluser_medicinephongluu( userphongluutid serial NOT NULL, medicinephongluuid integer, medicinestoreid integer, usercode text, userdepgidnote text, CONSTRAINT tools_tbluser_medicinephongluu_pkey PRIMARY KEY (userphongluutid) );";
+                string sql_tbluser = "CREATE TABLE IF NOT EXISTS mrd_tbluser_medicinephongluu( userphongluutid serial NOT NULL, medicinephongluuid integer, medicinestoreid integer, usercode text, userdepgidnote text, CONSTRAINT tools_tbluser_medicinephongluu_pkey PRIMARY KEY (userphongluutid) );";
                 if (condb.ExecuteNonQuery(sql_tbluser))
                 {
                     result = true;
@@ -379,7 +379,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableUserMedicinePhongLuu" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableUserMedicinePhongLuu" + ex.ToString());
             }
             return result;
         }
@@ -397,7 +397,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableToolsServicepricePttt" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableToolsServicepricePttt" + ex.ToString());
             }
             return result;
         }
@@ -409,7 +409,7 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string sqlKiemtra = "SELECT userhisid from tools_tbluser";
+                string sqlKiemtra = "SELECT userhisid from mrd_tbluser";
                 try
                 {
                     DataView dataKiemTra = new DataView(condb.getDataTable(sqlKiemtra));
@@ -417,9 +417,9 @@ namespace MeO2_MedicalRecord.FormCommon
                 }
                 catch (Exception ex)
                 {
-                    MeO2_MedicalRecord.Base.Logging.Error("Đã tồn tại cột userhisid trong tools_tbluser" + ex.ToString());
+                    MSO2_MedicalRecord.Base.Logging.Error("Đã tồn tại cột userhisid trong mrd_tbluser" + ex.ToString());
                     throw;
-                    string sql_updateuser = "ALTER TABLE tools_tbluser ADD userhisid integer;";
+                    string sql_updateuser = "ALTER TABLE mrd_tbluser ADD userhisid integer;";
                     if (condb.ExecuteNonQuery_Error(sql_updateuser))
                     {
                         result = true;
@@ -428,7 +428,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi UpdateTableWithVersion" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi UpdateTableWithVersion" + ex.ToString());
             }
             return result;
         }
@@ -449,7 +449,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi tao VIEW vienphi_money" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi tao VIEW vienphi_money" + ex.ToString());
             }
             return result;
         }
@@ -467,7 +467,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi tao VIEW serviceprice_department" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi tao VIEW serviceprice_department" + ex.ToString());
             }
             return result;
         }
@@ -485,7 +485,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi tao VIEW serviceprice_department" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi tao VIEW serviceprice_department" + ex.ToString());
             }
             return result;
         }
@@ -506,7 +506,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error("Lỗi CreateFunctionByteaimport" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateFunctionByteaimport" + ex.ToString());
             }
             return result;
         }

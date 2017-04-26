@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 using System.Configuration;
-using MeO2_MedicalRecord.Base;
+using MSO2_MedicalRecord.Base;
 
-namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
+namespace MSO2_MedicalRecord.FormCommon.TabTrangChu
 {
     public partial class frmThayPass : Form
     {
@@ -19,7 +19,7 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
         public string serveruser = ConfigurationManager.AppSettings["Username"].ToString();
         public string serverpass = ConfigurationManager.AppSettings["Password"].ToString();
         public string serverdb = ConfigurationManager.AppSettings["Database"].ToString();
-        MeO2_MedicalRecord.Base.ConnectDatabase condb = new MeO2_MedicalRecord.Base.ConnectDatabase();
+        MSO2_MedicalRecord.Base.ConnectDatabase condb = new MSO2_MedicalRecord.Base.ConnectDatabase();
 
         public frmThayPass()
         {
@@ -37,16 +37,16 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
             {
                 try
                 {
-                    string en_txtUserID = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
-                    string en_txtUserPasswordOld = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtPasswordOld.Text.Trim(), true);
-                    string en_txtUserPasswordNew = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtPasswordNew1.Text.Trim(), true);
+                    string en_txtUserID = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
+                    string en_txtUserPasswordOld = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtPasswordOld.Text.Trim(), true);
+                    string en_txtUserPasswordNew = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtPasswordNew1.Text.Trim(), true);
 
-                    string sqlquerry = "select * from tools_tbluser where usercode='" + en_txtUserID + "' and userpassword='" + en_txtUserPasswordOld + "'";
+                    string sqlquerry = "select * from mrd_tbluser where usercode='" + en_txtUserID + "' and userpassword='" + en_txtUserPasswordOld + "'";
                     DataView dataBC = new DataView(condb.getDataTable(sqlquerry));
 
                     if (dataBC.Count > 0 && txtPasswordNew1.Text == txtPasswordNew2.Text)
                     {
-                        string sqlupdate_user = "UPDATE tools_tbluser SET userpassword='" + en_txtUserPasswordNew + "' WHERE usercode='" + en_txtUserID + "';";
+                        string sqlupdate_user = "UPDATE mrd_tbluser SET userpassword='" + en_txtUserPasswordNew + "' WHERE usercode='" + en_txtUserID + "';";
                        if (condb.ExecuteNonQuery(sqlupdate_user))
                         {
                             MessageBox.Show("Thay đổi mật khẩu thành công.", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Information);

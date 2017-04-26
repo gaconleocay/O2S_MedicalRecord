@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MeO2_MedicalRecord.Properties {
+namespace MSO2_MedicalRecord.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord
+namespace MSO2_MedicalRecord
 {
     static class Program
     {
@@ -15,7 +15,7 @@ namespace MeO2_MedicalRecord
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MSO2_MedicalRecord.FormCommon.frmLogin());
         }
     }
 }

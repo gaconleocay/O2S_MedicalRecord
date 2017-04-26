@@ -1,4 +1,4 @@
-﻿namespace MeO2_MedicalRecord.FormCommon.TabCaiDat
+﻿namespace MSO2_MedicalRecord.FormCommon.TabCaiDat
 {
     partial class ucMaHoaVaGiaiMa
     {

@@ -1,4 +1,4 @@
-﻿namespace MeO2_MedicalRecord.FormCommon
+﻿namespace MSO2_MedicalRecord.FormCommon
 {
     partial class ucHoSoBenhAn
     {
@@ -116,7 +116,7 @@
             this.xtraTabDSChucNang.Appearance.PageClient.BackColor = System.Drawing.Color.DarkRed;
             this.xtraTabDSChucNang.Appearance.PageClient.Options.UseBackColor = true;
             this.xtraTabDSChucNang.Controls.Add(this.layoutControl1);
-            this.xtraTabDSChucNang.Image = global::MeO2_MedicalRecord.Properties.Resources.list_2_16;
+            this.xtraTabDSChucNang.Image = global::MSO2_MedicalRecord.Properties.Resources.list_2_16;
             this.xtraTabDSChucNang.Name = "xtraTabDSChucNang";
             this.xtraTabDSChucNang.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
             this.xtraTabDSChucNang.Size = new System.Drawing.Size(1090, 582);

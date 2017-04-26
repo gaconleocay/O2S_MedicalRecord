@@ -8,7 +8,7 @@ using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord.Base
+namespace MSO2_MedicalRecord.Base
 {
     public static class ExportDataToFile
     {

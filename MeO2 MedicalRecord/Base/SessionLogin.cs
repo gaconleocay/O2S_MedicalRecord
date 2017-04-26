@@ -11,7 +11,7 @@ using System.Net;
 using System.Diagnostics;
 
 
-namespace MeO2_MedicalRecord.Base
+namespace MSO2_MedicalRecord.Base
 {
     /// <summary>
     /// Clast lưu biến tên user đăng nhập hệ thống để sử dụng cho mọi nơi trong chương trình

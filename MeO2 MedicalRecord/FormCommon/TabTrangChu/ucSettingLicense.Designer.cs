@@ -1,4 +1,4 @@
-﻿namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
+﻿namespace MSO2_MedicalRecord.FormCommon.TabTrangChu
 {
     partial class ucSettingLicense
     {
@@ -210,7 +210,7 @@
             this.btnTaoLicenseTao.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnTaoLicenseTao.Appearance.Options.UseFont = true;
             this.btnTaoLicenseTao.Appearance.Options.UseForeColor = true;
-            this.btnTaoLicenseTao.Image = global::MeO2_MedicalRecord.Properties.Resources.arrow_32_16;
+            this.btnTaoLicenseTao.Image = global::MSO2_MedicalRecord.Properties.Resources.arrow_32_16;
             this.btnTaoLicenseTao.Location = new System.Drawing.Point(291, 153);
             this.btnTaoLicenseTao.Name = "btnTaoLicenseTao";
             this.btnTaoLicenseTao.Size = new System.Drawing.Size(110, 23);

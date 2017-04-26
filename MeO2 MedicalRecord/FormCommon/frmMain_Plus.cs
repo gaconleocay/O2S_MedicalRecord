@@ -1,11 +1,11 @@
-﻿using MeO2_MedicalRecord.Base;
+﻿using MSO2_MedicalRecord.Base;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using System.Linq;
 
-namespace MeO2_MedicalRecord.FormCommon
+namespace MSO2_MedicalRecord.FormCommon
 {
     public partial class frmMain : Form
     {
@@ -29,7 +29,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
                 throw;
             }
         }
@@ -43,7 +43,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
                 throw;
             }
         }

@@ -1,4 +1,4 @@
-﻿namespace MeO2_MedicalRecord.FormCommon.TabCaiDat
+﻿namespace MSO2_MedicalRecord.FormCommon.TabCaiDat
 {
     partial class ucCauHinhHeThong
     {
@@ -103,7 +103,7 @@
             this.btnOptionAdd.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnOptionAdd.Appearance.Options.UseFont = true;
             this.btnOptionAdd.Appearance.Options.UseForeColor = true;
-            this.btnOptionAdd.Image = global::MeO2_MedicalRecord.Properties.Resources.plus_2_16;
+            this.btnOptionAdd.Image = global::MSO2_MedicalRecord.Properties.Resources.plus_2_16;
             this.btnOptionAdd.Location = new System.Drawing.Point(45, 495);
             this.btnOptionAdd.Name = "btnOptionAdd";
             this.btnOptionAdd.Size = new System.Drawing.Size(145, 30);
@@ -136,7 +136,7 @@
             this.btnOptionDefault.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnOptionDefault.Appearance.Options.UseFont = true;
             this.btnOptionDefault.Appearance.Options.UseForeColor = true;
-            this.btnOptionDefault.Image = global::MeO2_MedicalRecord.Properties.Resources.list_view_16;
+            this.btnOptionDefault.Image = global::MSO2_MedicalRecord.Properties.Resources.list_view_16;
             this.btnOptionDefault.Location = new System.Drawing.Point(234, 495);
             this.btnOptionDefault.Name = "btnOptionDefault";
             this.btnOptionDefault.Size = new System.Drawing.Size(145, 30);
@@ -150,7 +150,7 @@
             this.btnOptionOK.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnOptionOK.Appearance.Options.UseFont = true;
             this.btnOptionOK.Appearance.Options.UseForeColor = true;
-            this.btnOptionOK.Image = global::MeO2_MedicalRecord.Properties.Resources.checkmark_24;
+            this.btnOptionOK.Image = global::MSO2_MedicalRecord.Properties.Resources.checkmark_24;
             this.btnOptionOK.Location = new System.Drawing.Point(181, 418);
             this.btnOptionOK.Name = "btnOptionOK";
             this.btnOptionOK.Size = new System.Drawing.Size(100, 40);

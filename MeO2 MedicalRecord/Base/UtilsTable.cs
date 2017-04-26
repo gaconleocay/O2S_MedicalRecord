@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeO2_MedicalRecord.Base
+namespace MSO2_MedicalRecord.Base
 {
     /*
      Mình viết một lớp Utils để lấy ra wrapper cho table phục vụ cho mục đích hiển thị.

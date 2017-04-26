@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord.ThongBao
+namespace MSO2_MedicalRecord.ThongBao
 {
     public partial class frmThongBao : Form
     {

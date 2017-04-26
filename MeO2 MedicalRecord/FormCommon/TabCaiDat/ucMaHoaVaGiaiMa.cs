@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord.FormCommon.TabCaiDat
+namespace MSO2_MedicalRecord.FormCommon.TabCaiDat
 {
     public partial class ucMaHoaVaGiaiMa : UserControl
     {
@@ -21,11 +21,11 @@ namespace MeO2_MedicalRecord.FormCommon.TabCaiDat
         {
             try
             {
-                this.txtDauRa.Text = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtDauVao.Text, true);
+                this.txtDauRa.Text = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtDauVao.Text, true);
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -33,11 +33,11 @@ namespace MeO2_MedicalRecord.FormCommon.TabCaiDat
         {
             try
             {
-                this.txtDauRa.Text = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(txtDauVao.Text, true);
+                this.txtDauRa.Text = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(txtDauVao.Text, true);
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -50,7 +50,7 @@ namespace MeO2_MedicalRecord.FormCommon.TabCaiDat
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
     }

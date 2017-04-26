@@ -1,11 +1,11 @@
-﻿using MeO2_MedicalRecord.ClassCommon;
+﻿using MSO2_MedicalRecord.ClassCommon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeO2_MedicalRecord.Base
+namespace MSO2_MedicalRecord.Base
 {
     public class listChucNang
     {
@@ -484,7 +484,7 @@ namespace MeO2_MedicalRecord.Base
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error(ex);
+                MSO2_MedicalRecord.Base.Logging.Error(ex);
             }
             return lstresult;
         }

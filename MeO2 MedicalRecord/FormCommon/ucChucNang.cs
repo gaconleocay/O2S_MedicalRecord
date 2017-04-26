@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraTab;
 using DevExpress.XtraGrid.Views.Grid;
-using MeO2_MedicalRecord.Base;
+using MSO2_MedicalRecord.Base;
 
-namespace MeO2_MedicalRecord.FormCommon
+namespace MSO2_MedicalRecord.FormCommon
 {
     public partial class ucHoSoBenhAn : UserControl
     {
         #region Declaration
-        MeO2_MedicalRecord.Base.ConnectDatabase condb = new MeO2_MedicalRecord.Base.ConnectDatabase();
+        MSO2_MedicalRecord.Base.ConnectDatabase condb = new MSO2_MedicalRecord.Base.ConnectDatabase();
         public string CurrentTabPage { get; set; }
         public int SelectedTabPageIndex { get; set; }
         internal frmMain frmMain;
@@ -43,7 +43,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -55,7 +55,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void LoadDataDSBaoCao()
@@ -66,7 +66,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -88,7 +88,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void xtraTabControlChucNang_SelectedPageChanged(object sender, TabPageChangedEventArgs e)
@@ -111,7 +111,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         #endregion
@@ -130,7 +130,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void gridViewDSChucNang_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -144,7 +144,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -157,7 +157,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -174,7 +174,7 @@ namespace MeO2_MedicalRecord.FormCommon
                 {
                     //Chon ucControl
                     ucControlActive = TabControlProcess.SelectUCControlActive(code);
-                    MeO2_MedicalRecord.FormCommon.TabControlProcess.TabCreating(xtraTabControlChucNang, code, name, note, ucControlActive);
+                    MSO2_MedicalRecord.FormCommon.TabControlProcess.TabCreating(xtraTabControlChucNang, code, name, note, ucControlActive);
                     ucControlActive.Show();
                 }
                 else
@@ -184,7 +184,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error(ex);
+                MSO2_MedicalRecord.Base.Logging.Error(ex);
             }
         }
         private void gridViewDSChucNang_RowStyle(object sender, RowStyleEventArgs e)
@@ -204,7 +204,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         #endregion
@@ -223,7 +223,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void gridViewDSBaoCao_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
@@ -237,7 +237,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -250,7 +250,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -267,7 +267,7 @@ namespace MeO2_MedicalRecord.FormCommon
                 {
                     //Chon ucControl
                     ucControlActive = TabControlProcess.SelectUCControlActive(code);
-                    MeO2_MedicalRecord.FormCommon.TabControlProcess.TabCreating(xtraTabControlChucNang, code, name, note, ucControlActive);
+                    MSO2_MedicalRecord.FormCommon.TabControlProcess.TabCreating(xtraTabControlChucNang, code, name, note, ucControlActive);
                     ucControlActive.Show();
                 }
                 else
@@ -277,7 +277,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error(ex);
+                MSO2_MedicalRecord.Base.Logging.Error(ex);
             }
         }
         private void gridViewDSBaoCao_RowStyle(object sender, RowStyleEventArgs e)
@@ -297,7 +297,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         #endregion

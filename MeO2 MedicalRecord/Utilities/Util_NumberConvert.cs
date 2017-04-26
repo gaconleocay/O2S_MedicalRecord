@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeO2_MedicalRecord.Utilities
+namespace MSO2_MedicalRecord.Utilities
 {
     public class Util_NumberConvert
     {

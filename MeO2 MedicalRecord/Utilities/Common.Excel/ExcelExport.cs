@@ -8,7 +8,7 @@ using Aspose.Cells;
 using System.IO;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord.Utilities.Common.Excel
+namespace MSO2_MedicalRecord.Utilities.Common.Excel
 {
     public class ExcelExport
     {
@@ -101,13 +101,13 @@ namespace MeO2_MedicalRecord.Utilities.Common.Excel
                                         designer.Workbook.Save(exportFilePath, new XlsSaveOptions(SaveFormat.Excel97To2003));
                                         break;
                                 }
-                                ThongBao.frmThongBao frmthongbao = new ThongBao.frmThongBao(MeO2_MedicalRecord.Base.ThongBaoLable.EXPORT_DU_LIEU_THANH_CONG);
+                                ThongBao.frmThongBao frmthongbao = new ThongBao.frmThongBao(MSO2_MedicalRecord.Base.ThongBaoLable.EXPORT_DU_LIEU_THANH_CONG);
                                 frmthongbao.Show();
                             }
                         }
                         else
                         {
-                            ThongBao.frmThongBao frmthongbao = new ThongBao.frmThongBao(MeO2_MedicalRecord.Base.ThongBaoLable.KHONG_TIM_THAY_TEMPLATE_BAO_CAO);
+                            ThongBao.frmThongBao frmthongbao = new ThongBao.frmThongBao(MSO2_MedicalRecord.Base.ThongBaoLable.KHONG_TIM_THAY_TEMPLATE_BAO_CAO);
                             frmthongbao.Show();
                         }
                     }

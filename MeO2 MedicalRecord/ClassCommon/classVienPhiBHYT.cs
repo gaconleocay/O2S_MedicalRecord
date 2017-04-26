@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeO2_MedicalRecord.ClassCommon
+namespace MSO2_MedicalRecord.ClassCommon
 {
   public  class classVienPhiBHYT
     {

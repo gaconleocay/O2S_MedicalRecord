@@ -1,4 +1,4 @@
-﻿using MeO2_MedicalRecord.Base;
+﻿using MSO2_MedicalRecord.Base;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,14 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord.Base
+namespace MSO2_MedicalRecord.Base
 {
     public static class CheckPermission
     {
-        static MeO2_MedicalRecord.Base.ConnectDatabase condb = new MeO2_MedicalRecord.Base.ConnectDatabase();
+        static MSO2_MedicalRecord.Base.ConnectDatabase condb = new MSO2_MedicalRecord.Base.ConnectDatabase();
         public static bool ChkPerModule(string percode)
         {
-            //string en_percode = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(percode, true);
+            //string en_percode = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(percode, true);
             bool result = false;
             try
             {
@@ -33,7 +33,7 @@ namespace MeO2_MedicalRecord.Base
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error(ex);
+                MSO2_MedicalRecord.Base.Logging.Error(ex);
             }
             return result;
         }
@@ -54,8 +54,8 @@ namespace MeO2_MedicalRecord.Base
                 }
                 else
                 {
-                    string en_usercode = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
-                    string sqlper = "SELECT permissionid, permissioncode, permissionname, userid, usercode, permissioncheck FROM tools_tbluser_permission WHERE usercode = '" + en_usercode + "' and permissioncheck='1';";
+                    string en_usercode = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
+                    string sqlper = "SELECT permissionid, permissioncode, permissionname, userid, usercode, permissioncheck FROM mrd_tbluser_permission WHERE usercode = '" + en_usercode + "' and permissioncheck='1';";
                     DataView dv = new DataView(condb.getDataTable(sqlper));
                     if (dv.Count > 0)
                     {
@@ -84,7 +84,7 @@ namespace MeO2_MedicalRecord.Base
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error(ex);
+                MSO2_MedicalRecord.Base.Logging.Error(ex);
             }
             return lstPhanQuyen;
         }
@@ -97,12 +97,12 @@ namespace MeO2_MedicalRecord.Base
                 string sqlper = "";
                 if (SessionLogin.SessionUsercode == Base.KeyTrongPhanMem.AdminUser_key)
                 {
-                    sqlper = "SELECT de.departmentgroupid,de.departmentgroupcode, de.departmentgroupname,de.departmentgrouptype, de.departmentid,de.departmentcode,de.departmentname,de.departmenttype FROM  tools_depatment de WHERE de.departmentgrouptype in (1,4,10,11) and de.departmenttype in (2,3,7,9) ORDER BY de.departmentgroupname,de.departmentname,de.departmenttype;";
+                    sqlper = "SELECT de.departmentgroupid,de.departmentgroupcode, de.departmentgroupname,de.departmentgrouptype, de.departmentid,de.departmentcode,de.departmentname,de.departmenttype FROM  mrd_depatment de WHERE de.departmentgrouptype in (1,4,10,11) and de.departmenttype in (2,3,7,9) ORDER BY de.departmentgroupname,de.departmentname,de.departmenttype;";
                 }
                 else
                 {
-                    string en_usercode = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
-                    sqlper = "SELECT ude.departmentgroupid,de.departmentgroupcode, de.departmentgroupname,de.departmentgrouptype, ude.departmentid,de.departmentcode,de.departmentname,ude.departmenttype, ude.usercode FROM tools_tbluser_departmentgroup ude inner join tools_depatment de on ude.departmentid=de.departmentid WHERE usercode = '" + en_usercode + "' ORDER BY de.departmentgroupname,de.departmentname,ude.departmenttype;";
+                    string en_usercode = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
+                    sqlper = "SELECT ude.departmentgroupid,de.departmentgroupcode, de.departmentgroupname,de.departmentgrouptype, ude.departmentid,de.departmentcode,de.departmentname,ude.departmenttype, ude.usercode FROM mrd_tbluser_departmentgroup ude inner join mrd_depatment de on ude.departmentid=de.departmentid WHERE usercode = '" + en_usercode + "' ORDER BY de.departmentgroupname,de.departmentname,ude.departmenttype;";
                 }
                 DataView dv = new DataView(condb.getDataTable(sqlper));
                 if (dv.Count > 0)
@@ -124,7 +124,7 @@ namespace MeO2_MedicalRecord.Base
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error(ex);
+                MSO2_MedicalRecord.Base.Logging.Error(ex);
             }
             return lstPhanQuyenKhoaPhong;
         }
@@ -141,8 +141,8 @@ namespace MeO2_MedicalRecord.Base
                 }
                 else
                 {
-                    string en_usercode = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
-                    sqlper = "SELECT ms.medicinestoreid, ms.medicinestorecode, ms.medicinestorename, ms.medicinestoretype, (case ms.medicinestoretype when 1 then 'Kho tổng' when 2 then 'Kho ngoại trú' when 3 then 'Kho nội trú' when 4 then 'Nhà thuốc' when 7 then 'Kho vật tư' end) as medicinestoretypename FROM medicine_store ms INNER JOIN tools_tbluser_medicinestore ttm on ms.medicinestoreid=ttm.medicinestoreid WHERE ttm.usercode = '" + en_usercode + "' ORDER BY ms.medicinestoretype,ms.medicinestorename;";
+                    string en_usercode = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
+                    sqlper = "SELECT ms.medicinestoreid, ms.medicinestorecode, ms.medicinestorename, ms.medicinestoretype, (case ms.medicinestoretype when 1 then 'Kho tổng' when 2 then 'Kho ngoại trú' when 3 then 'Kho nội trú' when 4 then 'Nhà thuốc' when 7 then 'Kho vật tư' end) as medicinestoretypename FROM medicine_store ms INNER JOIN mrd_tbluser_medicinestore ttm on ms.medicinestoreid=ttm.medicinestoreid WHERE ttm.usercode = '" + en_usercode + "' ORDER BY ms.medicinestoretype,ms.medicinestorename;";
                 }
 
                 DataView dataKhoThuoc = new DataView(condb.getDataTable(sqlper));
@@ -164,7 +164,7 @@ namespace MeO2_MedicalRecord.Base
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error(ex);
+                MSO2_MedicalRecord.Base.Logging.Error(ex);
             }
             return lstPhanQuyen_KhoThuoc;
         }
@@ -181,8 +181,8 @@ namespace MeO2_MedicalRecord.Base
                 }
                 else
                 {
-                    string en_usercode = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
-                    sqlper = "SELECT pl.medicinephongluuid, pl.medicinephongluucode, (ms.medicinestorename || '-' ||pl.medicinephongluuname) as medicinephongluuname, ms.medicinestoreid, ms.medicinestorecode, ms.medicinestorename FROM medicinephongluu pl INNER JOIN tools_tbluser_medicinephongluu ttm on pl.medicinephongluuid=ttm.medicinephongluuid inner join medicine_store ms on pl.medicinestoreid=ms.medicinestoreid WHERE ttm.usercode = '" + en_usercode + "' ORDER BY ms.medicinestorename, pl.medicinephongluuname;";
+                    string en_usercode = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
+                    sqlper = "SELECT pl.medicinephongluuid, pl.medicinephongluucode, (ms.medicinestorename || '-' ||pl.medicinephongluuname) as medicinephongluuname, ms.medicinestoreid, ms.medicinestorecode, ms.medicinestorename FROM medicinephongluu pl INNER JOIN mrd_tbluser_medicinephongluu ttm on pl.medicinephongluuid=ttm.medicinephongluuid inner join medicine_store ms on pl.medicinestoreid=ms.medicinestoreid WHERE ttm.usercode = '" + en_usercode + "' ORDER BY ms.medicinestorename, pl.medicinephongluuname;";
                 }
 
                 DataView dataPhongluu = new DataView(condb.getDataTable(sqlper));
@@ -205,7 +205,7 @@ namespace MeO2_MedicalRecord.Base
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error(ex);
+                MSO2_MedicalRecord.Base.Logging.Error(ex);
             }
             return lstPhanQuyen_PhongLuu;
         }

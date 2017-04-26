@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeO2_MedicalRecord
+namespace MSO2_MedicalRecord
 {
     public class GlobalStore
     {
-        public static long ThoiGianCapNhatTbl_tools_bndangdt_tmp { get; set; } //phut
-        public static string KhoangThoiGianLayDuLieu { get; set; } //Định dạng: yyyy-MM-dd HH:mm:ss
+        //public static long ThoiGianCapNhatTbl_tools_bndangdt_tmp { get; set; } //phut
+        //public static string KhoangThoiGianLayDuLieu { get; set; } //Định dạng: yyyy-MM-dd HH:mm:ss
 
 
 

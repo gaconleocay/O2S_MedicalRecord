@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text;
 
-namespace MeO2_MedicalRecord.FormCommon.DangKyBanQuyen
+namespace MSO2_MedicalRecord.FormCommon.DangKyBanQuyen
 {
     public class ClassEncoding
     {
@@ -37,7 +37,7 @@ namespace MeO2_MedicalRecord.FormCommon.DangKyBanQuyen
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn("Ma hoa chuoi theo nhieu dinh dang " + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Warn("Ma hoa chuoi theo nhieu dinh dang " + ex.ToString());
             }
             return encodeText;
         }

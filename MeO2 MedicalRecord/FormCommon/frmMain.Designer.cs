@@ -1,4 +1,4 @@
-﻿namespace MeO2_MedicalRecord.FormCommon
+﻿namespace MSO2_MedicalRecord.FormCommon
 {
     partial class frmMain
     {
@@ -198,7 +198,7 @@
             // 
             this.tabMenuTrangChu.Caption = "TRANG CHỦ";
             this.tabMenuTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tabMenuTrangChu.Image = global::MeO2_MedicalRecord.Properties.Resources.house_16;
+            this.tabMenuTrangChu.Image = global::MSO2_MedicalRecord.Properties.Resources.house_16;
             this.tabMenuTrangChu.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabMenuTrangChu.Name = "tabMenuTrangChu";
             this.tabMenuTrangChu.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
@@ -208,7 +208,7 @@
             // 
             this.tabMenuDashboard.Caption = "DASHBOARD";
             this.tabMenuDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMenuDashboard.Image = global::MeO2_MedicalRecord.Properties.Resources.pie_16;
+            this.tabMenuDashboard.Image = global::MSO2_MedicalRecord.Properties.Resources.pie_16;
             this.tabMenuDashboard.ImageUri.Uri = "AlignJustify";
             this.tabMenuDashboard.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabMenuDashboard.Margin = new System.Windows.Forms.Padding(0);
@@ -220,7 +220,7 @@
             // 
             this.tabMenuHSBA.Caption = "HỒ SƠ BỆNH ÁN";
             this.tabMenuHSBA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tabMenuHSBA.Image = global::MeO2_MedicalRecord.Properties.Resources.side_right_view_16;
+            this.tabMenuHSBA.Image = global::MSO2_MedicalRecord.Properties.Resources.side_right_view_16;
             this.tabMenuHSBA.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabMenuHSBA.Margin = new System.Windows.Forms.Padding(0);
             this.tabMenuHSBA.Name = "tabMenuHSBA";
@@ -231,7 +231,7 @@
             // 
             this.tabMenuRestart.Caption = "tabMenuRestart";
             this.tabMenuRestart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.tabMenuRestart.Image = global::MeO2_MedicalRecord.Properties.Resources.refresh_2_16;
+            this.tabMenuRestart.Image = global::MSO2_MedicalRecord.Properties.Resources.refresh_2_16;
             this.tabMenuRestart.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Image;
             this.tabMenuRestart.Name = "tabMenuRestart";
             this.tabMenuRestart.PageText = "Khởi động lại";

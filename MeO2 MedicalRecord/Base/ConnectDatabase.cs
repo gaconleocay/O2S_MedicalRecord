@@ -3,20 +3,22 @@ using System.Data;
 using System.Windows.Forms;
 using Npgsql;
 using System.Configuration;
-using MeO2_MedicalRecord.ClassCommon;
+using MSO2_MedicalRecord.ClassCommon;
 
-namespace MeO2_MedicalRecord.Base
+namespace MSO2_MedicalRecord.Base
 {
     public class ConnectDatabase
     {
-        public string serverhost = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost"].ToString().Trim() ?? "", true);
-        public string serveruser = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Username"].ToString().Trim(), true);
-        public string serverpass = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Password"].ToString().Trim(), true);
-        public string serverdb = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database"].ToString().Trim(), true);
+        public string serverhost = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost"].ToString().Trim() ?? "", true);
+        public string serveruser = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Username"].ToString().Trim(), true);
+        public string serverpass = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Password"].ToString().Trim(), true);
+        public string serverdb = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database"].ToString().Trim(), true);
+        public string serverhost_HSBA = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost_HSBA"].ToString().Trim() ?? "", true);
+        public string serveruser_HSBA = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Username_HSBA"].ToString().Trim(), true);
+        public string serverpass_HSBA = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Password_HSBA"].ToString().Trim(), true);
+        public string serverdb_HSBA = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database_HSBA"].ToString().Trim(), true);
 
         NpgsqlConnection conn;
-        //private DataSet ds = new DataSet();
-        private DataTable dt = new DataTable();
         private bool kiemtraketnoi = false;
 
         // Mở kết nối

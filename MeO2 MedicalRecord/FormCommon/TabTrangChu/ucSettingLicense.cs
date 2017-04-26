@@ -8,14 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
-using MeO2_MedicalRecord.Base;
+using MSO2_MedicalRecord.Base;
 
-namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
+namespace MSO2_MedicalRecord.FormCommon.TabTrangChu
 {
     public partial class ucSettingLicense : UserControl
     {
         private string MaDatabase = String.Empty;
-        private MeO2_MedicalRecord.Base.ConnectDatabase condb = new MeO2_MedicalRecord.Base.ConnectDatabase();
+        private MSO2_MedicalRecord.Base.ConnectDatabase condb = new MSO2_MedicalRecord.Base.ConnectDatabase();
 
         public ucSettingLicense()
         {
@@ -31,18 +31,18 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void HienThiThongTinVeLicense()
         {
             try
             {
-                MaDatabase = MeO2_MedicalRecord.FormCommon.DangKyBanQuyen.KiemTraLicense.LayThongTinMaDatabase();
+                MaDatabase = MSO2_MedicalRecord.FormCommon.DangKyBanQuyen.KiemTraLicense.LayThongTinMaDatabase();
                 txtMaMay.Text = MaDatabase;
                 txtMaMay.ReadOnly = true;
                 //Load License tu DB ra
-                string kiemtra_licensetag = "SELECT datakey, licensekey FROM tools_license WHERE datakey='" + MaDatabase + "' limit 1;";
+                string kiemtra_licensetag = "SELECT datakey, licensekey FROM mrd_license WHERE datakey='" + MaDatabase + "' limit 1;";
                 DataView dv = new DataView(condb.getDataTable(kiemtra_licensetag));
                 if (dv != null && dv.Count > 0)
                 {
@@ -53,14 +53,14 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void LoadFormTaoLicense()
         {
             try
             {
-                if (SessionLogin.SessionUsercode == MeO2_MedicalRecord.Base.KeyTrongPhanMem.AdminUser_key)
+                if (SessionLogin.SessionUsercode == MSO2_MedicalRecord.Base.KeyTrongPhanMem.AdminUser_key)
                 {
                     groupBoxTaoLicense.Visible = true;
                     txtTaoLicensePassword.Focus();
@@ -77,7 +77,7 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -99,7 +99,7 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
 
         }
@@ -108,7 +108,7 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
             try
             {
                 //Luu key kich hoat vao DB
-                string update_license = "UPDATE tools_license SET licensekey='" + txtKeyKichHoat.Text.Trim() + "' WHERE datakey='" + MaDatabase + "' ;";
+                string update_license = "UPDATE mrd_license SET licensekey='" + txtKeyKichHoat.Text.Trim() + "' WHERE datakey='" + MaDatabase + "' ;";
                 if (condb.ExecuteNonQuery(update_license))
                 {
                     ThongBao.frmThongBao frmthongbao = new ThongBao.frmThongBao("Lưu mã kích hoạt thành công!");
@@ -116,13 +116,13 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
                 }
                 else
                 {
-                    ThongBao.frmThongBao frmthongbao = new ThongBao.frmThongBao(MeO2_MedicalRecord.Base.ThongBaoLable.CO_LOI_XAY_RA);
+                    ThongBao.frmThongBao frmthongbao = new ThongBao.frmThongBao(MSO2_MedicalRecord.Base.ThongBaoLable.CO_LOI_XAY_RA);
                     frmthongbao.Show();
                 }
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void btnLicenseCopy_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -150,20 +150,20 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
                     string MaDatabaseVaThoiGianSuDung = "";
                     if (chkKhongThoiHan.Checked)
                     {
-                        MaDatabaseVaThoiGianSuDung = MeO2_MedicalRecord.Base.KeyTrongPhanMem.SaltEncrypt + "$" + txtTaoLicenseMaMay.Text + "$" + Base.KeyTrongPhanMem.BanQuyenKhongThoiHan;
+                        MaDatabaseVaThoiGianSuDung = MSO2_MedicalRecord.Base.KeyTrongPhanMem.SaltEncrypt + "$" + txtTaoLicenseMaMay.Text + "$" + Base.KeyTrongPhanMem.BanQuyenKhongThoiHan;
                     }
                     else
                     {
                         string datetungay = DateTime.ParseExact(dtTaoLicenseKeyTuNgay.Text, "HH:mm:ss dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyyMMdd");
                         string datedenngay = DateTime.ParseExact(dtTaoLicenseKeyDenNgay.Text, "HH:mm:ss dd/MM/yyyy", CultureInfo.InvariantCulture).ToString("yyyyMMdd");
-                        MaDatabaseVaThoiGianSuDung = MeO2_MedicalRecord.Base.KeyTrongPhanMem.SaltEncrypt + "$" + txtTaoLicenseMaMay.Text + "$" + datetungay + "$" + datedenngay;
+                        MaDatabaseVaThoiGianSuDung = MSO2_MedicalRecord.Base.KeyTrongPhanMem.SaltEncrypt + "$" + txtTaoLicenseMaMay.Text + "$" + datetungay + "$" + datedenngay;
                     }
                     txtTaoLicenseMaKichHoat.Text = EncryptAndDecrypt.Encrypt(MaDatabaseVaThoiGianSuDung, true);
                 }
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -176,7 +176,7 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -187,7 +187,7 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
                 if (e.KeyCode == Keys.Enter)
                 {
                     //Kiem tra pass dung hay sai?
-                    if (txtTaoLicensePassword.Text.Trim() == MeO2_MedicalRecord.Base.KeyTrongPhanMem.LayLicense_key && SessionLogin.SessionUsercode == MeO2_MedicalRecord.Base.KeyTrongPhanMem.AdminUser_key)
+                    if (txtTaoLicensePassword.Text.Trim() == MSO2_MedicalRecord.Base.KeyTrongPhanMem.LayLicense_key && SessionLogin.SessionUsercode == MSO2_MedicalRecord.Base.KeyTrongPhanMem.AdminUser_key)
                     {
                         btnTaoLicenseTao.Enabled = true;
                     }
@@ -195,7 +195,7 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         #endregion
@@ -217,7 +217,7 @@ namespace MeO2_MedicalRecord.FormCommon.TabTrangChu
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 

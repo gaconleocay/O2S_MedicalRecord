@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraSplashScreen;
 
-namespace MeO2_MedicalRecord.ThongBao
+namespace MSO2_MedicalRecord.ThongBao
 {
     public partial class SplashScreen1 : SplashScreen
     {

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeO2_MedicalRecord.ClassCommon
+namespace MSO2_MedicalRecord.ClassCommon
 {
     public class classPermission
     {
-        //public tools_tbluser_permission();
+        //public mrd_tbluser_permission();
         public bool permissioncheck { get; set; }
         public Int32 permissionid { get; set; }
         public string permissioncode { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace MeO2_MedicalRecord.ThongBao
+﻿namespace MSO2_MedicalRecord.ThongBao
 {
     partial class frmThongBao
     {

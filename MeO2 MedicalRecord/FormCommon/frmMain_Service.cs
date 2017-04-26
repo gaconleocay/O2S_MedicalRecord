@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord.FormCommon
+namespace MSO2_MedicalRecord.FormCommon
 {
     public partial class frmMain : Form
     {
@@ -20,7 +20,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -29,15 +29,15 @@ namespace MeO2_MedicalRecord.FormCommon
         {
             try
             {
-                if (MeO2_MedicalRecord.GlobalStore.ThoiGianCapNhatTbl_tools_bndangdt_tmp > 0)
-                {
-                    timerTblBNDangDT.Interval = Utilities.Util_TypeConvertParse.ToInt32((GlobalStore.ThoiGianCapNhatTbl_tools_bndangdt_tmp * 60 * 1000).ToString());
-                    timerTblBNDangDT.Start();
-                }
+                //if (MSO2_MedicalRecord.GlobalStore.ThoiGianCapNhatTbl_tools_bndangdt_tmp > 0)
+                //{
+                //    timerTblBNDangDT.Interval = Utilities.Util_TypeConvertParse.ToInt32((GlobalStore.ThoiGianCapNhatTbl_tools_bndangdt_tmp * 60 * 1000).ToString());
+                //    timerTblBNDangDT.Start();
+                //}
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
         private void timerTblBCNoiTru_Tick(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 

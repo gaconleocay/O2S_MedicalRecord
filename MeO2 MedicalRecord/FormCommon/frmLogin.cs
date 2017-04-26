@@ -11,14 +11,14 @@ using Npgsql;
 using System.Configuration;
 using System.Net;
 using System.Diagnostics;
-using MeO2_MedicalRecord.Base;
+using MSO2_MedicalRecord.Base;
 using System.IO;
 
-namespace MeO2_MedicalRecord.FormCommon
+namespace MSO2_MedicalRecord.FormCommon
 {
     public partial class frmLogin : Form
     {
-        MeO2_MedicalRecord.Base.ConnectDatabase condb = new MeO2_MedicalRecord.Base.ConnectDatabase();
+        MSO2_MedicalRecord.Base.ConnectDatabase condb = new MSO2_MedicalRecord.Base.ConnectDatabase();
         NpgsqlConnection conn;
         public frmLogin()
         {
@@ -39,8 +39,8 @@ namespace MeO2_MedicalRecord.FormCommon
 
                 if (ConfigurationManager.AppSettings["LoginUser"].ToString() != "" && ConfigurationManager.AppSettings["LoginPassword"].ToString() != "")
                 {
-                    this.txtUsername.Text = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["LoginUser"].ToString(), true);
-                    this.txtPassword.Text = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["LoginPassword"].ToString(), true);
+                    this.txtUsername.Text = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["LoginUser"].ToString(), true);
+                    this.txtPassword.Text = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["LoginPassword"].ToString(), true);
                     this.checkEditNhoPass.Checked = Convert.ToBoolean(ConfigurationManager.AppSettings["checkEditNhoPass"]);
                 }
                 else
@@ -65,11 +65,11 @@ namespace MeO2_MedicalRecord.FormCommon
                 System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
                 FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
                 SessionLogin.SessionVersion = fvi.FileVersion;
-                KiemTraVaCopyFileLaucherNew();
+              //  KiemTraVaCopyFileLaucherNew(); chua co Lanucher
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -78,21 +78,26 @@ namespace MeO2_MedicalRecord.FormCommon
             bool result = false;
             try
             {
-                string serverhost = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost"].ToString().Trim() ?? "", true);
-                string serveruser = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Username"].ToString().Trim(), true);
-                string serverpass = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Password"].ToString().Trim(), true);
-                string serverdb = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database"].ToString().Trim(), true);
-
+                string serverhost = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost"].ToString().Trim() ?? "", true);
+                string serveruser = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Username"].ToString().Trim(), true);
+                string serverpass = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Password"].ToString().Trim(), true);
+                string serverdb = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database"].ToString().Trim(), true);
+                string serverhost_HSBA = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost_HSBA"].ToString().Trim() ?? "", true);
+                string serveruser_HSBA = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Username_HSBA"].ToString().Trim(), true);
+                string serverpass_HSBA = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Password_HSBA"].ToString().Trim(), true);
+                string serverdb_HSBA = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database_HSBA"].ToString().Trim(), true);
 
                 if (conn == null)
                     conn = new NpgsqlConnection("Server=" + serverhost + ";Port=5432;User Id=" + serveruser + "; " + "Password=" + serverpass + ";Database=" + serverdb + ";CommandTimeout=1800000;");
                 if (conn.State == ConnectionState.Closed)
                     conn.Open();
+                conn.Close();
                 result = true;
+                //todo them ket noi den CSDL HSBA
             }
             catch (Exception ex)
             {
-                Logging.Error("Loi ket noi den CSDL: " + ex.ToString());
+                Base.Logging.Error(ex);
             }
             return result;
         }
@@ -100,20 +105,20 @@ namespace MeO2_MedicalRecord.FormCommon
         {
             try
             {
-                SessionLogin.MaDatabase = MeO2_MedicalRecord.FormCommon.DangKyBanQuyen.KiemTraLicense.LayThongTinMaDatabase();
-                string tenmay = MeO2_MedicalRecord.FormCommon.DangKyBanQuyen.HardwareInfo.GetComputerName();
-                string license_trang = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt("", true);
+                SessionLogin.MaDatabase = MSO2_MedicalRecord.FormCommon.DangKyBanQuyen.KiemTraLicense.LayThongTinMaDatabase();
+                //string tenmay = MSO2_MedicalRecord.FormCommon.DangKyBanQuyen.HardwareInfo.GetComputerName();
+                string license_trang = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt("", true);
 
-                string kiemtra_client = "SELECT * FROM tools_license WHERE datakey='" + SessionLogin.MaDatabase + "' ;";
+                string kiemtra_client = "SELECT * FROM mrd_license WHERE datakey='" + SessionLogin.MaDatabase + "' ;";
                 DataView dv = new DataView(condb.getDataTable(kiemtra_client));
                 if (dv != null && dv.Count > 0)
                 {
                     //Kiem tra license
-                    //MeO2_MedicalRecord.FormCommon.DangKyBanQuyen.kiemTraLicenseHopLe.KiemTraLicenseHopLe();
+                    //MSO2_MedicalRecord.FormCommon.DangKyBanQuyen.kiemTraLicenseHopLe.KiemTraLicenseHopLe();
                 }
                 else
                 {
-                    string insert_client = "INSERT INTO tools_license(datakey, licensekey) VALUES ('" + SessionLogin.MaDatabase + "','" + license_trang + "' );";
+                    string insert_client = "INSERT INTO mrd_license(datakey, licensekey) VALUES ('" + SessionLogin.MaDatabase + "','" + license_trang + "' );";
                     condb.ExecuteNonQuery(insert_client);
                 }
             }
@@ -127,31 +132,31 @@ namespace MeO2_MedicalRecord.FormCommon
             try
             {
                 //Set default
-                MeO2_MedicalRecord.GlobalStore.ThoiGianCapNhatTbl_tools_bndangdt_tmp = 0;
-                MeO2_MedicalRecord.GlobalStore.KhoangThoiGianLayDuLieu = DateTime.Now.Year - 1 + "-01-01 00:00:00";
+                //MSO2_MedicalRecord.GlobalStore.ThoiGianCapNhatTbl_tools_bndangdt_tmp = 0;
+                //MSO2_MedicalRecord.GlobalStore.KhoangThoiGianLayDuLieu = DateTime.Now.Year - 1 + "-01-01 00:00:00";
 
                 //Load thong tin Luu vao GlobalStore
-                string sqlDSOption = "SELECT toolsoptionid, toolsoptioncode, toolsoptionname, toolsoptionvalue, toolsoptionnote FROM tools_option WHERE toolsoptionlook<>'1' ;";
-                DataView dataOption = new DataView(condb.getDataTable(sqlDSOption));
-                if (dataOption != null && dataOption.Count > 0)
-                {
-                    for (int i = 0; i < dataOption.Count; i++)
-                    {
-                        if (dataOption[i]["toolsoptioncode"].ToString().ToUpper() == "ThoiGianCapNhatTbl_tools_bndangdt_tmp".ToUpper())
-                        {
-                            MeO2_MedicalRecord.GlobalStore.ThoiGianCapNhatTbl_tools_bndangdt_tmp = Utilities.Util_TypeConvertParse.ToInt64(dataOption[i]["toolsoptionvalue"].ToString());
-                        }
+                //string sqlDSOption = "SELECT toolsoptionid, toolsoptioncode, toolsoptionname, toolsoptionvalue, toolsoptionnote FROM mrd_option WHERE toolsoptionlook<>'1' ;";
+                //DataView dataOption = new DataView(condb.getDataTable(sqlDSOption));
+                //if (dataOption != null && dataOption.Count > 0)
+                //{
+                //    for (int i = 0; i < dataOption.Count; i++)
+                //    {
+                //        if (dataOption[i]["toolsoptioncode"].ToString().ToUpper() == "ThoiGianCapNhatTbl_tools_bndangdt_tmp".ToUpper())
+                //        {
+                //            MSO2_MedicalRecord.GlobalStore.ThoiGianCapNhatTbl_tools_bndangdt_tmp = Utilities.Util_TypeConvertParse.ToInt64(dataOption[i]["toolsoptionvalue"].ToString());
+                //        }
 
-                        if (dataOption[i]["toolsoptioncode"].ToString().ToUpper() == "KhoangThoiGianLayDuLieu".ToUpper())
-                        {
-                            MeO2_MedicalRecord.GlobalStore.KhoangThoiGianLayDuLieu = dataOption[i]["toolsoptionvalue"].ToString();
-                        }
-                    }
-                }
+                //        if (dataOption[i]["toolsoptioncode"].ToString().ToUpper() == "KhoangThoiGianLayDuLieu".ToUpper())
+                //        {
+                //            MSO2_MedicalRecord.GlobalStore.KhoangThoiGianLayDuLieu = dataOption[i]["toolsoptionvalue"].ToString();
+                //        }
+                //    }
+                //}
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn(ex);
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
 
@@ -160,17 +165,17 @@ namespace MeO2_MedicalRecord.FormCommon
             try
             {
                 string versionDatabase = "";
-                DataView dataVer = new DataView(condb.getDataTable("SELECT appversion from tools_version where app_type=1 LIMIT 1;"));
+                DataView dataVer = new DataView(condb.getDataTable("SELECT appversion from mrd_version where app_type=1 LIMIT 1;"));
                 if (dataVer != null && dataVer.Count > 0)
                 {
                     versionDatabase = dataVer[0]["appversion"].ToString();
                 }
-                //lấy thông tin version của phần mềm MedicalLinkLauncher.exe
-                FileVersionInfo.GetVersionInfo(Path.Combine(Environment.CurrentDirectory, "MedicalLinkLauncher.exe"));
-                FileVersionInfo myFileVersionInfo = FileVersionInfo.GetVersionInfo(Environment.CurrentDirectory + "\\MedicalLinkLauncher.exe");
+                //lấy thông tin version của phần mềm MSO2 MedicalRecord Launcher.exe
+                FileVersionInfo.GetVersionInfo(Path.Combine(Environment.CurrentDirectory, "MSO2 MedicalRecord Launcher.exe"));
+                FileVersionInfo myFileVersionInfo = FileVersionInfo.GetVersionInfo(Environment.CurrentDirectory + "\\MSO2 MedicalRecord Launcher.exe");
                 if (myFileVersionInfo.FileVersion.ToString() != versionDatabase)
                 {
-                    DataView dataurlfile = new DataView(condb.getDataTable("select app_link from tools_version where app_type=1 limit 1;"));
+                    DataView dataurlfile = new DataView(condb.getDataTable("select app_link from mrd_version where app_type=1 limit 1;"));
                     if (dataurlfile != null && dataurlfile.Count > 0)
                     {
                         string tempDirectory = dataurlfile[0]["app_link"].ToString();
@@ -226,8 +231,8 @@ namespace MeO2_MedicalRecord.FormCommon
             try
             {
                 // Mã hóa thông tin để so sánh trong DB
-                string en_txtUsername = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtUsername.Text.Trim().ToLower(), true);
-                string en_txtPassword = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtPassword.Text.Trim(), true);
+                string en_txtUsername = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtUsername.Text.Trim().ToLower(), true);
+                string en_txtPassword = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtPassword.Text.Trim(), true);
 
                 if (txtUsername.Text == "" || txtPassword.Text == "")
                 {
@@ -241,35 +246,35 @@ namespace MeO2_MedicalRecord.FormCommon
                     SessionLogin.SessionUsercode = txtUsername.Text.Trim().ToLower();
                     SessionLogin.SessionUsername = "Administrator";
                     //Load data
-                    SessionLogin.SessionLstPhanQuyenNguoiDung = MeO2_MedicalRecord.Base.CheckPermission.GetListPhanQuyenNguoiDung();
-                    SessionLogin.SessionlstPhanQuyen_KhoaPhong = MeO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoaPhong();
-                    //SessionLogin.SessionLstPhanQuyen_KhoThuoc = MeO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoThuoc();
-                    //SessionLogin.SessionLstPhanQuyen_PhongLuu = MeO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_PhongLuu();
+                    SessionLogin.SessionLstPhanQuyenNguoiDung = MSO2_MedicalRecord.Base.CheckPermission.GetListPhanQuyenNguoiDung();
+                    SessionLogin.SessionlstPhanQuyen_KhoaPhong = MSO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoaPhong();
+                    //SessionLogin.SessionLstPhanQuyen_KhoThuoc = MSO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoThuoc();
+                    //SessionLogin.SessionLstPhanQuyen_PhongLuu = MSO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_PhongLuu();
                     frmMain frmm = new frmMain();
                     frmm.Show();
                     this.Visible = false;
-                    MeO2_MedicalRecord.Base.Logging.Info("Application open successfull. Time=" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff"));
+                    MSO2_MedicalRecord.Base.Logging.Info("Application open successfull. Time=" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff"));
                 }
                 else
                 {
                     try
                     {
-                        string command = "SELECT usercode, username, userpassword FROM tools_tbluser WHERE usercode='" + en_txtUsername + "' and userpassword='" + en_txtPassword + "';";
+                        string command = "SELECT usercode, username, userpassword FROM mrd_tbluser WHERE usercode='" + en_txtUsername + "' and userpassword='" + en_txtPassword + "';";
                         DataView dv = new DataView(condb.getDataTable(command));
                         if (dv != null && dv.Count > 0)
                         {
-                            MeO2_MedicalRecord.FormCommon.DangKyBanQuyen.KiemTraLicense.KiemTraLicenseHopLe();
+                            MSO2_MedicalRecord.FormCommon.DangKyBanQuyen.KiemTraLicense.KiemTraLicenseHopLe();
                             SessionLogin.SessionUsercode = txtUsername.Text.Trim().ToLower();
-                            SessionLogin.SessionUsername = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(dv[0]["username"].ToString(), true);
+                            SessionLogin.SessionUsername = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(dv[0]["username"].ToString(), true);
                             //Load data
-                            SessionLogin.SessionLstPhanQuyenNguoiDung = MeO2_MedicalRecord.Base.CheckPermission.GetListPhanQuyenNguoiDung();
-                            SessionLogin.SessionlstPhanQuyen_KhoaPhong = MeO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoaPhong();
-                            //SessionLogin.SessionLstPhanQuyen_KhoThuoc = MeO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoThuoc();
-                            //SessionLogin.SessionLstPhanQuyen_PhongLuu = MeO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_PhongLuu();
+                            SessionLogin.SessionLstPhanQuyenNguoiDung = MSO2_MedicalRecord.Base.CheckPermission.GetListPhanQuyenNguoiDung();
+                            SessionLogin.SessionlstPhanQuyen_KhoaPhong = MSO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoaPhong();
+                            //SessionLogin.SessionLstPhanQuyen_KhoThuoc = MSO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoThuoc();
+                            //SessionLogin.SessionLstPhanQuyen_PhongLuu = MSO2_MedicalRecord.Base.CheckPermission.GetPhanQuyen_PhongLuu();
                             frmMain frmm = new frmMain();
                             frmm.Show();
                             this.Visible = false;
-                            MeO2_MedicalRecord.Base.Logging.Info("Application open successfull. Time=" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff"));
+                            MSO2_MedicalRecord.Base.Logging.Info("Application open successfull. Time=" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff"));
                         }
                         else
                         {
@@ -278,7 +283,7 @@ namespace MeO2_MedicalRecord.FormCommon
                     }
                     catch (Exception ex)
                     {
-                        MeO2_MedicalRecord.Base.Logging.Error(ex);
+                        MSO2_MedicalRecord.Base.Logging.Error(ex);
                         txtUsername.Focus();
                     }
                 }
@@ -288,8 +293,8 @@ namespace MeO2_MedicalRecord.FormCommon
                 {
                     Configuration _config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                     _config.AppSettings.Settings["checkEditNhoPass"].Value = Convert.ToString(checkEditNhoPass.Checked);
-                    _config.AppSettings.Settings["LoginUser"].Value = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtUsername.Text.Trim(), true);
-                    _config.AppSettings.Settings["LoginPassword"].Value = MeO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtPassword.Text.Trim(), true);
+                    _config.AppSettings.Settings["LoginUser"].Value = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtUsername.Text.Trim(), true);
+                    _config.AppSettings.Settings["LoginPassword"].Value = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtPassword.Text.Trim(), true);
                     _config.Save(ConfigurationSaveMode.Modified);
 
                     ConfigurationManager.RefreshSection("appSettings");
@@ -307,7 +312,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Warn("Dang nhap " + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Warn("Dang nhap " + ex.ToString());
             }
         }
 
@@ -349,7 +354,7 @@ namespace MeO2_MedicalRecord.FormCommon
             }
             catch (Exception ex)
             {
-                MeO2_MedicalRecord.Base.Logging.Error(ex);
+                MSO2_MedicalRecord.Base.Logging.Error(ex);
             }
         }
 

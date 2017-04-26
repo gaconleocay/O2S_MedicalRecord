@@ -1,4 +1,4 @@
-﻿namespace MeO2_MedicalRecord.FormCommon
+﻿namespace MSO2_MedicalRecord.FormCommon
 {
     partial class ucTrangChu
     {
@@ -115,7 +115,7 @@
             this.xtraTabTTCoBan.Appearance.PageClient.Options.UseBackColor = true;
             this.xtraTabTTCoBan.Controls.Add(this.panel2);
             this.xtraTabTTCoBan.Controls.Add(this.panel1);
-            this.xtraTabTTCoBan.Image = global::MeO2_MedicalRecord.Properties.Resources.quote_16;
+            this.xtraTabTTCoBan.Image = global::MSO2_MedicalRecord.Properties.Resources.quote_16;
             this.xtraTabTTCoBan.Name = "xtraTabTTCoBan";
             this.xtraTabTTCoBan.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
             this.xtraTabTTCoBan.Size = new System.Drawing.Size(1090, 582);
@@ -408,7 +408,7 @@
             // xtraTabCaiDat
             // 
             this.xtraTabCaiDat.Controls.Add(this.splitContainerControlCaiDat);
-            this.xtraTabCaiDat.Image = global::MeO2_MedicalRecord.Properties.Resources.settings_19_16;
+            this.xtraTabCaiDat.Image = global::MSO2_MedicalRecord.Properties.Resources.settings_19_16;
             this.xtraTabCaiDat.Name = "xtraTabCaiDat";
             this.xtraTabCaiDat.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
             this.xtraTabCaiDat.Size = new System.Drawing.Size(1090, 582);
