@@ -13,7 +13,7 @@ namespace MSO2_MedicalRecord.Utilities.Common.Excel
     public class ExcelExport
     {
         #region Process_TMP
-        private DataTable InsertOrders(List<ClassCommon.reportExcelDTO> thongTinThem)
+        private DataTable InsertOrders(List<DTO.reportExcelDTO> thongTinThem)
         {
             DataTable orderTable = new DataTable("DATA");
             try
@@ -45,7 +45,7 @@ namespace MSO2_MedicalRecord.Utilities.Common.Excel
         #endregion
 
 
-        public void ExportExcelTemplate(string pv_sErr, string fileNameTemplate, List<ClassCommon.reportExcelDTO> thongTinThem, DataTable dataTable)
+        public void ExportExcelTemplate(string pv_sErr, string fileNameTemplate, List<DTO.reportExcelDTO> thongTinThem, DataTable dataTable)
         {
             try
             {
@@ -101,13 +101,13 @@ namespace MSO2_MedicalRecord.Utilities.Common.Excel
                                         designer.Workbook.Save(exportFilePath, new XlsSaveOptions(SaveFormat.Excel97To2003));
                                         break;
                                 }
-                                ThongBao.frmThongBao frmthongbao = new ThongBao.frmThongBao(MSO2_MedicalRecord.Base.ThongBaoLable.EXPORT_DU_LIEU_THANH_CONG);
+                                MSO2_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new MSO2_MedicalRecord.Utilities.ThongBao.frmThongBao(MSO2_MedicalRecord.Base.ThongBaoLable.EXPORT_DU_LIEU_THANH_CONG);
                                 frmthongbao.Show();
                             }
                         }
                         else
                         {
-                            ThongBao.frmThongBao frmthongbao = new ThongBao.frmThongBao(MSO2_MedicalRecord.Base.ThongBaoLable.KHONG_TIM_THAY_TEMPLATE_BAO_CAO);
+                            MSO2_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new MSO2_MedicalRecord.Utilities.ThongBao.frmThongBao(MSO2_MedicalRecord.Base.ThongBaoLable.KHONG_TIM_THAY_TEMPLATE_BAO_CAO);
                             frmthongbao.Show();
                         }
                     }

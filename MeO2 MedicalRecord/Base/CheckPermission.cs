@@ -11,10 +11,9 @@ namespace MSO2_MedicalRecord.Base
 {
     public static class CheckPermission
     {
-        static MSO2_MedicalRecord.Base.ConnectDatabase condb = new MSO2_MedicalRecord.Base.ConnectDatabase();
+        static MSO2_MedicalRecord.DAL.ConnectDatabase condb = new MSO2_MedicalRecord.DAL.ConnectDatabase();
         public static bool ChkPerModule(string percode)
         {
-            //string en_percode = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(percode, true);
             bool result = false;
             try
             {
@@ -39,9 +38,9 @@ namespace MSO2_MedicalRecord.Base
         }
 
         //Lay danh sach phan quyen khi nguoi dung dang nhap
-        public static List<ClassCommon.classPermission> GetListPhanQuyenNguoiDung()
+        public static List<DTO.classPermission> GetListPhanQuyenNguoiDung()
         {
-            List<ClassCommon.classPermission> lstPhanQuyen = new List<ClassCommon.classPermission>();
+            List<DTO.classPermission> lstPhanQuyen = new List<DTO.classPermission>();
             try
             {
                 if (SessionLogin.SessionUsercode == KeyTrongPhanMem.AdminUser_key)
@@ -56,12 +55,12 @@ namespace MSO2_MedicalRecord.Base
                 {
                     string en_usercode = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
                     string sqlper = "SELECT permissionid, permissioncode, permissionname, userid, usercode, permissioncheck FROM mrd_tbluser_permission WHERE usercode = '" + en_usercode + "' and permissioncheck='1';";
-                    DataView dv = new DataView(condb.getDataTable(sqlper));
+                    DataView dv = new DataView(condb.GetDataTable_HIS(sqlper));
                     if (dv.Count > 0)
                     {
                         for (int i = 0; i < dv.Count; i++)
                         {
-                            ClassCommon.classPermission itemPer = new ClassCommon.classPermission();
+                            DTO.classPermission itemPer = new DTO.classPermission();
                             //itemPer.permissionid = Convert.ToInt32(dv[i]["permissionid"]);
                             itemPer.permissioncode = Base.EncryptAndDecrypt.Decrypt(dv[i]["permissioncode"].ToString(), true);
                             itemPer.permissionname = Base.EncryptAndDecrypt.Decrypt(dv[i]["permissionname"].ToString(), true);
@@ -89,9 +88,9 @@ namespace MSO2_MedicalRecord.Base
             return lstPhanQuyen;
         }
 
-        public static List<ClassCommon.classUserDepartment> GetPhanQuyen_KhoaPhong()
+        public static List<DTO.classUserDepartment> GetPhanQuyen_KhoaPhong()
         {
-            List<ClassCommon.classUserDepartment> lstPhanQuyenKhoaPhong = new List<ClassCommon.classUserDepartment>();
+            List<DTO.classUserDepartment> lstPhanQuyenKhoaPhong = new List<DTO.classUserDepartment>();
             try
             {
                 string sqlper = "";
@@ -104,12 +103,12 @@ namespace MSO2_MedicalRecord.Base
                     string en_usercode = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
                     sqlper = "SELECT ude.departmentgroupid,de.departmentgroupcode, de.departmentgroupname,de.departmentgrouptype, ude.departmentid,de.departmentcode,de.departmentname,ude.departmenttype, ude.usercode FROM mrd_tbluser_departmentgroup ude inner join mrd_depatment de on ude.departmentid=de.departmentid WHERE usercode = '" + en_usercode + "' ORDER BY de.departmentgroupname,de.departmentname,ude.departmenttype;";
                 }
-                DataView dv = new DataView(condb.getDataTable(sqlper));
+                DataView dv = new DataView(condb.GetDataTable_HIS(sqlper));
                 if (dv.Count > 0)
                 {
                     for (int i = 0; i < dv.Count; i++)
                     {
-                        ClassCommon.classUserDepartment itemUdepart = new ClassCommon.classUserDepartment();
+                        DTO.classUserDepartment itemUdepart = new DTO.classUserDepartment();
                         itemUdepart.departmentgroupid = Utilities.Util_TypeConvertParse.ToInt32(dv[i]["departmentgroupid"].ToString());
                         itemUdepart.departmentgroupcode = dv[i]["departmentgroupcode"].ToString();
                         itemUdepart.departmentgroupname = dv[i]["departmentgroupname"].ToString();
@@ -129,9 +128,9 @@ namespace MSO2_MedicalRecord.Base
             return lstPhanQuyenKhoaPhong;
         }
 
-        public static List<ClassCommon.classUserMedicineStore> GetPhanQuyen_KhoThuoc()
+        public static List<DTO.classUserMedicineStore> GetPhanQuyen_KhoThuoc()
         {
-            List<ClassCommon.classUserMedicineStore> lstPhanQuyen_KhoThuoc = new List<ClassCommon.classUserMedicineStore>();
+            List<DTO.classUserMedicineStore> lstPhanQuyen_KhoThuoc = new List<DTO.classUserMedicineStore>();
             try
             {
                 string sqlper = "";
@@ -145,12 +144,12 @@ namespace MSO2_MedicalRecord.Base
                     sqlper = "SELECT ms.medicinestoreid, ms.medicinestorecode, ms.medicinestorename, ms.medicinestoretype, (case ms.medicinestoretype when 1 then 'Kho tổng' when 2 then 'Kho ngoại trú' when 3 then 'Kho nội trú' when 4 then 'Nhà thuốc' when 7 then 'Kho vật tư' end) as medicinestoretypename FROM medicine_store ms INNER JOIN mrd_tbluser_medicinestore ttm on ms.medicinestoreid=ttm.medicinestoreid WHERE ttm.usercode = '" + en_usercode + "' ORDER BY ms.medicinestoretype,ms.medicinestorename;";
                 }
 
-                DataView dataKhoThuoc = new DataView(condb.getDataTable(sqlper));
+                DataView dataKhoThuoc = new DataView(condb.GetDataTable_HIS(sqlper));
                 if (dataKhoThuoc.Count > 0)
                 {
                     for (int i = 0; i < dataKhoThuoc.Count; i++)
                     {
-                        ClassCommon.classUserMedicineStore userMedicineStore = new ClassCommon.classUserMedicineStore();
+                        DTO.classUserMedicineStore userMedicineStore = new DTO.classUserMedicineStore();
                         userMedicineStore.MedicineStoreCheck = false;
                         userMedicineStore.MedicineStoreId = Utilities.Util_TypeConvertParse.ToInt32(dataKhoThuoc[i]["medicinestoreid"].ToString());
                         userMedicineStore.MedicineStoreCode = dataKhoThuoc[i]["medicinestorecode"].ToString();
@@ -169,9 +168,9 @@ namespace MSO2_MedicalRecord.Base
             return lstPhanQuyen_KhoThuoc;
         }
 
-        public static List<ClassCommon.classUserMedicinePhongLuu> GetPhanQuyen_PhongLuu()
+        public static List<DTO.classUserMedicinePhongLuu> GetPhanQuyen_PhongLuu()
         {
-            List<ClassCommon.classUserMedicinePhongLuu> lstPhanQuyen_PhongLuu = new List<ClassCommon.classUserMedicinePhongLuu>();
+            List<DTO.classUserMedicinePhongLuu> lstPhanQuyen_PhongLuu = new List<DTO.classUserMedicinePhongLuu>();
             try
             {
                 string sqlper = "";
@@ -185,12 +184,12 @@ namespace MSO2_MedicalRecord.Base
                     sqlper = "SELECT pl.medicinephongluuid, pl.medicinephongluucode, (ms.medicinestorename || '-' ||pl.medicinephongluuname) as medicinephongluuname, ms.medicinestoreid, ms.medicinestorecode, ms.medicinestorename FROM medicinephongluu pl INNER JOIN mrd_tbluser_medicinephongluu ttm on pl.medicinephongluuid=ttm.medicinephongluuid inner join medicine_store ms on pl.medicinestoreid=ms.medicinestoreid WHERE ttm.usercode = '" + en_usercode + "' ORDER BY ms.medicinestorename, pl.medicinephongluuname;";
                 }
 
-                DataView dataPhongluu = new DataView(condb.getDataTable(sqlper));
+                DataView dataPhongluu = new DataView(condb.GetDataTable_HIS(sqlper));
                 if (dataPhongluu.Count > 0)
                 {
                     for (int i = 0; i < dataPhongluu.Count; i++)
                     {
-                        ClassCommon.classUserMedicinePhongLuu userMedicineStore = new ClassCommon.classUserMedicinePhongLuu();
+                        DTO.classUserMedicinePhongLuu userMedicineStore = new DTO.classUserMedicinePhongLuu();
                         userMedicineStore.MedicinePhongLuuCheck = false;
                         userMedicineStore.MedicinePhongLuuId = Utilities.Util_TypeConvertParse.ToInt32(dataPhongluu[i]["medicinephongluuid"].ToString());
                         userMedicineStore.MedicinePhongLuuCode = dataPhongluu[i]["medicinephongluucode"].ToString();

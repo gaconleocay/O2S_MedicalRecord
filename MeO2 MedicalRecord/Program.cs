@@ -15,7 +15,7 @@ namespace MSO2_MedicalRecord
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MSO2_MedicalRecord.FormCommon.frmLogin());
+            Application.Run(new MSO2_MedicalRecord.GUI.FormCommon.frmLogin());
         }
     }
 }

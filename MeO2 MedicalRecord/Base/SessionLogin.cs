@@ -26,14 +26,14 @@ namespace MSO2_MedicalRecord.Base
         public static bool KiemTraLicenseSuDung { get; set; } //kiem tra license: neu false thi out phan mem, neu true thi cho su dung tiep
         public static string License_KeyDB { get; set; } //License lay tu DB
         public static string MaDatabase { get; set; }//Lay thong tin database
-        public static List<ClassCommon.classPermission> SessionLstPhanQuyenNguoiDung { get; set; }
-        public static List<ClassCommon.classUserDepartment> SessionlstPhanQuyen_KhoaPhong { get; set; }
-        public static List<ClassCommon.classPermission> SessionLstPhanQuyen_ChucNang { get; set; }
-        public static List<ClassCommon.classPermission> SessionLstPhanQuyen_Report { get; set; }
-        public static List<ClassCommon.classPermission> SessionLstPhanQuyen_Dashboard { get; set; }
-        public static List<ClassCommon.classPermission> SessionLstPhanQuyen_BaoCao { get; set; }
-        public static List<ClassCommon.classUserMedicineStore> SessionLstPhanQuyen_KhoThuoc { get; set; }
-        public static List<ClassCommon.classUserMedicinePhongLuu> SessionLstPhanQuyen_PhongLuu { get; set; }
+        public static List<DTO.classPermission> SessionLstPhanQuyenNguoiDung { get; set; }
+        public static List<DTO.classUserDepartment> SessionlstPhanQuyen_KhoaPhong { get; set; }
+        public static List<DTO.classPermission> SessionLstPhanQuyen_ChucNang { get; set; }
+        public static List<DTO.classPermission> SessionLstPhanQuyen_Report { get; set; }
+        public static List<DTO.classPermission> SessionLstPhanQuyen_Dashboard { get; set; }
+        public static List<DTO.classPermission> SessionLstPhanQuyen_BaoCao { get; set; }
+        public static List<DTO.classUserMedicineStore> SessionLstPhanQuyen_KhoThuoc { get; set; }
+        public static List<DTO.classUserMedicinePhongLuu> SessionLstPhanQuyen_PhongLuu { get; set; }
 
     }
 
