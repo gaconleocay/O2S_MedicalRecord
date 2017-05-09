@@ -114,7 +114,7 @@
             this.btnThayDoi.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnThayDoi.Appearance.Options.UseFont = true;
             this.btnThayDoi.Appearance.Options.UseForeColor = true;
-            this.btnThayDoi.Image = global::MSO2_MedicalRecord.Properties.Resources.save_24;
+            this.btnThayDoi.Image = global::MSO2_MedicalRecord.Properties.Resources.save_16;
             this.btnThayDoi.Location = new System.Drawing.Point(161, 210);
             this.btnThayDoi.Name = "btnThayDoi";
             this.btnThayDoi.Size = new System.Drawing.Size(100, 40);

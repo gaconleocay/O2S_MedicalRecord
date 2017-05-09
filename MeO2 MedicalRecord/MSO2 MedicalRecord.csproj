@@ -62,6 +62,7 @@
     <Reference Include="AutoMapper">
       <HintPath>..\Library\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.BonusSkins.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -79,6 +80,8 @@
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraRichEdit.v15.2.Extensions, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -144,33 +147,57 @@
     <Compile Include="Base\ReadExcelFile.cs" />
     <Compile Include="Base\SessionLogin.cs" />
     <Compile Include="Base\ThongBaoLable.cs" />
-    <Compile Include="DTO\BCDashboardBenhNhanNgoaiTru.cs" />
-    <Compile Include="DTO\BCDashboardQLTongTheKhoa.cs" />
-    <Compile Include="DTO\BCDashboardTongHopToanVien.cs" />
-    <Compile Include="DTO\classBCBHYT21Chenh.cs" />
-    <Compile Include="DTO\classBCBHYT21ChenhNew.cs" />
-    <Compile Include="DTO\classBCChiDinhPTTT.cs" />
-    <Compile Include="DTO\classBCChiDinhPTTT_User.cs" />
-    <Compile Include="DTO\classBCQLTongTheKhoaBNDetail.cs" />
-    <Compile Include="DTO\classDanhMucDichVu.cs" />
-    <Compile Include="DTO\classDanhMucPhong.cs" />
-    <Compile Include="DTO\classDMDVKTBHYTChenh.cs" />
-    <Compile Include="DTO\classDMDVKTBHYTChenhNew.cs" />
-    <Compile Include="DTO\classDoiTuongThanhToan.cs" />
-    <Compile Include="DTO\classLichSuNhapXuatThuoc.cs" />
-    <Compile Include="DTO\classMedicineRef.cs" />
-    <Compile Include="DTO\classMedicineStore.cs" />
-    <Compile Include="DTO\classPermission.cs" />
-    <Compile Include="DTO\classUserDepartment.cs" />
-    <Compile Include="DTO\classUserMedicineNhomThuoc.cs" />
-    <Compile Include="DTO\classUserMedicinePhongLuu.cs" />
-    <Compile Include="DTO\classUserMedicineStore.cs" />
-    <Compile Include="DTO\classVienPhiBHYT.cs" />
-    <Compile Include="DTO\reportDTO.cs" />
-    <Compile Include="DTO\reportExcelDTO.cs" />
     <Compile Include="Base\ClassEncoding.cs" />
     <Compile Include="Base\HardwareInfo.cs" />
     <Compile Include="Base\KiemTraLicense.cs" />
+    <Compile Include="DTO\mrd_serviceref.cs" />
+    <Compile Include="DTO\classMedicineStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTO\classPermission.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTO\classUserDepartment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTO\classUserMedicineNhomThuoc.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTO\classUserMedicinePhongLuu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTO\classUserMedicineStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTO\MedicalrecordDTO.cs" />
+    <Compile Include="DTO\reportExcelDTO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTO\serviceprice_ptttDTO.cs" />
+    <Compile Include="GUI\ChucNang\HSBA_PTTT\frmNhapPhieuThucHienPTTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChucNang\HSBA_PTTT\frmNhapPhieuThucHienPTTT.Designer.cs">
+      <DependentUpon>frmNhapPhieuThucHienPTTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChucNang\HSBA_ThongTinChung\ucHSBA_ThongTinChung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChucNang\HSBA_ThongTinChung\ucHSBA_ThongTinChung.Designer.cs">
+      <DependentUpon>ucHSBA_ThongTinChung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChucNang\ucDanhSachHoSoBenhAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChucNang\ucDanhSachHoSoBenhAn.Designer.cs">
+      <DependentUpon>ucDanhSachHoSoBenhAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChucNang\HSBA_PTTT\ucHSBA_PTTT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChucNang\HSBA_PTTT\ucHSBA_PTTT.Designer.cs">
+      <DependentUpon>ucHSBA_PTTT.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormCommon\frmConnectDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +248,12 @@
       <DependentUpon>ucQuanLyNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="BUS\TabControlProcess.cs" />
+    <Compile Include="GUI\FormCommon\TabCaiDat\ucUpdateTemplateDVPTTT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\FormCommon\TabCaiDat\ucUpdateTemplateDVPTTT.Designer.cs">
+      <DependentUpon>ucUpdateTemplateDVPTTT.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormCommon\TabTrangChu\frmThayPass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,12 +271,6 @@
     </Compile>
     <Compile Include="GUI\FormCommon\TabTrangChu\ucSettingLicense.Designer.cs">
       <DependentUpon>ucSettingLicense.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\FormCommon\ucChucNang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\FormCommon\ucChucNang.Designer.cs">
-      <DependentUpon>ucChucNang.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormCommon\ucTrangChu.cs">
       <SubType>UserControl</SubType>
@@ -279,6 +306,18 @@
     <Compile Include="Utilities\Util_DateTime.cs" />
     <Compile Include="Utilities\Util_NumberConvert.cs" />
     <Compile Include="Utilities\Util_TypeConvertParse.cs" />
+    <EmbeddedResource Include="GUI\ChucNang\HSBA_PTTT\frmNhapPhieuThucHienPTTT.resx">
+      <DependentUpon>frmNhapPhieuThucHienPTTT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChucNang\HSBA_ThongTinChung\ucHSBA_ThongTinChung.resx">
+      <DependentUpon>ucHSBA_ThongTinChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChucNang\ucDanhSachHoSoBenhAn.resx">
+      <DependentUpon>ucDanhSachHoSoBenhAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChucNang\HSBA_PTTT\ucHSBA_PTTT.resx">
+      <DependentUpon>ucHSBA_PTTT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\frmConnectDB.resx">
       <DependentUpon>frmConnectDB.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +339,9 @@
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucQuanLyNguoiDung.resx">
       <DependentUpon>ucQuanLyNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucUpdateTemplateDVPTTT.resx">
+      <DependentUpon>ucUpdateTemplateDVPTTT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\TabTrangChu\frmThayPass.resx">
       <DependentUpon>frmThayPass.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,9 +350,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\TabTrangChu\ucSettingLicense.resx">
       <DependentUpon>ucSettingLicense.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormCommon\ucChucNang.resx">
-      <DependentUpon>ucChucNang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\ucTrangChu.resx">
       <DependentUpon>ucTrangChu.cs</DependentUpon>
@@ -355,113 +394,53 @@
     <Content Include="bin\Library\Aspose.Cells.dll" />
     <Content Include="bin\Library\Aspose.Words.dll" />
     <Content Include="medical-records_2.ico" />
+    <None Include="Resources\delete-2-16.png" />
+    <None Include="Resources\arrow-32-16.png" />
+    <None Include="Resources\edit-5-161.png" />
     <None Include="Resources\refresh-2-16.png" />
     <None Include="Resources\pie-16.png" />
     <None Include="Resources\quote-16.png" />
     <None Include="Resources\edit-11-16.png" />
-    <None Include="Resources\delete-row-24.png" />
     <None Include="Resources\delete-row-16.png" />
-    <None Include="Resources\categorize-24.png" />
     <None Include="Resources\categorize-16.png" />
-    <None Include="Resources\folder-2-24.png" />
     <None Include="Resources\folder-2-16.png" />
-    <None Include="Resources\edit-user-24.png" />
     <None Include="Resources\edit-user-16.png" />
-    <None Include="Resources\edit-11-24.png" />
-    <None Include="Resources\house-24.png" />
     <None Include="Resources\house-16.png" />
-    <None Include="Resources\list-view-24.png" />
     <None Include="Resources\list-view-16.png" />
-    <None Include="Resources\list-rich-24.png" />
     <None Include="Resources\list-rich-16.png" />
-    <None Include="Resources\list-2-24.png" />
     <None Include="Resources\list-2-16.png" />
-    <None Include="Resources\inbox-5-24.png" />
     <None Include="Resources\inbox-5-16.png" />
-    <None Include="Resources\pages-4-24.png" />
     <None Include="Resources\pages-4-16.png" />
     <None Include="Resources\redo-16.png" />
-    <None Include="Resources\redo-24.png" />
-    <None Include="Resources\sun-2-24.png" />
     <None Include="Resources\sun-2-16.png" />
-    <None Include="Resources\star-2-24.png" />
     <None Include="Resources\star-2-16.png" />
-    <None Include="Resources\snow-storm-24.png" />
     <None Include="Resources\snow-storm-16.png" />
-    <None Include="Resources\sitemap-24.png" />
     <None Include="Resources\sitemap-16.png" />
-    <None Include="Resources\sinchronize-24.png" />
     <None Include="Resources\sinchronize-16.png" />
-    <None Include="Resources\side-right-view-24.png" />
     <None Include="Resources\side-right-view-16.png" />
-    <None Include="Resources\settings-24-24.png" />
     <None Include="Resources\settings-24-16.png" />
-    <None Include="Resources\settings-19-24.png" />
     <None Include="Resources\settings-19-16.png" />
-    <None Include="Resources\settings-12-24.png" />
     <None Include="Resources\settings-12-16.png" />
-    <None Include="Resources\settings-11-24.png" />
     <None Include="Resources\settings-11-16.png" />
-    <None Include="Resources\settings-7-24.png" />
     <None Include="Resources\settings-7-16.png" />
-    <None Include="Resources\search-3-24.png" />
     <None Include="Resources\search-3-16.png" />
-    <None Include="Resources\unlock-24.png" />
     <None Include="Resources\unlock-16.png" />
-    <None Include="Resources\text-file-4-24.png" />
     <None Include="Resources\text-file-4-16.png" />
     <None Include="Resources\timeline-16.png" />
-    <None Include="Resources\timeline-24.png" />
     <None Include="Resources\undo-16.png" />
-    <None Include="Resources\undo-24.png" />
     <None Include="Resources\user-2-16.png" />
-    <None Include="Resources\user-2-24.png" />
-    <None Include="Resources\zoom-out-321.png" />
-    <None Include="Resources\zoom-in-321.png" />
-    <None Include="Resources\x-mark-321.png" />
-    <None Include="Resources\save-as-321.png" />
-    <None Include="Resources\save-321.png" />
-    <None Include="Resources\plus-2-321.png" />
-    <None Include="Resources\microsoft-word-321.png" />
-    <None Include="Resources\zoom-out-24.png" />
     <None Include="Resources\zoom-out-16.png" />
-    <None Include="Resources\zoom-in-32.png" />
-    <None Include="Resources\zoom-in-24.png" />
     <None Include="Resources\zoom-in-16.png" />
-    <None Include="Resources\zoom-out-32.png" />
-    <None Include="Resources\x-mark-24.png" />
     <None Include="Resources\x-mark-16.png" />
-    <None Include="Resources\x-mark-32.png" />
-    <None Include="Resources\plus-2-32.png" />
-    <None Include="Resources\plus-2-24.png" />
     <None Include="Resources\plus-2-16.png" />
-    <None Include="Resources\minus-32.png" />
-    <None Include="Resources\minus-24.png" />
     <None Include="Resources\minus-16.png" />
     <None Include="Resources\microsoft-word-16.png" />
-    <None Include="Resources\microsoft-word-24.png" />
-    <None Include="Resources\microsoft-word-32.png" />
-    <None Include="Resources\edit-5-32.png" />
-    <None Include="Resources\edit-5-24.png" />
     <None Include="Resources\edit-5-16.png" />
-    <None Include="Resources\excel-3-32.png" />
-    <None Include="Resources\excel-3-24.png" />
     <None Include="Resources\excel-3-16.png" />
-    <None Include="Resources\save-32.png" />
-    <None Include="Resources\save-24.png" />
     <None Include="Resources\save-16.png" />
     <None Include="Resources\medical-records_2.png" />
     <None Include="Resources\checkmark-16.png" />
-    <None Include="Resources\checkmark-24.png" />
-    <None Include="Resources\checkmark-32.png" />
-    <None Include="Resources\save-as-24.png" />
     <None Include="Resources\save-as-16.png" />
-    <None Include="Resources\save-as-32.png" />
-    <None Include="Resources\delete-2-16.png" />
-    <None Include="Resources\delete-2-32.png" />
-    <None Include="Resources\delete-2-24.png" />
-    <None Include="Resources\arrow-32-32.png" />
-    <None Include="Resources\arrow-32-16.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

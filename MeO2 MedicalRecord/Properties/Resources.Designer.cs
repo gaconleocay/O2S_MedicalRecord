@@ -65,7 +65,7 @@ namespace MSO2_MedicalRecord.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap arrow_32_16 {
             get {
-                object obj = ResourceManager.GetObject("arrow-32-16", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow_32_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,29 +83,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap categorize_24 {
-            get {
-                object obj = ResourceManager.GetObject("categorize_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap checkmark_16 {
             get {
-                object obj = ResourceManager.GetObject("checkmark-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap checkmark_24 {
-            get {
-                object obj = ResourceManager.GetObject("checkmark-24", resourceCulture);
+                object obj = ResourceManager.GetObject("checkmark_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -115,17 +95,7 @@ namespace MSO2_MedicalRecord.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap delete_2_16 {
             get {
-                object obj = ResourceManager.GetObject("delete-2-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap delete_2_24 {
-            get {
-                object obj = ResourceManager.GetObject("delete-2-24", resourceCulture);
+                object obj = ResourceManager.GetObject("delete_2_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,29 +113,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap delete_row_24 {
-            get {
-                object obj = ResourceManager.GetObject("delete_row_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap edit_11_16 {
             get {
                 object obj = ResourceManager.GetObject("edit_11_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap edit_11_24 {
-            get {
-                object obj = ResourceManager.GetObject("edit_11_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +133,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit_5_24 {
+        internal static System.Drawing.Bitmap edit_5_161 {
             get {
-                object obj = ResourceManager.GetObject("edit_5_24", resourceCulture);
+                object obj = ResourceManager.GetObject("edit_5_161", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,29 +153,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edit_user_24 {
-            get {
-                object obj = ResourceManager.GetObject("edit_user_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap excel_3_16 {
             get {
                 object obj = ResourceManager.GetObject("excel_3_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap excel_3_24 {
-            get {
-                object obj = ResourceManager.GetObject("excel_3_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,29 +173,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap folder_2_24 {
-            get {
-                object obj = ResourceManager.GetObject("folder_2_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap house_16 {
             get {
                 object obj = ResourceManager.GetObject("house_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap house_24 {
-            get {
-                object obj = ResourceManager.GetObject("house_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,29 +193,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap inbox_5_24 {
-            get {
-                object obj = ResourceManager.GetObject("inbox_5_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap list_2_16 {
             get {
                 object obj = ResourceManager.GetObject("list_2_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap list_2_24 {
-            get {
-                object obj = ResourceManager.GetObject("list_2_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,29 +213,29 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap list_rich_24 {
-            get {
-                object obj = ResourceManager.GetObject("list_rich_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap list_view_16 {
             get {
-                object obj = ResourceManager.GetObject("list-view-16", resourceCulture);
+                object obj = ResourceManager.GetObject("list_view_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon medical_records_2 {
+            get {
+                object obj = ResourceManager.GetObject("medical_records_2", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap list_view_24 {
+        internal static System.Drawing.Bitmap medical_records_21 {
             get {
-                object obj = ResourceManager.GetObject("list_view_24", resourceCulture);
+                object obj = ResourceManager.GetObject("medical_records_21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,29 +253,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap microsoft_word_24 {
-            get {
-                object obj = ResourceManager.GetObject("microsoft_word_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap minus_16 {
             get {
-                object obj = ResourceManager.GetObject("minus-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap minus_24 {
-            get {
-                object obj = ResourceManager.GetObject("minus-24", resourceCulture);
+                object obj = ResourceManager.GetObject("minus_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -395,17 +265,7 @@ namespace MSO2_MedicalRecord.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap pages_4_16 {
             get {
-                object obj = ResourceManager.GetObject("pages-4-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pages_4_24 {
-            get {
-                object obj = ResourceManager.GetObject("pages-4-24", resourceCulture);
+                object obj = ResourceManager.GetObject("pages_4_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -415,7 +275,7 @@ namespace MSO2_MedicalRecord.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap pie_16 {
             get {
-                object obj = ResourceManager.GetObject("pie-16", resourceCulture);
+                object obj = ResourceManager.GetObject("pie_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -425,17 +285,7 @@ namespace MSO2_MedicalRecord.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap plus_2_16 {
             get {
-                object obj = ResourceManager.GetObject("plus-2-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap plus_2_24 {
-            get {
-                object obj = ResourceManager.GetObject("plus-2-24", resourceCulture);
+                object obj = ResourceManager.GetObject("plus_2_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,19 +313,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap redo_24 {
-            get {
-                object obj = ResourceManager.GetObject("redo_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap refresh_2_16 {
             get {
-                object obj = ResourceManager.GetObject("refresh-2-16", resourceCulture);
+                object obj = ResourceManager.GetObject("refresh_2_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -485,17 +325,7 @@ namespace MSO2_MedicalRecord.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap save_16 {
             get {
-                object obj = ResourceManager.GetObject("save-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap save_24 {
-            get {
-                object obj = ResourceManager.GetObject("save-24", resourceCulture);
+                object obj = ResourceManager.GetObject("save_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -505,17 +335,7 @@ namespace MSO2_MedicalRecord.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap save_as_16 {
             get {
-                object obj = ResourceManager.GetObject("save-as-16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap save_as_24 {
-            get {
-                object obj = ResourceManager.GetObject("save-as-24", resourceCulture);
+                object obj = ResourceManager.GetObject("save_as_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -533,29 +353,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap search_3_24 {
-            get {
-                object obj = ResourceManager.GetObject("search_3_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap settings_11_16 {
             get {
                 object obj = ResourceManager.GetObject("settings_11_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap settings_11_24 {
-            get {
-                object obj = ResourceManager.GetObject("settings_11_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,29 +373,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings_12_24 {
-            get {
-                object obj = ResourceManager.GetObject("settings_12_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap settings_19_16 {
             get {
                 object obj = ResourceManager.GetObject("settings_19_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap settings_19_24 {
-            get {
-                object obj = ResourceManager.GetObject("settings_19_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -613,29 +393,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings_24_24 {
-            get {
-                object obj = ResourceManager.GetObject("settings_24_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap settings_7_16 {
             get {
                 object obj = ResourceManager.GetObject("settings_7_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap settings_7_24 {
-            get {
-                object obj = ResourceManager.GetObject("settings_7_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -653,29 +413,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap side_right_view_24 {
-            get {
-                object obj = ResourceManager.GetObject("side_right_view_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap sinchronize_16 {
             get {
                 object obj = ResourceManager.GetObject("sinchronize_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap sinchronize_24 {
-            get {
-                object obj = ResourceManager.GetObject("sinchronize_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -693,29 +433,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap sitemap_24 {
-            get {
-                object obj = ResourceManager.GetObject("sitemap_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap snow_storm_16 {
             get {
                 object obj = ResourceManager.GetObject("snow_storm_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap snow_storm_24 {
-            get {
-                object obj = ResourceManager.GetObject("snow_storm_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -733,29 +453,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap star_2_24 {
-            get {
-                object obj = ResourceManager.GetObject("star_2_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap sun_2_16 {
             get {
                 object obj = ResourceManager.GetObject("sun_2_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap sun_2_24 {
-            get {
-                object obj = ResourceManager.GetObject("sun_2_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -773,29 +473,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap text_file_4_24 {
-            get {
-                object obj = ResourceManager.GetObject("text_file_4_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap timeline_16 {
             get {
                 object obj = ResourceManager.GetObject("timeline_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap timeline_24 {
-            get {
-                object obj = ResourceManager.GetObject("timeline_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -813,29 +493,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap undo_24 {
-            get {
-                object obj = ResourceManager.GetObject("undo_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap unlock_16 {
             get {
                 object obj = ResourceManager.GetObject("unlock_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap unlock_24 {
-            get {
-                object obj = ResourceManager.GetObject("unlock_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -853,29 +513,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_2_24 {
-            get {
-                object obj = ResourceManager.GetObject("user_2_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap x_mark_16 {
             get {
                 object obj = ResourceManager.GetObject("x_mark_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap x_mark_24 {
-            get {
-                object obj = ResourceManager.GetObject("x_mark_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -893,29 +533,9 @@ namespace MSO2_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap zoom_in_24 {
-            get {
-                object obj = ResourceManager.GetObject("zoom_in_24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap zoom_out_16 {
             get {
                 object obj = ResourceManager.GetObject("zoom_out_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap zoom_out_24 {
-            get {
-                object obj = ResourceManager.GetObject("zoom_out_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

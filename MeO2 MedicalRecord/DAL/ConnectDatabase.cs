@@ -240,6 +240,30 @@ namespace MSO2_MedicalRecord.DAL
             }
             return result;
         }
+        public bool ExecuteNonQuery_Dblink(string sql)
+        {
+            bool result = false;
+            try
+            {
+                try
+                {
+                    //dblink_connect
+                    string dblink_connect = "SELECT dblink_connect('myconn', 'dbname=" + serverdb + " port=5432 host=" + serverhost + " user=" + serveruser + " password=" + serverpass + "');";
+                    GetDataTable_HSBA(dblink_connect);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                //Chay SQL thuc thi
+                result = ExecuteNonQuery_HSBA(sql);
+            }
+            catch (Exception ex)
+            {
+                Logging.Error("Loi getDataTable Dblink: " + ex.ToString());
+            }
+            return result;
+        }
 
         #endregion
     }

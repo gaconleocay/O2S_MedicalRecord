@@ -17,6 +17,8 @@ namespace MSO2_MedicalRecord.DAL
             bool result = true;
             try
             {
+                result = KetNoiSCDLProcess.CreateMrdServiceref();
+
                 //result = KetNoiSCDLProcess.CreateTableTblUser();
                 //result = KetNoiSCDLProcess.CreateTableTblPermission();
                 //result = KetNoiSCDLProcess.CreateTableTblDepartment();
@@ -42,7 +44,6 @@ namespace MSO2_MedicalRecord.DAL
                 ////result= KetNoiSCDLProcess.UpdateTableUser();
                 //result = KetNoiSCDLProcess.CreateTableUserDepartmentgroup();
                 //result = KetNoiSCDLProcess.CreateTableVersion();
-                //result = KetNoiSCDLProcess.CreateFunctionByteaImport();
             }
             catch (Exception ex)
             {
@@ -52,20 +53,24 @@ namespace MSO2_MedicalRecord.DAL
         }
 
         #region Tao bang
-        private static bool CreateTableTblUser()
+        private static bool CreateMrdServiceref()
         {
             bool result = false;
             try
             {
-                string sql_tbluser = "CREATE TABLE IF NOT EXISTS mrd_tbluser ( userid serial NOT NULL, usercode text NOT NULL, username text, userpassword text, userstatus integer, usergnhom integer, usernote text, userhisid integer, CONSTRAINT tools_tbluser_pkey PRIMARY KEY (userid));";
-                if (condb.ExecuteNonQuery_HIS(sql_tbluser))
+                string sql_tbluser = "CREATE TABLE IF NOT EXISTS mrd_serviceref ( mrd_servicerefid serial NOT NULL, his_servicepricerefid integer, servicegrouptype integer, bhyt_groupcode text, servicepricegroupcode text, servicepricecode text, servicepricename text, servicepricenamenhandan text, servicepricenamebhyt text, servicepricenamenuocngoai text, servicepriceunit text, servicepricefee text, servicepricefeenhandan text, servicepricefeebhyt text, servicepricefeenuocngoai text, servicelock integer DEFAULT 0, servicepricecodeuser text, servicepricesttuser text, pttt_hangid integer DEFAULT 0, pttt_loaiid integer DEFAULT 0, mrd_templatename text, CONSTRAINT mrd_serviceref_pkey PRIMARY KEY (mrd_servicerefid) );";
+                if (condb.ExecuteNonQuery_HSBA(sql_tbluser))
                 {
                     result = true;
+                    string sql_delete = "DELETE FROM tools_servicefull;";
+                    string sql_insert_ser = "INSERT INTO mrd_serviceref (his_servicepricerefid, servicegrouptype, bhyt_groupcode, servicepricegroupcode, servicepricecode, servicepricename, servicepricenamenhandan, servicepricenamebhyt, servicepricenamenuocngoai, servicepriceunit, servicepricefee, servicepricefeenhandan, servicepricefeebhyt, servicepricefeenuocngoai, servicelock, servicepricecodeuser, servicepricesttuser, pttt_hangid, pttt_loaiid) SELECT servicepriceref.* FROM dblink('myconn','SELECT servicepricerefid, servicegrouptype, bhyt_groupcode, servicepricegroupcode, servicepricecode, servicepricename, servicepricenamenhandan, servicepricenamebhyt, servicepricenamenuocngoai, servicepriceunit, servicepricefee, servicepricefeenhandan, servicepricefeebhyt, servicepricefeenuocngoai, servicelock, servicepricecodeuser, servicepricesttuser, pttt_hangid, pttt_loaiid FROM servicepriceref WHERE servicepricecode <>'' and COALESCE(isremove,0)<>1 and servicepricegroupcode<>'' ORDER BY servicegrouptype, bhyt_groupcode, servicepricegroupcode, servicepricename; ') AS servicepriceref(servicepricerefid integer, servicegrouptype integer, bhyt_groupcode text, servicepricegroupcode text, servicepricecode text, servicepricename text, servicepricenamenhandan text, servicepricenamebhyt text, servicepricenamenuocngoai text, servicepriceunit text, servicepricefee text, servicepricefeenhandan text, servicepricefeebhyt text, servicepricefeenuocngoai text, servicelock integer, servicepricecodeuser text, servicepricesttuser text, pttt_hangid integer, pttt_loaiid integer);";
+                    condb.ExecuteNonQuery_HSBA(sql_delete);
+                    condb.ExecuteNonQuery_Dblink(sql_insert_ser);
                 }
             }
             catch (Exception ex)
             {
-                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateTableTblUser" + ex.ToString());
+                MSO2_MedicalRecord.Base.Logging.Error("Lỗi CreateMrdServiceref" + ex.ToString());
             }
             return result;
         }

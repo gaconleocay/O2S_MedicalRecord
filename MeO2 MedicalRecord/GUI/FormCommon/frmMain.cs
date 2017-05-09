@@ -56,10 +56,16 @@ namespace MSO2_MedicalRecord.GUI.FormCommon
                 tabMenuTrangChu.Controls.Add(ucTrangChu);
 
                 tabMenuHSBA.Controls.Clear();
-                MSO2_MedicalRecord.GUI.FormCommon.ucHoSoBenhAn ucHSBA = new FormCommon.ucHoSoBenhAn();
-                ucHSBA.MyGetData = new FormCommon.ucHoSoBenhAn.GetString(HienThiTenChucNang);
+                MSO2_MedicalRecord.GUI.ChucNang.ucDanhSachHoSoBenhAn ucHSBA = new ChucNang.ucDanhSachHoSoBenhAn();
+                ucHSBA.MyGetData = new ChucNang.ucDanhSachHoSoBenhAn.GetString(HienThiTenChucNang);
                 ucHSBA.Dock = System.Windows.Forms.DockStyle.Fill;
                 tabMenuHSBA.Controls.Add(ucHSBA);
+
+              //  tabMenuHSBA.Controls.Clear();
+              //  MSO2_MedicalRecord.BaoCao.BCPhauThuatThuThuat ucHSBA = new BaoCao.BCPhauThuatThuThuat();
+              ////  ucHSBA.MyGetData = new FormCommon.ucHoSoBenhAn.GetString(HienThiTenChucNang);
+              //  ucHSBA.Dock = System.Windows.Forms.DockStyle.Fill;
+              //  tabMenuHSBA.Controls.Add(ucHSBA);
 
                 //tabMenuDashboard.Controls.Clear();
                 //MSO2_MedicalRecord.GUI.FormCommon.ucDashboard ucDashboard = new FormCommon.ucDashboard();

@@ -74,7 +74,7 @@
             this.btnDBLuu.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnDBLuu.Appearance.Options.UseFont = true;
             this.btnDBLuu.Appearance.Options.UseForeColor = true;
-            this.btnDBLuu.Image = global::MSO2_MedicalRecord.Properties.Resources.save_24;
+            this.btnDBLuu.Image = global::MSO2_MedicalRecord.Properties.Resources.save_16;
             this.btnDBLuu.Location = new System.Drawing.Point(352, 227);
             this.btnDBLuu.Name = "btnDBLuu";
             this.btnDBLuu.Size = new System.Drawing.Size(100, 40);

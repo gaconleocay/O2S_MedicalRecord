@@ -384,7 +384,7 @@
             this.btnUserOK.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnUserOK.Appearance.Options.UseFont = true;
             this.btnUserOK.Appearance.Options.UseForeColor = true;
-            this.btnUserOK.Image = global::MSO2_MedicalRecord.Properties.Resources.checkmark_24;
+            this.btnUserOK.Image = global::MSO2_MedicalRecord.Properties.Resources.checkmark_16;
             this.btnUserOK.Location = new System.Drawing.Point(706, 23);
             this.btnUserOK.Name = "btnUserOK";
             this.btnUserOK.Size = new System.Drawing.Size(100, 40);

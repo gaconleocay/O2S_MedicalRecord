@@ -36,7 +36,7 @@ namespace MSO2_MedicalRecord.Base
         internal static string CHUA_CHON_KHO_THUOC = "Chưa chọn kho thuốc!";
         internal static string CHUA_CHON_PHONG_LUU = "Chưa chọn phòng lưu!";
         internal static string CHUA_CHON_DOI_TUONG_BENH_NHAN = "Chưa chọn đối tượng bệnh nhân!";
-
+        internal static string CHUA_CHON_TEMPLATE = "Chưa chọn template!";
 
         internal static void HienThiThongBao(System.Windows.Forms.Timer timerThongBao, DevExpress.XtraEditors.LabelControl lblThongBao, string tenThongBao)
         {

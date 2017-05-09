@@ -129,7 +129,20 @@ namespace MSO2_MedicalRecord.GUI.FormCommon
             }
         }
 
-
+        private void navBarItemListDVPTTT_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                panelCaiDatChiTiet.Controls.Clear();
+                ucUpdateTemplateDVPTTT frmResult = new ucUpdateTemplateDVPTTT();
+                frmResult.Dock = System.Windows.Forms.DockStyle.Fill;
+                panelCaiDatChiTiet.Controls.Add(frmResult);
+            }
+            catch (Exception ex)
+            {
+                MSO2_MedicalRecord.Base.Logging.Warn(ex);
+            }
+        }
 
 
     }

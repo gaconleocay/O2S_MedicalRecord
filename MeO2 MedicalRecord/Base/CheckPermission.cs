@@ -103,7 +103,7 @@ namespace MSO2_MedicalRecord.Base
                     string en_usercode = MSO2_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
                     sqlper = "SELECT ude.departmentgroupid,de.departmentgroupcode, de.departmentgroupname,de.departmentgrouptype, ude.departmentid,de.departmentcode,de.departmentname,ude.departmenttype, ude.usercode FROM mrd_tbluser_departmentgroup ude inner join mrd_depatment de on ude.departmentid=de.departmentid WHERE usercode = '" + en_usercode + "' ORDER BY de.departmentgroupname,de.departmentname,ude.departmenttype;";
                 }
-                DataView dv = new DataView(condb.GetDataTable_HIS(sqlper));
+                DataView dv = new DataView(condb.GetDataTable_HSBA(sqlper));
                 if (dv.Count > 0)
                 {
                     for (int i = 0; i < dv.Count; i++)
