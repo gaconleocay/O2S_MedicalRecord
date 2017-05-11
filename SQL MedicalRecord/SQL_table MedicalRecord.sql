@@ -1,5 +1,5 @@
 ---table 
-CREATE TABLE mrd_license
+CREATE TABLE IF NOT EXISTS mrd_license
 (
   licenseid serial NOT NULL,
   datakey text,
@@ -12,7 +12,7 @@ CREATE INDEX mrd_license_licenseid_idx
   USING btree
   (licenseid);
 ----------
-CREATE TABLE mrd_option
+CREATE TABLE IF NOT EXISTS mrd_option
 (
   toolsoptionid serial NOT NULL,
   toolsoptioncode text,
@@ -30,7 +30,7 @@ CREATE INDEX mrd_option_toolsoptionid_idx
   USING btree
   (toolsoptionid);
 ---------
-CREATE TABLE mrd_tbllog
+CREATE TABLE IF NOT EXISTS mrd_tbllog
 (
   logid serial NOT NULL,
   loguser text,
@@ -42,7 +42,7 @@ CREATE TABLE mrd_tbllog
   CONSTRAINT mrd_tbllog_pkey PRIMARY KEY (logid)
 )
 
-CREATE TABLE mrd_tbluser
+CREATE TABLE IF NOT EXISTS mrd_tbluser
 (
   userid serial NOT NULL,
   usercode text NOT NULL,
@@ -60,7 +60,7 @@ CREATE INDEX mrd_tbluser_usercode_idx
   USING btree
   (usercode);
 ---------
-CREATE TABLE mrd_tbluser_departmentgroup
+CREATE TABLE IF NOT EXISTS mrd_tbluser_departmentgroup
 (
   userdepgid serial NOT NULL,
   departmentgroupid integer,
@@ -80,7 +80,7 @@ CREATE INDEX mrd_tbluserdep_usercode_idx
   USING btree
   (usercode);
 ---------
-CREATE TABLE mrd_tbluser_medicinephongluu
+CREATE TABLE IF NOT EXISTS mrd_tbluser_medicinephongluu
 (
   userphongluutid serial NOT NULL,
   medicinephongluuid integer,
@@ -99,7 +99,7 @@ CREATE INDEX mrd_tbluserphongluu_usercode_idx
   USING btree
   (usercode);  
 ----------
-CREATE TABLE mrd_tbluser_medicinestore
+CREATE TABLE IF NOT EXISTS mrd_tbluser_medicinestore
 (
   usermestid serial NOT NULL,
   medicinestoreid integer,
@@ -118,7 +118,7 @@ CREATE INDEX mrd_tblusermedi_usercode_idx
   USING btree
   (usercode);  
 ----------
-CREATE TABLE mrd_tbluser_permission
+CREATE TABLE IF NOT EXISTS mrd_tbluser_permission
 (
   userpermissionid serial NOT NULL,
   permissionid integer,
@@ -131,7 +131,7 @@ CREATE TABLE mrd_tbluser_permission
   CONSTRAINT userpermissionid_pkey PRIMARY KEY (userpermissionid)
 )
 
-CREATE TABLE mrd_version
+CREATE TABLE IF NOT EXISTS mrd_version
 (
   versionid serial NOT NULL,
   appversion text,
@@ -147,9 +147,48 @@ CREATE TABLE mrd_version
   CONSTRAINT mrd_version_pkey PRIMARY KEY (versionid)
 )
 
+-------
+CREATE TABLE IF NOT EXISTS mrd_depatment
+(
+  mrd_depatmentid serial NOT NULL,
+  departmentgroupid integer,
+  departmentgroupcode text,
+  departmentgroupname text,
+  departmentgrouptype integer,
+  departmentid integer,
+  departmentcode text,
+  departmentname text,
+  departmenttype integer,
+  CONSTRAINT mrd_depatment_pkey PRIMARY KEY (mrd_depatmentid)
+)
 
 
-
+------
+CREATE TABLE IF NOT EXISTS mrd_serviceref
+(
+  mrd_servicerefid serial NOT NULL,
+  his_servicepricerefid integer,
+  servicegrouptype integer,
+  bhyt_groupcode text,
+  servicepricegroupcode text,
+  servicepricecode text,
+  servicepricename text,
+  servicepricenamenhandan text,
+  servicepricenamebhyt text,
+  servicepricenamenuocngoai text,
+  servicepriceunit text,
+  servicepricefee text,
+  servicepricefeenhandan text,
+  servicepricefeebhyt text,
+  servicepricefeenuocngoai text,
+  servicelock integer DEFAULT 0,
+  servicepricecodeuser text,
+  servicepricesttuser text,
+  pttt_hangid integer DEFAULT 0,
+  pttt_loaiid integer DEFAULT 0,
+  mrd_templatename text,
+  CONSTRAINT mrd_serviceref_pkey PRIMARY KEY (mrd_servicerefid)
+)
 
 
 
