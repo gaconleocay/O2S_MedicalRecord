@@ -37,6 +37,8 @@
             this.radioKhamBenh = new System.Windows.Forms.RadioButton();
             this.panelControlChucNang = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtservicepricenamenhandan = new System.Windows.Forms.TextBox();
             this.txtservicepricegroupcode = new System.Windows.Forms.TextBox();
             this.txtbhyt_groupcode = new System.Windows.Forms.TextBox();
             this.btnTimFileKetQua = new DevExpress.XtraEditors.SimpleButton();
@@ -65,6 +67,7 @@
             this.panelControlData = new DevExpress.XtraEditors.PanelControl();
             this.gridControlDMDichVu = new DevExpress.XtraGrid.GridControl();
             this.gridViewDMDichVu = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -192,6 +195,8 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.label11);
+            this.panelControl2.Controls.Add(this.txtservicepricenamenhandan);
             this.panelControl2.Controls.Add(this.txtservicepricegroupcode);
             this.panelControl2.Controls.Add(this.txtbhyt_groupcode);
             this.panelControl2.Controls.Add(this.btnTimFileKetQua);
@@ -219,6 +224,25 @@
             this.panelControl2.Size = new System.Drawing.Size(585, 501);
             this.panelControl2.TabIndex = 1;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(49, 135);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 16);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Tên viện phí";
+            // 
+            // txtservicepricenamenhandan
+            // 
+            this.txtservicepricenamenhandan.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtservicepricenamenhandan.Location = new System.Drawing.Point(133, 135);
+            this.txtservicepricenamenhandan.Name = "txtservicepricenamenhandan";
+            this.txtservicepricenamenhandan.ReadOnly = true;
+            this.txtservicepricenamenhandan.Size = new System.Drawing.Size(439, 23);
+            this.txtservicepricenamenhandan.TabIndex = 42;
+            // 
             // txtservicepricegroupcode
             // 
             this.txtservicepricegroupcode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -244,7 +268,7 @@
             this.btnTimFileKetQua.Appearance.Options.UseFont = true;
             this.btnTimFileKetQua.Appearance.Options.UseForeColor = true;
             this.btnTimFileKetQua.Image = global::O2S_MedicalRecord.Properties.Resources.text_file_4_16;
-            this.btnTimFileKetQua.Location = new System.Drawing.Point(472, 284);
+            this.btnTimFileKetQua.Location = new System.Drawing.Point(472, 329);
             this.btnTimFileKetQua.Name = "btnTimFileKetQua";
             this.btnTimFileKetQua.Size = new System.Drawing.Size(100, 27);
             this.btnTimFileKetQua.TabIndex = 39;
@@ -254,7 +278,7 @@
             // txtmrd_templatename
             // 
             this.txtmrd_templatename.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmrd_templatename.Location = new System.Drawing.Point(134, 287);
+            this.txtmrd_templatename.Location = new System.Drawing.Point(134, 332);
             this.txtmrd_templatename.Name = "txtmrd_templatename";
             this.txtmrd_templatename.Size = new System.Drawing.Size(318, 23);
             this.txtmrd_templatename.TabIndex = 38;
@@ -263,7 +287,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 294);
+            this.label10.Location = new System.Drawing.Point(19, 339);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 16);
             this.label10.TabIndex = 32;
@@ -283,7 +307,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(324, 213);
+            this.label5.Location = new System.Drawing.Point(324, 258);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 16);
             this.label5.TabIndex = 27;
@@ -293,7 +317,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(53, 213);
+            this.label8.Location = new System.Drawing.Point(53, 258);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 16);
             this.label8.TabIndex = 26;
@@ -302,7 +326,7 @@
             // txtservicepricefeenuocngoai
             // 
             this.txtservicepricefeenuocngoai.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricefeenuocngoai.Location = new System.Drawing.Point(423, 210);
+            this.txtservicepricefeenuocngoai.Location = new System.Drawing.Point(423, 255);
             this.txtservicepricefeenuocngoai.Name = "txtservicepricefeenuocngoai";
             this.txtservicepricefeenuocngoai.ReadOnly = true;
             this.txtservicepricefeenuocngoai.Size = new System.Drawing.Size(150, 23);
@@ -312,7 +336,7 @@
             // txtservicepricefee
             // 
             this.txtservicepricefee.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricefee.Location = new System.Drawing.Point(134, 210);
+            this.txtservicepricefee.Location = new System.Drawing.Point(134, 255);
             this.txtservicepricefee.Name = "txtservicepricefee";
             this.txtservicepricefee.ReadOnly = true;
             this.txtservicepricefee.Size = new System.Drawing.Size(150, 23);
@@ -323,7 +347,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(343, 173);
+            this.label6.Location = new System.Drawing.Point(343, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 16);
             this.label6.TabIndex = 23;
@@ -333,7 +357,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(67, 173);
+            this.label7.Location = new System.Drawing.Point(67, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 16);
             this.label7.TabIndex = 22;
@@ -342,7 +366,7 @@
             // txtservicepricefeenhandan
             // 
             this.txtservicepricefeenhandan.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricefeenhandan.Location = new System.Drawing.Point(423, 166);
+            this.txtservicepricefeenhandan.Location = new System.Drawing.Point(423, 211);
             this.txtservicepricefeenhandan.Name = "txtservicepricefeenhandan";
             this.txtservicepricefeenhandan.ReadOnly = true;
             this.txtservicepricefeenhandan.Size = new System.Drawing.Size(150, 23);
@@ -352,7 +376,7 @@
             // txtservicepricefeebhyt
             // 
             this.txtservicepricefeebhyt.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricefeebhyt.Location = new System.Drawing.Point(134, 170);
+            this.txtservicepricefeebhyt.Location = new System.Drawing.Point(134, 215);
             this.txtservicepricefeebhyt.Name = "txtservicepricefeebhyt";
             this.txtservicepricefeebhyt.ReadOnly = true;
             this.txtservicepricefeebhyt.Size = new System.Drawing.Size(150, 23);
@@ -373,7 +397,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(63, 133);
+            this.label3.Location = new System.Drawing.Point(63, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 17;
@@ -402,7 +426,7 @@
             // txtservicepricenamebhyt
             // 
             this.txtservicepricenamebhyt.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricenamebhyt.Location = new System.Drawing.Point(133, 130);
+            this.txtservicepricenamebhyt.Location = new System.Drawing.Point(133, 175);
             this.txtservicepricenamebhyt.Name = "txtservicepricenamebhyt";
             this.txtservicepricenamebhyt.ReadOnly = true;
             this.txtservicepricenamebhyt.Size = new System.Drawing.Size(439, 23);
@@ -504,6 +528,7 @@
             // 
             this.gridViewDMDichVu.ColumnPanelRowHeight = 25;
             this.gridViewDMDichVu.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn7,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -521,6 +546,26 @@
             this.gridViewDMDichVu.OptionsView.ShowIndicator = false;
             this.gridViewDMDichVu.RowHeight = 25;
             // 
+            // gridColumn7
+            // 
+            this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn7.AppearanceCell.Options.UseFont = true;
+            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn7.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.gridColumn7.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn7.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn7.Caption = "STT";
+            this.gridColumn7.FieldName = "stt";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 0;
+            this.gridColumn7.Width = 35;
+            // 
             // gridColumn1
             // 
             this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -536,7 +581,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
             this.gridColumn1.Width = 78;
             // 
             // gridColumn2
@@ -554,7 +599,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 95;
             // 
             // gridColumn3
@@ -568,11 +613,11 @@
             this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn3.Caption = "Tên dịch vụ";
-            this.gridColumn3.FieldName = "servicepricenamebhyt";
+            this.gridColumn3.FieldName = "servicepricenamenhandan";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 400;
             // 
             // gridColumn6
@@ -590,7 +635,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 3;
+            this.gridColumn6.VisibleIndex = 4;
             // 
             // gridColumn4
             // 
@@ -607,7 +652,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.VisibleIndex = 5;
             this.gridColumn4.Width = 102;
             // 
             // gridColumn5
@@ -625,12 +670,12 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 6;
             this.gridColumn5.Width = 128;
             // 
             // openFileDialogSelect
             // 
-            this.openFileDialogSelect.Filter = "Excel 2007-2013|*.xlsx|Excel 2003|*.xls";
+            this.openFileDialogSelect.Filter = "Word 2007-2013|*.docx|Word 2003|*.doc";
             this.openFileDialogSelect.Title = "Mở file Excel";
             // 
             // ucUpdateTemplateDVPTTT
@@ -708,5 +753,8 @@
         private DevExpress.XtraEditors.CheckEdit chkDaKhoa;
         private System.Windows.Forms.TextBox txtservicepricegroupcode;
         private System.Windows.Forms.TextBox txtbhyt_groupcode;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtservicepricenamenhandan;
     }
 }

@@ -29,6 +29,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 btnSua.Enabled = false;
                 btnLuu.Enabled = false;
                 btnHuy.Enabled = false;
+                btnTimFileKetQua.Enabled = false;
                 txtmrd_templatename.ReadOnly = true;
             }
             catch (Exception ex)
@@ -141,7 +142,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     servicelock = 1;
                 }
 
-                string sqlLayDanhMuc = "select mrd_servicerefid, his_servicepricerefid, servicegrouptype, bhyt_groupcode, servicepricegroupcode, servicepricecode, servicepricename, servicepricenamenhandan, servicepricenamebhyt, servicepricenamenuocngoai, servicepriceunit, servicepricefee, servicepricefeenhandan, servicepricefeebhyt, servicepricefeenuocngoai, servicelock, servicepricecodeuser, servicepricesttuser, pttt_hangid, pttt_loaiid, mrd_templatename from mrd_serviceref where servicegrouptype=" + servicegrouptype + " and servicelock=" + servicelock + "; ";
+                string sqlLayDanhMuc = "select ROW_NUMBER () OVER (ORDER BY bhyt_groupcode, servicepricename) as stt, mrd_servicerefid, his_servicepricerefid, servicegrouptype, bhyt_groupcode, servicepricegroupcode, servicepricecode, servicepricename, servicepricenamenhandan, servicepricenamebhyt, servicepricenamenuocngoai, servicepriceunit, servicepricefee, servicepricefeenhandan, servicepricefeebhyt, servicepricefeenuocngoai, servicelock, servicepricecodeuser, servicepricesttuser, pttt_hangid, pttt_loaiid, mrd_templatename from mrd_serviceref where servicegrouptype=" + servicegrouptype + " and servicelock=" + servicelock + "; ";
                 DataView dv_DanhMucDichVu = new DataView(condb.GetDataTable_HSBA(sqlLayDanhMuc));
                 if (dv_DanhMucDichVu.Count > 0)
                 {
@@ -216,6 +217,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     txtservicepricecode.Text = serviceprice.servicepricecode;
                     txtservicepricegroupcode.Text = serviceprice.servicepricegroupcode;
                     txtservicepricecodeuser.Text = serviceprice.servicepricecodeuser;
+                    txtservicepricenamenhandan.Text = serviceprice.servicepricenamenhandan;
                     txtservicepricenamebhyt.Text = serviceprice.servicepricenamebhyt;
                     txtservicepricefeebhyt.Text = serviceprice.servicepricefeebhyt.ToString();
                     txtservicepricefeenhandan.Text = serviceprice.servicepricefeenhandan.ToString();
@@ -261,12 +263,14 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     btnSua.Enabled = true;
                     btnLuu.Enabled = false;
                     btnHuy.Enabled = false;
+                    btnTimFileKetQua.Enabled = false;
                 }
                 else
                 {
                     txtservicepricecode.Clear();
                     txtservicepricegroupcode.Clear();
                     txtservicepricecodeuser.Clear();
+                    txtservicepricenamenhandan.Clear();
                     txtservicepricenamebhyt.Clear();
                     txtservicepricefeebhyt.Clear();
                     txtservicepricefeenhandan.Clear();
@@ -277,6 +281,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     btnSua.Enabled = false;
                     btnLuu.Enabled = false;
                     btnHuy.Enabled = false;
+                    btnTimFileKetQua.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -289,6 +294,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
         {
             try
             {
+                btnTimFileKetQua.Enabled = true;
                 txtmrd_templatename.ReadOnly = false;
                 btnSua.Enabled = false;
                 btnLuu.Enabled = true;
@@ -317,6 +323,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                         btnLuu.Enabled = false;
                         btnHuy.Enabled = false;
                         txtmrd_templatename.ReadOnly = true;
+                        btnTimFileKetQua.Enabled = false;
                     }
                 }
                 else
@@ -339,6 +346,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 txtservicepricecode.Clear();
                 txtservicepricegroupcode.Clear();
                 txtservicepricecodeuser.Clear();
+                txtservicepricenamenhandan.Clear();
                 txtservicepricenamebhyt.Clear();
                 txtservicepricefeebhyt.Clear();
                 txtservicepricefeenhandan.Clear();
@@ -349,6 +357,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 btnSua.Enabled = false;
                 btnLuu.Enabled = false;
                 btnHuy.Enabled = false;
+                btnTimFileKetQua.Enabled = false;
                 txtmrd_templatename.ReadOnly = true;
             }
             catch (Exception ex)
