@@ -13,6 +13,7 @@ using System.Net;
 using System.Diagnostics;
 using O2S_MedicalRecord.Base;
 using System.IO;
+using O2S_MedicalRecord.DTO;
 
 namespace O2S_MedicalRecord.GUI.FormCommon
 {
@@ -250,6 +251,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                     SessionLogin.SessionlstPhanQuyen_KhoaPhong = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoaPhong();
                     //SessionLogin.SessionLstPhanQuyen_KhoThuoc = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoThuoc();
                     //SessionLogin.SessionLstPhanQuyen_PhongLuu = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_PhongLuu();
+
+                    LoadDataSystems.Load_Serviceprice();
                     frmMain frmm = new frmMain();
                     frmm.Show();
                     this.Visible = false;
@@ -271,6 +274,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                             SessionLogin.SessionlstPhanQuyen_KhoaPhong = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoaPhong();
                             //SessionLogin.SessionLstPhanQuyen_KhoThuoc = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoThuoc();
                             //SessionLogin.SessionLstPhanQuyen_PhongLuu = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_PhongLuu();
+
+                            LoadDataSystems.Load_Serviceprice();
                             frmMain frmm = new frmMain();
                             frmm.Show();
                             this.Visible = false;
@@ -370,6 +375,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 throw;
             }
         }
+
+
 
     }
 }

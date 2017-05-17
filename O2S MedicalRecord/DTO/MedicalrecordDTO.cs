@@ -21,5 +21,7 @@ namespace O2S_MedicalRecord.DTO
        public long departmentid { get; set; }
        public long departmentgroupid { get; set; }
        public long servicepriceid { get; set; }
+       public string servicepricecode { get; set; }
+
     }
 }

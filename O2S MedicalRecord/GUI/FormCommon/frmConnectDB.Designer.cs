@@ -77,7 +77,7 @@
             this.btnDBLuu.Image = global::O2S_MedicalRecord.Properties.Resources.save_16;
             this.btnDBLuu.Location = new System.Drawing.Point(352, 227);
             this.btnDBLuu.Name = "btnDBLuu";
-            this.btnDBLuu.Size = new System.Drawing.Size(100, 40);
+            this.btnDBLuu.Size = new System.Drawing.Size(100, 30);
             this.btnDBLuu.TabIndex = 10;
             this.btnDBLuu.Text = "Lưu";
             this.btnDBLuu.Click += new System.EventHandler(this.tbnDBLuu_Click);
@@ -88,10 +88,10 @@
             this.btnDBKiemTra.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnDBKiemTra.Appearance.Options.UseFont = true;
             this.btnDBKiemTra.Appearance.Options.UseForeColor = true;
-            this.btnDBKiemTra.Image = ((System.Drawing.Image)(resources.GetObject("btnDBKiemTra.Image")));
+            this.btnDBKiemTra.Image = global::O2S_MedicalRecord.Properties.Resources.question_mark_16;
             this.btnDBKiemTra.Location = new System.Drawing.Point(227, 227);
             this.btnDBKiemTra.Name = "btnDBKiemTra";
-            this.btnDBKiemTra.Size = new System.Drawing.Size(100, 40);
+            this.btnDBKiemTra.Size = new System.Drawing.Size(100, 30);
             this.btnDBKiemTra.TabIndex = 11;
             this.btnDBKiemTra.Text = "Kiểm Tra";
             this.btnDBKiemTra.Click += new System.EventHandler(this.btnDBKiemTra_Click);
@@ -102,10 +102,10 @@
             this.btnDBUpdate.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnDBUpdate.Appearance.Options.UseFont = true;
             this.btnDBUpdate.Appearance.Options.UseForeColor = true;
-            this.btnDBUpdate.Image = global::O2S_MedicalRecord.Properties.Resources.checkmark_16;
+            this.btnDBUpdate.Image = global::O2S_MedicalRecord.Properties.Resources.sinchronize_16;
             this.btnDBUpdate.Location = new System.Drawing.Point(476, 227);
             this.btnDBUpdate.Name = "btnDBUpdate";
-            this.btnDBUpdate.Size = new System.Drawing.Size(100, 40);
+            this.btnDBUpdate.Size = new System.Drawing.Size(100, 30);
             this.btnDBUpdate.TabIndex = 13;
             this.btnDBUpdate.Text = "Update DB";
             this.btnDBUpdate.Click += new System.EventHandler(this.btnDBUpdate_Click);
@@ -122,6 +122,7 @@
             this.groupBox1.Controls.Add(this.labelControl8);
             this.groupBox1.Controls.Add(this.labelControl9);
             this.groupBox1.Controls.Add(this.labelControl10);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.groupBox1.Location = new System.Drawing.Point(398, 2);
             this.groupBox1.Name = "groupBox1";
@@ -185,51 +186,51 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl6.Location = new System.Drawing.Point(21, 152);
+            this.labelControl6.Location = new System.Drawing.Point(6, 152);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(84, 14);
+            this.labelControl6.Size = new System.Drawing.Size(89, 16);
             this.labelControl6.TabIndex = 17;
             this.labelControl6.Text = "Database name";
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl7.Location = new System.Drawing.Point(50, 121);
+            this.labelControl7.Location = new System.Drawing.Point(40, 120);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(51, 14);
+            this.labelControl7.Size = new System.Drawing.Size(55, 16);
             this.labelControl7.TabIndex = 16;
             this.labelControl7.Text = "Password";
             // 
             // labelControl8
             // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl8.Location = new System.Drawing.Point(74, 89);
+            this.labelControl8.Location = new System.Drawing.Point(69, 89);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(24, 14);
+            this.labelControl8.Size = new System.Drawing.Size(26, 16);
             this.labelControl8.TabIndex = 15;
             this.labelControl8.Text = "User";
             // 
             // labelControl9
             // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl9.Location = new System.Drawing.Point(74, 29);
+            this.labelControl9.Location = new System.Drawing.Point(70, 28);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(25, 14);
+            this.labelControl9.Size = new System.Drawing.Size(25, 16);
             this.labelControl9.TabIndex = 14;
             this.labelControl9.Text = "Host";
             // 
             // labelControl10
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl10.Location = new System.Drawing.Point(76, 59);
+            this.labelControl10.Location = new System.Drawing.Point(72, 58);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(23, 14);
+            this.labelControl10.Size = new System.Drawing.Size(23, 16);
             this.labelControl10.TabIndex = 13;
             this.labelControl10.Text = "Port";
             // 
@@ -245,6 +246,7 @@
             this.groupBox2.Controls.Add(this.labelControl3);
             this.groupBox2.Controls.Add(this.labelControl2);
             this.groupBox2.Controls.Add(this.labelControl1);
+            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.groupBox2.Location = new System.Drawing.Point(7, 2);
             this.groupBox2.Name = "groupBox2";
@@ -308,51 +310,51 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl5.Location = new System.Drawing.Point(17, 144);
+            this.labelControl5.Location = new System.Drawing.Point(7, 144);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(84, 14);
+            this.labelControl5.Size = new System.Drawing.Size(89, 16);
             this.labelControl5.TabIndex = 17;
             this.labelControl5.Text = "Database name";
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl4.Location = new System.Drawing.Point(46, 113);
+            this.labelControl4.Location = new System.Drawing.Point(41, 112);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(51, 14);
+            this.labelControl4.Size = new System.Drawing.Size(55, 16);
             this.labelControl4.TabIndex = 16;
             this.labelControl4.Text = "Password";
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl3.Location = new System.Drawing.Point(70, 81);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(24, 14);
+            this.labelControl3.Size = new System.Drawing.Size(26, 16);
             this.labelControl3.TabIndex = 15;
             this.labelControl3.Text = "User";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl2.Location = new System.Drawing.Point(70, 21);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(25, 14);
+            this.labelControl2.Size = new System.Drawing.Size(25, 16);
             this.labelControl2.TabIndex = 14;
             this.labelControl2.Text = "Host";
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl1.Location = new System.Drawing.Point(72, 51);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(23, 14);
+            this.labelControl1.Size = new System.Drawing.Size(23, 16);
             this.labelControl1.TabIndex = 13;
             this.labelControl1.Text = "Port";
             // 

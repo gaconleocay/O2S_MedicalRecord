@@ -153,7 +153,7 @@
             this.btnOptionOK.Image = global::O2S_MedicalRecord.Properties.Resources.checkmark_16;
             this.btnOptionOK.Location = new System.Drawing.Point(181, 418);
             this.btnOptionOK.Name = "btnOptionOK";
-            this.btnOptionOK.Size = new System.Drawing.Size(100, 40);
+            this.btnOptionOK.Size = new System.Drawing.Size(100, 30);
             this.btnOptionOK.TabIndex = 7;
             this.btnOptionOK.Text = "OK";
             this.btnOptionOK.Click += new System.EventHandler(this.btnOptionOK_Click);

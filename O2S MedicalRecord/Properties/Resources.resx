@@ -118,140 +118,62 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="medical_records_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\medical-records_2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow_32_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\arrow-32-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="categorize_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\categorize-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="checkmark_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\checkmark-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\delete-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete_row_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\delete-row-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_11_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\edit-11-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_5_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\edit-5-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_5_161" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\edit-5-161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_user_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\edit-user-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="excel_3_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\excel-3-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="folder_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\folder-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="house_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\house-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inbox_5_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\inbox-5-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="list_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\list-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="list_rich_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\list-rich-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="list_view_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\list-view-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="medical_records_21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\medical-records_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="microsoft_word_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\microsoft-word-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minus_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\minus-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pages_4_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\pages-4-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pie_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\pie-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="plus_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\plus-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="quote_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\quote-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="redo_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\redo-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="refresh_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\refresh-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\save-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save_as_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\save-as-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search_3_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\search-3-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings_11_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\settings-11-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings_12_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\settings-12-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings_19_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\settings-19-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings_24_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\settings-24-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings_7_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\settings-7-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="side_right_view_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\side-right-view-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sinchronize_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\sinchronize-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sitemap_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\sitemap-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="snow_storm_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\snow-storm-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="star_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\star-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sun_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\sun-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="text_file_4_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\text-file-4-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="timeline_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\timeline-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="undo_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\undo-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unlock_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\unlock-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\user-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="timeline_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\timeline-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save_as_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\save-as-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\save-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="undo_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\undo-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="categorize_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\categorize-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_5_161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\edit-5-161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_11_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\edit-11-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="question-mark-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\question-mark-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pie_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\pie-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inbox_5_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\inbox-5-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="text_file_4_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\text-file-4-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="excel_3_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\excel-3-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="redo_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\redo-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_user_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\edit-user-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_19_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\settings-19-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_7_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\settings-7-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkmark_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\checkmark-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="x_mark_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\x-mark-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,7 +181,91 @@
   <data name="zoom_in_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\zoom-in-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="delete_row_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\delete-row-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\list-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\refresh-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow_32_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\arrow-32-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="side_right_view_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\side-right-view-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_rich_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\list-rich-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_11_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\settings-11-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="microsoft_word_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\microsoft-word-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sun_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\sun-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sitemap_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\sitemap-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="house_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\house-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\folder-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="snow_storm_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\snow-storm-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="list_view_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\list-view-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sinchronize_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\sinchronize-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medical_records_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\medical-records_2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quote_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\quote-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\user-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="zoom_out_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\zoom-out-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\delete-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="star_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\star-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pages_4_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\pages-4-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_3_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\search-3-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_12_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\settings-12-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_24_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\settings-24-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medical_records_21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\medical-records_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minus_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\minus-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_5_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\edit-5-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add-user-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-user-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

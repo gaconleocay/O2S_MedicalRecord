@@ -63,6 +63,16 @@ namespace O2S_MedicalRecord.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_user_16 {
+            get {
+                object obj = ResourceManager.GetObject("add-user-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arrow_32_16 {
             get {
                 object obj = ResourceManager.GetObject("arrow_32_16", resourceCulture);
@@ -286,6 +296,16 @@ namespace O2S_MedicalRecord.Properties {
         internal static System.Drawing.Bitmap plus_2_16 {
             get {
                 object obj = ResourceManager.GetObject("plus_2_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap question_mark_16 {
+            get {
+                object obj = ResourceManager.GetObject("question-mark-16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -93,10 +93,10 @@
             this.btnNVThem.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnNVThem.Appearance.Options.UseFont = true;
             this.btnNVThem.Appearance.Options.UseForeColor = true;
-            this.btnNVThem.Image = ((System.Drawing.Image)(resources.GetObject("btnNVThem.Image")));
-            this.btnNVThem.Location = new System.Drawing.Point(15, 22);
+            this.btnNVThem.Image = global::O2S_MedicalRecord.Properties.Resources.add_user_16;
+            this.btnNVThem.Location = new System.Drawing.Point(15, 29);
             this.btnNVThem.Name = "btnNVThem";
-            this.btnNVThem.Size = new System.Drawing.Size(100, 40);
+            this.btnNVThem.Size = new System.Drawing.Size(100, 30);
             this.btnNVThem.TabIndex = 5;
             this.btnNVThem.Text = "Thêm";
             this.btnNVThem.Click += new System.EventHandler(this.btnNVThem_Click);
@@ -148,9 +148,9 @@
             this.btnThemTuExcel.Appearance.Options.UseFont = true;
             this.btnThemTuExcel.Appearance.Options.UseForeColor = true;
             this.btnThemTuExcel.Image = global::O2S_MedicalRecord.Properties.Resources.pages_4_16;
-            this.btnThemTuExcel.Location = new System.Drawing.Point(723, 22);
+            this.btnThemTuExcel.Location = new System.Drawing.Point(726, 29);
             this.btnThemTuExcel.Name = "btnThemTuExcel";
-            this.btnThemTuExcel.Size = new System.Drawing.Size(130, 40);
+            this.btnThemTuExcel.Size = new System.Drawing.Size(130, 30);
             this.btnThemTuExcel.TabIndex = 8;
             this.btnThemTuExcel.Text = "Thêm từ Excel";
             this.btnThemTuExcel.Click += new System.EventHandler(this.btnThemTuExcel_Click);
@@ -162,9 +162,9 @@
             this.btnNVOK.Appearance.Options.UseFont = true;
             this.btnNVOK.Appearance.Options.UseForeColor = true;
             this.btnNVOK.Image = global::O2S_MedicalRecord.Properties.Resources.checkmark_16;
-            this.btnNVOK.Location = new System.Drawing.Point(584, 22);
+            this.btnNVOK.Location = new System.Drawing.Point(584, 29);
             this.btnNVOK.Name = "btnNVOK";
-            this.btnNVOK.Size = new System.Drawing.Size(100, 40);
+            this.btnNVOK.Size = new System.Drawing.Size(100, 30);
             this.btnNVOK.TabIndex = 7;
             this.btnNVOK.Text = "OK";
             this.btnNVOK.Click += new System.EventHandler(this.btnNVOK_Click_1);

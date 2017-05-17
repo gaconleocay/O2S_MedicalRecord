@@ -82,6 +82,7 @@
     <Reference Include="DevExpress.XtraRichEdit.v15.2.Extensions, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -150,7 +151,7 @@
     <Compile Include="Base\ClassEncoding.cs" />
     <Compile Include="Base\HardwareInfo.cs" />
     <Compile Include="Base\KiemTraLicense.cs" />
-    <Compile Include="DTO\mrd_serviceref.cs" />
+    <Compile Include="DTO\MrdServicerefDTO.cs" />
     <Compile Include="DTO\classMedicineStore.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -174,6 +175,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DTO\serviceprice_ptttDTO.cs" />
+    <Compile Include="GUI\ChucNang\HSBA_PTTT\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChucNang\HSBA_PTTT\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ChucNang\HSBA_PTTT\frmNhapPhieuThucHienPTTT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +230,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DAL\KetNoiSCDLProcess.cs" />
+    <Compile Include="GUI\FormCommon\LoadDataSystems.cs" />
     <Compile Include="GUI\FormCommon\TabCaiDat\ucCauHinhHeThong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -284,6 +292,7 @@
     <Compile Include="GlobalStore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Common.Word\WordMergeTemplateExport.cs" />
     <Compile Include="Utilities\ThongBao\frmThongBao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -306,6 +315,9 @@
     <Compile Include="Utilities\Util_DateTime.cs" />
     <Compile Include="Utilities\Util_NumberConvert.cs" />
     <Compile Include="Utilities\Util_TypeConvertParse.cs" />
+    <EmbeddedResource Include="GUI\ChucNang\HSBA_PTTT\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChucNang\HSBA_PTTT\frmNhapPhieuThucHienPTTT.resx">
       <DependentUpon>frmNhapPhieuThucHienPTTT.cs</DependentUpon>
     </EmbeddedResource>
@@ -394,6 +406,53 @@
     <Content Include="bin\Library\Aspose.Cells.dll" />
     <Content Include="bin\Library\Aspose.Words.dll" />
     <Content Include="medical-records_2.ico" />
+    <None Include="Resources\question-mark-16.png" />
+    <None Include="Resources\add-user-16.png" />
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Catheter TM bẹn.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Catheter TMTT.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Catheter động mạch quay.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Chọc DMP.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Chọc DNT.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Chọc dịch ổ bụng.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Cấp cứu ngừng tuần hoàn.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Dẫn lưu DMP1.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Lọc máu cấp cứu CVVH.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\MKQ.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Rút NKQ.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Thận nhân tạo.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Đặt NKQ mới.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Đặt sonde dạ dày.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Đặt sonde niệu đạo bàng quang.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\delete-2-16.png" />
     <None Include="Resources\arrow-32-16.png" />
     <None Include="Resources\edit-5-161.png" />
@@ -460,7 +519,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Templates\" />
     <Folder Include="Utilities\PrintPreview\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

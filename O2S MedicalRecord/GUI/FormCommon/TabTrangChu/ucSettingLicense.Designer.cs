@@ -40,6 +40,7 @@
             this.btnLicenseKiemTra = new DevExpress.XtraEditors.SimpleButton();
             this.txtKeyKichHoat = new DevExpress.XtraEditors.MemoEdit();
             this.groupBoxTaoLicense = new System.Windows.Forms.GroupBox();
+            this.chkKhongThoiHan = new DevExpress.XtraEditors.CheckEdit();
             this.btnTaoLicenseTao = new DevExpress.XtraEditors.SimpleButton();
             this.btnTaoLicenseCopy = new DevExpress.XtraEditors.SimpleButton();
             this.txtTaoLicenseMaKichHoat = new DevExpress.XtraEditors.MemoEdit();
@@ -52,15 +53,14 @@
             this.txtTaoLicensePassword = new DevExpress.XtraEditors.TextEdit();
             this.txtTaoLicenseMaMay = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.chkKhongThoiHan = new DevExpress.XtraEditors.CheckEdit();
             this.groupBoxLicense.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKeyKichHoat.Properties)).BeginInit();
             this.groupBoxTaoLicense.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkKhongThoiHan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaoLicenseMaKichHoat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaoLicensePassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaoLicenseMaMay.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkKhongThoiHan.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxLicense
@@ -151,9 +151,10 @@
             this.btnLicenseLuu.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnLicenseLuu.Appearance.Options.UseFont = true;
             this.btnLicenseLuu.Appearance.Options.UseForeColor = true;
+            this.btnLicenseLuu.Image = global::O2S_MedicalRecord.Properties.Resources.save_16;
             this.btnLicenseLuu.Location = new System.Drawing.Point(381, 191);
             this.btnLicenseLuu.Name = "btnLicenseLuu";
-            this.btnLicenseLuu.Size = new System.Drawing.Size(100, 23);
+            this.btnLicenseLuu.Size = new System.Drawing.Size(100, 30);
             this.btnLicenseLuu.TabIndex = 17;
             this.btnLicenseLuu.Text = "Lưu";
             this.btnLicenseLuu.Click += new System.EventHandler(this.btnLicenseLuu_Click);
@@ -164,9 +165,10 @@
             this.btnLicenseKiemTra.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnLicenseKiemTra.Appearance.Options.UseFont = true;
             this.btnLicenseKiemTra.Appearance.Options.UseForeColor = true;
+            this.btnLicenseKiemTra.Image = global::O2S_MedicalRecord.Properties.Resources.question_mark_16;
             this.btnLicenseKiemTra.Location = new System.Drawing.Point(216, 191);
             this.btnLicenseKiemTra.Name = "btnLicenseKiemTra";
-            this.btnLicenseKiemTra.Size = new System.Drawing.Size(100, 23);
+            this.btnLicenseKiemTra.Size = new System.Drawing.Size(100, 30);
             this.btnLicenseKiemTra.TabIndex = 16;
             this.btnLicenseKiemTra.Text = "Kiểm tra";
             this.btnLicenseKiemTra.Click += new System.EventHandler(this.btnLicenseKiemTra_Click);
@@ -204,6 +206,19 @@
             this.groupBoxTaoLicense.Text = "Tạo license";
             this.groupBoxTaoLicense.Visible = false;
             // 
+            // chkKhongThoiHan
+            // 
+            this.chkKhongThoiHan.Location = new System.Drawing.Point(720, 106);
+            this.chkKhongThoiHan.Name = "chkKhongThoiHan";
+            this.chkKhongThoiHan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkKhongThoiHan.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.chkKhongThoiHan.Properties.Appearance.Options.UseFont = true;
+            this.chkKhongThoiHan.Properties.Appearance.Options.UseForeColor = true;
+            this.chkKhongThoiHan.Properties.Caption = "Bản quyền không thời hạn";
+            this.chkKhongThoiHan.Size = new System.Drawing.Size(175, 20);
+            this.chkKhongThoiHan.TabIndex = 36;
+            this.chkKhongThoiHan.CheckedChanged += new System.EventHandler(this.chkKhongThoiHan_CheckedChanged);
+            // 
             // btnTaoLicenseTao
             // 
             this.btnTaoLicenseTao.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,9 +226,9 @@
             this.btnTaoLicenseTao.Appearance.Options.UseFont = true;
             this.btnTaoLicenseTao.Appearance.Options.UseForeColor = true;
             this.btnTaoLicenseTao.Image = global::O2S_MedicalRecord.Properties.Resources.arrow_32_16;
-            this.btnTaoLicenseTao.Location = new System.Drawing.Point(291, 153);
+            this.btnTaoLicenseTao.Location = new System.Drawing.Point(291, 148);
             this.btnTaoLicenseTao.Name = "btnTaoLicenseTao";
-            this.btnTaoLicenseTao.Size = new System.Drawing.Size(110, 23);
+            this.btnTaoLicenseTao.Size = new System.Drawing.Size(110, 30);
             this.btnTaoLicenseTao.TabIndex = 35;
             this.btnTaoLicenseTao.Text = "Tạo license";
             this.btnTaoLicenseTao.Click += new System.EventHandler(this.btnTaoLicenseTao_Click);
@@ -338,19 +353,6 @@
             this.labelControl14.TabIndex = 25;
             this.labelControl14.Text = "Mã máy:";
             // 
-            // chkKhongThoiHan
-            // 
-            this.chkKhongThoiHan.Location = new System.Drawing.Point(720, 106);
-            this.chkKhongThoiHan.Name = "chkKhongThoiHan";
-            this.chkKhongThoiHan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkKhongThoiHan.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.chkKhongThoiHan.Properties.Appearance.Options.UseFont = true;
-            this.chkKhongThoiHan.Properties.Appearance.Options.UseForeColor = true;
-            this.chkKhongThoiHan.Properties.Caption = "Bản quyền không thời hạn";
-            this.chkKhongThoiHan.Size = new System.Drawing.Size(175, 20);
-            this.chkKhongThoiHan.TabIndex = 36;
-            this.chkKhongThoiHan.CheckedChanged += new System.EventHandler(this.chkKhongThoiHan_CheckedChanged);
-            // 
             // ucSettingLicense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,10 +368,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtKeyKichHoat.Properties)).EndInit();
             this.groupBoxTaoLicense.ResumeLayout(false);
             this.groupBoxTaoLicense.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkKhongThoiHan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaoLicenseMaKichHoat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaoLicensePassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaoLicenseMaMay.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chkKhongThoiHan.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

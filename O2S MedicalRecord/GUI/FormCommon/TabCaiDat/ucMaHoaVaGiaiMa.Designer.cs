@@ -101,7 +101,7 @@
             this.btnGiaiMa.Appearance.Options.UseForeColor = true;
             this.btnGiaiMa.Location = new System.Drawing.Point(372, 157);
             this.btnGiaiMa.Name = "btnGiaiMa";
-            this.btnGiaiMa.Size = new System.Drawing.Size(100, 23);
+            this.btnGiaiMa.Size = new System.Drawing.Size(100, 30);
             this.btnGiaiMa.TabIndex = 39;
             this.btnGiaiMa.Text = "Giải mã";
             this.btnGiaiMa.Click += new System.EventHandler(this.btnGiaiMa_Click);
@@ -114,7 +114,7 @@
             this.btnMaHoa.Appearance.Options.UseForeColor = true;
             this.btnMaHoa.Location = new System.Drawing.Point(189, 157);
             this.btnMaHoa.Name = "btnMaHoa";
-            this.btnMaHoa.Size = new System.Drawing.Size(100, 23);
+            this.btnMaHoa.Size = new System.Drawing.Size(100, 30);
             this.btnMaHoa.TabIndex = 38;
             this.btnMaHoa.Text = "Mã hóa";
             this.btnMaHoa.Click += new System.EventHandler(this.btnMaHoa_Click);

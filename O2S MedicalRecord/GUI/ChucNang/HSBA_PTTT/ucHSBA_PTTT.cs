@@ -143,11 +143,13 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_PTTT
             {
                 var rowHandle = gridViewChiTietPhieuPTTT.FocusedRowHandle;
                 long servicepriceid = Utilities.Util_TypeConvertParse.ToInt64(gridViewChiTietPhieuPTTT.GetRowCellValue(rowHandle, "servicepriceid").ToString());
+                string servicepricecode = gridViewChiTietPhieuPTTT.GetRowCellValue(rowHandle, "servicepricecode").ToString();
                 long departmentid = Utilities.Util_TypeConvertParse.ToInt64(gridViewChiTietPhieuPTTT.GetRowCellValue(rowHandle, "departmentid").ToString());
 
                 if (this.mecicalrecordCurrentDTO.departmentid == departmentid && (this.mecicalrecordCurrentDTO.medicalrecordstatus==0 ) || this.mecicalrecordCurrentDTO.medicalrecordstatus==2)
                 {
                     this.mecicalrecordCurrentDTO.servicepriceid = servicepriceid;
+                    this.mecicalrecordCurrentDTO.servicepricecode = servicepricecode;
                     this.mecicalrecordCurrentDTO.departmentid = departmentid;
 
                     if (servicepriceid == 1) //da tao phieu nhap PTTT

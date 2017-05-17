@@ -18,7 +18,9 @@ namespace O2S_MedicalRecord.Base
         internal static int SoLuongTabPageChucNang = 5;
         internal static int SoLuongTabPageDashboard = 10;
         internal static string BanQuyenKhongThoiHan = "BanQuyenKhongThoiHan";
-
+        internal static string PhieuPhauThuatThuThuat_Path = "\\Templates\\PhieuPhauThuatThuThuat";
+        internal static string PhieuPhauThuatThuThuat_Path_Tmp = "\\Templates\\PhieuPhauThuatThuThuat_Tmp";
+        internal static string Templates_Path = "\\Templates";
 
 
 

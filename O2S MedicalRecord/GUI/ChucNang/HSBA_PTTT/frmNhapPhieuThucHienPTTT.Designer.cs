@@ -35,7 +35,7 @@
             this.galleryChangeStyleItem1 = new DevExpress.XtraRichEdit.UI.GalleryChangeStyleItem();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel_content = new System.Windows.Forms.Panel();
-            this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
+            this.richEditControlData = new DevExpress.XtraRichEdit.RichEditControl();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.undoItem1 = new DevExpress.XtraRichEdit.UI.UndoItem();
             this.redoItem1 = new DevExpress.XtraRichEdit.UI.RedoItem();
@@ -113,6 +113,35 @@
             this.changeParagraphBackColorItem1 = new DevExpress.XtraRichEdit.UI.ChangeParagraphBackColorItem();
             this.findItem1 = new DevExpress.XtraRichEdit.UI.FindItem();
             this.replaceItem1 = new DevExpress.XtraRichEdit.UI.ReplaceItem();
+            this.changeSectionPageMarginsItem1 = new DevExpress.XtraRichEdit.UI.ChangeSectionPageMarginsItem();
+            this.setNormalSectionPageMarginsItem1 = new DevExpress.XtraRichEdit.UI.SetNormalSectionPageMarginsItem();
+            this.setNarrowSectionPageMarginsItem1 = new DevExpress.XtraRichEdit.UI.SetNarrowSectionPageMarginsItem();
+            this.setModerateSectionPageMarginsItem1 = new DevExpress.XtraRichEdit.UI.SetModerateSectionPageMarginsItem();
+            this.setWideSectionPageMarginsItem1 = new DevExpress.XtraRichEdit.UI.SetWideSectionPageMarginsItem();
+            this.showPageMarginsSetupFormItem1 = new DevExpress.XtraRichEdit.UI.ShowPageMarginsSetupFormItem();
+            this.changeSectionPageOrientationItem1 = new DevExpress.XtraRichEdit.UI.ChangeSectionPageOrientationItem();
+            this.setPortraitPageOrientationItem1 = new DevExpress.XtraRichEdit.UI.SetPortraitPageOrientationItem();
+            this.setLandscapePageOrientationItem1 = new DevExpress.XtraRichEdit.UI.SetLandscapePageOrientationItem();
+            this.changeSectionPaperKindItem1 = new DevExpress.XtraRichEdit.UI.ChangeSectionPaperKindItem();
+            this.changeSectionColumnsItem1 = new DevExpress.XtraRichEdit.UI.ChangeSectionColumnsItem();
+            this.setSectionOneColumnItem1 = new DevExpress.XtraRichEdit.UI.SetSectionOneColumnItem();
+            this.setSectionTwoColumnsItem1 = new DevExpress.XtraRichEdit.UI.SetSectionTwoColumnsItem();
+            this.setSectionThreeColumnsItem1 = new DevExpress.XtraRichEdit.UI.SetSectionThreeColumnsItem();
+            this.showColumnsSetupFormItem1 = new DevExpress.XtraRichEdit.UI.ShowColumnsSetupFormItem();
+            this.insertBreakItem1 = new DevExpress.XtraRichEdit.UI.InsertBreakItem();
+            this.insertPageBreakItem1 = new DevExpress.XtraRichEdit.UI.InsertPageBreakItem();
+            this.insertColumnBreakItem1 = new DevExpress.XtraRichEdit.UI.InsertColumnBreakItem();
+            this.insertSectionBreakNextPageItem1 = new DevExpress.XtraRichEdit.UI.InsertSectionBreakNextPageItem();
+            this.insertSectionBreakEvenPageItem1 = new DevExpress.XtraRichEdit.UI.InsertSectionBreakEvenPageItem();
+            this.insertSectionBreakOddPageItem1 = new DevExpress.XtraRichEdit.UI.InsertSectionBreakOddPageItem();
+            this.changeSectionLineNumberingItem1 = new DevExpress.XtraRichEdit.UI.ChangeSectionLineNumberingItem();
+            this.setSectionLineNumberingNoneItem1 = new DevExpress.XtraRichEdit.UI.SetSectionLineNumberingNoneItem();
+            this.setSectionLineNumberingContinuousItem1 = new DevExpress.XtraRichEdit.UI.SetSectionLineNumberingContinuousItem();
+            this.setSectionLineNumberingRestartNewPageItem1 = new DevExpress.XtraRichEdit.UI.SetSectionLineNumberingRestartNewPageItem();
+            this.setSectionLineNumberingRestartNewSectionItem1 = new DevExpress.XtraRichEdit.UI.SetSectionLineNumberingRestartNewSectionItem();
+            this.toggleParagraphSuppressLineNumbersItem1 = new DevExpress.XtraRichEdit.UI.ToggleParagraphSuppressLineNumbersItem();
+            this.showLineNumberingFormItem1 = new DevExpress.XtraRichEdit.UI.ShowLineNumberingFormItem();
+            this.changePageColorItem1 = new DevExpress.XtraRichEdit.UI.ChangePageColorItem();
             this.fileRibbonPage1 = new DevExpress.XtraRichEdit.UI.FileRibbonPage();
             this.commonRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.CommonRibbonPageGroup();
             this.homeRibbonPage1 = new DevExpress.XtraRichEdit.UI.HomeRibbonPage();
@@ -128,6 +157,9 @@
             this.headerFooterRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.HeaderFooterRibbonPageGroup();
             this.textRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.TextRibbonPageGroup();
             this.symbolsRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.SymbolsRibbonPageGroup();
+            this.pageLayoutRibbonPage1 = new DevExpress.XtraRichEdit.UI.PageLayoutRibbonPage();
+            this.pageSetupRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.PageSetupRibbonPageGroup();
+            this.pageBackgroundRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.PageBackgroundRibbonPageGroup();
             this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController();
             this.panelMain.SuspendLayout();
             this.panel_content.SuspendLayout();
@@ -166,21 +198,21 @@
             // 
             // panel_content
             // 
-            this.panel_content.Controls.Add(this.richEditControl1);
+            this.panel_content.Controls.Add(this.richEditControlData);
             this.panel_content.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_content.Location = new System.Drawing.Point(0, 0);
             this.panel_content.Name = "panel_content";
             this.panel_content.Size = new System.Drawing.Size(1234, 601);
             this.panel_content.TabIndex = 2;
             // 
-            // richEditControl1
+            // richEditControlData
             // 
-            this.richEditControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControl1.Location = new System.Drawing.Point(0, 0);
-            this.richEditControl1.MenuManager = this.ribbonControl1;
-            this.richEditControl1.Name = "richEditControl1";
-            this.richEditControl1.Size = new System.Drawing.Size(1234, 601);
-            this.richEditControl1.TabIndex = 0;
+            this.richEditControlData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richEditControlData.Location = new System.Drawing.Point(0, 0);
+            this.richEditControlData.MenuManager = this.ribbonControl1;
+            this.richEditControlData.Name = "richEditControlData";
+            this.richEditControlData.Size = new System.Drawing.Size(1234, 601);
+            this.richEditControlData.TabIndex = 0;
             // 
             // ribbonControl1
             // 
@@ -261,14 +293,44 @@
             this.changeParagraphBackColorItem1,
             this.galleryChangeStyleItem1,
             this.findItem1,
-            this.replaceItem1});
+            this.replaceItem1,
+            this.changeSectionPageMarginsItem1,
+            this.setNormalSectionPageMarginsItem1,
+            this.setNarrowSectionPageMarginsItem1,
+            this.setModerateSectionPageMarginsItem1,
+            this.setWideSectionPageMarginsItem1,
+            this.showPageMarginsSetupFormItem1,
+            this.changeSectionPageOrientationItem1,
+            this.setPortraitPageOrientationItem1,
+            this.setLandscapePageOrientationItem1,
+            this.changeSectionPaperKindItem1,
+            this.changeSectionColumnsItem1,
+            this.setSectionOneColumnItem1,
+            this.setSectionTwoColumnsItem1,
+            this.setSectionThreeColumnsItem1,
+            this.showColumnsSetupFormItem1,
+            this.insertBreakItem1,
+            this.insertPageBreakItem1,
+            this.insertColumnBreakItem1,
+            this.insertSectionBreakNextPageItem1,
+            this.insertSectionBreakEvenPageItem1,
+            this.insertSectionBreakOddPageItem1,
+            this.changeSectionLineNumberingItem1,
+            this.setSectionLineNumberingNoneItem1,
+            this.setSectionLineNumberingContinuousItem1,
+            this.setSectionLineNumberingRestartNewPageItem1,
+            this.setSectionLineNumberingRestartNewSectionItem1,
+            this.toggleParagraphSuppressLineNumbersItem1,
+            this.showLineNumberingFormItem1,
+            this.changePageColorItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 76;
+            this.ribbonControl1.MaxItemId = 120;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.fileRibbonPage1,
             this.homeRibbonPage1,
-            this.insertRibbonPage1});
+            this.insertRibbonPage1,
+            this.pageLayoutRibbonPage1});
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemFontEdit1,
             this.repositoryItemRichEditFontSizeEdit1});
@@ -298,6 +360,7 @@
             // 
             this.fileSaveItem1.Id = 5;
             this.fileSaveItem1.Name = "fileSaveItem1";
+            this.fileSaveItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.fileSaveItem1_ItemClick);
             // 
             // fileSaveAsItem1
             // 
@@ -406,6 +469,10 @@
             this.barButtonGroup1.ItemLinks.Add(this.changeFontSizeItem1);
             this.barButtonGroup1.ItemLinks.Add(this.fontSizeIncreaseItem1);
             this.barButtonGroup1.ItemLinks.Add(this.fontSizeDecreaseItem1);
+            this.barButtonGroup1.ItemLinks.Add(this.changeFontNameItem1);
+            this.barButtonGroup1.ItemLinks.Add(this.changeFontSizeItem1);
+            this.barButtonGroup1.ItemLinks.Add(this.fontSizeIncreaseItem1);
+            this.barButtonGroup1.ItemLinks.Add(this.fontSizeDecreaseItem1);
             this.barButtonGroup1.Name = "barButtonGroup1";
             this.barButtonGroup1.Tag = "{97BBE334-159B-44d9-A168-0411957565E8}";
             // 
@@ -433,7 +500,7 @@
             this.repositoryItemRichEditFontSizeEdit1.AutoHeight = false;
             this.repositoryItemRichEditFontSizeEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemRichEditFontSizeEdit1.Control = this.richEditControl1;
+            this.repositoryItemRichEditFontSizeEdit1.Control = this.richEditControlData;
             this.repositoryItemRichEditFontSizeEdit1.Name = "repositoryItemRichEditFontSizeEdit1";
             // 
             // fontSizeIncreaseItem1
@@ -449,6 +516,14 @@
             // barButtonGroup2
             // 
             this.barButtonGroup2.Id = 23;
+            this.barButtonGroup2.ItemLinks.Add(this.toggleFontBoldItem1);
+            this.barButtonGroup2.ItemLinks.Add(this.toggleFontItalicItem1);
+            this.barButtonGroup2.ItemLinks.Add(this.toggleFontUnderlineItem1);
+            this.barButtonGroup2.ItemLinks.Add(this.toggleFontDoubleUnderlineItem1);
+            this.barButtonGroup2.ItemLinks.Add(this.toggleFontStrikeoutItem1);
+            this.barButtonGroup2.ItemLinks.Add(this.toggleFontDoubleStrikeoutItem1);
+            this.barButtonGroup2.ItemLinks.Add(this.toggleFontSuperscriptItem1);
+            this.barButtonGroup2.ItemLinks.Add(this.toggleFontSubscriptItem1);
             this.barButtonGroup2.ItemLinks.Add(this.toggleFontBoldItem1);
             this.barButtonGroup2.ItemLinks.Add(this.toggleFontItalicItem1);
             this.barButtonGroup2.ItemLinks.Add(this.toggleFontUnderlineItem1);
@@ -505,6 +580,8 @@
             this.barButtonGroup3.Id = 24;
             this.barButtonGroup3.ItemLinks.Add(this.changeFontColorItem1);
             this.barButtonGroup3.ItemLinks.Add(this.changeFontBackColorItem1);
+            this.barButtonGroup3.ItemLinks.Add(this.changeFontColorItem1);
+            this.barButtonGroup3.ItemLinks.Add(this.changeFontBackColorItem1);
             this.barButtonGroup3.Name = "barButtonGroup3";
             this.barButtonGroup3.Tag = "{DF8C5334-EDE3-47c9-A42C-FE9A9247E180}";
             // 
@@ -559,6 +636,9 @@
             this.barButtonGroup4.ItemLinks.Add(this.toggleBulletedListItem1);
             this.barButtonGroup4.ItemLinks.Add(this.toggleNumberingListItem1);
             this.barButtonGroup4.ItemLinks.Add(this.toggleMultiLevelListItem1);
+            this.barButtonGroup4.ItemLinks.Add(this.toggleBulletedListItem1);
+            this.barButtonGroup4.ItemLinks.Add(this.toggleNumberingListItem1);
+            this.barButtonGroup4.ItemLinks.Add(this.toggleMultiLevelListItem1);
             this.barButtonGroup4.Name = "barButtonGroup4";
             this.barButtonGroup4.Tag = "{0B3A7A43-3079-4ce0-83A8-3789F5F6DC9F}";
             // 
@@ -583,6 +663,9 @@
             this.barButtonGroup5.ItemLinks.Add(this.decreaseIndentItem1);
             this.barButtonGroup5.ItemLinks.Add(this.increaseIndentItem1);
             this.barButtonGroup5.ItemLinks.Add(this.toggleShowWhitespaceItem1);
+            this.barButtonGroup5.ItemLinks.Add(this.decreaseIndentItem1);
+            this.barButtonGroup5.ItemLinks.Add(this.increaseIndentItem1);
+            this.barButtonGroup5.ItemLinks.Add(this.toggleShowWhitespaceItem1);
             this.barButtonGroup5.Name = "barButtonGroup5";
             this.barButtonGroup5.Tag = "{4747D5AB-2BEB-4ea6-9A1D-8E4FB36F1B40}";
             // 
@@ -604,6 +687,10 @@
             // barButtonGroup6
             // 
             this.barButtonGroup6.Id = 27;
+            this.barButtonGroup6.ItemLinks.Add(this.toggleParagraphAlignmentLeftItem1);
+            this.barButtonGroup6.ItemLinks.Add(this.toggleParagraphAlignmentCenterItem1);
+            this.barButtonGroup6.ItemLinks.Add(this.toggleParagraphAlignmentRightItem1);
+            this.barButtonGroup6.ItemLinks.Add(this.toggleParagraphAlignmentJustifyItem1);
             this.barButtonGroup6.ItemLinks.Add(this.toggleParagraphAlignmentLeftItem1);
             this.barButtonGroup6.ItemLinks.Add(this.toggleParagraphAlignmentCenterItem1);
             this.barButtonGroup6.ItemLinks.Add(this.toggleParagraphAlignmentRightItem1);
@@ -634,6 +721,8 @@
             // barButtonGroup7
             // 
             this.barButtonGroup7.Id = 28;
+            this.barButtonGroup7.ItemLinks.Add(this.changeParagraphLineSpacingItem1);
+            this.barButtonGroup7.ItemLinks.Add(this.changeParagraphBackColorItem1);
             this.barButtonGroup7.ItemLinks.Add(this.changeParagraphLineSpacingItem1);
             this.barButtonGroup7.ItemLinks.Add(this.changeParagraphBackColorItem1);
             this.barButtonGroup7.Name = "barButtonGroup7";
@@ -707,6 +796,178 @@
             // 
             this.replaceItem1.Id = 75;
             this.replaceItem1.Name = "replaceItem1";
+            // 
+            // changeSectionPageMarginsItem1
+            // 
+            this.changeSectionPageMarginsItem1.Id = 76;
+            this.changeSectionPageMarginsItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.setNormalSectionPageMarginsItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.setNarrowSectionPageMarginsItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.setModerateSectionPageMarginsItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.setWideSectionPageMarginsItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.showPageMarginsSetupFormItem1, true)});
+            this.changeSectionPageMarginsItem1.Name = "changeSectionPageMarginsItem1";
+            // 
+            // setNormalSectionPageMarginsItem1
+            // 
+            this.setNormalSectionPageMarginsItem1.Id = 77;
+            this.setNormalSectionPageMarginsItem1.Name = "setNormalSectionPageMarginsItem1";
+            // 
+            // setNarrowSectionPageMarginsItem1
+            // 
+            this.setNarrowSectionPageMarginsItem1.Id = 78;
+            this.setNarrowSectionPageMarginsItem1.Name = "setNarrowSectionPageMarginsItem1";
+            // 
+            // setModerateSectionPageMarginsItem1
+            // 
+            this.setModerateSectionPageMarginsItem1.Id = 79;
+            this.setModerateSectionPageMarginsItem1.Name = "setModerateSectionPageMarginsItem1";
+            // 
+            // setWideSectionPageMarginsItem1
+            // 
+            this.setWideSectionPageMarginsItem1.Id = 80;
+            this.setWideSectionPageMarginsItem1.Name = "setWideSectionPageMarginsItem1";
+            // 
+            // showPageMarginsSetupFormItem1
+            // 
+            this.showPageMarginsSetupFormItem1.Id = 81;
+            this.showPageMarginsSetupFormItem1.Name = "showPageMarginsSetupFormItem1";
+            // 
+            // changeSectionPageOrientationItem1
+            // 
+            this.changeSectionPageOrientationItem1.Id = 82;
+            this.changeSectionPageOrientationItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.setPortraitPageOrientationItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.setLandscapePageOrientationItem1)});
+            this.changeSectionPageOrientationItem1.Name = "changeSectionPageOrientationItem1";
+            // 
+            // setPortraitPageOrientationItem1
+            // 
+            this.setPortraitPageOrientationItem1.Id = 83;
+            this.setPortraitPageOrientationItem1.Name = "setPortraitPageOrientationItem1";
+            // 
+            // setLandscapePageOrientationItem1
+            // 
+            this.setLandscapePageOrientationItem1.Id = 84;
+            this.setLandscapePageOrientationItem1.Name = "setLandscapePageOrientationItem1";
+            // 
+            // changeSectionPaperKindItem1
+            // 
+            this.changeSectionPaperKindItem1.Id = 85;
+            this.changeSectionPaperKindItem1.Name = "changeSectionPaperKindItem1";
+            // 
+            // changeSectionColumnsItem1
+            // 
+            this.changeSectionColumnsItem1.Id = 86;
+            this.changeSectionColumnsItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.setSectionOneColumnItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.setSectionTwoColumnsItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.setSectionThreeColumnsItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.showColumnsSetupFormItem1, true)});
+            this.changeSectionColumnsItem1.Name = "changeSectionColumnsItem1";
+            // 
+            // setSectionOneColumnItem1
+            // 
+            this.setSectionOneColumnItem1.Id = 87;
+            this.setSectionOneColumnItem1.Name = "setSectionOneColumnItem1";
+            // 
+            // setSectionTwoColumnsItem1
+            // 
+            this.setSectionTwoColumnsItem1.Id = 88;
+            this.setSectionTwoColumnsItem1.Name = "setSectionTwoColumnsItem1";
+            // 
+            // setSectionThreeColumnsItem1
+            // 
+            this.setSectionThreeColumnsItem1.Id = 89;
+            this.setSectionThreeColumnsItem1.Name = "setSectionThreeColumnsItem1";
+            // 
+            // showColumnsSetupFormItem1
+            // 
+            this.showColumnsSetupFormItem1.Id = 90;
+            this.showColumnsSetupFormItem1.Name = "showColumnsSetupFormItem1";
+            // 
+            // insertBreakItem1
+            // 
+            this.insertBreakItem1.Id = 91;
+            this.insertBreakItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.insertPageBreakItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.insertColumnBreakItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.insertSectionBreakNextPageItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.insertSectionBreakEvenPageItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.insertSectionBreakOddPageItem1)});
+            this.insertBreakItem1.Name = "insertBreakItem1";
+            // 
+            // insertPageBreakItem1
+            // 
+            this.insertPageBreakItem1.Id = 92;
+            this.insertPageBreakItem1.Name = "insertPageBreakItem1";
+            // 
+            // insertColumnBreakItem1
+            // 
+            this.insertColumnBreakItem1.Id = 93;
+            this.insertColumnBreakItem1.Name = "insertColumnBreakItem1";
+            // 
+            // insertSectionBreakNextPageItem1
+            // 
+            this.insertSectionBreakNextPageItem1.Id = 94;
+            this.insertSectionBreakNextPageItem1.Name = "insertSectionBreakNextPageItem1";
+            // 
+            // insertSectionBreakEvenPageItem1
+            // 
+            this.insertSectionBreakEvenPageItem1.Id = 95;
+            this.insertSectionBreakEvenPageItem1.Name = "insertSectionBreakEvenPageItem1";
+            // 
+            // insertSectionBreakOddPageItem1
+            // 
+            this.insertSectionBreakOddPageItem1.Id = 96;
+            this.insertSectionBreakOddPageItem1.Name = "insertSectionBreakOddPageItem1";
+            // 
+            // changeSectionLineNumberingItem1
+            // 
+            this.changeSectionLineNumberingItem1.Id = 97;
+            this.changeSectionLineNumberingItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.setSectionLineNumberingNoneItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.setSectionLineNumberingContinuousItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.setSectionLineNumberingRestartNewPageItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.setSectionLineNumberingRestartNewSectionItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.toggleParagraphSuppressLineNumbersItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.showLineNumberingFormItem1, true)});
+            this.changeSectionLineNumberingItem1.Name = "changeSectionLineNumberingItem1";
+            // 
+            // setSectionLineNumberingNoneItem1
+            // 
+            this.setSectionLineNumberingNoneItem1.Id = 98;
+            this.setSectionLineNumberingNoneItem1.Name = "setSectionLineNumberingNoneItem1";
+            // 
+            // setSectionLineNumberingContinuousItem1
+            // 
+            this.setSectionLineNumberingContinuousItem1.Id = 99;
+            this.setSectionLineNumberingContinuousItem1.Name = "setSectionLineNumberingContinuousItem1";
+            // 
+            // setSectionLineNumberingRestartNewPageItem1
+            // 
+            this.setSectionLineNumberingRestartNewPageItem1.Id = 100;
+            this.setSectionLineNumberingRestartNewPageItem1.Name = "setSectionLineNumberingRestartNewPageItem1";
+            // 
+            // setSectionLineNumberingRestartNewSectionItem1
+            // 
+            this.setSectionLineNumberingRestartNewSectionItem1.Id = 101;
+            this.setSectionLineNumberingRestartNewSectionItem1.Name = "setSectionLineNumberingRestartNewSectionItem1";
+            // 
+            // toggleParagraphSuppressLineNumbersItem1
+            // 
+            this.toggleParagraphSuppressLineNumbersItem1.Id = 102;
+            this.toggleParagraphSuppressLineNumbersItem1.Name = "toggleParagraphSuppressLineNumbersItem1";
+            // 
+            // showLineNumberingFormItem1
+            // 
+            this.showLineNumberingFormItem1.Id = 103;
+            this.showLineNumberingFormItem1.Name = "showLineNumberingFormItem1";
+            // 
+            // changePageColorItem1
+            // 
+            this.changePageColorItem1.Id = 104;
+            this.changePageColorItem1.Name = "changePageColorItem1";
             // 
             // fileRibbonPage1
             // 
@@ -830,6 +1091,29 @@
             this.symbolsRibbonPageGroup1.ItemLinks.Add(this.insertSymbolItem1);
             this.symbolsRibbonPageGroup1.Name = "symbolsRibbonPageGroup1";
             // 
+            // pageLayoutRibbonPage1
+            // 
+            this.pageLayoutRibbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.pageSetupRibbonPageGroup1,
+            this.pageBackgroundRibbonPageGroup1});
+            this.pageLayoutRibbonPage1.Name = "pageLayoutRibbonPage1";
+            // 
+            // pageSetupRibbonPageGroup1
+            // 
+            this.pageSetupRibbonPageGroup1.ItemLinks.Add(this.changeSectionPageMarginsItem1);
+            this.pageSetupRibbonPageGroup1.ItemLinks.Add(this.changeSectionPageOrientationItem1);
+            this.pageSetupRibbonPageGroup1.ItemLinks.Add(this.changeSectionPaperKindItem1);
+            this.pageSetupRibbonPageGroup1.ItemLinks.Add(this.changeSectionColumnsItem1);
+            this.pageSetupRibbonPageGroup1.ItemLinks.Add(this.insertBreakItem1);
+            this.pageSetupRibbonPageGroup1.ItemLinks.Add(this.changeSectionLineNumberingItem1);
+            this.pageSetupRibbonPageGroup1.Name = "pageSetupRibbonPageGroup1";
+            // 
+            // pageBackgroundRibbonPageGroup1
+            // 
+            this.pageBackgroundRibbonPageGroup1.AllowTextClipping = false;
+            this.pageBackgroundRibbonPageGroup1.ItemLinks.Add(this.changePageColorItem1);
+            this.pageBackgroundRibbonPageGroup1.Name = "pageBackgroundRibbonPageGroup1";
+            // 
             // richEditBarController1
             // 
             this.richEditBarController1.BarItems.Add(this.undoItem1);
@@ -900,7 +1184,36 @@
             this.richEditBarController1.BarItems.Add(this.galleryChangeStyleItem1);
             this.richEditBarController1.BarItems.Add(this.findItem1);
             this.richEditBarController1.BarItems.Add(this.replaceItem1);
-            this.richEditBarController1.Control = this.richEditControl1;
+            this.richEditBarController1.BarItems.Add(this.changeSectionPageMarginsItem1);
+            this.richEditBarController1.BarItems.Add(this.setNormalSectionPageMarginsItem1);
+            this.richEditBarController1.BarItems.Add(this.setNarrowSectionPageMarginsItem1);
+            this.richEditBarController1.BarItems.Add(this.setModerateSectionPageMarginsItem1);
+            this.richEditBarController1.BarItems.Add(this.setWideSectionPageMarginsItem1);
+            this.richEditBarController1.BarItems.Add(this.showPageMarginsSetupFormItem1);
+            this.richEditBarController1.BarItems.Add(this.changeSectionPageOrientationItem1);
+            this.richEditBarController1.BarItems.Add(this.setPortraitPageOrientationItem1);
+            this.richEditBarController1.BarItems.Add(this.setLandscapePageOrientationItem1);
+            this.richEditBarController1.BarItems.Add(this.changeSectionPaperKindItem1);
+            this.richEditBarController1.BarItems.Add(this.changeSectionColumnsItem1);
+            this.richEditBarController1.BarItems.Add(this.setSectionOneColumnItem1);
+            this.richEditBarController1.BarItems.Add(this.setSectionTwoColumnsItem1);
+            this.richEditBarController1.BarItems.Add(this.setSectionThreeColumnsItem1);
+            this.richEditBarController1.BarItems.Add(this.showColumnsSetupFormItem1);
+            this.richEditBarController1.BarItems.Add(this.insertBreakItem1);
+            this.richEditBarController1.BarItems.Add(this.insertPageBreakItem1);
+            this.richEditBarController1.BarItems.Add(this.insertColumnBreakItem1);
+            this.richEditBarController1.BarItems.Add(this.insertSectionBreakNextPageItem1);
+            this.richEditBarController1.BarItems.Add(this.insertSectionBreakEvenPageItem1);
+            this.richEditBarController1.BarItems.Add(this.insertSectionBreakOddPageItem1);
+            this.richEditBarController1.BarItems.Add(this.changeSectionLineNumberingItem1);
+            this.richEditBarController1.BarItems.Add(this.setSectionLineNumberingNoneItem1);
+            this.richEditBarController1.BarItems.Add(this.setSectionLineNumberingContinuousItem1);
+            this.richEditBarController1.BarItems.Add(this.setSectionLineNumberingRestartNewPageItem1);
+            this.richEditBarController1.BarItems.Add(this.setSectionLineNumberingRestartNewSectionItem1);
+            this.richEditBarController1.BarItems.Add(this.toggleParagraphSuppressLineNumbersItem1);
+            this.richEditBarController1.BarItems.Add(this.showLineNumberingFormItem1);
+            this.richEditBarController1.BarItems.Add(this.changePageColorItem1);
+            this.richEditBarController1.Control = this.richEditControlData;
             // 
             // frmNhapPhieuThucHienPTTT
             // 
@@ -912,6 +1225,7 @@
             this.Name = "frmNhapPhieuThucHienPTTT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập phiếu Phẫu thuật thủ thuật";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmNhapPhieuThucHienPTTT_Load);
             this.panelMain.ResumeLayout(false);
             this.panel_content.ResumeLayout(false);
@@ -928,7 +1242,7 @@
 
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panel_content;
-        private DevExpress.XtraRichEdit.RichEditControl richEditControl1;
+        private DevExpress.XtraRichEdit.RichEditControl richEditControlData;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraRichEdit.UI.UndoItem undoItem1;
         private DevExpress.XtraRichEdit.UI.RedoItem redoItem1;
@@ -1024,5 +1338,37 @@
         private DevExpress.XtraRichEdit.UI.TextRibbonPageGroup textRibbonPageGroup1;
         private DevExpress.XtraRichEdit.UI.SymbolsRibbonPageGroup symbolsRibbonPageGroup1;
         private DevExpress.XtraRichEdit.UI.RichEditBarController richEditBarController1;
+        private DevExpress.XtraRichEdit.UI.ChangeSectionPageMarginsItem changeSectionPageMarginsItem1;
+        private DevExpress.XtraRichEdit.UI.SetNormalSectionPageMarginsItem setNormalSectionPageMarginsItem1;
+        private DevExpress.XtraRichEdit.UI.SetNarrowSectionPageMarginsItem setNarrowSectionPageMarginsItem1;
+        private DevExpress.XtraRichEdit.UI.SetModerateSectionPageMarginsItem setModerateSectionPageMarginsItem1;
+        private DevExpress.XtraRichEdit.UI.SetWideSectionPageMarginsItem setWideSectionPageMarginsItem1;
+        private DevExpress.XtraRichEdit.UI.ShowPageMarginsSetupFormItem showPageMarginsSetupFormItem1;
+        private DevExpress.XtraRichEdit.UI.ChangeSectionPageOrientationItem changeSectionPageOrientationItem1;
+        private DevExpress.XtraRichEdit.UI.SetPortraitPageOrientationItem setPortraitPageOrientationItem1;
+        private DevExpress.XtraRichEdit.UI.SetLandscapePageOrientationItem setLandscapePageOrientationItem1;
+        private DevExpress.XtraRichEdit.UI.ChangeSectionPaperKindItem changeSectionPaperKindItem1;
+        private DevExpress.XtraRichEdit.UI.ChangeSectionColumnsItem changeSectionColumnsItem1;
+        private DevExpress.XtraRichEdit.UI.SetSectionOneColumnItem setSectionOneColumnItem1;
+        private DevExpress.XtraRichEdit.UI.SetSectionTwoColumnsItem setSectionTwoColumnsItem1;
+        private DevExpress.XtraRichEdit.UI.SetSectionThreeColumnsItem setSectionThreeColumnsItem1;
+        private DevExpress.XtraRichEdit.UI.ShowColumnsSetupFormItem showColumnsSetupFormItem1;
+        private DevExpress.XtraRichEdit.UI.InsertBreakItem insertBreakItem1;
+        private DevExpress.XtraRichEdit.UI.InsertPageBreakItem insertPageBreakItem1;
+        private DevExpress.XtraRichEdit.UI.InsertColumnBreakItem insertColumnBreakItem1;
+        private DevExpress.XtraRichEdit.UI.InsertSectionBreakNextPageItem insertSectionBreakNextPageItem1;
+        private DevExpress.XtraRichEdit.UI.InsertSectionBreakEvenPageItem insertSectionBreakEvenPageItem1;
+        private DevExpress.XtraRichEdit.UI.InsertSectionBreakOddPageItem insertSectionBreakOddPageItem1;
+        private DevExpress.XtraRichEdit.UI.ChangeSectionLineNumberingItem changeSectionLineNumberingItem1;
+        private DevExpress.XtraRichEdit.UI.SetSectionLineNumberingNoneItem setSectionLineNumberingNoneItem1;
+        private DevExpress.XtraRichEdit.UI.SetSectionLineNumberingContinuousItem setSectionLineNumberingContinuousItem1;
+        private DevExpress.XtraRichEdit.UI.SetSectionLineNumberingRestartNewPageItem setSectionLineNumberingRestartNewPageItem1;
+        private DevExpress.XtraRichEdit.UI.SetSectionLineNumberingRestartNewSectionItem setSectionLineNumberingRestartNewSectionItem1;
+        private DevExpress.XtraRichEdit.UI.ToggleParagraphSuppressLineNumbersItem toggleParagraphSuppressLineNumbersItem1;
+        private DevExpress.XtraRichEdit.UI.ShowLineNumberingFormItem showLineNumberingFormItem1;
+        private DevExpress.XtraRichEdit.UI.ChangePageColorItem changePageColorItem1;
+        private DevExpress.XtraRichEdit.UI.PageLayoutRibbonPage pageLayoutRibbonPage1;
+        private DevExpress.XtraRichEdit.UI.PageSetupRibbonPageGroup pageSetupRibbonPageGroup1;
+        private DevExpress.XtraRichEdit.UI.PageBackgroundRibbonPageGroup pageBackgroundRibbonPageGroup1;
     }
 }

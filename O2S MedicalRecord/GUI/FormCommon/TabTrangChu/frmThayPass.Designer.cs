@@ -117,7 +117,7 @@
             this.btnThayDoi.Image = global::O2S_MedicalRecord.Properties.Resources.save_16;
             this.btnThayDoi.Location = new System.Drawing.Point(161, 210);
             this.btnThayDoi.Name = "btnThayDoi";
-            this.btnThayDoi.Size = new System.Drawing.Size(100, 40);
+            this.btnThayDoi.Size = new System.Drawing.Size(100, 30);
             this.btnThayDoi.TabIndex = 6;
             this.btnThayDoi.Text = "Lưu";
             this.btnThayDoi.Click += new System.EventHandler(this.simpleButton1_Click);

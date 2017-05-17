@@ -66,13 +66,13 @@
             this.navBarItemListNguoiDung = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemListNhanVien = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemListOption = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemListDVPTTT = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemMaHoaGiaiMa = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemNhatKySuKien = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemQLMayTram = new DevExpress.XtraNavBar.NavBarItem();
             this.panelCaiDatChiTiet = new DevExpress.XtraEditors.PanelControl();
             this.timerThongBao = new System.Windows.Forms.Timer(this.components);
-            this.navBarItemListDVPTTT = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlHome)).BeginInit();
             this.xtraTabControlHome.SuspendLayout();
             this.xtraTabTTCoBan.SuspendLayout();
@@ -563,6 +563,22 @@
             this.navBarItemListOption.Name = "navBarItemListOption";
             this.navBarItemListOption.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemListOption_LinkClicked);
             // 
+            // navBarItemListDVPTTT
+            // 
+            this.navBarItemListDVPTTT.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.navBarItemListDVPTTT.Appearance.Options.UseFont = true;
+            this.navBarItemListDVPTTT.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.navBarItemListDVPTTT.AppearanceDisabled.Options.UseFont = true;
+            this.navBarItemListDVPTTT.AppearanceHotTracked.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarItemListDVPTTT.AppearanceHotTracked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.navBarItemListDVPTTT.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItemListDVPTTT.AppearanceHotTracked.Options.UseForeColor = true;
+            this.navBarItemListDVPTTT.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.navBarItemListDVPTTT.AppearancePressed.Options.UseFont = true;
+            this.navBarItemListDVPTTT.Caption = "Danh mục dịch vụ PTTT";
+            this.navBarItemListDVPTTT.Name = "navBarItemListDVPTTT";
+            this.navBarItemListDVPTTT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemListDVPTTT_LinkClicked);
+            // 
             // navBarGroup3
             // 
             this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -637,22 +653,6 @@
             // 
             this.timerThongBao.Interval = 2000;
             this.timerThongBao.Tick += new System.EventHandler(this.timerThongBao_Tick);
-            // 
-            // navBarItemListDVPTTT
-            // 
-            this.navBarItemListDVPTTT.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.navBarItemListDVPTTT.Appearance.Options.UseFont = true;
-            this.navBarItemListDVPTTT.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.navBarItemListDVPTTT.AppearanceDisabled.Options.UseFont = true;
-            this.navBarItemListDVPTTT.AppearanceHotTracked.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarItemListDVPTTT.AppearanceHotTracked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.navBarItemListDVPTTT.AppearanceHotTracked.Options.UseFont = true;
-            this.navBarItemListDVPTTT.AppearanceHotTracked.Options.UseForeColor = true;
-            this.navBarItemListDVPTTT.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.navBarItemListDVPTTT.AppearancePressed.Options.UseFont = true;
-            this.navBarItemListDVPTTT.Caption = "Danh mục dịch vụ PTTT";
-            this.navBarItemListDVPTTT.Name = "navBarItemListDVPTTT";
-            this.navBarItemListDVPTTT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemListDVPTTT_LinkClicked);
             // 
             // ucTrangChu
             // 

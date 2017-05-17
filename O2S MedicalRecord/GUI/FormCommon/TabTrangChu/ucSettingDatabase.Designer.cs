@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBoxDatabase = new System.Windows.Forms.GroupBox();
-            this.btnDBUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.txtDBPort = new DevExpress.XtraEditors.TextEdit();
             this.txtDBName = new DevExpress.XtraEditors.TextEdit();
             this.txtDBPass = new DevExpress.XtraEditors.TextEdit();
@@ -40,6 +39,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.btnDBUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.btnDBLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnDBKiemTra = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -86,19 +86,6 @@
             this.groupBoxDatabase.TabIndex = 16;
             this.groupBoxDatabase.TabStop = false;
             this.groupBoxDatabase.Text = "Chi tiết database HIS";
-            // 
-            // btnDBUpdate
-            // 
-            this.btnDBUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDBUpdate.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnDBUpdate.Appearance.Options.UseFont = true;
-            this.btnDBUpdate.Appearance.Options.UseForeColor = true;
-            this.btnDBUpdate.Location = new System.Drawing.Point(439, 389);
-            this.btnDBUpdate.Name = "btnDBUpdate";
-            this.btnDBUpdate.Size = new System.Drawing.Size(100, 23);
-            this.btnDBUpdate.TabIndex = 30;
-            this.btnDBUpdate.Text = "Update DB";
-            this.btnDBUpdate.Click += new System.EventHandler(this.btnDBUpdate_Click);
             // 
             // txtDBPort
             // 
@@ -203,15 +190,30 @@
             this.labelControl1.TabIndex = 18;
             this.labelControl1.Text = "Port";
             // 
+            // btnDBUpdate
+            // 
+            this.btnDBUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDBUpdate.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnDBUpdate.Appearance.Options.UseFont = true;
+            this.btnDBUpdate.Appearance.Options.UseForeColor = true;
+            this.btnDBUpdate.Image = global::O2S_MedicalRecord.Properties.Resources.sinchronize_16;
+            this.btnDBUpdate.Location = new System.Drawing.Point(439, 389);
+            this.btnDBUpdate.Name = "btnDBUpdate";
+            this.btnDBUpdate.Size = new System.Drawing.Size(100, 30);
+            this.btnDBUpdate.TabIndex = 30;
+            this.btnDBUpdate.Text = "Update DB";
+            this.btnDBUpdate.Click += new System.EventHandler(this.btnDBUpdate_Click);
+            // 
             // btnDBLuu
             // 
             this.btnDBLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDBLuu.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnDBLuu.Appearance.Options.UseFont = true;
             this.btnDBLuu.Appearance.Options.UseForeColor = true;
+            this.btnDBLuu.Image = global::O2S_MedicalRecord.Properties.Resources.save_16;
             this.btnDBLuu.Location = new System.Drawing.Point(286, 389);
             this.btnDBLuu.Name = "btnDBLuu";
-            this.btnDBLuu.Size = new System.Drawing.Size(100, 23);
+            this.btnDBLuu.Size = new System.Drawing.Size(100, 30);
             this.btnDBLuu.TabIndex = 17;
             this.btnDBLuu.Text = "Lưu";
             this.btnDBLuu.Click += new System.EventHandler(this.btnDBLuu_Click);
@@ -222,9 +224,10 @@
             this.btnDBKiemTra.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnDBKiemTra.Appearance.Options.UseFont = true;
             this.btnDBKiemTra.Appearance.Options.UseForeColor = true;
+            this.btnDBKiemTra.Image = global::O2S_MedicalRecord.Properties.Resources.question_mark_16;
             this.btnDBKiemTra.Location = new System.Drawing.Point(117, 389);
             this.btnDBKiemTra.Name = "btnDBKiemTra";
-            this.btnDBKiemTra.Size = new System.Drawing.Size(100, 23);
+            this.btnDBKiemTra.Size = new System.Drawing.Size(100, 30);
             this.btnDBKiemTra.TabIndex = 16;
             this.btnDBKiemTra.Text = "Kiểm tra";
             this.btnDBKiemTra.Click += new System.EventHandler(this.btnDBKiemTra_Click);

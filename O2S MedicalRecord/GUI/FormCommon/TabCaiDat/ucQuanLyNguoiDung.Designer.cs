@@ -324,10 +324,10 @@
             this.btnUserThem.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnUserThem.Appearance.Options.UseFont = true;
             this.btnUserThem.Appearance.Options.UseForeColor = true;
-            this.btnUserThem.Image = ((System.Drawing.Image)(resources.GetObject("btnUserThem.Image")));
-            this.btnUserThem.Location = new System.Drawing.Point(18, 22);
+            this.btnUserThem.Image = global::O2S_MedicalRecord.Properties.Resources.add_user_16;
+            this.btnUserThem.Location = new System.Drawing.Point(18, 28);
             this.btnUserThem.Name = "btnUserThem";
-            this.btnUserThem.Size = new System.Drawing.Size(100, 40);
+            this.btnUserThem.Size = new System.Drawing.Size(100, 30);
             this.btnUserThem.TabIndex = 5;
             this.btnUserThem.Text = "Thêm";
             this.btnUserThem.Click += new System.EventHandler(this.btnUserThem_Click);
@@ -385,9 +385,9 @@
             this.btnUserOK.Appearance.Options.UseFont = true;
             this.btnUserOK.Appearance.Options.UseForeColor = true;
             this.btnUserOK.Image = global::O2S_MedicalRecord.Properties.Resources.checkmark_16;
-            this.btnUserOK.Location = new System.Drawing.Point(706, 23);
+            this.btnUserOK.Location = new System.Drawing.Point(707, 27);
             this.btnUserOK.Name = "btnUserOK";
-            this.btnUserOK.Size = new System.Drawing.Size(100, 40);
+            this.btnUserOK.Size = new System.Drawing.Size(100, 30);
             this.btnUserOK.TabIndex = 8;
             this.btnUserOK.Text = "OK";
             this.btnUserOK.Click += new System.EventHandler(this.btnUserOK_Click);

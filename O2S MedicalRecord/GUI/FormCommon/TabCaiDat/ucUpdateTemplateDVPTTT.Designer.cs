@@ -65,16 +65,17 @@
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnSua = new DevExpress.XtraEditors.SimpleButton();
             this.panelControlData = new DevExpress.XtraEditors.PanelControl();
-            this.gridControlDMDichVu = new DevExpress.XtraGrid.GridControl();
-            this.gridViewDMDichVu = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.treeListDSDichVu = new DevExpress.XtraTreeList.TreeList();
+            this.mrd_servicerefid = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.servicepricecode = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.servicepricename = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.servicepriceunit = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.servicepricefeebhyt = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.servicepricefeenhandan = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.mrd_templatename = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.openFileDialogSelect = new System.Windows.Forms.OpenFileDialog();
+            this.dropDownImportExport = new DevExpress.XtraEditors.DropDownButton();
+            this.openFileDialogImport = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlThongTinDV)).BeginInit();
             this.panelControlThongTinDV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkDaKhoa.Properties)).BeginInit();
@@ -86,12 +87,12 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlData)).BeginInit();
             this.panelControlData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlDMDichVu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewDMDichVu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListDSDichVu)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlThongTinDV
             // 
+            this.panelControlThongTinDV.Controls.Add(this.dropDownImportExport);
             this.panelControlThongTinDV.Controls.Add(this.chkDaKhoa);
             this.panelControlThongTinDV.Controls.Add(this.btnTimKiem);
             this.panelControlThongTinDV.Controls.Add(this.radioXetNghiem);
@@ -106,7 +107,7 @@
             // 
             // chkDaKhoa
             // 
-            this.chkDaKhoa.Location = new System.Drawing.Point(550, 19);
+            this.chkDaKhoa.Location = new System.Drawing.Point(495, 19);
             this.chkDaKhoa.Name = "chkDaKhoa";
             this.chkDaKhoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.chkDaKhoa.Properties.Appearance.Options.UseFont = true;
@@ -121,7 +122,7 @@
             this.btnTimKiem.Appearance.Options.UseFont = true;
             this.btnTimKiem.Appearance.Options.UseForeColor = true;
             this.btnTimKiem.Image = global::O2S_MedicalRecord.Properties.Resources.search_3_16;
-            this.btnTimKiem.Location = new System.Drawing.Point(930, 16);
+            this.btnTimKiem.Location = new System.Drawing.Point(764, 17);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 30);
             this.btnTimKiem.TabIndex = 5;
@@ -505,178 +506,201 @@
             // 
             // panelControlData
             // 
-            this.panelControlData.Controls.Add(this.gridControlDMDichVu);
+            this.panelControlData.Controls.Add(this.treeListDSDichVu);
             this.panelControlData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlData.Location = new System.Drawing.Point(0, 62);
             this.panelControlData.Name = "panelControlData";
             this.panelControlData.Size = new System.Drawing.Size(507, 551);
             this.panelControlData.TabIndex = 7;
             // 
-            // gridControlDMDichVu
+            // treeListDSDichVu
             // 
-            this.gridControlDMDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDMDichVu.Location = new System.Drawing.Point(2, 2);
-            this.gridControlDMDichVu.MainView = this.gridViewDMDichVu;
-            this.gridControlDMDichVu.Name = "gridControlDMDichVu";
-            this.gridControlDMDichVu.Size = new System.Drawing.Size(503, 547);
-            this.gridControlDMDichVu.TabIndex = 0;
-            this.gridControlDMDichVu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewDMDichVu});
-            this.gridControlDMDichVu.Click += new System.EventHandler(this.gridControlDMDichVu_Click);
+            this.treeListDSDichVu.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListDSDichVu.Appearance.Row.Options.UseFont = true;
+            this.treeListDSDichVu.CaptionHeight = 25;
+            this.treeListDSDichVu.ColumnPanelRowHeight = 25;
+            this.treeListDSDichVu.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.mrd_servicerefid,
+            this.servicepricecode,
+            this.servicepricename,
+            this.servicepriceunit,
+            this.servicepricefeebhyt,
+            this.servicepricefeenhandan,
+            this.mrd_templatename});
+            this.treeListDSDichVu.Cursor = System.Windows.Forms.Cursors.Default;
+            this.treeListDSDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeListDSDichVu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeListDSDichVu.Location = new System.Drawing.Point(2, 2);
+            this.treeListDSDichVu.Name = "treeListDSDichVu";
+            this.treeListDSDichVu.OptionsBehavior.PopulateServiceColumns = true;
+            this.treeListDSDichVu.OptionsFind.AllowFindPanel = true;
+            this.treeListDSDichVu.OptionsFind.AlwaysVisible = true;
+            this.treeListDSDichVu.OptionsFind.FindNullPrompt = "Từ khóa tìm kiếm...";
+            this.treeListDSDichVu.OptionsFind.ShowClearButton = false;
+            this.treeListDSDichVu.OptionsView.AutoWidth = false;
+            this.treeListDSDichVu.OptionsView.ShowIndicator = false;
+            this.treeListDSDichVu.RowHeight = 25;
+            this.treeListDSDichVu.Size = new System.Drawing.Size(503, 547);
+            this.treeListDSDichVu.TabIndex = 0;
+            this.treeListDSDichVu.TreeLevelWidth = 25;
+            this.treeListDSDichVu.NodeCellStyle += new DevExpress.XtraTreeList.GetCustomNodeCellStyleEventHandler(this.treeListDSDichVu_NodeCellStyle);
+            this.treeListDSDichVu.Click += new System.EventHandler(this.treeListDSDichVu_Click);
             // 
-            // gridViewDMDichVu
+            // mrd_servicerefid
             // 
-            this.gridViewDMDichVu.ColumnPanelRowHeight = 25;
-            this.gridViewDMDichVu.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn7,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn6,
-            this.gridColumn4,
-            this.gridColumn5});
-            this.gridViewDMDichVu.GridControl = this.gridControlDMDichVu;
-            this.gridViewDMDichVu.Name = "gridViewDMDichVu";
-            this.gridViewDMDichVu.OptionsFind.AlwaysVisible = true;
-            this.gridViewDMDichVu.OptionsFind.FindNullPrompt = "Từ khóa tìm kiếm...";
-            this.gridViewDMDichVu.OptionsFind.ShowClearButton = false;
-            this.gridViewDMDichVu.OptionsView.ColumnAutoWidth = false;
-            this.gridViewDMDichVu.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridViewDMDichVu.OptionsView.ShowGroupPanel = false;
-            this.gridViewDMDichVu.OptionsView.ShowIndicator = false;
-            this.gridViewDMDichVu.RowHeight = 25;
+            this.mrd_servicerefid.Caption = "treeListColumn1";
+            this.mrd_servicerefid.FieldName = "mrd_servicerefid";
+            this.mrd_servicerefid.Name = "mrd_servicerefid";
+            this.mrd_servicerefid.OptionsColumn.AllowEdit = false;
             // 
-            // gridColumn7
+            // servicepricecode
             // 
-            this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn7.AppearanceCell.Options.UseFont = true;
-            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn7.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn7.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn7.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn7.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.Caption = "STT";
-            this.gridColumn7.FieldName = "stt";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.AllowEdit = false;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 0;
-            this.gridColumn7.Width = 35;
+            this.servicepricecode.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicepricecode.AppearanceCell.Options.UseFont = true;
+            this.servicepricecode.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicepricecode.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.servicepricecode.AppearanceHeader.Options.UseFont = true;
+            this.servicepricecode.AppearanceHeader.Options.UseForeColor = true;
+            this.servicepricecode.AppearanceHeader.Options.UseTextOptions = true;
+            this.servicepricecode.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.servicepricecode.Caption = "Mã dịch vụ";
+            this.servicepricecode.FieldName = "servicepricecode";
+            this.servicepricecode.Name = "servicepricecode";
+            this.servicepricecode.OptionsColumn.AllowEdit = false;
+            this.servicepricecode.Visible = true;
+            this.servicepricecode.VisibleIndex = 0;
+            this.servicepricecode.Width = 120;
             // 
-            // gridColumn1
+            // servicepricename
             // 
-            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn1.AppearanceCell.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn1.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "Nhóm";
-            this.gridColumn1.FieldName = "servicepricegroupcode";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 78;
+            this.servicepricename.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicepricename.AppearanceCell.Options.UseFont = true;
+            this.servicepricename.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicepricename.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.servicepricename.AppearanceHeader.Options.UseFont = true;
+            this.servicepricename.AppearanceHeader.Options.UseForeColor = true;
+            this.servicepricename.AppearanceHeader.Options.UseTextOptions = true;
+            this.servicepricename.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.servicepricename.Caption = "Tên dịch vụ";
+            this.servicepricename.FieldName = "servicepricename";
+            this.servicepricename.Name = "servicepricename";
+            this.servicepricename.OptionsColumn.AllowEdit = false;
+            this.servicepricename.Visible = true;
+            this.servicepricename.VisibleIndex = 1;
+            this.servicepricename.Width = 303;
             // 
-            // gridColumn2
+            // servicepriceunit
             // 
-            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn2.AppearanceCell.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn2.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "Mã dịch vụ";
-            this.gridColumn2.FieldName = "servicepricecode";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 95;
+            this.servicepriceunit.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicepriceunit.AppearanceCell.Options.UseFont = true;
+            this.servicepriceunit.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicepriceunit.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.servicepriceunit.AppearanceHeader.Options.UseFont = true;
+            this.servicepriceunit.AppearanceHeader.Options.UseForeColor = true;
+            this.servicepriceunit.AppearanceHeader.Options.UseTextOptions = true;
+            this.servicepriceunit.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.servicepriceunit.Caption = "ĐVT";
+            this.servicepriceunit.FieldName = "servicepriceunit";
+            this.servicepriceunit.Name = "servicepriceunit";
+            this.servicepriceunit.OptionsColumn.AllowEdit = false;
+            this.servicepriceunit.Visible = true;
+            this.servicepriceunit.VisibleIndex = 2;
+            this.servicepriceunit.Width = 70;
             // 
-            // gridColumn3
+            // servicepricefeebhyt
             // 
-            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn3.AppearanceCell.Options.UseFont = true;
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn3.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn3.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "Tên dịch vụ";
-            this.gridColumn3.FieldName = "servicepricenamenhandan";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 400;
+            this.servicepricefeebhyt.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicepricefeebhyt.AppearanceCell.Options.UseFont = true;
+            this.servicepricefeebhyt.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicepricefeebhyt.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.servicepricefeebhyt.AppearanceHeader.Options.UseFont = true;
+            this.servicepricefeebhyt.AppearanceHeader.Options.UseForeColor = true;
+            this.servicepricefeebhyt.AppearanceHeader.Options.UseTextOptions = true;
+            this.servicepricefeebhyt.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.servicepricefeebhyt.Caption = "Giá bảo hiểm";
+            this.servicepricefeebhyt.FieldName = "servicepricefeebhyt";
+            this.servicepricefeebhyt.Format.FormatString = "#,##0";
+            this.servicepricefeebhyt.Format.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.servicepricefeebhyt.Name = "servicepricefeebhyt";
+            this.servicepricefeebhyt.OptionsColumn.AllowEdit = false;
+            this.servicepricefeebhyt.Visible = true;
+            this.servicepricefeebhyt.VisibleIndex = 3;
+            this.servicepricefeebhyt.Width = 120;
             // 
-            // gridColumn6
+            // servicepricefeenhandan
             // 
-            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn6.AppearanceCell.Options.UseFont = true;
-            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn6.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn6.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn6.Caption = "Đơn vị tính";
-            this.gridColumn6.FieldName = "servicepriceunit";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
+            this.servicepricefeenhandan.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicepricefeenhandan.AppearanceCell.Options.UseFont = true;
+            this.servicepricefeenhandan.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicepricefeenhandan.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.servicepricefeenhandan.AppearanceHeader.Options.UseFont = true;
+            this.servicepricefeenhandan.AppearanceHeader.Options.UseForeColor = true;
+            this.servicepricefeenhandan.AppearanceHeader.Options.UseTextOptions = true;
+            this.servicepricefeenhandan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.servicepricefeenhandan.Caption = "Giá viện phí";
+            this.servicepricefeenhandan.FieldName = "servicepricefeenhandan";
+            this.servicepricefeenhandan.Format.FormatString = "#,##0";
+            this.servicepricefeenhandan.Format.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.servicepricefeenhandan.Name = "servicepricefeenhandan";
+            this.servicepricefeenhandan.OptionsColumn.AllowEdit = false;
+            this.servicepricefeenhandan.Visible = true;
+            this.servicepricefeenhandan.VisibleIndex = 4;
+            this.servicepricefeenhandan.Width = 120;
             // 
-            // gridColumn4
+            // mrd_templatename
             // 
-            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn4.AppearanceCell.Options.UseFont = true;
-            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn4.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn4.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn4.Caption = "Giá BHYT";
-            this.gridColumn4.FieldName = "servicepricefeebhyt";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 5;
-            this.gridColumn4.Width = 102;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn5.AppearanceCell.Options.UseFont = true;
-            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn5.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn5.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn5.Caption = "Giá viện phí";
-            this.gridColumn5.FieldName = "servicepricefeenhandan";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 6;
-            this.gridColumn5.Width = 128;
+            this.mrd_templatename.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mrd_templatename.AppearanceCell.Options.UseFont = true;
+            this.mrd_templatename.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mrd_templatename.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.mrd_templatename.AppearanceHeader.Options.UseFont = true;
+            this.mrd_templatename.AppearanceHeader.Options.UseForeColor = true;
+            this.mrd_templatename.AppearanceHeader.Options.UseTextOptions = true;
+            this.mrd_templatename.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.mrd_templatename.Caption = "Tên file template";
+            this.mrd_templatename.FieldName = "mrd_templatename";
+            this.mrd_templatename.Name = "mrd_templatename";
+            this.mrd_templatename.OptionsColumn.AllowEdit = false;
+            this.mrd_templatename.Visible = true;
+            this.mrd_templatename.VisibleIndex = 5;
+            this.mrd_templatename.Width = 236;
             // 
             // openFileDialogSelect
             // 
             this.openFileDialogSelect.Filter = "Word 2007-2013|*.docx|Word 2003|*.doc";
             this.openFileDialogSelect.Title = "Mở file Excel";
+            // 
+            // dropDownImportExport
+            // 
+            this.dropDownImportExport.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dropDownImportExport.Appearance.Options.UseFont = true;
+            this.dropDownImportExport.Appearance.Options.UseForeColor = true;
+            this.dropDownImportExport.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearanceDropDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dropDownImportExport.AppearanceDropDown.Options.UseFont = true;
+            this.dropDownImportExport.AppearanceDropDown.Options.UseForeColor = true;
+            this.dropDownImportExport.AppearanceDropDownDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearanceDropDownDisabled.Options.UseFont = true;
+            this.dropDownImportExport.AppearanceDropDownHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearanceDropDownHovered.Options.UseFont = true;
+            this.dropDownImportExport.AppearanceDropDownPressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearanceDropDownPressed.Options.UseFont = true;
+            this.dropDownImportExport.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearanceHovered.Options.UseFont = true;
+            this.dropDownImportExport.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearancePressed.Options.UseFont = true;
+            this.dropDownImportExport.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Show;
+            this.dropDownImportExport.Location = new System.Drawing.Point(981, 17);
+            this.dropDownImportExport.Name = "dropDownImportExport";
+            this.dropDownImportExport.Size = new System.Drawing.Size(100, 30);
+            this.dropDownImportExport.TabIndex = 8;
+            this.dropDownImportExport.Text = "Nhập xuất";
+            // 
+            // openFileDialogImport
+            // 
+            this.openFileDialogImport.Filter = "Word 2007-2013|*.docx|Word 2003|*.doc";
+            this.openFileDialogImport.Title = "Mở file Excel";
             // 
             // ucUpdateTemplateDVPTTT
             // 
@@ -701,8 +725,7 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlData)).EndInit();
             this.panelControlData.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlDMDichVu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewDMDichVu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListDSDichVu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -717,19 +740,11 @@
         private System.Windows.Forms.RadioButton radioKhamBenh;
         private DevExpress.XtraEditors.PanelControl panelControlChucNang;
         private DevExpress.XtraEditors.PanelControl panelControlData;
-        private DevExpress.XtraGrid.GridControl gridControlDMDichVu;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewDMDichVu;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton btnHuy;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
         private DevExpress.XtraEditors.SimpleButton btnSua;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -753,8 +768,17 @@
         private DevExpress.XtraEditors.CheckEdit chkDaKhoa;
         private System.Windows.Forms.TextBox txtservicepricegroupcode;
         private System.Windows.Forms.TextBox txtbhyt_groupcode;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtservicepricenamenhandan;
+        private DevExpress.XtraTreeList.TreeList treeListDSDichVu;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn servicepricecode;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn servicepricename;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn servicepriceunit;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn servicepricefeebhyt;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn servicepricefeenhandan;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn mrd_servicerefid;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn mrd_templatename;
+        private DevExpress.XtraEditors.DropDownButton dropDownImportExport;
+        internal System.Windows.Forms.OpenFileDialog openFileDialogImport;
     }
 }
