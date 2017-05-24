@@ -14,11 +14,15 @@ using DevExpress.Data;
 using System.Collections;
 using DevExpress.XtraGrid.Views.Base;
 using O2S_MedicalRecord.DTO;
+using O2S_MedicalRecord.Utilities.GUIGridView;
+using DevExpress.Utils.Menu;
+using O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn;
 
 namespace O2S_MedicalRecord.GUI.ChucNang
 {
     public partial class ucDanhSachHoSoBenhAn : UserControl
     {
+        #region Khai bao
         // khai báo 1 hàm delegate
         public delegate void GetString(string thoigian);
         // khai báo 1 kiểu hàm delegate
@@ -28,10 +32,9 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         public delegate void GetStringThongTinBenhNhan(long medicalrecordid, long hosobenhanid);
         public GetStringThongTinBenhNhan MyGetDataThongTinBenhNhan;
 
-
-
         private DAL.ConnectDatabase conn = new DAL.ConnectDatabase();
 
+        #endregion
         public ucDanhSachHoSoBenhAn()
         {
             InitializeComponent();
@@ -42,10 +45,78 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         {
             try
             {
+                LoadDataDefault();
+                LoadTabChucNangVaPhanQuyen();
+                LoadDanhSachKhoa();
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Warn(ex);
+            }
+        }
+
+        private void LoadDataDefault()
+        {
+            try
+            {
                 dateTuNgay.DateTime = Convert.ToDateTime(DateTime.Now.AddDays(-15).ToString("yyyy-MM-dd") + " 00:00:00");
                 dateDenNgay.DateTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:59");
-                LoadTabChucNang();
-                LoadDanhSachKhoa();
+
+                xtraTabThongTinChung.PageVisible = false;
+                xtraTabHSBA.PageVisible = false;
+                xtraTabHoiChan.PageVisible = false;
+                xtraTabPTTT.PageVisible = false;
+
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Warn(ex);
+            }
+        }
+        private void LoadTabChucNangVaPhanQuyen()
+        {
+            try
+            {
+                if (O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("TOOL_01")) //Thong tin chung
+                {
+                    xtraTabThongTinChung.PageVisible = true;
+                    xtraTabThongTinChung.Controls.Clear();
+                    O2S_MedicalRecord.GUI.ChucNang.HSBA_ThongTinChung.ucHSBA_ThongTinChung ucHSBA_TTChung = new HSBA_ThongTinChung.ucHSBA_ThongTinChung();
+                    //ucHSBA_TTChung.MyGetData = new FormCommon.ucTrangChu.GetString(HienThiTenChucNang);
+                    ucHSBA_TTChung.Dock = System.Windows.Forms.DockStyle.Fill;
+                    xtraTabThongTinChung.Controls.Add(ucHSBA_TTChung);
+                }
+
+                if (O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("TOOL_01")) //Ho so benh an
+                {
+                    xtraTabHSBA.PageVisible = true;
+                    xtraTabHSBA.Controls.Clear();
+                    O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn.ucHSBA_BenhAn ucHSBA_BenhAn = new HSBA_BenhAn.ucHSBA_BenhAn();
+                    //ucHSBA_BenhAn.MyGetData = new FormCommon.ucTrangChu.GetString(HienThiTenChucNang);
+                    ucHSBA_BenhAn.Dock = System.Windows.Forms.DockStyle.Fill;
+                    xtraTabHSBA.Controls.Add(ucHSBA_BenhAn);
+                }
+
+                if (O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("TOOL_03")) //Hoi chan
+                {
+                    xtraTabHoiChan.PageVisible = true;
+                    //xtraTabHSBA.Controls.Clear();
+                    //O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn.ucHSBA_BenhAn ucHSBA_BenhAn = new HSBA_BenhAn.ucHSBA_BenhAn();
+                    ////ucHSBA_BenhAn.MyGetData = new FormCommon.ucTrangChu.GetString(HienThiTenChucNang);
+                    //ucHSBA_BenhAn.Dock = System.Windows.Forms.DockStyle.Fill;
+                    //xtraTabHSBA.Controls.Add(ucHSBA_BenhAn);
+                }
+
+                if (O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("TOOL_04")) //PTTT
+                {
+                    xtraTabPTTT.PageVisible = true;
+                    xtraTabPTTT.Controls.Clear();
+                    O2S_MedicalRecord.GUI.ChucNang.HSBA_PTTT.ucHSBA_PTTT ucHSBA_PTTT = new HSBA_PTTT.ucHSBA_PTTT();
+                    //ucHSBA_PTTT.MyGetData = new FormCommon.ucTrangChu.GetString(HienThiTenChucNang);
+                    ucHSBA_PTTT.Dock = System.Windows.Forms.DockStyle.Fill;
+                    xtraTabPTTT.Controls.Add(ucHSBA_PTTT);
+                }
+
             }
             catch (Exception ex)
             {
@@ -75,57 +146,9 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 Base.Logging.Warn(ex);
             }
         }
-        private void LoadTabChucNang()
-        {
-            try
-            {
-                xtraTabThongTinChung.Controls.Clear();
-                O2S_MedicalRecord.GUI.ChucNang.HSBA_ThongTinChung.ucHSBA_ThongTinChung ucHSBA_TTChung = new HSBA_ThongTinChung.ucHSBA_ThongTinChung();
-                //ucHSBA_TTChung.MyGetData = new FormCommon.ucTrangChu.GetString(HienThiTenChucNang);
-                ucHSBA_TTChung.Dock = System.Windows.Forms.DockStyle.Fill;
-                xtraTabThongTinChung.Controls.Add(ucHSBA_TTChung);
 
-                xtraTabPTTT.Controls.Clear();
-                O2S_MedicalRecord.GUI.ChucNang.HSBA_PTTT.ucHSBA_PTTT ucHSBA_PTTT = new HSBA_PTTT.ucHSBA_PTTT();
-                //ucHSBA_PTTT.MyGetData = new FormCommon.ucTrangChu.GetString(HienThiTenChucNang);
-                ucHSBA_PTTT.Dock = System.Windows.Forms.DockStyle.Fill;
-                xtraTabPTTT.Controls.Add(ucHSBA_PTTT);
-
-            }
-            catch (Exception ex)
-            {
-                Base.Logging.Warn(ex);
-            }
-        }
 
         #endregion
-
-        private void cboKhoa_EditValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cboKhoa.EditValue != null)
-                {
-                    //Load danh muc phong thuoc khoa
-                    var lstDSPhong = Base.SessionLogin.SessionlstPhanQuyen_KhoaPhong.Where(o => o.departmentgroupid == Utilities.Util_TypeConvertParse.ToInt64(cboKhoa.EditValue.ToString())).OrderBy(o => o.departmentname).ToList();
-                    if (lstDSPhong != null && lstDSPhong.Count > 0)
-                    {
-                        cboPhong.Properties.DataSource = lstDSPhong;
-                        cboPhong.Properties.DisplayMember = "departmentname";
-                        cboPhong.Properties.ValueMember = "departmentid";
-                    }
-                    if (lstDSPhong.Count == 1)
-                    {
-                        cboPhong.ItemIndex = 0;
-                        btnRefresh_Click(null, null);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Base.Logging.Warn(ex);
-            }
-        }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -175,12 +198,12 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             try
             {
                 var rowHandle = gridViewDSHSBA.FocusedRowHandle;
-                    MedicalrecordDTO filterDTO = new MedicalrecordDTO();
-                    filterDTO.medicalrecordid = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "medicalrecordid").ToString());
-                    filterDTO.hosobenhanid = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "hosobenhanid").ToString());
-                    filterDTO.medicalrecordstatus = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "medicalrecordstatus").ToString());
-                    filterDTO.departmentid = Utilities.Util_TypeConvertParse.ToInt64(cboPhong.EditValue.ToString());
-                    LoadTabChucNangClickRow(filterDTO);
+                MedicalrecordDTO filterDTO = new MedicalrecordDTO();
+                filterDTO.medicalrecordid = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "medicalrecordid").ToString());
+                filterDTO.hosobenhanid = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "hosobenhanid").ToString());
+                filterDTO.medicalrecordstatus = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "medicalrecordstatus").ToString());
+                filterDTO.departmentid = Utilities.Util_TypeConvertParse.ToInt64(cboPhong.EditValue.ToString());
+                LoadDataTabChucNangClickRow(filterDTO);
             }
             catch (Exception ex)
             {
@@ -188,7 +211,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             }
         }
 
-        private void LoadTabChucNangClickRow(MedicalrecordDTO filterDTO)
+        //Xem lai - sua lai toi uu hon
+        private void LoadDataTabChucNangClickRow(MedicalrecordDTO filterDTO)
         {
             try
             {
@@ -197,6 +221,12 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 //ucHSBA_TTChung.MyGetData = new FormCommon.ucTrangChu.GetString(HienThiTenChucNang);
                 ucHSBA_TTChung.Dock = System.Windows.Forms.DockStyle.Fill;
                 xtraTabThongTinChung.Controls.Add(ucHSBA_TTChung);
+
+                xtraTabHSBA.Controls.Clear();
+                O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn.ucHSBA_BenhAn ucHSBA_BenhAn = new HSBA_BenhAn.ucHSBA_BenhAn(filterDTO);
+                //ucHSBA_BenhAn.MyGetData = new FormCommon.ucTrangChu.GetString(HienThiTenChucNang);
+                ucHSBA_BenhAn.Dock = System.Windows.Forms.DockStyle.Fill;
+                xtraTabHSBA.Controls.Add(ucHSBA_BenhAn);
 
                 xtraTabPTTT.Controls.Clear();
                 O2S_MedicalRecord.GUI.ChucNang.HSBA_PTTT.ucHSBA_PTTT ucHSBA_PTTT = new HSBA_PTTT.ucHSBA_PTTT(filterDTO);
@@ -212,64 +242,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         }
 
 
-
-
-
-        private void gridViewDSHSBA_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
-        {
-            GridView view = sender as GridView;
-            if (e.RowHandle == view.FocusedRowHandle)
-            {
-                e.Appearance.BackColor = Color.LightGreen;
-                e.Appearance.ForeColor = Color.Black;
-            }
-        }
-
-        private void cboPhong_EditValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                btnRefresh_Click(null, null);
-            }
-            catch (Exception ex)
-            {
-                Base.Logging.Warn(ex);
-            }
-        }
-        private void gridViewDSHSBA_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
-        {
-            try
-            {
-                if (e.Column.FieldName == "status_img")
-                {
-                    string val = Convert.ToString(gridViewDSHSBA.GetRowCellValue(e.RowHandle, "medicalrecordstatus"));
-                    if (val == "2")
-                    {
-                        e.Handled = true;
-                        Point pos = CalcPosition(e, imageListstatus.Images[0]);
-                        e.Graphics.DrawImage(imageListstatus.Images[0], pos);
-                    }
-                    else if (val == "99")
-                    {
-                        e.Handled = true;
-                        Point pos = CalcPosition(e, imageListstatus.Images[1]);
-                        e.Graphics.DrawImage(imageListstatus.Images[1], pos);
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                Base.Logging.Warn(ex);
-            }
-        }
-        Point CalcPosition(RowCellCustomDrawEventArgs e, Image img)
-        {
-            Point p = new Point();
-            p.X = e.Bounds.Location.X + (e.Bounds.Width - img.Width) / 2;
-            p.Y = e.Bounds.Location.Y + (e.Bounds.Height - img.Height) / 2;
-            return p;
-        }
 
         private void xtraTabTTHSBA_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
@@ -289,6 +261,168 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 Base.Logging.Warn(ex);
             }
         }
+        private void gridViewDSHSBA_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
+        {
+            try
+            {
+                if (e.MenuType == DevExpress.XtraGrid.Views.Grid.GridMenuType.Row)
+                {
+                    e.Menu.Items.Clear();
+                    DXMenuItem itemXoaPhieuChiDinh = new DXMenuItem("Nhập hồ sơ bệnh án");
+                    itemXoaPhieuChiDinh.Image = imMenu.Images[0];
+                    //itemXoaToanBA.Shortcut = Shortcut.F6;
+                    itemXoaPhieuChiDinh.Click += new EventHandler(ItemNhapHoSoBenhAn_Click);
+                    e.Menu.Items.Add(itemXoaPhieuChiDinh);
+                }
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Warn(ex);
+            }
+        }
+        void ItemNhapHoSoBenhAn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // lấy giá trị tại dòng click chuột
+                var rowHandle = gridViewDSHSBA.FocusedRowHandle;
+                MedicalrecordDTO filterDTO = new MedicalrecordDTO();
+                filterDTO.medicalrecordid = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "medicalrecordid").ToString());
+                filterDTO.hosobenhanid = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "hosobenhanid").ToString());
+                filterDTO.medicalrecordstatus = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "medicalrecordstatus").ToString());
+                filterDTO.departmentid = Utilities.Util_TypeConvertParse.ToInt64(cboPhong.EditValue.ToString());
+
+                if (filterDTO.medicalrecordstatus == 0)
+                {
+                    O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.BENH_NHAN_CHUA_DUOC_TIEP_NHAN_VAO_PHONG);
+                    frmthongbao.Show();
+                }
+                else if (filterDTO.medicalrecordstatus == 2)
+                {
+                    frmChonLoaiBenhAn frmChon = new frmChonLoaiBenhAn(filterDTO);
+                    frmChon.ShowDialog();
+                }
+                else
+                {
+                    O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.BENH_AN_DA_KET_THUC);
+                    frmthongbao.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Warn(ex);
+            }
+        }
+
+        #region Custom
+        private void cboPhong_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                btnRefresh_Click(null, null);
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Warn(ex);
+            }
+        }
+        private void dateTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cboKhoa.EditValue != null || cboPhong.EditValue != null)
+                {
+                    btnRefresh_Click(null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Warn(ex);
+            }
+        }
+        private void dateDenNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cboKhoa.EditValue != null || cboPhong.EditValue != null)
+                {
+                    btnRefresh_Click(null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Warn(ex);
+            }
+        }
+        private void gridViewDSHSBA_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.RowHandle == view.FocusedRowHandle)
+            {
+                e.Appearance.BackColor = Color.LightGreen;
+                e.Appearance.ForeColor = Color.Black;
+            }
+        }
+        private void gridViewDSHSBA_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            try
+            {
+                if (e.Column.FieldName == "status_img")
+                {
+                    string val = Convert.ToString(gridViewDSHSBA.GetRowCellValue(e.RowHandle, "medicalrecordstatus"));
+                    if (val == "2")
+                    {
+                        e.Handled = true;
+                        Point pos = Util_GUIGridView.CalcPosition(e, imageListstatus.Images[0]);
+                        e.Graphics.DrawImage(imageListstatus.Images[0], pos);
+                    }
+                    else if (val == "99")
+                    {
+                        e.Handled = true;
+                        Point pos = Util_GUIGridView.CalcPosition(e, imageListstatus.Images[1]);
+                        e.Graphics.DrawImage(imageListstatus.Images[1], pos);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Warn(ex);
+            }
+        }
+        private void cboKhoa_EditValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cboKhoa.EditValue != null)
+                {
+                    //Load danh muc phong thuoc khoa
+                    var lstDSPhong = Base.SessionLogin.SessionlstPhanQuyen_KhoaPhong.Where(o => o.departmentgroupid == Utilities.Util_TypeConvertParse.ToInt64(cboKhoa.EditValue.ToString())).OrderBy(o => o.departmentname).ToList();
+                    if (lstDSPhong != null && lstDSPhong.Count > 0)
+                    {
+                        cboPhong.Properties.DataSource = lstDSPhong;
+                        cboPhong.Properties.DisplayMember = "departmentname";
+                        cboPhong.Properties.ValueMember = "departmentid";
+                    }
+                    if (lstDSPhong.Count == 1)
+                    {
+                        cboPhong.ItemIndex = 0;
+                        btnRefresh_Click(null, null);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Warn(ex);
+            }
+        }
+
+
+
+
+
+        #endregion
+
 
 
 

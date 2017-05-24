@@ -80,6 +80,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.imageListstatus = new System.Windows.Forms.ImageList(this.components);
+            this.imMenu = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
@@ -115,6 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -283,6 +285,7 @@
             this.dateDenNgay.Properties.Mask.EditMask = "HH:mm:ss dd/MM/yyyy";
             this.dateDenNgay.Size = new System.Drawing.Size(156, 22);
             this.dateDenNgay.TabIndex = 13;
+            this.dateDenNgay.EditValueChanged += new System.EventHandler(this.dateDenNgay_EditValueChanged);
             // 
             // dateTuNgay
             // 
@@ -308,6 +311,7 @@
             this.dateTuNgay.Properties.Mask.EditMask = "HH:mm:ss dd/MM/yyyy";
             this.dateTuNgay.Size = new System.Drawing.Size(156, 22);
             this.dateTuNgay.TabIndex = 12;
+            this.dateTuNgay.EditValueChanged += new System.EventHandler(this.dateTuNgay_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -412,6 +416,7 @@
             this.gridViewDSHSBA.RowHeight = 25;
             this.gridViewDSHSBA.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridViewDSHSBA_CustomDrawCell);
             this.gridViewDSHSBA.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridViewDSHSBA_RowCellStyle);
+            this.gridViewDSHSBA.PopupMenuShowing += new DevExpress.XtraGrid.Views.Grid.PopupMenuShowingEventHandler(this.gridViewDSHSBA_PopupMenuShowing);
             // 
             // gridColumn8
             // 
@@ -675,7 +680,6 @@
             // 
             this.xtraTabHSBA.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabHSBA.Image")));
             this.xtraTabHSBA.Name = "xtraTabHSBA";
-            this.xtraTabHSBA.PageVisible = false;
             this.xtraTabHSBA.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
             this.xtraTabHSBA.Size = new System.Drawing.Size(785, 636);
             this.xtraTabHSBA.Text = "Hồ sơ bệnh án";
@@ -792,6 +796,11 @@
             this.imageListstatus.Images.SetKeyName(0, "status_2a.png");
             this.imageListstatus.Images.SetKeyName(1, "status_1.png");
             // 
+            // imMenu
+            // 
+            this.imMenu.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imMenu.ImageStream")));
+            this.imMenu.Images.SetKeyName(0, "fast-forward-2-16.png");
+            // 
             // ucDanhSachHoSoBenhAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -836,6 +845,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -892,6 +902,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemStatus;
         private System.Windows.Forms.ImageList imageListstatus;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.Utils.ImageCollection imMenu;
 
     }
 }
