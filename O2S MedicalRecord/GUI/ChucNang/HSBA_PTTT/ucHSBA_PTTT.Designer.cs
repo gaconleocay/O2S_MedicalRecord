@@ -30,23 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucHSBA_PTTT));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelChiTiet = new System.Windows.Forms.Panel();
             this.gridControlChiTietPhieuPTTT = new DevExpress.XtraGrid.GridControl();
             this.gridViewChiTietPhieuPTTT = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.mrd_pttt_servicestatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelButton = new System.Windows.Forms.Panel();
-            this.btnXemPhieuPTTT = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhapPhieuPTTT = new DevExpress.XtraEditors.SimpleButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridControlDSPhieuPTTT = new DevExpress.XtraGrid.GridControl();
@@ -65,6 +70,8 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.imageListstatus = new System.Windows.Forms.ImageList(this.components);
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEditView = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panel1.SuspendLayout();
             this.panelChiTiet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlChiTietPhieuPTTT)).BeginInit();
@@ -73,6 +80,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDSPhieuPTTT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDSPhieuPTTT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,11 +109,14 @@
             this.gridControlChiTietPhieuPTTT.Location = new System.Drawing.Point(0, 0);
             this.gridControlChiTietPhieuPTTT.MainView = this.gridViewChiTietPhieuPTTT;
             this.gridControlChiTietPhieuPTTT.Name = "gridControlChiTietPhieuPTTT";
+            this.gridControlChiTietPhieuPTTT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemButtonEditView});
             this.gridControlChiTietPhieuPTTT.Size = new System.Drawing.Size(791, 322);
             this.gridControlChiTietPhieuPTTT.TabIndex = 0;
             this.gridControlChiTietPhieuPTTT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewChiTietPhieuPTTT});
             this.gridControlChiTietPhieuPTTT.Click += new System.EventHandler(this.gridControlChiTietPhieuPTTT_Click);
+            this.gridControlChiTietPhieuPTTT.DoubleClick += new System.EventHandler(this.gridControlChiTietPhieuPTTT_DoubleClick);
             // 
             // gridViewChiTietPhieuPTTT
             // 
@@ -113,21 +124,25 @@
             this.gridViewChiTietPhieuPTTT.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn14,
             this.gridColumn15,
+            this.gridColumn26,
+            this.gridColumn21,
             this.gridColumn16,
             this.gridColumn17,
             this.gridColumn18,
             this.gridColumn19,
-            this.gridColumn20,
-            this.gridColumn21,
-            this.gridColumn22,
+            this.gridColumn24,
             this.gridColumn23,
-            this.gridColumn24});
+            this.gridColumn22,
+            this.gridColumn20,
+            this.gridColumn25,
+            this.mrd_pttt_servicestatus});
             this.gridViewChiTietPhieuPTTT.GridControl = this.gridControlChiTietPhieuPTTT;
             this.gridViewChiTietPhieuPTTT.Name = "gridViewChiTietPhieuPTTT";
             this.gridViewChiTietPhieuPTTT.OptionsView.ShowGroupPanel = false;
             this.gridViewChiTietPhieuPTTT.OptionsView.ShowIndicator = false;
             this.gridViewChiTietPhieuPTTT.RowHeight = 25;
             this.gridViewChiTietPhieuPTTT.ViewCaptionHeight = 25;
+            this.gridViewChiTietPhieuPTTT.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridViewChiTietPhieuPTTT_CustomDrawCell);
             this.gridViewChiTietPhieuPTTT.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gridViewDSPhieuPTTT_RowCellStyle);
             // 
             // gridColumn14
@@ -144,6 +159,7 @@
             this.gridColumn14.FieldName = "serviceprice_status";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
+            this.gridColumn14.OptionsColumn.FixedWidth = true;
             this.gridColumn14.OptionsColumn.ShowCaption = false;
             this.gridColumn14.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.gridColumn14.Visible = true;
@@ -166,9 +182,25 @@
             this.gridColumn15.FieldName = "stt";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
+            this.gridColumn15.OptionsColumn.FixedWidth = true;
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 1;
+            this.gridColumn15.VisibleIndex = 2;
             this.gridColumn15.Width = 35;
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn21.AppearanceCell.Options.UseFont = true;
+            this.gridColumn21.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn21.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.gridColumn21.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn21.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn21.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn21.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn21.Caption = "servicepriceid";
+            this.gridColumn21.FieldName = "servicepriceid";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn16
             // 
@@ -185,8 +217,8 @@
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 2;
-            this.gridColumn16.Width = 120;
+            this.gridColumn16.VisibleIndex = 3;
+            this.gridColumn16.Width = 103;
             // 
             // gridColumn17
             // 
@@ -203,8 +235,8 @@
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.OptionsColumn.AllowEdit = false;
             this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 3;
-            this.gridColumn17.Width = 517;
+            this.gridColumn17.VisibleIndex = 4;
+            this.gridColumn17.Width = 446;
             // 
             // gridColumn18
             // 
@@ -223,8 +255,8 @@
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.OptionsColumn.AllowEdit = false;
             this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 4;
-            this.gridColumn18.Width = 80;
+            this.gridColumn18.VisibleIndex = 5;
+            this.gridColumn18.Width = 68;
             // 
             // gridColumn19
             // 
@@ -241,64 +273,8 @@
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.OptionsColumn.AllowEdit = false;
             this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 5;
-            this.gridColumn19.Width = 80;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn20.AppearanceCell.Options.UseFont = true;
-            this.gridColumn20.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn20.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn20.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn20.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn20.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn20.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn20.Caption = "gridColumn20";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.OptionsColumn.AllowEdit = false;
-            // 
-            // gridColumn21
-            // 
-            this.gridColumn21.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn21.AppearanceCell.Options.UseFont = true;
-            this.gridColumn21.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn21.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn21.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn21.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn21.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn21.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn21.Caption = "gridColumn21";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.OptionsColumn.AllowEdit = false;
-            // 
-            // gridColumn22
-            // 
-            this.gridColumn22.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn22.AppearanceCell.Options.UseFont = true;
-            this.gridColumn22.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn22.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn22.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn22.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn22.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn22.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn22.Caption = "gridColumn22";
-            this.gridColumn22.Name = "gridColumn22";
-            this.gridColumn22.OptionsColumn.AllowEdit = false;
-            // 
-            // gridColumn23
-            // 
-            this.gridColumn23.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn23.AppearanceCell.Options.UseFont = true;
-            this.gridColumn23.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn23.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn23.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn23.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn23.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn23.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn23.Caption = "gridColumn23";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.OptionsColumn.AllowEdit = false;
+            this.gridColumn19.VisibleIndex = 6;
+            this.gridColumn19.Width = 73;
             // 
             // gridColumn24
             // 
@@ -310,33 +286,67 @@
             this.gridColumn24.AppearanceHeader.Options.UseForeColor = true;
             this.gridColumn24.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn24.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn24.Caption = "gridColumn24";
+            this.gridColumn24.Caption = "departmentgroupid";
+            this.gridColumn24.FieldName = "departmentgroupid";
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.OptionsColumn.AllowEdit = false;
             // 
+            // gridColumn23
+            // 
+            this.gridColumn23.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn23.AppearanceCell.Options.UseFont = true;
+            this.gridColumn23.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn23.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.gridColumn23.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn23.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn23.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn23.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn23.Caption = "departmentid";
+            this.gridColumn23.FieldName = "departmentid";
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn22.AppearanceCell.Options.UseFont = true;
+            this.gridColumn22.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn22.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.gridColumn22.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn22.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn22.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn22.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn22.Caption = "maubenhphamid";
+            this.gridColumn22.FieldName = "maubenhphamid";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "mrd_pttt_serviceid";
+            this.gridColumn20.FieldName = "mrd_pttt_serviceid";
+            this.gridColumn20.Name = "gridColumn20";
+            // 
+            // gridColumn25
+            // 
+            this.gridColumn25.Caption = "mrd_pttttemid";
+            this.gridColumn25.FieldName = "mrd_pttttemid";
+            this.gridColumn25.Name = "gridColumn25";
+            // 
+            // mrd_pttt_servicestatus
+            // 
+            this.mrd_pttt_servicestatus.Caption = "gridColumn26";
+            this.mrd_pttt_servicestatus.FieldName = "mrd_pttt_servicestatus";
+            this.mrd_pttt_servicestatus.Name = "mrd_pttt_servicestatus";
+            // 
             // panelButton
             // 
-            this.panelButton.Controls.Add(this.btnXemPhieuPTTT);
             this.panelButton.Controls.Add(this.btnNhapPhieuPTTT);
             this.panelButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelButton.Location = new System.Drawing.Point(0, 627);
             this.panelButton.Name = "panelButton";
             this.panelButton.Size = new System.Drawing.Size(791, 40);
             this.panelButton.TabIndex = 2;
-            // 
-            // btnXemPhieuPTTT
-            // 
-            this.btnXemPhieuPTTT.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemPhieuPTTT.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnXemPhieuPTTT.Appearance.Options.UseFont = true;
-            this.btnXemPhieuPTTT.Appearance.Options.UseForeColor = true;
-            this.btnXemPhieuPTTT.Image = global::O2S_MedicalRecord.Properties.Resources.edit_11_16;
-            this.btnXemPhieuPTTT.Location = new System.Drawing.Point(203, 5);
-            this.btnXemPhieuPTTT.Name = "btnXemPhieuPTTT";
-            this.btnXemPhieuPTTT.Size = new System.Drawing.Size(150, 30);
-            this.btnXemPhieuPTTT.TabIndex = 1;
-            this.btnXemPhieuPTTT.Text = "Xem phiếu PTTT";
-            this.btnXemPhieuPTTT.Click += new System.EventHandler(this.btnXemPhieuPTTT_Click);
             // 
             // btnNhapPhieuPTTT
             // 
@@ -429,6 +439,7 @@
             this.gridColumn2.FieldName = "stt";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.FixedWidth = true;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
             this.gridColumn2.Width = 35;
@@ -617,6 +628,28 @@
             this.imageListstatus.Images.SetKeyName(0, "status_2a.png");
             this.imageListstatus.Images.SetKeyName(1, "status_1.png");
             // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "gridColumn26";
+            this.gridColumn26.ColumnEdit = this.repositoryItemButtonEditView;
+            this.gridColumn26.FieldName = "gridColumn26";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.OptionsColumn.FixedWidth = true;
+            this.gridColumn26.OptionsColumn.ShowCaption = false;
+            this.gridColumn26.UnboundType = DevExpress.Data.UnboundColumnType.Object;
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 1;
+            this.gridColumn26.Width = 35;
+            // 
+            // repositoryItemButtonEditView
+            // 
+            this.repositoryItemButtonEditView.AutoHeight = false;
+            this.repositoryItemButtonEditView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::O2S_MedicalRecord.Properties.Resources.edit_11_16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "Xem mô tả PTTT", null, null, true)});
+            this.repositoryItemButtonEditView.Name = "repositoryItemButtonEditView";
+            this.repositoryItemButtonEditView.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repositoryItemButtonEditView.Click += new System.EventHandler(this.repositoryItemButtonEditView_Click);
+            // 
             // ucHSBA_PTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -633,6 +666,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDSPhieuPTTT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDSPhieuPTTT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -665,14 +699,17 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private System.Windows.Forms.Panel panelButton;
-        private DevExpress.XtraEditors.SimpleButton btnXemPhieuPTTT;
         private DevExpress.XtraEditors.SimpleButton btnNhapPhieuPTTT;
         private System.Windows.Forms.ImageList imageListstatus;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
+        private DevExpress.XtraGrid.Columns.GridColumn mrd_pttt_servicestatus;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEditView;
     }
 }

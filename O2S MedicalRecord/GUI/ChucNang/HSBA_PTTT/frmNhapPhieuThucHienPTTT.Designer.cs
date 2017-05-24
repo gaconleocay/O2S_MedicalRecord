@@ -142,6 +142,9 @@
             this.toggleParagraphSuppressLineNumbersItem1 = new DevExpress.XtraRichEdit.UI.ToggleParagraphSuppressLineNumbersItem();
             this.showLineNumberingFormItem1 = new DevExpress.XtraRichEdit.UI.ShowLineNumberingFormItem();
             this.changePageColorItem1 = new DevExpress.XtraRichEdit.UI.ChangePageColorItem();
+            this.LuuMauItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.LuuNhapItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.fileSaveItem = new DevExpress.XtraBars.BarButtonItem();
             this.fileRibbonPage1 = new DevExpress.XtraRichEdit.UI.FileRibbonPage();
             this.commonRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.CommonRibbonPageGroup();
             this.homeRibbonPage1 = new DevExpress.XtraRichEdit.UI.HomeRibbonPage();
@@ -211,6 +214,9 @@
             this.richEditControlData.Location = new System.Drawing.Point(0, 0);
             this.richEditControlData.MenuManager = this.ribbonControl1;
             this.richEditControlData.Name = "richEditControlData";
+            this.richEditControlData.Options.DocumentSaveOptions.CurrentFormat = DevExpress.XtraRichEdit.DocumentFormat.OpenXml;
+            this.richEditControlData.Options.Export.OpenXml.AlternateImageFolder = true;
+            this.richEditControlData.Options.Import.OpenXml.IgnoreParseErrors = true;
             this.richEditControlData.Size = new System.Drawing.Size(1234, 601);
             this.richEditControlData.TabIndex = 0;
             // 
@@ -322,9 +328,12 @@
             this.setSectionLineNumberingRestartNewSectionItem1,
             this.toggleParagraphSuppressLineNumbersItem1,
             this.showLineNumberingFormItem1,
-            this.changePageColorItem1});
+            this.changePageColorItem1,
+            this.LuuMauItem1,
+            this.LuuNhapItem1,
+            this.fileSaveItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 120;
+            this.ribbonControl1.MaxItemId = 3;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.fileRibbonPage1,
@@ -350,22 +359,25 @@
             // 
             this.fileNewItem1.Id = 3;
             this.fileNewItem1.Name = "fileNewItem1";
+            this.fileNewItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // fileOpenItem1
             // 
             this.fileOpenItem1.Id = 4;
             this.fileOpenItem1.Name = "fileOpenItem1";
+            this.fileOpenItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // fileSaveItem1
             // 
             this.fileSaveItem1.Id = 5;
             this.fileSaveItem1.Name = "fileSaveItem1";
-            this.fileSaveItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.fileSaveItem1_ItemClick);
             // 
             // fileSaveAsItem1
             // 
+            this.fileSaveAsItem1.Caption = "Xuất file Word";
             this.fileSaveAsItem1.Id = 6;
             this.fileSaveAsItem1.Name = "fileSaveAsItem1";
+            this.fileSaveAsItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // quickPrintItem1
             // 
@@ -969,6 +981,33 @@
             this.changePageColorItem1.Id = 104;
             this.changePageColorItem1.Name = "changePageColorItem1";
             // 
+            // LuuMauItem1
+            // 
+            this.LuuMauItem1.Caption = "Lưu file mẫu";
+            this.LuuMauItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("LuuMauItem1.Glyph")));
+            this.LuuMauItem1.Id = 120;
+            this.LuuMauItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("LuuMauItem1.LargeGlyph")));
+            this.LuuMauItem1.Name = "LuuMauItem1";
+            this.LuuMauItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.LuuMauItem1_ItemClick);
+            // 
+            // LuuNhapItem1
+            // 
+            this.LuuNhapItem1.Caption = "Lưu nháp";
+            this.LuuNhapItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("LuuNhapItem1.Glyph")));
+            this.LuuNhapItem1.Id = 121;
+            this.LuuNhapItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("LuuNhapItem1.LargeGlyph")));
+            this.LuuNhapItem1.Name = "LuuNhapItem1";
+            this.LuuNhapItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.LuuNhapItem1_ItemClick);
+            // 
+            // fileSaveItem
+            // 
+            this.fileSaveItem.Caption = "Lưu";
+            this.fileSaveItem.Glyph = ((System.Drawing.Image)(resources.GetObject("fileSaveItem.Glyph")));
+            this.fileSaveItem.Id = 2;
+            this.fileSaveItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("fileSaveItem.LargeGlyph")));
+            this.fileSaveItem.Name = "fileSaveItem";
+            this.fileSaveItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.fileSaveItem_ItemClick);
+            // 
             // fileRibbonPage1
             // 
             this.fileRibbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -979,9 +1018,9 @@
             // 
             this.commonRibbonPageGroup1.ItemLinks.Add(this.undoItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.redoItem1);
-            this.commonRibbonPageGroup1.ItemLinks.Add(this.fileNewItem1);
-            this.commonRibbonPageGroup1.ItemLinks.Add(this.fileOpenItem1);
-            this.commonRibbonPageGroup1.ItemLinks.Add(this.fileSaveItem1);
+            this.commonRibbonPageGroup1.ItemLinks.Add(this.fileSaveItem);
+            this.commonRibbonPageGroup1.ItemLinks.Add(this.LuuNhapItem1);
+            this.commonRibbonPageGroup1.ItemLinks.Add(this.LuuMauItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.fileSaveAsItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.quickPrintItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.printItem1);
@@ -1370,5 +1409,8 @@
         private DevExpress.XtraRichEdit.UI.PageLayoutRibbonPage pageLayoutRibbonPage1;
         private DevExpress.XtraRichEdit.UI.PageSetupRibbonPageGroup pageSetupRibbonPageGroup1;
         private DevExpress.XtraRichEdit.UI.PageBackgroundRibbonPageGroup pageBackgroundRibbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem LuuMauItem1;
+        private DevExpress.XtraBars.BarButtonItem LuuNhapItem1;
+        private DevExpress.XtraBars.BarButtonItem fileSaveItem;
     }
 }
