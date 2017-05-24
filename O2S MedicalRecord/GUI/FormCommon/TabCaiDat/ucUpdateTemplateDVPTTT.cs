@@ -39,6 +39,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 btnTimFileKetQua.Enabled = false;
                 txtmrd_templatename.ReadOnly = true;
                 LoadDanhSachImportExport();
+                btnTimKiem_Click(null, null);
             }
             catch (Exception ex)
             {
@@ -67,118 +68,34 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
         }
 
         #endregion
-        #region Radio Changed
-        private void radioKhamBenh_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (radioKhamBenh.Checked)
-                {
-                    radioXetNghiem.Checked = false;
-                    radioCDHA.Checked = false;
-                    radioChuyenKhoa.Checked = false;
-                    GetDataDanhMucDichVu();
-                }
-            }
-            catch (Exception ex)
-            {
-                O2S_MedicalRecord.Base.Logging.Warn(ex);
-            }
-        }
-
-        private void radioXetNghiem_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (radioXetNghiem.Checked)
-                {
-                    radioKhamBenh.Checked = false;
-                    radioCDHA.Checked = false;
-                    radioChuyenKhoa.Checked = false;
-                    GetDataDanhMucDichVu();
-                }
-            }
-            catch (Exception ex)
-            {
-                O2S_MedicalRecord.Base.Logging.Warn(ex);
-            }
-        }
-
-        private void radioCDHA_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (radioCDHA.Checked)
-                {
-                    radioXetNghiem.Checked = false;
-                    radioKhamBenh.Checked = false;
-                    radioChuyenKhoa.Checked = false;
-                    GetDataDanhMucDichVu();
-                }
-            }
-            catch (Exception ex)
-            {
-                O2S_MedicalRecord.Base.Logging.Warn(ex);
-            }
-        }
-
-        private void radioChuyenKhoa_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (radioChuyenKhoa.Checked)
-                {
-                    radioXetNghiem.Checked = false;
-                    radioKhamBenh.Checked = false;
-                    radioCDHA.Checked = false;
-                    GetDataDanhMucDichVu();
-                }
-            }
-            catch (Exception ex)
-            {
-                O2S_MedicalRecord.Base.Logging.Warn(ex);
-            }
-        }
-
-        #endregion
-
 
         private void GetDataDanhMucDichVu()
         {
             SplashScreenManager.ShowForm(typeof(O2S_MedicalRecord.Utilities.ThongBao.WaitForm1));
             try
             {
-                long servicegrouptype = 0;
-                int servicelock = 0;
-                if (radioKhamBenh.Checked)
-                {
-                    servicegrouptype = 1;
-                }
-                if (radioXetNghiem.Checked)
-                {
-                    servicegrouptype = 2;
-                }
-                if (radioCDHA.Checked)
-                {
-                    servicegrouptype = 3;
-                }
-                if (radioChuyenKhoa.Checked)
-                {
-                    servicegrouptype = 4;
-                }
+                string servicelock = " and servicelock=0";
                 if (chkDaKhoa.Checked)
                 {
-                    servicelock = 1;
+                    servicelock = "";
                 }
 
-                if (GlobalStore.GlobalLstMrdServiceref != null && GlobalStore.GlobalLstMrdServiceref.Count > 0)
+                //xem va toi uu lai
+                if (GlobalStore.GlobalLst_MrdServiceref != null && GlobalStore.GlobalLst_MrdServiceref.Count > 0)
                 {
                     this.lstmrd_serviceref = new List<MrdServicerefDTO>();
-                    this.lstmrd_serviceref = GlobalStore.GlobalLstMrdServiceref.Where(o => o.servicegrouptype == servicegrouptype && o.servicelock == servicelock).ToList();
+                    if (chkDaKhoa.Checked)
+                    {
+                        this.lstmrd_serviceref = GlobalStore.GlobalLst_MrdServiceref.Where(o => o.servicegrouptype == 4 && o.bhyt_groupcode == "06PTTT" || o.bhyt_groupcode == "07KTC").ToList();
+                    }
+                    else
+                    {
+                        this.lstmrd_serviceref = GlobalStore.GlobalLst_MrdServiceref.Where(o => o.servicegrouptype == 4 && o.servicelock == 0 && o.bhyt_groupcode == "06PTTT" || o.bhyt_groupcode == "07KTC").ToList();
+                    }
                 }
                 else
                 {
-                    string sqlLayDanhMuc = "select ROW_NUMBER () OVER (ORDER BY bhyt_groupcode, servicepricename) as stt, mrd_servicerefid, his_servicepricerefid, servicegrouptype, servicepricetype, bhyt_groupcode, servicepricegroupcode, servicepricecode, servicepricename, servicepricenamenhandan, servicepricenamebhyt, servicepricenamenuocngoai, servicepriceunit, servicepricefee, servicepricefeenhandan, servicepricefeebhyt, servicepricefeenuocngoai, servicelock, servicepricecodeuser, servicepricesttuser, pttt_hangid, pttt_loaiid, mrd_templatename from mrd_serviceref where servicegrouptype=" + servicegrouptype + " and servicelock=" + servicelock + "; ";
+                    string sqlLayDanhMuc = "select ROW_NUMBER () OVER (ORDER BY bhyt_groupcode, servicepricename) as stt, mrd_servicerefid, his_servicepricerefid, servicegrouptype, servicepricetype, bhyt_groupcode, servicepricegroupcode, servicepricecode, servicepricename, servicepricenamenhandan, servicepricenamebhyt, servicepricenamenuocngoai, servicepriceunit, servicepricefee, servicepricefeenhandan, servicepricefeebhyt, servicepricefeenuocngoai, servicelock, servicepricecodeuser, servicepricesttuser, pttt_hangid, pttt_loaiid, mrd_templatename from mrd_serviceref where servicegrouptype = 4 and bhyt_groupcode in ('06PTTT','07KTC') " + servicelock + "; ";
                     DataView dv_DanhMucDichVu = new DataView(condb.GetDataTable_HSBA(sqlLayDanhMuc));
                     if (dv_DanhMucDichVu.Count > 0)
                     {
@@ -216,7 +133,27 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 //hien thi
                 if (this.lstmrd_serviceref != null && this.lstmrd_serviceref.Count > 0)
                 {
-                    HienThiLenTreeList();
+                    if (txtTuKhoaTimKiem.Text.Trim() != "")
+                    {
+                        List<MrdServicerefDTO> lstmrd_serviceref_bodau = new List<MrdServicerefDTO>();
+                        foreach (var item in this.lstmrd_serviceref)
+                        {
+                            MrdServicerefDTO lstmrd_serviceref = new MrdServicerefDTO();
+                            lstmrd_serviceref = item;
+                            lstmrd_serviceref.servicepricecode_khongdau = Utilities.Common.String.Convert.UnSignVNese(item.servicepricecode).ToLower();
+                            lstmrd_serviceref.servicepricename_khongdau = Utilities.Common.String.Convert.UnSignVNese(item.servicepricename).ToLower();
+                            lstmrd_serviceref_bodau.Add(lstmrd_serviceref);
+                        }
+
+                        string tukhoa = Utilities.Common.String.Convert.UnSignVNese(txtTuKhoaTimKiem.Text.Trim().ToLower());
+
+                        List<MrdServicerefDTO> lstmrd_serviceref_timkiem = lstmrd_serviceref_bodau.Where(o => o.servicepricecode_khongdau.Contains(tukhoa) || o.servicepricename_khongdau.Contains(tukhoa)).ToList();
+                        HienThiLenTreeList_TuKhoaTimKiem(lstmrd_serviceref_timkiem);
+                    }
+                    else
+                    {
+                        HienThiLenTreeList(this.lstmrd_serviceref);
+                    }
                 }
                 else
                 {
@@ -230,41 +167,58 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
             SplashScreenManager.CloseForm();
         }
 
-        private void HienThiLenTreeList()
+        #region Create Tree
+        private void HienThiLenTreeList(List<MrdServicerefDTO> lstmrd_serviceref_hienthi)
         {
             try
             {
-                if (this.lstmrd_serviceref != null)
+                if (lstmrd_serviceref_hienthi != null && lstmrd_serviceref_hienthi.Count > 0)
                 {
                     treeListDSDichVu.ClearNodes();
                     TreeListNode parentForRootNodes = null;
 
                     string servicegrouptype_code = "";
                     string servicegrouptype_name = "";
-                    if (radioKhamBenh.Checked)
-                    {
-                        servicegrouptype_code = "G0";
-                        servicegrouptype_name = "KHÁM BỆNH";
-                    }
-                    if (radioXetNghiem.Checked)
-                    {
-                        servicegrouptype_code = "G1";
-                        servicegrouptype_name = "XÉT NGHIỆM";
-                    }
-                    if (radioCDHA.Checked)
-                    {
-                        servicegrouptype_code = "G2";
-                        servicegrouptype_name = "CHẨN ĐOÁN HÌNH ẢNH";
-                    }
-                    if (radioChuyenKhoa.Checked)
-                    {
-                        servicegrouptype_code = "G3";
-                        servicegrouptype_name = "CÁC DỊCH VỤ CHUYÊN KHOA, KHÁC";
-                    }
+
+                    //                    List<MrdServicerefDTO> listServiceGroupType = lstmrd_serviceref_hienthi.Where(s => s.servicegrouptype == 4).ToList().GroupBy(o => o.servicegrouptype).Select(n => n.First()).ToList().OrderBy(g => g.servicegrouptype).ToList();
+                    //                    if (listServiceGroupType != null && listServiceGroupType.Count > 0)
+                    //                    {
+                    //                        foreach (var serviceGroupType in listServiceGroupType)
+                    //                        {
+                    //                            if (serviceGroupType.servicegrouptype == 1)
+                    //                            {
+                    //                                servicegrouptype_code = "G0";
+                    //                                servicegrouptype_name = "KHÁM BỆNH";
+                    //                            }
+                    //                            else if (serviceGroupType.servicegrouptype == 2)
+                    //                            {
+                    //                                servicegrouptype_code = "G1";
+                    //                                servicegrouptype_name = "XÉT NGHIỆM";
+                    //                            }
+                    //                            else if (serviceGroupType.servicegrouptype == 3)
+                    //                            {
+                    //                                servicegrouptype_code = "G2";
+                    //                                servicegrouptype_name = "CHẨN ĐOÁN HÌNH ẢNH";
+                    //                            }
+                    //                            else if (serviceGroupType.servicegrouptype == 4)
+                    //                            {
+                    //                                servicegrouptype_code = "G3";
+                    //                                servicegrouptype_name = "CÁC DỊCH VỤ CHUYÊN KHOA, KHÁC";
+                    //                            }
+                    //                            TreeListNode rootNode_0 = treeListDSDichVu.AppendNode(
+                    //new object[] { "0", servicegrouptype_code, servicegrouptype_name, null, null, null, null },
+                    //parentForRootNodes, null);
+                    //                            CreateChildNodeServiceType(parentForRootNodes, servicegrouptype_code, lstmrd_serviceref_hienthi);
+                    //                            treeListDSDichVu.ExpandAll();
+                    //                        }
+                    //                    }
+
+                    servicegrouptype_code = "G3";
+                    servicegrouptype_name = "CÁC DỊCH VỤ CHUYÊN KHOA, KHÁC";
                     TreeListNode rootNode_0 = treeListDSDichVu.AppendNode(
-               new object[] { "0", servicegrouptype_code, servicegrouptype_name, null, null, null, null },
-               parentForRootNodes, null);
-                    CreateChildNodeServiceType(parentForRootNodes, servicegrouptype_code);
+new object[] { "0", servicegrouptype_code, servicegrouptype_name, null, null, null, null,null,null },
+parentForRootNodes, null);
+                    CreateChildNodeServiceType(parentForRootNodes, servicegrouptype_code, lstmrd_serviceref_hienthi);
                     treeListDSDichVu.ExpandAll();
                 }
                 else
@@ -278,28 +232,27 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
             }
         }
 
-        #region Create Tree
-        private void CreateChildNodeServiceType(TreeListNode rootNode, string servicegrouptype_code)
+        private void CreateChildNodeServiceType(TreeListNode rootNode, string servicegrouptype_code, List<MrdServicerefDTO> lstmrd_serviceref_hienthi)
         {
             try
             {
-                var listServiceTypeId = this.lstmrd_serviceref.FindAll(o => o.servicepricegroupcode == servicegrouptype_code).ToList().OrderBy(o => o.servicepricename);
+                var listServiceTypeId = lstmrd_serviceref_hienthi.FindAll(o => o.servicepricegroupcode == servicegrouptype_code).ToList().OrderBy(o => o.servicepricename);
                 if (listServiceTypeId != null && listServiceTypeId.Count() > 0)
                 {
                     foreach (var serviceTypeId in listServiceTypeId)
                     {
-                        var serviceTypeObj = this.lstmrd_serviceref.Where(o => o.servicepricegroupcode == serviceTypeId.servicepricecode);
+                        var serviceTypeObj = lstmrd_serviceref_hienthi.Where(o => o.servicepricegroupcode == serviceTypeId.servicepricecode);
                         if (serviceTypeObj != null && serviceTypeObj.Count() > 0)
                         {
                             TreeListNode childNode = treeListDSDichVu.AppendNode(
-                    new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, null, null, null, null },
+                    new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, null, null, null, null, null, null },
                     rootNode, null);
-                            CreateChildNodeServiceType(childNode, serviceTypeId.servicepricecode);
+                            CreateChildNodeServiceType(childNode, serviceTypeId.servicepricecode, lstmrd_serviceref_hienthi);
                         }
                         else //là lá
                         {
                             TreeListNode childChildNode = treeListDSDichVu.AppendNode(
-                                new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, serviceTypeId.servicepriceunit, serviceTypeId.servicepricefeebhyt, serviceTypeId.servicepricefeenhandan, serviceTypeId.mrd_templatename },
+                                new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, serviceTypeId.servicepriceunit, serviceTypeId.servicepricefeebhyt, serviceTypeId.servicepricefeenhandan, serviceTypeId.mrd_templatename, serviceTypeId.servicepricenamebhyt, serviceTypeId.servicepricenamenuocngoai },
                                 rootNode, serviceTypeId);
                         }
                     }
@@ -311,18 +264,37 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
             }
         }
 
+        private void HienThiLenTreeList_TuKhoaTimKiem(List<MrdServicerefDTO> lstmrd_serviceref_hienthi)
+        {
+            try
+            {
+                if (lstmrd_serviceref_hienthi != null && lstmrd_serviceref_hienthi.Count > 0)
+                {
+                    treeListDSDichVu.ClearNodes();
+                    TreeListNode parentForRootNodes = null;
+                    foreach (var serviceTypeId in lstmrd_serviceref_hienthi)
+                    {
+                        TreeListNode childChildNode = treeListDSDichVu.AppendNode(
+                                 new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, serviceTypeId.servicepriceunit, serviceTypeId.servicepricefeebhyt, serviceTypeId.servicepricefeenhandan, serviceTypeId.mrd_templatename, serviceTypeId.servicepricenamebhyt, serviceTypeId.servicepricenamenuocngoai },
+                                 parentForRootNodes, serviceTypeId);
+                    }
+                }
+                else
+                {
+                    treeListDSDichVu.ClearNodes();
+                }
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
+        }
         #endregion
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             try
             {
-                if (radioKhamBenh.Checked == false && radioXetNghiem.Checked == false && radioCDHA.Checked == false && radioChuyenKhoa.Checked == false)
-                {
-                    O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.VUI_LONG_NHAP_DAY_DU_THONG_TIN);
-                    frmthongbao.Show();
-                    return;
-                }
                 GetDataDanhMucDichVu();
             }
             catch (Exception ex)
@@ -388,6 +360,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 txtservicepricecodeuser.Clear();
                 txtservicepricenamenhandan.Clear();
                 txtservicepricenamebhyt.Clear();
+                txtservicepricenamepttt.Clear();
                 txtservicepricefeebhyt.Clear();
                 txtservicepricefeenhandan.Clear();
                 txtservicepricefee.Clear();
@@ -453,6 +426,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     txtservicepricecodeuser.Text = serviceprice.servicepricecodeuser;
                     txtservicepricenamenhandan.Text = serviceprice.servicepricenamenhandan;
                     txtservicepricenamebhyt.Text = serviceprice.servicepricenamebhyt;
+                    txtservicepricenamepttt.Text = serviceprice.servicepricenamenuocngoai;
                     txtservicepricefeebhyt.Text = serviceprice.servicepricefeebhyt.ToString();
                     txtservicepricefeenhandan.Text = serviceprice.servicepricefeenhandan.ToString();
                     txtservicepricefee.Text = serviceprice.servicepricefee.ToString();
@@ -506,6 +480,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     txtservicepricecodeuser.Clear();
                     txtservicepricenamenhandan.Clear();
                     txtservicepricenamebhyt.Clear();
+                    txtservicepricenamepttt.Clear();
                     txtservicepricefeebhyt.Clear();
                     txtservicepricefeenhandan.Clear();
                     txtservicepricefee.Clear();
@@ -531,30 +506,13 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 string tenbaocao = ((DXMenuItem)sender).Caption;
                 if (tenbaocao == "Xuất danh sách dịch vụ")
                 {
-                    long servicegrouptype = 0;
                     int servicelock = 0;
-                    if (radioKhamBenh.Checked)
-                    {
-                        servicegrouptype = 1;
-                    }
-                    if (radioXetNghiem.Checked)
-                    {
-                        servicegrouptype = 2;
-                    }
-                    if (radioCDHA.Checked)
-                    {
-                        servicegrouptype = 3;
-                    }
-                    if (radioChuyenKhoa.Checked)
-                    {
-                        servicegrouptype = 4;
-                    }
                     if (chkDaKhoa.Checked)
                     {
                         servicelock = 1;
                     }
 
-                    string sql_laydanhsach = "select ROW_NUMBER () OVER (ORDER BY bhyt_groupcode, servicepricename) as stt, mrd_servicerefid, his_servicepricerefid, servicegrouptype, servicepricetype, bhyt_groupcode, servicepricegroupcode, servicepricecode, servicepricename, servicepricenamenhandan, servicepricenamebhyt, servicepricenamenuocngoai, servicepriceunit, servicepricefee, servicepricefeenhandan, servicepricefeebhyt, servicepricefeenuocngoai, servicelock, servicepricecodeuser, servicepricesttuser, pttt_hangid, pttt_loaiid, mrd_templatename from mrd_serviceref where servicegrouptype=" + servicegrouptype + " and servicelock=" + servicelock + ";";
+                    string sql_laydanhsach = "select ROW_NUMBER () OVER (ORDER BY bhyt_groupcode, servicepricename) as stt, mrd_servicerefid, his_servicepricerefid, servicegrouptype, servicepricetype, bhyt_groupcode, servicepricegroupcode, servicepricecode, servicepricename, servicepricenamenhandan, servicepricenamebhyt, servicepricenamenuocngoai, servicepriceunit, servicepricefee, servicepricefeenhandan, servicepricefeebhyt, servicepricefeenuocngoai, servicelock, servicepricecodeuser, servicepricesttuser, pttt_hangid, pttt_loaiid, mrd_templatename from mrd_serviceref where servicegrouptype = 4 and servicelock=" + servicelock + ";";
                     DataTable dv_dataserviceref = condb.GetDataTable_HSBA(sql_laydanhsach);
                     if (dv_dataserviceref.Rows.Count > 0)
                     {
@@ -616,6 +574,14 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
             catch (Exception ex)
             {
                 Base.Logging.Warn(ex);
+            }
+        }
+
+        private void txtTuKhoaTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                GetDataDanhMucDichVu();
             }
         }
 

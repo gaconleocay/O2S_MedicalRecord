@@ -10,19 +10,21 @@ namespace O2S_MedicalRecord.DAL
 {
     public class ConnectDatabase
     {
-        public string serverhost = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost"].ToString().Trim() ?? "", true);
-        public string serveruser = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Username"].ToString().Trim(), true);
-        public string serverpass = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Password"].ToString().Trim(), true);
-        public string serverdb = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database"].ToString().Trim(), true);
-        public string serverhost_HSBA = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost_HSBA"].ToString().Trim() ?? "", true);
-        public string serveruser_HSBA = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Username_HSBA"].ToString().Trim(), true);
-        public string serverpass_HSBA = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Password_HSBA"].ToString().Trim(), true);
-        public string serverdb_HSBA = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database_HSBA"].ToString().Trim(), true);
+        #region Khai bao
+        private string serverhost = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost"].ToString().Trim() ?? "", true);
+        private string serveruser = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Username"].ToString().Trim(), true);
+        private string serverpass = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Password"].ToString().Trim(), true);
+        private string serverdb = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database"].ToString().Trim(), true);
+        private string serverhost_HSBA = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost_HSBA"].ToString().Trim() ?? "", true);
+        private string serveruser_HSBA = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Username_HSBA"].ToString().Trim(), true);
+        private string serverpass_HSBA = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Password_HSBA"].ToString().Trim(), true);
+        private string serverdb_HSBA = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database_HSBA"].ToString().Trim(), true);
 
         NpgsqlConnection conn;
         NpgsqlConnection conn_HSBA;
         private bool kiemtraketnoi = false;
 
+        #endregion
         #region Database HIS
         public void connect()
         {
@@ -221,22 +223,19 @@ namespace O2S_MedicalRecord.DAL
             DataTable result = new DataTable();
             try
             {
-                try
-                {
-                    //dblink_connect
-                    string dblink_connect = "SELECT dblink_connect('myconn', 'dbname=" + serverdb + " port=5432 host=" + serverhost + " user=" + serveruser + " password=" + serverpass + "');";
-                    GetDataTable_HSBA(dblink_connect);
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+                //dblink_connect
+                Execute_Dblink_Connect_HIS();
                 //Chay SQL thuc thi
                 result = GetDataTable_HSBA(sql);
+                //Disconnect
+                Execute_Dblink_Disconnect_HIS();
             }
             catch (Exception ex)
             {
-                Logging.Error("Loi getDataTable Dblink: " + ex.ToString());
+                Execute_Dblink_Disconnect_HIS();
+                Execute_Dblink_Connect_HIS();
+                result = GetDataTable_HSBA(sql);
+                Execute_Dblink_Disconnect_HIS();
             }
             return result;
         }
@@ -245,27 +244,51 @@ namespace O2S_MedicalRecord.DAL
             bool result = false;
             try
             {
-                try
-                {
-                    //dblink_connect
-                    string dblink_connect = "SELECT dblink_connect('myconn', 'dbname=" + serverdb + " port=5432 host=" + serverhost + " user=" + serveruser + " password=" + serverpass + "');";
-                    GetDataTable_HSBA(dblink_connect);
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
+                //dblink_connect
+                Execute_Dblink_Connect_HIS();
                 //Chay SQL thuc thi
                 result = ExecuteNonQuery_HSBA(sql);
+                //Disconnect
+                Execute_Dblink_Disconnect_HIS();
             }
             catch (Exception ex)
             {
-                Logging.Error("Loi getDataTable Dblink: " + ex.ToString());
+                //Logging.Error("Loi getDataTable Dblink: " + ex.ToString());
+                Execute_Dblink_Disconnect_HIS();
+                Execute_Dblink_Connect_HIS();
+                result = ExecuteNonQuery_HSBA(sql);
+                Execute_Dblink_Disconnect_HIS();
             }
             return result;
         }
 
+        public void Execute_Dblink_Connect_HIS()
+        {
+            try
+            {
+                string dblink_connect = "SELECT dblink_connect('myconn', 'dbname=" + serverdb + " port=5432 host=" + serverhost + " user=" + serveruser + " password=" + serverpass + "');";
+                GetDataTable_HSBA(dblink_connect);
+            }
+            catch (Exception)
+            {
+            }
+        }
+        public void Execute_Dblink_Disconnect_HIS()
+        {
+            try
+            {
+                string dblink_dis = "SELECT dblink_disconnect('myconn');";
+                GetDataTable_HSBA(dblink_dis);
+            }
+            catch (Exception)
+            {
+            }
+        }
         #endregion
+
+
+
+
     }
 }
 

@@ -18,7 +18,8 @@ namespace O2S_MedicalRecord.Base
     /// </summary>
     public static class SessionLogin
     {
-        public static string SessionUsercode { get; set; }  // ID user
+        public static long SessionUserID { get; set; }  // ID user
+        public static string SessionUsercode { get; set; }  // code user
         public static string SessionUsername { get; set; }  // Tên user
         public static string SessionMachineName { get; set; }   // Tên máy
         public static string SessionMyIP { get; set; }  // Địa chỉ IP máy
@@ -34,7 +35,6 @@ namespace O2S_MedicalRecord.Base
         public static List<DTO.classPermission> SessionLstPhanQuyen_BaoCao { get; set; }
         public static List<DTO.classUserMedicineStore> SessionLstPhanQuyen_KhoThuoc { get; set; }
         public static List<DTO.classUserMedicinePhongLuu> SessionLstPhanQuyen_PhongLuu { get; set; }
-
     }
 
 

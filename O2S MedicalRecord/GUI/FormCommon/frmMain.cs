@@ -61,12 +61,6 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 ucHSBA.Dock = System.Windows.Forms.DockStyle.Fill;
                 tabMenuHSBA.Controls.Add(ucHSBA);
 
-              //  tabMenuHSBA.Controls.Clear();
-              //  O2S_MedicalRecord.BaoCao.BCPhauThuatThuThuat ucHSBA = new BaoCao.BCPhauThuatThuThuat();
-              ////  ucHSBA.MyGetData = new FormCommon.ucHoSoBenhAn.GetString(HienThiTenChucNang);
-              //  ucHSBA.Dock = System.Windows.Forms.DockStyle.Fill;
-              //  tabMenuHSBA.Controls.Add(ucHSBA);
-
                 //tabMenuDashboard.Controls.Clear();
                 //O2S_MedicalRecord.GUI.FormCommon.ucDashboard ucDashboard = new FormCommon.ucDashboard();
                 //ucDashboard.MyGetData = new FormCommon.ucDashboard.GetString(HienThiTenChucNang);

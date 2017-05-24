@@ -22,7 +22,7 @@ namespace O2S_MedicalRecord.Base
                 string license_keydb = "";
                 //Load License tu DB ra
                 string kiemtra_licensetag = "SELECT datakey,licensekey FROM mrd_license WHERE datakey='" + SessionLogin.MaDatabase + "' ;";
-                DataView dataLicense = new DataView(condb.GetDataTable_HIS(kiemtra_licensetag));
+                DataView dataLicense = new DataView(condb.GetDataTable_HSBA(kiemtra_licensetag));
                 if (dataLicense != null && dataLicense.Count > 0)
                 {
                     license_keydb = dataLicense[0]["licensekey"].ToString();
@@ -90,7 +90,7 @@ namespace O2S_MedicalRecord.Base
             try
             {
                 string sqlLayMaDatabase = "SELECT datid, datname FROM pg_stat_activity where pid=(select pg_backend_pid());";
-                DataView dataMaDB = new DataView(condb.GetDataTable_HIS(sqlLayMaDatabase));
+                DataView dataMaDB = new DataView(condb.GetDataTable_HSBA(sqlLayMaDatabase));
                 if (dataMaDB != null && dataMaDB.Count > 0)
                 {
                     MaDatabase = dataMaDB[0]["datid"].ToString() + dataMaDB[0]["datname"].ToString();

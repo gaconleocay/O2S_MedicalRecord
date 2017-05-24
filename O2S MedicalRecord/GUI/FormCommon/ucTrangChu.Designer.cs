@@ -67,6 +67,7 @@
             this.navBarItemListNhanVien = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemListOption = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemListDVPTTT = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemListDMBenhAn = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItemMaHoaGiaiMa = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemNhatKySuKien = new DevExpress.XtraNavBar.NavBarItem();
@@ -447,7 +448,8 @@
             this.navBarItemMaHoaGiaiMa,
             this.navBarItemNhatKySuKien,
             this.navBarItemQLMayTram,
-            this.navBarItemListDVPTTT});
+            this.navBarItemListDVPTTT,
+            this.navBarItemListDMBenhAn});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 159;
@@ -512,7 +514,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemListNguoiDung),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemListNhanVien),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemListOption),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemListDVPTTT)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemListDVPTTT),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemListDMBenhAn)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navBarItemListNguoiDung
@@ -578,6 +581,22 @@
             this.navBarItemListDVPTTT.Caption = "Danh mục dịch vụ PTTT";
             this.navBarItemListDVPTTT.Name = "navBarItemListDVPTTT";
             this.navBarItemListDVPTTT.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemListDVPTTT_LinkClicked);
+            // 
+            // navBarItemListDMBenhAn
+            // 
+            this.navBarItemListDMBenhAn.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.navBarItemListDMBenhAn.Appearance.Options.UseFont = true;
+            this.navBarItemListDMBenhAn.AppearanceDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.navBarItemListDMBenhAn.AppearanceDisabled.Options.UseFont = true;
+            this.navBarItemListDMBenhAn.AppearanceHotTracked.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.navBarItemListDMBenhAn.AppearanceHotTracked.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.navBarItemListDMBenhAn.AppearanceHotTracked.Options.UseFont = true;
+            this.navBarItemListDMBenhAn.AppearanceHotTracked.Options.UseForeColor = true;
+            this.navBarItemListDMBenhAn.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.navBarItemListDMBenhAn.AppearancePressed.Options.UseFont = true;
+            this.navBarItemListDMBenhAn.Caption = "Danh mục bệnh án";
+            this.navBarItemListDMBenhAn.Name = "navBarItemListDMBenhAn";
+            this.navBarItemListDMBenhAn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemListDMBenhAn_LinkClicked);
             // 
             // navBarGroup3
             // 
@@ -728,5 +747,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemNhatKySuKien;
         private DevExpress.XtraNavBar.NavBarItem navBarItemQLMayTram;
         private DevExpress.XtraNavBar.NavBarItem navBarItemListDVPTTT;
+        private DevExpress.XtraNavBar.NavBarItem navBarItemListDMBenhAn;
     }
 }

@@ -144,6 +144,19 @@ namespace O2S_MedicalRecord.GUI.FormCommon
             }
         }
 
-
+        private void navBarItemListDMBenhAn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                panelCaiDatChiTiet.Controls.Clear();
+                ucDanhMucBenhAn frmResult = new ucDanhMucBenhAn();
+                frmResult.Dock = System.Windows.Forms.DockStyle.Fill;
+                panelCaiDatChiTiet.Controls.Add(frmResult);
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
+        }
     }
 }

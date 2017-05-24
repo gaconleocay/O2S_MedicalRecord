@@ -9,7 +9,8 @@ namespace O2S_MedicalRecord
 {
     public class GlobalStore
     {
-       public static List<MrdServicerefDTO> GlobalLstMrdServiceref { get; set; }
+       public static List<MrdServicerefDTO> GlobalLst_MrdServiceref { get; set; }
+       public static List<MrdHsbaTemplateDTO> GlobalLst_MrdHsbaTemplate { get; set; }
 
 
 

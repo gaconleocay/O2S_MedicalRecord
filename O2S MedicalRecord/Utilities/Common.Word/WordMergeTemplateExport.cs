@@ -31,7 +31,7 @@ namespace O2S_MedicalRecord.Utilities.Common.Word
                 throw ex;
             }
         }
-        public static Aspose.Words.Document ExportWordMailMerge(string fileFullPath, DataTable dt)
+        public static Aspose.Words.Document ExportWordMailMerge(string fileFullPath, DataTable dt, string filetempname)
         {
             Aspose.Words.Document doc = new Document();
             try
@@ -43,7 +43,7 @@ namespace O2S_MedicalRecord.Utilities.Common.Word
                 Aspose.Words.Document docccc = new Aspose.Words.Document(fileFullPath);
                 doc = docccc.Clone();
                 doc.MailMerge.Execute(dt);
-                doc.Save(strRoot + "\\Templates\\PhieuPhauThuatThuThuat_Tmp\\PTTT.docx", SaveFormat.Docx);
+                doc.Save(strRoot + "\\Templates\\ReportTemps\\" + filetempname, SaveFormat.Docx);
             }
             catch (Exception ex)
             {
@@ -51,5 +51,27 @@ namespace O2S_MedicalRecord.Utilities.Common.Word
             }
             return doc;
         }
+
+        public static Aspose.Words.Document ExportWordMailMergeFormat(string fileFullPath, DataTable dt, string filetempname, SaveFormat format)
+        {
+            Aspose.Words.Document doc = new Document();
+            try
+            {
+                string strRoot = Environment.CurrentDirectory;
+                Aspose.Words.License l = new Aspose.Words.License();
+                string strLicense = strRoot + "\\Library\\Aspose.Words.lic";
+                l.SetLicense(strLicense);
+                Aspose.Words.Document docccc = new Aspose.Words.Document(fileFullPath);
+                doc = docccc.Clone();
+                doc.MailMerge.Execute(dt);
+                doc.Save(strRoot + "\\Templates\\ReportTemps\\" + filetempname, format);
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
+            return doc;
+        }
+
     }
 }

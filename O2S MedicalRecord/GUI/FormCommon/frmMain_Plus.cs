@@ -18,7 +18,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 Base.SessionLogin.SessionLstPhanQuyen_BaoCao = Base.SessionLogin.SessionLstPhanQuyenNguoiDung.Where(o => o.permissiontype == 10).OrderBy(o => o.permissioncode).ToList();
                 Base.SessionLogin.SessionLstPhanQuyen_Dashboard = Base.SessionLogin.SessionLstPhanQuyenNguoiDung.Where(o => o.permissiontype == 5).ToList();
 
-                if ((SessionLogin.SessionLstPhanQuyen_ChucNang == null || SessionLogin.SessionLstPhanQuyen_ChucNang.Count <= 0) && (SessionLogin.SessionLstPhanQuyen_Report == null || SessionLogin.SessionLstPhanQuyen_Report.Count <= 0))
+                if (SessionLogin.SessionLstPhanQuyen_ChucNang == null || SessionLogin.SessionLstPhanQuyen_ChucNang.Count <= 0)
                 {
                     tabMenuHSBA.PageVisible = false;
                 }
@@ -39,7 +39,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon
             try
             {
                 tabMenuHSBA.PageVisible = enabledisable;
-                tabMenuDashboard.PageVisible = enabledisable;
+                //tabMenuDashboard.PageVisible = enabledisable;
             }
             catch (Exception ex)
             {

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panelControlThongTinDV = new DevExpress.XtraEditors.PanelControl();
+            this.txtTuKhoaTimKiem = new System.Windows.Forms.TextBox();
+            this.dropDownImportExport = new DevExpress.XtraEditors.DropDownButton();
             this.chkDaKhoa = new DevExpress.XtraEditors.CheckEdit();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
-            this.radioXetNghiem = new System.Windows.Forms.RadioButton();
-            this.radioChuyenKhoa = new System.Windows.Forms.RadioButton();
-            this.radioCDHA = new System.Windows.Forms.RadioButton();
-            this.radioKhamBenh = new System.Windows.Forms.RadioButton();
             this.panelControlChucNang = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtservicepricenamepttt = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtservicepricenamenhandan = new System.Windows.Forms.TextBox();
             this.txtservicepricegroupcode = new System.Windows.Forms.TextBox();
@@ -73,8 +73,9 @@
             this.servicepricefeebhyt = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.servicepricefeenhandan = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.mrd_templatename = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.servicepricenamebhyt = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.servicepricenamenuocngoai = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.openFileDialogSelect = new System.Windows.Forms.OpenFileDialog();
-            this.dropDownImportExport = new DevExpress.XtraEditors.DropDownButton();
             this.openFileDialogImport = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlThongTinDV)).BeginInit();
             this.panelControlThongTinDV.SuspendLayout();
@@ -92,22 +93,55 @@
             // 
             // panelControlThongTinDV
             // 
+            this.panelControlThongTinDV.Controls.Add(this.txtTuKhoaTimKiem);
             this.panelControlThongTinDV.Controls.Add(this.dropDownImportExport);
             this.panelControlThongTinDV.Controls.Add(this.chkDaKhoa);
             this.panelControlThongTinDV.Controls.Add(this.btnTimKiem);
-            this.panelControlThongTinDV.Controls.Add(this.radioXetNghiem);
-            this.panelControlThongTinDV.Controls.Add(this.radioChuyenKhoa);
-            this.panelControlThongTinDV.Controls.Add(this.radioCDHA);
-            this.panelControlThongTinDV.Controls.Add(this.radioKhamBenh);
             this.panelControlThongTinDV.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlThongTinDV.Location = new System.Drawing.Point(0, 0);
             this.panelControlThongTinDV.Name = "panelControlThongTinDV";
             this.panelControlThongTinDV.Size = new System.Drawing.Size(1096, 62);
             this.panelControlThongTinDV.TabIndex = 4;
             // 
+            // txtTuKhoaTimKiem
+            // 
+            this.txtTuKhoaTimKiem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuKhoaTimKiem.Location = new System.Drawing.Point(30, 18);
+            this.txtTuKhoaTimKiem.Name = "txtTuKhoaTimKiem";
+            this.txtTuKhoaTimKiem.Size = new System.Drawing.Size(416, 27);
+            this.txtTuKhoaTimKiem.TabIndex = 39;
+            this.txtTuKhoaTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTuKhoaTimKiem_KeyDown);
+            // 
+            // dropDownImportExport
+            // 
+            this.dropDownImportExport.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dropDownImportExport.Appearance.Options.UseFont = true;
+            this.dropDownImportExport.Appearance.Options.UseForeColor = true;
+            this.dropDownImportExport.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearanceDropDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.dropDownImportExport.AppearanceDropDown.Options.UseFont = true;
+            this.dropDownImportExport.AppearanceDropDown.Options.UseForeColor = true;
+            this.dropDownImportExport.AppearanceDropDownDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearanceDropDownDisabled.Options.UseFont = true;
+            this.dropDownImportExport.AppearanceDropDownHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearanceDropDownHovered.Options.UseFont = true;
+            this.dropDownImportExport.AppearanceDropDownPressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearanceDropDownPressed.Options.UseFont = true;
+            this.dropDownImportExport.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearanceHovered.Options.UseFont = true;
+            this.dropDownImportExport.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dropDownImportExport.AppearancePressed.Options.UseFont = true;
+            this.dropDownImportExport.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Show;
+            this.dropDownImportExport.Location = new System.Drawing.Point(855, 17);
+            this.dropDownImportExport.Name = "dropDownImportExport";
+            this.dropDownImportExport.Size = new System.Drawing.Size(100, 30);
+            this.dropDownImportExport.TabIndex = 8;
+            this.dropDownImportExport.Text = "Nhập xuất";
+            // 
             // chkDaKhoa
             // 
-            this.chkDaKhoa.Location = new System.Drawing.Point(495, 19);
+            this.chkDaKhoa.Location = new System.Drawing.Point(672, 19);
             this.chkDaKhoa.Name = "chkDaKhoa";
             this.chkDaKhoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.chkDaKhoa.Properties.Appearance.Options.UseFont = true;
@@ -122,80 +156,27 @@
             this.btnTimKiem.Appearance.Options.UseFont = true;
             this.btnTimKiem.Appearance.Options.UseForeColor = true;
             this.btnTimKiem.Image = global::O2S_MedicalRecord.Properties.Resources.search_3_16;
-            this.btnTimKiem.Location = new System.Drawing.Point(764, 17);
+            this.btnTimKiem.Location = new System.Drawing.Point(482, 15);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 30);
             this.btnTimKiem.TabIndex = 5;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // radioXetNghiem
-            // 
-            this.radioXetNghiem.AutoSize = true;
-            this.radioXetNghiem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioXetNghiem.Location = new System.Drawing.Point(124, 19);
-            this.radioXetNghiem.Name = "radioXetNghiem";
-            this.radioXetNghiem.Size = new System.Drawing.Size(107, 23);
-            this.radioXetNghiem.TabIndex = 3;
-            this.radioXetNghiem.TabStop = true;
-            this.radioXetNghiem.Text = "Xét nghiệm";
-            this.radioXetNghiem.UseVisualStyleBackColor = true;
-            this.radioXetNghiem.Visible = false;
-            this.radioXetNghiem.CheckedChanged += new System.EventHandler(this.radioXetNghiem_CheckedChanged);
-            // 
-            // radioChuyenKhoa
-            // 
-            this.radioChuyenKhoa.AutoSize = true;
-            this.radioChuyenKhoa.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioChuyenKhoa.Location = new System.Drawing.Point(326, 19);
-            this.radioChuyenKhoa.Name = "radioChuyenKhoa";
-            this.radioChuyenKhoa.Size = new System.Drawing.Size(119, 23);
-            this.radioChuyenKhoa.TabIndex = 2;
-            this.radioChuyenKhoa.TabStop = true;
-            this.radioChuyenKhoa.Text = "Chuyên khoa";
-            this.radioChuyenKhoa.UseVisualStyleBackColor = true;
-            this.radioChuyenKhoa.CheckedChanged += new System.EventHandler(this.radioChuyenKhoa_CheckedChanged);
-            // 
-            // radioCDHA
-            // 
-            this.radioCDHA.AutoSize = true;
-            this.radioCDHA.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioCDHA.Location = new System.Drawing.Point(237, 19);
-            this.radioCDHA.Name = "radioCDHA";
-            this.radioCDHA.Size = new System.Drawing.Size(70, 23);
-            this.radioCDHA.TabIndex = 1;
-            this.radioCDHA.TabStop = true;
-            this.radioCDHA.Text = "CĐHA";
-            this.radioCDHA.UseVisualStyleBackColor = true;
-            this.radioCDHA.Visible = false;
-            this.radioCDHA.CheckedChanged += new System.EventHandler(this.radioCDHA_CheckedChanged);
-            // 
-            // radioKhamBenh
-            // 
-            this.radioKhamBenh.AutoSize = true;
-            this.radioKhamBenh.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioKhamBenh.Location = new System.Drawing.Point(11, 19);
-            this.radioKhamBenh.Name = "radioKhamBenh";
-            this.radioKhamBenh.Size = new System.Drawing.Size(107, 23);
-            this.radioKhamBenh.TabIndex = 0;
-            this.radioKhamBenh.TabStop = true;
-            this.radioKhamBenh.Text = "Khám bệnh";
-            this.radioKhamBenh.UseVisualStyleBackColor = true;
-            this.radioKhamBenh.Visible = false;
-            this.radioKhamBenh.CheckedChanged += new System.EventHandler(this.radioKhamBenh_CheckedChanged);
-            // 
             // panelControlChucNang
             // 
             this.panelControlChucNang.Controls.Add(this.panelControl2);
             this.panelControlChucNang.Controls.Add(this.panelControl1);
             this.panelControlChucNang.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControlChucNang.Location = new System.Drawing.Point(507, 62);
+            this.panelControlChucNang.Location = new System.Drawing.Point(565, 62);
             this.panelControlChucNang.Name = "panelControlChucNang";
-            this.panelControlChucNang.Size = new System.Drawing.Size(589, 551);
+            this.panelControlChucNang.Size = new System.Drawing.Size(531, 551);
             this.panelControlChucNang.TabIndex = 6;
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.label12);
+            this.panelControl2.Controls.Add(this.txtservicepricenamepttt);
             this.panelControl2.Controls.Add(this.label11);
             this.panelControl2.Controls.Add(this.txtservicepricenamenhandan);
             this.panelControl2.Controls.Add(this.txtservicepricegroupcode);
@@ -222,32 +203,51 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(2, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(585, 501);
+            this.panelControl2.Size = new System.Drawing.Size(527, 501);
             this.panelControl2.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(45, 218);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 16);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Tên PTTT";
+            // 
+            // txtservicepricenamepttt
+            // 
+            this.txtservicepricenamepttt.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtservicepricenamepttt.Location = new System.Drawing.Point(115, 215);
+            this.txtservicepricenamepttt.Name = "txtservicepricenamepttt";
+            this.txtservicepricenamepttt.ReadOnly = true;
+            this.txtservicepricenamepttt.Size = new System.Drawing.Size(407, 23);
+            this.txtservicepricenamepttt.TabIndex = 44;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(49, 135);
+            this.label11.Location = new System.Drawing.Point(32, 138);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 16);
+            this.label11.Size = new System.Drawing.Size(74, 16);
             this.label11.TabIndex = 43;
-            this.label11.Text = "Tên viện phí";
+            this.label11.Text = "Tên dịch vụ";
             // 
             // txtservicepricenamenhandan
             // 
             this.txtservicepricenamenhandan.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricenamenhandan.Location = new System.Drawing.Point(133, 135);
+            this.txtservicepricenamenhandan.Location = new System.Drawing.Point(113, 135);
             this.txtservicepricenamenhandan.Name = "txtservicepricenamenhandan";
             this.txtservicepricenamenhandan.ReadOnly = true;
-            this.txtservicepricenamenhandan.Size = new System.Drawing.Size(439, 23);
+            this.txtservicepricenamenhandan.Size = new System.Drawing.Size(407, 23);
             this.txtservicepricenamenhandan.TabIndex = 42;
             // 
             // txtservicepricegroupcode
             // 
             this.txtservicepricegroupcode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricegroupcode.Location = new System.Drawing.Point(423, 15);
+            this.txtservicepricegroupcode.Location = new System.Drawing.Point(370, 15);
             this.txtservicepricegroupcode.Name = "txtservicepricegroupcode";
             this.txtservicepricegroupcode.ReadOnly = true;
             this.txtservicepricegroupcode.Size = new System.Drawing.Size(150, 23);
@@ -256,10 +256,10 @@
             // txtbhyt_groupcode
             // 
             this.txtbhyt_groupcode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbhyt_groupcode.Location = new System.Drawing.Point(133, 95);
+            this.txtbhyt_groupcode.Location = new System.Drawing.Point(113, 95);
             this.txtbhyt_groupcode.Name = "txtbhyt_groupcode";
             this.txtbhyt_groupcode.ReadOnly = true;
-            this.txtbhyt_groupcode.Size = new System.Drawing.Size(200, 23);
+            this.txtbhyt_groupcode.Size = new System.Drawing.Size(150, 23);
             this.txtbhyt_groupcode.TabIndex = 40;
             // 
             // btnTimFileKetQua
@@ -269,7 +269,7 @@
             this.btnTimFileKetQua.Appearance.Options.UseFont = true;
             this.btnTimFileKetQua.Appearance.Options.UseForeColor = true;
             this.btnTimFileKetQua.Image = global::O2S_MedicalRecord.Properties.Resources.text_file_4_16;
-            this.btnTimFileKetQua.Location = new System.Drawing.Point(472, 329);
+            this.btnTimFileKetQua.Location = new System.Drawing.Point(420, 367);
             this.btnTimFileKetQua.Name = "btnTimFileKetQua";
             this.btnTimFileKetQua.Size = new System.Drawing.Size(100, 27);
             this.btnTimFileKetQua.TabIndex = 39;
@@ -279,16 +279,16 @@
             // txtmrd_templatename
             // 
             this.txtmrd_templatename.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmrd_templatename.Location = new System.Drawing.Point(134, 332);
+            this.txtmrd_templatename.Location = new System.Drawing.Point(114, 371);
             this.txtmrd_templatename.Name = "txtmrd_templatename";
-            this.txtmrd_templatename.Size = new System.Drawing.Size(318, 23);
+            this.txtmrd_templatename.Size = new System.Drawing.Size(300, 23);
             this.txtmrd_templatename.TabIndex = 38;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 339);
+            this.label10.Location = new System.Drawing.Point(3, 374);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 16);
             this.label10.TabIndex = 32;
@@ -298,7 +298,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(356, 18);
+            this.label9.Location = new System.Drawing.Point(303, 18);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 16);
             this.label9.TabIndex = 29;
@@ -308,7 +308,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(324, 258);
+            this.label5.Location = new System.Drawing.Point(271, 298);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 16);
             this.label5.TabIndex = 27;
@@ -318,7 +318,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(53, 258);
+            this.label8.Location = new System.Drawing.Point(33, 298);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 16);
             this.label8.TabIndex = 26;
@@ -327,7 +327,7 @@
             // txtservicepricefeenuocngoai
             // 
             this.txtservicepricefeenuocngoai.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricefeenuocngoai.Location = new System.Drawing.Point(423, 255);
+            this.txtservicepricefeenuocngoai.Location = new System.Drawing.Point(370, 295);
             this.txtservicepricefeenuocngoai.Name = "txtservicepricefeenuocngoai";
             this.txtservicepricefeenuocngoai.ReadOnly = true;
             this.txtservicepricefeenuocngoai.Size = new System.Drawing.Size(150, 23);
@@ -337,7 +337,7 @@
             // txtservicepricefee
             // 
             this.txtservicepricefee.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricefee.Location = new System.Drawing.Point(134, 255);
+            this.txtservicepricefee.Location = new System.Drawing.Point(114, 295);
             this.txtservicepricefee.Name = "txtservicepricefee";
             this.txtservicepricefee.ReadOnly = true;
             this.txtservicepricefee.Size = new System.Drawing.Size(150, 23);
@@ -348,7 +348,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(343, 218);
+            this.label6.Location = new System.Drawing.Point(290, 258);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 16);
             this.label6.TabIndex = 23;
@@ -358,7 +358,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(67, 218);
+            this.label7.Location = new System.Drawing.Point(47, 258);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 16);
             this.label7.TabIndex = 22;
@@ -367,7 +367,7 @@
             // txtservicepricefeenhandan
             // 
             this.txtservicepricefeenhandan.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricefeenhandan.Location = new System.Drawing.Point(423, 211);
+            this.txtservicepricefeenhandan.Location = new System.Drawing.Point(370, 251);
             this.txtservicepricefeenhandan.Name = "txtservicepricefeenhandan";
             this.txtservicepricefeenhandan.ReadOnly = true;
             this.txtservicepricefeenhandan.Size = new System.Drawing.Size(150, 23);
@@ -377,7 +377,7 @@
             // txtservicepricefeebhyt
             // 
             this.txtservicepricefeebhyt.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricefeebhyt.Location = new System.Drawing.Point(134, 215);
+            this.txtservicepricefeebhyt.Location = new System.Drawing.Point(114, 255);
             this.txtservicepricefeebhyt.Name = "txtservicepricefeebhyt";
             this.txtservicepricefeebhyt.ReadOnly = true;
             this.txtservicepricefeebhyt.Size = new System.Drawing.Size(150, 23);
@@ -388,7 +388,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(52, 98);
+            this.label4.Location = new System.Drawing.Point(32, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 16);
             this.label4.TabIndex = 18;
@@ -398,7 +398,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(63, 178);
+            this.label3.Location = new System.Drawing.Point(42, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
             this.label3.TabIndex = 17;
@@ -408,7 +408,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 58);
+            this.label2.Location = new System.Drawing.Point(53, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 16;
@@ -418,7 +418,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 18);
+            this.label1.Location = new System.Drawing.Point(38, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 16);
             this.label1.TabIndex = 15;
@@ -427,28 +427,28 @@
             // txtservicepricenamebhyt
             // 
             this.txtservicepricenamebhyt.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricenamebhyt.Location = new System.Drawing.Point(133, 175);
+            this.txtservicepricenamebhyt.Location = new System.Drawing.Point(113, 175);
             this.txtservicepricenamebhyt.Name = "txtservicepricenamebhyt";
             this.txtservicepricenamebhyt.ReadOnly = true;
-            this.txtservicepricenamebhyt.Size = new System.Drawing.Size(439, 23);
+            this.txtservicepricenamebhyt.Size = new System.Drawing.Size(407, 23);
             this.txtservicepricenamebhyt.TabIndex = 14;
             // 
             // txtservicepricecodeuser
             // 
             this.txtservicepricecodeuser.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricecodeuser.Location = new System.Drawing.Point(133, 55);
+            this.txtservicepricecodeuser.Location = new System.Drawing.Point(113, 55);
             this.txtservicepricecodeuser.Name = "txtservicepricecodeuser";
             this.txtservicepricecodeuser.ReadOnly = true;
-            this.txtservicepricecodeuser.Size = new System.Drawing.Size(200, 23);
+            this.txtservicepricecodeuser.Size = new System.Drawing.Size(150, 23);
             this.txtservicepricecodeuser.TabIndex = 13;
             // 
             // txtservicepricecode
             // 
             this.txtservicepricecode.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtservicepricecode.Location = new System.Drawing.Point(133, 15);
+            this.txtservicepricecode.Location = new System.Drawing.Point(113, 15);
             this.txtservicepricecode.Name = "txtservicepricecode";
             this.txtservicepricecode.ReadOnly = true;
-            this.txtservicepricecode.Size = new System.Drawing.Size(200, 23);
+            this.txtservicepricecode.Size = new System.Drawing.Size(150, 23);
             this.txtservicepricecode.TabIndex = 12;
             // 
             // panelControl1
@@ -459,7 +459,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl1.Location = new System.Drawing.Point(2, 503);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(585, 46);
+            this.panelControl1.Size = new System.Drawing.Size(527, 46);
             this.panelControl1.TabIndex = 0;
             // 
             // btnHuy
@@ -510,7 +510,7 @@
             this.panelControlData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlData.Location = new System.Drawing.Point(0, 62);
             this.panelControlData.Name = "panelControlData";
-            this.panelControlData.Size = new System.Drawing.Size(507, 551);
+            this.panelControlData.Size = new System.Drawing.Size(565, 551);
             this.panelControlData.TabIndex = 7;
             // 
             // treeListDSDichVu
@@ -526,7 +526,9 @@
             this.servicepriceunit,
             this.servicepricefeebhyt,
             this.servicepricefeenhandan,
-            this.mrd_templatename});
+            this.mrd_templatename,
+            this.servicepricenamebhyt,
+            this.servicepricenamenuocngoai});
             this.treeListDSDichVu.Cursor = System.Windows.Forms.Cursors.Default;
             this.treeListDSDichVu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeListDSDichVu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -534,13 +536,12 @@
             this.treeListDSDichVu.Name = "treeListDSDichVu";
             this.treeListDSDichVu.OptionsBehavior.PopulateServiceColumns = true;
             this.treeListDSDichVu.OptionsFind.AllowFindPanel = true;
-            this.treeListDSDichVu.OptionsFind.AlwaysVisible = true;
             this.treeListDSDichVu.OptionsFind.FindNullPrompt = "Từ khóa tìm kiếm...";
             this.treeListDSDichVu.OptionsFind.ShowClearButton = false;
             this.treeListDSDichVu.OptionsView.AutoWidth = false;
             this.treeListDSDichVu.OptionsView.ShowIndicator = false;
             this.treeListDSDichVu.RowHeight = 25;
-            this.treeListDSDichVu.Size = new System.Drawing.Size(503, 547);
+            this.treeListDSDichVu.Size = new System.Drawing.Size(561, 547);
             this.treeListDSDichVu.TabIndex = 0;
             this.treeListDSDichVu.TreeLevelWidth = 25;
             this.treeListDSDichVu.NodeCellStyle += new DevExpress.XtraTreeList.GetCustomNodeCellStyleEventHandler(this.treeListDSDichVu_NodeCellStyle);
@@ -665,37 +666,44 @@
             this.mrd_templatename.VisibleIndex = 5;
             this.mrd_templatename.Width = 236;
             // 
+            // servicepricenamebhyt
+            // 
+            this.servicepricenamebhyt.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.servicepricenamebhyt.AppearanceCell.Options.UseFont = true;
+            this.servicepricenamebhyt.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.servicepricenamebhyt.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.servicepricenamebhyt.AppearanceHeader.Options.UseFont = true;
+            this.servicepricenamebhyt.AppearanceHeader.Options.UseForeColor = true;
+            this.servicepricenamebhyt.AppearanceHeader.Options.UseTextOptions = true;
+            this.servicepricenamebhyt.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.servicepricenamebhyt.Caption = "Tên bảo hiểm y tế";
+            this.servicepricenamebhyt.FieldName = "servicepricenamebhyt";
+            this.servicepricenamebhyt.Name = "servicepricenamebhyt";
+            this.servicepricenamebhyt.Visible = true;
+            this.servicepricenamebhyt.VisibleIndex = 6;
+            this.servicepricenamebhyt.Width = 303;
+            // 
+            // servicepricenamenuocngoai
+            // 
+            this.servicepricenamenuocngoai.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.servicepricenamenuocngoai.AppearanceCell.Options.UseFont = true;
+            this.servicepricenamenuocngoai.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.servicepricenamenuocngoai.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.servicepricenamenuocngoai.AppearanceHeader.Options.UseFont = true;
+            this.servicepricenamenuocngoai.AppearanceHeader.Options.UseForeColor = true;
+            this.servicepricenamenuocngoai.AppearanceHeader.Options.UseTextOptions = true;
+            this.servicepricenamenuocngoai.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.servicepricenamenuocngoai.Caption = "Tên phẫu thuật thủ thuật";
+            this.servicepricenamenuocngoai.FieldName = "servicepricenamenuocngoai";
+            this.servicepricenamenuocngoai.Name = "servicepricenamenuocngoai";
+            this.servicepricenamenuocngoai.Visible = true;
+            this.servicepricenamenuocngoai.VisibleIndex = 7;
+            this.servicepricenamenuocngoai.Width = 303;
+            // 
             // openFileDialogSelect
             // 
             this.openFileDialogSelect.Filter = "Word 2007-2013|*.docx|Word 2003|*.doc";
             this.openFileDialogSelect.Title = "Mở file Excel";
-            // 
-            // dropDownImportExport
-            // 
-            this.dropDownImportExport.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dropDownImportExport.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dropDownImportExport.Appearance.Options.UseFont = true;
-            this.dropDownImportExport.Appearance.Options.UseForeColor = true;
-            this.dropDownImportExport.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dropDownImportExport.AppearanceDropDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dropDownImportExport.AppearanceDropDown.Options.UseFont = true;
-            this.dropDownImportExport.AppearanceDropDown.Options.UseForeColor = true;
-            this.dropDownImportExport.AppearanceDropDownDisabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dropDownImportExport.AppearanceDropDownDisabled.Options.UseFont = true;
-            this.dropDownImportExport.AppearanceDropDownHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dropDownImportExport.AppearanceDropDownHovered.Options.UseFont = true;
-            this.dropDownImportExport.AppearanceDropDownPressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dropDownImportExport.AppearanceDropDownPressed.Options.UseFont = true;
-            this.dropDownImportExport.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dropDownImportExport.AppearanceHovered.Options.UseFont = true;
-            this.dropDownImportExport.AppearancePressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dropDownImportExport.AppearancePressed.Options.UseFont = true;
-            this.dropDownImportExport.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Show;
-            this.dropDownImportExport.Location = new System.Drawing.Point(981, 17);
-            this.dropDownImportExport.Name = "dropDownImportExport";
-            this.dropDownImportExport.Size = new System.Drawing.Size(100, 30);
-            this.dropDownImportExport.TabIndex = 8;
-            this.dropDownImportExport.Text = "Nhập xuất";
             // 
             // openFileDialogImport
             // 
@@ -734,10 +742,6 @@
 
         private DevExpress.XtraEditors.PanelControl panelControlThongTinDV;
         private DevExpress.XtraEditors.SimpleButton btnTimKiem;
-        private System.Windows.Forms.RadioButton radioXetNghiem;
-        private System.Windows.Forms.RadioButton radioChuyenKhoa;
-        private System.Windows.Forms.RadioButton radioCDHA;
-        private System.Windows.Forms.RadioButton radioKhamBenh;
         private DevExpress.XtraEditors.PanelControl panelControlChucNang;
         private DevExpress.XtraEditors.PanelControl panelControlData;
         private DevExpress.XtraEditors.PanelControl panelControl2;
@@ -780,5 +784,10 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn mrd_templatename;
         private DevExpress.XtraEditors.DropDownButton dropDownImportExport;
         internal System.Windows.Forms.OpenFileDialog openFileDialogImport;
+        private System.Windows.Forms.TextBox txtTuKhoaTimKiem;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtservicepricenamepttt;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn servicepricenamebhyt;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn servicepricenamenuocngoai;
     }
 }

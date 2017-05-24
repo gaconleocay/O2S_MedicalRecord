@@ -37,36 +37,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 }
                 KiemTraInsertMayTram();
                 LoadDataFromDatabase();
-
-                if (ConfigurationManager.AppSettings["LoginUser"].ToString() != "" && ConfigurationManager.AppSettings["LoginPassword"].ToString() != "")
-                {
-                    this.txtUsername.Text = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["LoginUser"].ToString(), true);
-                    this.txtPassword.Text = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["LoginPassword"].ToString(), true);
-                    this.checkEditNhoPass.Checked = Convert.ToBoolean(ConfigurationManager.AppSettings["checkEditNhoPass"]);
-                }
-                else
-                {
-                    this.txtUsername.Text = "";
-                    this.txtPassword.Text = "";
-                }
-
-                txtUsername.Focus();
-
-                SessionLogin.SessionMachineName = Environment.MachineName;
-                // Địa chỉ Ip
-                String strHostName = Dns.GetHostName();
-                IPHostEntry iphostentry = Dns.GetHostByName(strHostName);
-                //int nIP = 0;
-                string listIP = "";
-                for (int i = 0; i < iphostentry.AddressList.Count(); i++)
-                {
-                    listIP += iphostentry.AddressList[i] + ";";
-                }
-                SessionLogin.SessionMyIP = listIP;
-                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
-                FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
-                SessionLogin.SessionVersion = fvi.FileVersion;
-              //  KiemTraVaCopyFileLaucherNew(); chua co Lanucher
+                LoadDefaultValue();
+                //  KiemTraVaCopyFileLaucherNew(); chua co Lanucher
             }
             catch (Exception ex)
             {
@@ -89,12 +61,26 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 string serverdb_HSBA = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database_HSBA"].ToString().Trim(), true);
 
                 if (conn == null)
+                {
                     conn = new NpgsqlConnection("Server=" + serverhost + ";Port=5432;User Id=" + serveruser + "; " + "Password=" + serverpass + ";Database=" + serverdb + ";CommandTimeout=1800000;");
+                }
                 if (conn.State == ConnectionState.Closed)
+                {
                     conn.Open();
+                }
                 conn.Close();
                 result = true;
                 //todo them ket noi den CSDL HSBA
+                if (conn == null)
+                {
+                    conn = new NpgsqlConnection("Server=" + serverhost_HSBA + ";Port=5432;User Id=" + serveruser_HSBA + "; " + "Password=" + serverpass_HSBA + ";Database=" + serverdb_HSBA + ";CommandTimeout=1800000;");
+                }
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+                conn.Close();
+                result = true;
             }
             catch (Exception ex)
             {
@@ -132,35 +118,14 @@ namespace O2S_MedicalRecord.GUI.FormCommon
         {
             try
             {
-                //Set default
-                //O2S_MedicalRecord.GlobalStore.ThoiGianCapNhatTbl_tools_bndangdt_tmp = 0;
-                //O2S_MedicalRecord.GlobalStore.KhoangThoiGianLayDuLieu = DateTime.Now.Year - 1 + "-01-01 00:00:00";
-
-                //Load thong tin Luu vao GlobalStore
-                //string sqlDSOption = "SELECT toolsoptionid, toolsoptioncode, toolsoptionname, toolsoptionvalue, toolsoptionnote FROM mrd_option WHERE toolsoptionlook<>'1' ;";
-                //DataView dataOption = new DataView(condb.getDataTable(sqlDSOption));
-                //if (dataOption != null && dataOption.Count > 0)
-                //{
-                //    for (int i = 0; i < dataOption.Count; i++)
-                //    {
-                //        if (dataOption[i]["toolsoptioncode"].ToString().ToUpper() == "ThoiGianCapNhatTbl_tools_bndangdt_tmp".ToUpper())
-                //        {
-                //            O2S_MedicalRecord.GlobalStore.ThoiGianCapNhatTbl_tools_bndangdt_tmp = Utilities.Util_TypeConvertParse.ToInt64(dataOption[i]["toolsoptionvalue"].ToString());
-                //        }
-
-                //        if (dataOption[i]["toolsoptioncode"].ToString().ToUpper() == "KhoangThoiGianLayDuLieu".ToUpper())
-                //        {
-                //            O2S_MedicalRecord.GlobalStore.KhoangThoiGianLayDuLieu = dataOption[i]["toolsoptionvalue"].ToString();
-                //        }
-                //    }
-                //}
+                LoadDataSystems.Load_Serviceprice();
+                LoadDataSystems.Load_MrdHsbaTemplate();
             }
             catch (Exception ex)
             {
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
-
         private void KiemTraVaCopyFileLaucherNew()
         {
             try
@@ -209,13 +174,6 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                         continue;
                     }
                 }
-                //string[] folders = Directory.GetDirectories(SourceFolder);
-                //foreach (string folder in folders)
-                //{
-                //    string name = Path.GetFileName(folder);
-                //    string dest = Path.Combine(DestFolder, name);
-                //    CopyFolder(folder, dest);
-                //}
             }
             catch (Exception ex)
             {
@@ -223,18 +181,49 @@ namespace O2S_MedicalRecord.GUI.FormCommon
             }
         }
 
+        private void LoadDefaultValue()
+        {
+            try
+            {
+                if (ConfigurationManager.AppSettings["LoginUser"].ToString() != "" && ConfigurationManager.AppSettings["LoginPassword"].ToString() != "")
+                {
+                    this.txtUsername.Text = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["LoginUser"].ToString(), true);
+                    this.txtPassword.Text = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["LoginPassword"].ToString(), true);
+                    this.checkEditNhoPass.Checked = Convert.ToBoolean(ConfigurationManager.AppSettings["checkEditNhoPass"]);
+                }
+                else
+                {
+                    this.txtUsername.Text = "";
+                    this.txtPassword.Text = "";
+                }
+                txtUsername.Focus();
 
-
+                SessionLogin.SessionMachineName = Environment.MachineName;
+                // Địa chỉ Ip
+                String strHostName = Dns.GetHostName();
+                IPHostEntry iphostentry = Dns.GetHostByName(strHostName);
+                //int nIP = 0;
+                string listIP = "";
+                for (int i = 0; i < iphostentry.AddressList.Count(); i++)
+                {
+                    listIP += iphostentry.AddressList[i] + ";";
+                }
+                SessionLogin.SessionMyIP = listIP;
+                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+                FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+                SessionLogin.SessionVersion = fvi.FileVersion;
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
+        }
 
         #endregion
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                // Mã hóa thông tin để so sánh trong DB
-                string en_txtUsername = O2S_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtUsername.Text.Trim().ToLower(), true);
-                string en_txtPassword = O2S_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtPassword.Text.Trim(), true);
-
                 if (txtUsername.Text == "" || txtPassword.Text == "")
                 {
                     MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -244,42 +233,28 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 // tạo 1 tài khoản ở trên PM, không chứa trong DB để làm tài khoản admin
                 else if (txtUsername.Text.ToLower() == Base.KeyTrongPhanMem.AdminUser_key && txtPassword.Text == Base.KeyTrongPhanMem.AdminPass_key)
                 {
+                    SessionLogin.SessionUserID = -1;
                     SessionLogin.SessionUsercode = txtUsername.Text.Trim().ToLower();
                     SessionLogin.SessionUsername = "Administrator";
-                    //Load data
-                    SessionLogin.SessionLstPhanQuyenNguoiDung = O2S_MedicalRecord.Base.CheckPermission.GetListPhanQuyenNguoiDung();
-                    SessionLogin.SessionlstPhanQuyen_KhoaPhong = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoaPhong();
-                    //SessionLogin.SessionLstPhanQuyen_KhoThuoc = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoThuoc();
-                    //SessionLogin.SessionLstPhanQuyen_PhongLuu = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_PhongLuu();
 
-                    LoadDataSystems.Load_Serviceprice();
-                    frmMain frmm = new frmMain();
-                    frmm.Show();
-                    this.Visible = false;
-                    O2S_MedicalRecord.Base.Logging.Info("Application open successfull. Time=" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff"));
+                    LoadDuLieuSauKhiDangNhap();
                 }
                 else
                 {
+                    string en_txtUsername = O2S_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtUsername.Text.Trim().ToLower(), true);
+                    string en_txtPassword = O2S_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtPassword.Text.Trim(), true);
                     try
                     {
-                        string command = "SELECT usercode, username, userpassword FROM mrd_tbluser WHERE usercode='" + en_txtUsername + "' and userpassword='" + en_txtPassword + "';";
+                        string command = "SELECT userid, usercode, username, userpassword FROM mrd_tbluser WHERE usercode='" + en_txtUsername + "' and userpassword='" + en_txtPassword + "';";
                         DataView dv = new DataView(condb.GetDataTable_HSBA(command));
                         if (dv != null && dv.Count > 0)
                         {
                             Base.KiemTraLicense.KiemTraLicenseHopLe();
+                            SessionLogin.SessionUserID = Utilities.Util_TypeConvertParse.ToInt64(dv[0]["userid"].ToString());
                             SessionLogin.SessionUsercode = txtUsername.Text.Trim().ToLower();
                             SessionLogin.SessionUsername = O2S_MedicalRecord.Base.EncryptAndDecrypt.Decrypt(dv[0]["username"].ToString(), true);
-                            //Load data
-                            SessionLogin.SessionLstPhanQuyenNguoiDung = O2S_MedicalRecord.Base.CheckPermission.GetListPhanQuyenNguoiDung();
-                            SessionLogin.SessionlstPhanQuyen_KhoaPhong = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoaPhong();
-                            //SessionLogin.SessionLstPhanQuyen_KhoThuoc = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoThuoc();
-                            //SessionLogin.SessionLstPhanQuyen_PhongLuu = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_PhongLuu();
 
-                            LoadDataSystems.Load_Serviceprice();
-                            frmMain frmm = new frmMain();
-                            frmm.Show();
-                            this.Visible = false;
-                            O2S_MedicalRecord.Base.Logging.Info("Application open successfull. Time=" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff"));
+                            LoadDuLieuSauKhiDangNhap();
                         }
                         else
                         {
@@ -321,6 +296,29 @@ namespace O2S_MedicalRecord.GUI.FormCommon
             }
         }
 
+        private void LoadDuLieuSauKhiDangNhap()
+        {
+            try
+            {
+                SessionLogin.SessionLstPhanQuyenNguoiDung = O2S_MedicalRecord.Base.CheckPermission.GetListPhanQuyenNguoiDung();
+                SessionLogin.SessionlstPhanQuyen_KhoaPhong = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoaPhong();
+                //SessionLogin.SessionLstPhanQuyen_KhoThuoc = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_KhoThuoc();
+                //SessionLogin.SessionLstPhanQuyen_PhongLuu = O2S_MedicalRecord.Base.CheckPermission.GetPhanQuyen_PhongLuu();
+
+
+                frmMain frmm = new frmMain();
+                frmm.Show();
+                this.Visible = false;
+                O2S_MedicalRecord.Base.Logging.Info("Application open successfull. Time=" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss:fff"));
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Error(ex);
+            }
+        }
+
+
+        #region Custom
         // Khi nhập username và nhấn enter thì forcus vào ô nhập pass
         private void txtUsername_Properties_KeyDown(object sender, KeyEventArgs e)
         {
@@ -375,8 +373,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 throw;
             }
         }
-
-
+        #endregion
 
     }
 }

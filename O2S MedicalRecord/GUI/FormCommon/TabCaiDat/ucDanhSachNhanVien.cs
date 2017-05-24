@@ -19,7 +19,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
     {
         O2S_MedicalRecord.DAL.ConnectDatabase condb = new O2S_MedicalRecord.DAL.ConnectDatabase();
         string codeid;
-        string worksheetName = "mrd_tblnhanvien";
+        string worksheetName = "tools_tblnhanvien";
         private DataView dmUser_Import;
 
         public ucDanhSachNhanVien()
@@ -48,8 +48,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
         {
             try
             {
-                string sqldsnv = "SELECT nhanvienid as stt, usercode as manv, username as tennv, userhisid FROM mrd_tblnhanvien ORDER BY manv";
-                DataView dv = new DataView(condb.GetDataTable_HSBA(sqldsnv));
+                string sqldsnv = "SELECT nhanvienid as stt, usercode as manv, username as tennv, userhisid FROM tools_tblnhanvien ORDER BY manv";
+                DataView dv = new DataView(condb.GetDataTable_HIS(sqldsnv)); //Lay danh sach tu ben HIS
                 if (dv.Count > 0)
                 {
                     gridControlDSNV.DataSource = dv;
@@ -93,8 +93,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
             {
                 if (txtNVID.Text != codeid)
                 {
-                    string sql = "INSERT INTO mrd_tblnhanvien(usercode, username, userpassword, userstatus, usergnhom, usernote, userhisid) VALUES ('" + en_txtNVID + "','" + en_txtNVName + "','" + en_pass + "','0','2','Nhân viên', '" + txtIDHIS.Text.Trim() + "');";
-                    if (condb.ExecuteNonQuery_HSBA(sql))
+                    string sql = "INSERT INTO tools_tblnhanvien(usercode, username, userpassword, userstatus, usergnhom, usernote, userhisid) VALUES ('" + en_txtNVID + "','" + en_txtNVName + "','" + en_pass + "','0','2','Nhân viên', '" + txtIDHIS.Text.Trim() + "');";
+                    if (condb.ExecuteNonQuery_HIS(sql))
                     {
                         O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.THEM_MOI_THANH_CONG);
                         frmthongbao.Show();
@@ -104,8 +104,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 }
                 else
                 {
-                    string sql = "UPDATE mrd_tblnhanvien SET usercode='" + en_txtNVID + "', username='" + en_txtNVName + "', userpassword='" + en_pass + "', userstatus='0', usergnhom='2', usernote='' , userhisid = '" + txtIDHIS.Text.Trim() + "' WHERE usercode='" + en_txtNVID + "';";
-                    if (condb.ExecuteNonQuery_HSBA(sql))
+                    string sql = "UPDATE tools_tblnhanvien SET usercode='" + en_txtNVID + "', username='" + en_txtNVName + "', userpassword='" + en_pass + "', userstatus='0', usergnhom='2', usernote='' , userhisid = '" + txtIDHIS.Text.Trim() + "' WHERE usercode='" + en_txtNVID + "';";
+                    if (condb.ExecuteNonQuery_HIS(sql))
                     {
                         O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.SUA_THANH_CONG);
                         frmthongbao.Show();
@@ -156,14 +156,14 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                             if (dmUser_Import[i]["USERCODE"].ToString() != "")
                             {
                                 condb.connect();
-                                string sql_kt = "SELECT usercode FROM mrd_tblnhanvien WHERE usercode='" + en_txtNVCode + "';";
-                                DataView dv_kt = new DataView(condb.GetDataTable_HSBA(sql_kt));
+                                string sql_kt = "SELECT usercode FROM tools_tblnhanvien WHERE usercode='" + en_txtNVCode + "';";
+                                DataView dv_kt = new DataView(condb.GetDataTable_HIS(sql_kt));
                                 if (dv_kt.Count > 0) //update
                                 {
-                                    string sql_updateUser = "UPDATE mrd_tblnhanvien SET username='" + en_txtNVName + "', userhisid='" + dmUser_Import[i]["USERHISID"] + "' WHERE usercode='" + en_txtNVCode + "';";
+                                    string sql_updateUser = "UPDATE tools_tblnhanvien SET username='" + en_txtNVName + "', userhisid='" + dmUser_Import[i]["USERHISID"] + "' WHERE usercode='" + en_txtNVCode + "';";
                                     try
                                     {
-                                        condb.ExecuteNonQuery_HSBA(sql_updateUser);
+                                        condb.ExecuteNonQuery_HIS(sql_updateUser);
                                         dem_update += 1;
                                     }
                                     catch (Exception)
@@ -173,10 +173,10 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                                 }
                                 else
                                 {
-                                    string sql_insertDVKT = "INSERT INTO mrd_tblnhanvien(usercode, username, userpassword, userstatus, usergnhom, usernote,userhisid) VALUES ('" + en_txtNVCode + "','" + en_txtNVName + "','" + en_pass + "','0','3','Nhân viên', '" + dmUser_Import[i]["USERHISID"] + "');";
+                                    string sql_insertDVKT = "INSERT INTO tools_tblnhanvien(usercode, username, userpassword, userstatus, usergnhom, usernote,userhisid) VALUES ('" + en_txtNVCode + "','" + en_txtNVName + "','" + en_pass + "','0','3','Nhân viên', '" + dmUser_Import[i]["USERHISID"] + "');";
                                     try
                                     {
-                                        condb.ExecuteNonQuery_HSBA(sql_insertDVKT);
+                                        condb.ExecuteNonQuery_HIS(sql_insertDVKT);
                                         dem_insert += 1;
                                     }
                                     catch (Exception)
@@ -236,8 +236,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
             {
                 try
                 {
-                    string sqlxoatk = "DELETE FROM mrd_tblnhanvien WHERE usercode='" + usercode + "';";
-                    condb.ExecuteNonQuery_HSBA(sqlxoatk);
+                    string sqlxoatk = "DELETE FROM tools_tblnhanvien WHERE usercode='" + usercode + "';";
+                    condb.ExecuteNonQuery_HIS(sqlxoatk);
                     O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao("Đã xóa bỏ tài khoản: " + usercode);
                     frmthongbao.Show();
                     gridControlDSNV.DataSource = null;

@@ -12,6 +12,7 @@ namespace O2S_MedicalRecord.DTO
        public long patientid { get; set; }
        public string patientcode { get; set; }
        public string patientname { get; set; }
+       public long vienphiid { get; set; }
        public long medicalrecordid { get; set; }
        public string medicalrecordcode { get; set; }
        public string bhytcode { get; set; }
@@ -22,6 +23,7 @@ namespace O2S_MedicalRecord.DTO
        public long departmentgroupid { get; set; }
        public long servicepriceid { get; set; }
        public string servicepricecode { get; set; }
+       public long mrd_pttt_serviceid { get; set; }
 
     }
 }

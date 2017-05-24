@@ -55,7 +55,7 @@ namespace O2S_MedicalRecord.Base
                 {
                     string en_usercode = O2S_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(SessionLogin.SessionUsercode, true);
                     string sqlper = "SELECT permissionid, permissioncode, permissionname, userid, usercode, permissioncheck FROM mrd_tbluser_permission WHERE usercode = '" + en_usercode + "' and permissioncheck='1';";
-                    DataView dv = new DataView(condb.GetDataTable_HIS(sqlper));
+                    DataView dv = new DataView(condb.GetDataTable_HSBA(sqlper));
                     if (dv.Count > 0)
                     {
                         for (int i = 0; i < dv.Count; i++)
