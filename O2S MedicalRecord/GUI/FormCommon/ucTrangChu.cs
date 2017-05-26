@@ -92,6 +92,11 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                             navBarItemListOption.Visible = O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_04");
                             navBarItemListDVPTTT.Visible = O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_06");
                             navBarItemListDMBenhAn.Visible = O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_07");
+                            navBarItemDMHoiChanThuoc.Visible = O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_08");
+                            navBarItemDMHoiChanPTTT.Visible = O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_09");
+                            navBarItemDMHoiChanChuyenVien.Visible = O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_10");
+                            navBarItemDMDungChung.Visible = O2S_MedicalRecord.Base.CheckPermission.ChkPerModule("SYS_11");
+
                         }
                         else
                         {
@@ -107,6 +112,10 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                         navBarItemListOption.Visible = false;
                         navBarItemListDVPTTT.Visible = false;
                         navBarItemListDMBenhAn.Visible = false;
+                        navBarItemDMHoiChanThuoc.Visible = false;
+                        navBarItemDMHoiChanPTTT.Visible = false;
+                        navBarItemDMHoiChanChuyenVien.Visible = false;
+                        navBarItemDMDungChung.Visible = false;
                     }
                     navBarItemMaHoaGiaiMa.Visible = false;//luon luon false
                     navBarItemNhatKySuKien.Visible = false;
