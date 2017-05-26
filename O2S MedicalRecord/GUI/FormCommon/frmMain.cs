@@ -56,8 +56,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 tabMenuTrangChu.Controls.Add(ucTrangChu);
 
                 tabMenuHSBA.Controls.Clear();
-                O2S_MedicalRecord.GUI.ChucNang.ucDanhSachHoSoBenhAn ucHSBA = new ChucNang.ucDanhSachHoSoBenhAn();
-                ucHSBA.MyGetData = new ChucNang.ucDanhSachHoSoBenhAn.GetString(HienThiTenChucNang);
+                O2S_MedicalRecord.GUI.ChucNang.ucDSHoSoBenhAn ucHSBA = new ChucNang.ucDSHoSoBenhAn();
+                ucHSBA.MyGetData = new ChucNang.ucDSHoSoBenhAn.GetString(HienThiTenChucNang);
                 ucHSBA.Dock = System.Windows.Forms.DockStyle.Fill;
                 tabMenuHSBA.Controls.Add(ucHSBA);
 

@@ -24,6 +24,7 @@ namespace O2S_MedicalRecord.DTO
        public long servicepriceid { get; set; }
        public string servicepricecode { get; set; }
        public long mrd_pttt_serviceid { get; set; }
+       public long hosobenhanstatus { get; set; }
 
     }
 }

@@ -19,10 +19,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_ThongTinChung
         //public delegate void GetString(string thoigian);
         //// khai báo 1 kiểu hàm delegate
         //public GetString MyGetData;
-        private long hosobenhanid { get; set; }
-        private long medicalrecordid { get; set; }
         private DAL.ConnectDatabase conn = new DAL.ConnectDatabase();
-
+        private MedicalrecordDTO mecicalrecordCurrentDTO { get; set; }
 
         #endregion
 
@@ -33,8 +31,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_ThongTinChung
         public ucHSBA_ThongTinChung(MedicalrecordDTO filterDTO)
         {
             InitializeComponent();
-            this.hosobenhanid = filterDTO.hosobenhanid;
-            this.medicalrecordid = filterDTO.medicalrecordid;
+            this.mecicalrecordCurrentDTO = filterDTO;
         }
 
 
@@ -60,7 +57,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_ThongTinChung
             try
             {
                 LoadDuLieuVeMacDinh();
-                LoadDataVeBenhNhan(this.medicalrecordid, this.hosobenhanid);
+                LoadDataVeBenhNhan(this.mecicalrecordCurrentDTO);
             }
             catch (Exception ex)
             {
@@ -93,13 +90,13 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_ThongTinChung
             }
         }
 
-        internal void LoadDataVeBenhNhan(long medicalrecordid, long hosobenhanid)
+        private void LoadDataVeBenhNhan(MedicalrecordDTO mecicalrecordDTO)
         {
             try
             {
-                if (this.medicalrecordid != null && this.hosobenhanid != null)
+                if (mecicalrecordDTO.medicalrecordid != null && mecicalrecordDTO.hosobenhanid != null)
                 {
-                    string sqlthongtin = "select degp.departmentgroupname, de.departmentname, hsba.hosobenhanid, mrd.medicalrecordcode, hsba.patientcode, hsba.patientname, vp.vienphicode, (case vp.doituongbenhnhanid when 1 then 'BHYT' when 2 then 'Viện phí' when 3 then 'Dịch vụ' when 4 then 'Người nước ngoài' when 5 then 'Miễn phí' when 6 then 'Hợp đồng' else '' end) as doituongbenhnhan, ((case when hsba.hc_sonha<>'' then hsba.hc_sonha || ', ' else '' end) || (case when hsba.hc_thon<>'' then hsba.hc_thon || ' - ' else '' end) || (case when hsba.hc_xacode<>'00' then hsba.hc_xaname || ' - ' else '' end) || (case when hsba.hc_huyencode<>'00' then hsba.hc_huyenname || ' - ' else '' end) || (case when hsba.hc_tinhcode<>'00' then hsba.hc_tinhname || ' - ' else '' end) || hc_quocgianame) as diachi, hsba.bhytcode, mrd.thoigianvaovien, mrd.thoigianravien from hosobenhan hsba inner join medicalrecord mrd on mrd.hosobenhanid=hsba.hosobenhanid inner join vienphi vp on vp.hosobenhanid=hsba.hosobenhanid left join departmentgroup degp on degp.departmentgroupid=mrd.departmentgroupid left join department de on de.departmentid=mrd.departmentid where mrd.medicalrecordid='" + medicalrecordid + "' and hsba.hosobenhanid='" + hosobenhanid + "'; ";
+                    string sqlthongtin = "select degp.departmentgroupname, de.departmentname, hsba.hosobenhanid, mrd.medicalrecordcode, hsba.patientcode, hsba.patientname, vp.vienphicode, (case vp.doituongbenhnhanid when 1 then 'BHYT' when 2 then 'Viện phí' when 3 then 'Dịch vụ' when 4 then 'Người nước ngoài' when 5 then 'Miễn phí' when 6 then 'Hợp đồng' else '' end) as doituongbenhnhan, ((case when hsba.hc_sonha<>'' then hsba.hc_sonha || ', ' else '' end) || (case when hsba.hc_thon<>'' then hsba.hc_thon || ' - ' else '' end) || (case when hsba.hc_xacode<>'00' then hsba.hc_xaname || ' - ' else '' end) || (case when hsba.hc_huyencode<>'00' then hsba.hc_huyenname || ' - ' else '' end) || (case when hsba.hc_tinhcode<>'00' then hsba.hc_tinhname || ' - ' else '' end) || hc_quocgianame) as diachi, hsba.bhytcode, mrd.thoigianvaovien, mrd.thoigianravien from hosobenhan hsba inner join medicalrecord mrd on mrd.hosobenhanid=hsba.hosobenhanid inner join vienphi vp on vp.hosobenhanid=hsba.hosobenhanid left join departmentgroup degp on degp.departmentgroupid=mrd.departmentgroupid left join department de on de.departmentid=mrd.departmentid where mrd.medicalrecordid='" + mecicalrecordDTO.medicalrecordid + "' and hsba.hosobenhanid='" + mecicalrecordDTO.hosobenhanid + "'; ";
                     DataView dataThongTin = new DataView(conn.GetDataTable_HIS(sqlthongtin));
                     if (dataThongTin.Count > 0)
                     {
@@ -124,6 +121,19 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_ThongTinChung
             }
         }
 
+        internal void DeLayThongTinBenhNhan(MedicalrecordDTO deMedicalrecord)
+        {
+            try
+            {
+                this.mecicalrecordCurrentDTO = deMedicalrecord;
+                ucHSBA_ThongTinChung_Load(null,null);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
         #endregion
 
 

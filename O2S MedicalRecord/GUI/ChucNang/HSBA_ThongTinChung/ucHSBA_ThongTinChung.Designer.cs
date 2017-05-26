@@ -403,6 +403,7 @@
             // 
             // lblPatientCode
             // 
+            this.lblPatientCode.AllowDrop = true;
             this.lblPatientCode.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPatientCode.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblPatientCode.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
@@ -592,7 +593,6 @@
         private DevExpress.XtraEditors.LabelControl lblDiaChi;
         private DevExpress.XtraEditors.LabelControl lblDoiTuongBenhNhan;
         private DevExpress.XtraEditors.LabelControl lblVienphiCode;
-        private DevExpress.XtraEditors.LabelControl lblPatientCode;
         private DevExpress.XtraEditors.LabelControl labelControl23;
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.LabelControl labelControl25;
@@ -621,5 +621,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        public DevExpress.XtraEditors.LabelControl lblPatientCode;
     }
 }

@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapPhieuThucHienPTTT));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup3 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup4 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraRichEdit.Model.BorderInfo borderInfo2 = new DevExpress.XtraRichEdit.Model.BorderInfo();
-            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation2 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraRichEdit.Model.BorderInfo borderInfo1 = new DevExpress.XtraRichEdit.Model.BorderInfo();
+            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation1 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
             this.stylesRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.StylesRibbonPageGroup();
             this.galleryChangeStyleItem1 = new DevExpress.XtraRichEdit.UI.GalleryChangeStyleItem();
             this.panelMain = new System.Windows.Forms.Panel();
@@ -361,7 +365,7 @@
             // 
             this.galleryChangeStyleItem1.Gallery.ColumnCount = 10;
             this.galleryChangeStyleItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup3});
+            galleryItemGroup1});
             this.galleryChangeStyleItem1.Gallery.ImageSize = new System.Drawing.Size(65, 46);
             this.galleryChangeStyleItem1.Id = 73;
             this.galleryChangeStyleItem1.Name = "galleryChangeStyleItem1";
@@ -648,7 +652,7 @@
             this.floatingObjectSendToBackItem1,
             this.floatingObjectSendBehindTextItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 142;
+            this.ribbonControl1.MaxItemId = 1;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.headerFooterToolsRibbonPageCategory1,
@@ -1320,6 +1324,10 @@
             this.LuuNhapItem1.Id = 121;
             this.LuuNhapItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("LuuNhapItem1.LargeGlyph")));
             this.LuuNhapItem1.Name = "LuuNhapItem1";
+            toolTipTitleItem1.Text = "Lưu lại . Sau khi lưu có thể chỉnh sửa được";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            this.LuuNhapItem1.SuperTip = superToolTip1;
+            this.LuuNhapItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.LuuNhapItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.LuuNhapItem1_ItemClick);
             // 
             // fileSaveItem
@@ -1327,8 +1335,12 @@
             this.fileSaveItem.Caption = "Lưu";
             this.fileSaveItem.Glyph = ((System.Drawing.Image)(resources.GetObject("fileSaveItem.Glyph")));
             this.fileSaveItem.Id = 2;
+            this.fileSaveItem.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S));
             this.fileSaveItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("fileSaveItem.LargeGlyph")));
             this.fileSaveItem.Name = "fileSaveItem";
+            toolTipTitleItem2.Text = "Lưu lại (Ctrl+S)";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            this.fileSaveItem.SuperTip = superToolTip2;
             this.fileSaveItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.fileSaveItem_ItemClick);
             // 
             // insertMergeFieldItem1
@@ -1473,7 +1485,7 @@
             // 
             this.galleryChangeTableStyleItem1.Gallery.ColumnCount = 3;
             this.galleryChangeTableStyleItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup4});
+            galleryItemGroup2});
             this.galleryChangeTableStyleItem1.Gallery.ImageSize = new System.Drawing.Size(65, 46);
             this.galleryChangeTableStyleItem1.Id = 28;
             this.galleryChangeTableStyleItem1.ModifyItemLink = null;
@@ -1484,13 +1496,13 @@
             // changeTableBorderLineStyleItem1
             // 
             this.changeTableBorderLineStyleItem1.Edit = this.repositoryItemBorderLineStyle1;
-            borderInfo2.Color = System.Drawing.Color.Black;
-            borderInfo2.Frame = false;
-            borderInfo2.Offset = 0;
-            borderInfo2.Shadow = false;
-            borderInfo2.Style = DevExpress.XtraRichEdit.Model.BorderLineStyle.Single;
-            borderInfo2.Width = 10;
-            this.changeTableBorderLineStyleItem1.EditValue = borderInfo2;
+            borderInfo1.Color = System.Drawing.Color.Black;
+            borderInfo1.Frame = false;
+            borderInfo1.Offset = 0;
+            borderInfo1.Shadow = false;
+            borderInfo1.Style = DevExpress.XtraRichEdit.Model.BorderLineStyle.Single;
+            borderInfo1.Width = 10;
+            this.changeTableBorderLineStyleItem1.EditValue = borderInfo1;
             this.changeTableBorderLineStyleItem1.EditWidth = 130;
             this.changeTableBorderLineStyleItem1.Id = 29;
             this.changeTableBorderLineStyleItem1.Name = "changeTableBorderLineStyleItem1";
@@ -2340,7 +2352,6 @@
             this.commonRibbonPageGroup1.ItemLinks.Add(this.undoItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.redoItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.fileSaveItem);
-            this.commonRibbonPageGroup1.ItemLinks.Add(this.LuuNhapItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.LuuMauItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.fileSaveAsItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.quickPrintItem1);
@@ -2357,12 +2368,12 @@
             this.stylesRibbonPageGroup1,
             this.editingRibbonPageGroup1});
             this.homeRibbonPage1.Name = "homeRibbonPage1";
-            reduceOperation2.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.UntilAvailable;
-            reduceOperation2.Group = this.stylesRibbonPageGroup1;
-            reduceOperation2.ItemLinkIndex = 0;
-            reduceOperation2.ItemLinksCount = 0;
-            reduceOperation2.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.Gallery;
-            this.homeRibbonPage1.ReduceOperations.Add(reduceOperation2);
+            reduceOperation1.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.UntilAvailable;
+            reduceOperation1.Group = this.stylesRibbonPageGroup1;
+            reduceOperation1.ItemLinkIndex = 0;
+            reduceOperation1.ItemLinksCount = 0;
+            reduceOperation1.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.Gallery;
+            this.homeRibbonPage1.ReduceOperations.Add(reduceOperation1);
             // 
             // clipboardRibbonPageGroup1
             // 
@@ -2738,18 +2749,22 @@
             // documentTrackingRibbonPageGroup1
             // 
             this.documentTrackingRibbonPageGroup1.Name = "documentTrackingRibbonPageGroup1";
+            this.documentTrackingRibbonPageGroup1.Text = "";
             // 
             // documentCommentRibbonPageGroup1
             // 
             this.documentCommentRibbonPageGroup1.Name = "documentCommentRibbonPageGroup1";
+            this.documentCommentRibbonPageGroup1.Text = "";
             // 
             // documentProtectionRibbonPageGroup1
             // 
             this.documentProtectionRibbonPageGroup1.Name = "documentProtectionRibbonPageGroup1";
+            this.documentProtectionRibbonPageGroup1.Text = "";
             // 
             // documentProofingRibbonPageGroup1
             // 
             this.documentProofingRibbonPageGroup1.Name = "documentProofingRibbonPageGroup1";
+            this.documentProofingRibbonPageGroup1.Text = "";
             // 
             // reviewRibbonPage1
             // 

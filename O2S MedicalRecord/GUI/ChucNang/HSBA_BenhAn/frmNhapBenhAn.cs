@@ -49,6 +49,9 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn
                 LuuMauItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 fileNewItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 fileSaveAsItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                richEditControlData.ReadOnly = this.mrdHsbaHosobenhan.file_readonly;
+
+                fileSaveItem.Enabled = !this.mrdHsbaHosobenhan.file_readonly;
             }
             catch (Exception ex)
             {
@@ -61,7 +64,19 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn
             {
                 if (this.mrdHsbaHosobenhan.mrd_hsba_hosobenhanid != 0)  //chinh sua
                 {
-                    richEditControlData.Document.RtfText = this.mrdHsbaHosobenhan.mrd_hsba_hosobenhandata;
+                    if (this.mrdHsbaHosobenhan.mrd_hsba_hosobenhandata == null || this.mrdHsbaHosobenhan.mrd_hsba_hosobenhandata == "")
+                    {
+                        string sqlkiemtrabenhan = "SELECT mrd_hsba_hosobenhandata FROM mrd_hsba_hosobenhan WHERE mrd_hsba_hosobenhanid=" + this.mrdHsbaHosobenhan.mrd_hsba_hosobenhanid + ";";
+                        DataTable databenhan = condb.GetDataTable_HSBA(sqlkiemtrabenhan);
+                        if (databenhan != null && databenhan.Rows.Count > 0)
+                        {
+                            richEditControlData.Document.RtfText = databenhan.Rows[0]["mrd_hsba_hosobenhandata"].ToString();
+                        }
+                    }
+                    else
+                    {
+                        richEditControlData.Document.RtfText = this.mrdHsbaHosobenhan.mrd_hsba_hosobenhandata;
+                    }
                 }
                 else //them moi
                 {

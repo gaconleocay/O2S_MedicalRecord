@@ -28,5 +28,7 @@ namespace O2S_MedicalRecord.DTO
         public string modify_mrdusercode { get; set; }
         public DateTime modify_date { get; set; }
         public string note { get; set; }
+        public bool file_readonly { get; set; }
+
     }
 }

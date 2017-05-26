@@ -62,7 +62,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_PTTT
         {
             try
             {
-                string sqlPhieuPTT = "select ROW_NUMBER () OVER (ORDER BY mbp.maubenhphamdate) as stt, mbp.maubenhphamid, mbp.sophieu, mbp.maubenhphamdate, mbp.maubenhphamdate_sudung, mbp.maubenhphamdate_thuchien, mbp.maubenhphamfinishdate, degp.departmentgroupname, de.departmentname, nv.username as nguoichidinh, mbp.maubenhphamdatastatus from maubenhpham mbp inner join departmentgroup degp on degp.departmentgroupid=mbp.departmentgroupid left join department de on de.departmentid=mbp.departmentid left join tools_tblnhanvien nv on nv.userhisid=mbp.userid inner join serviceprice ser on ser.maubenhphamid=mbp.maubenhphamid where mbp.hosobenhanid='" + this.mecicalrecordCurrentDTO.hosobenhanid + "' and mbp.maubenhphamgrouptype=4 and mbp.isdeleted=0 and ser.bhyt_groupcode in ('06PTTT','07KTC') group by mbp.maubenhphamid, mbp.sophieu, mbp.maubenhphamdate, mbp.maubenhphamdate_sudung, mbp.maubenhphamdate_thuchien, mbp.maubenhphamfinishdate, degp.departmentgroupname, de.departmentname, nv.username, mbp.maubenhphamdatastatus; ";
+                string sqlPhieuPTT = "select ROW_NUMBER () OVER (ORDER BY mbp.maubenhphamdate) as stt, mbp.maubenhphamid, mbp.sophieu, mbp.maubenhphamdate, mbp.maubenhphamdate_sudung, mbp.maubenhphamdate_thuchien, mbp.maubenhphamfinishdate, degp.departmentgroupname, de.departmentname, nv.username as nguoichidinh, mbp.maubenhphamdatastatus, mbp.chandoan from maubenhpham mbp inner join departmentgroup degp on degp.departmentgroupid=mbp.departmentgroupid left join department de on de.departmentid=mbp.departmentid left join tools_tblnhanvien nv on nv.userhisid=mbp.userid inner join serviceprice ser on ser.maubenhphamid=mbp.maubenhphamid where mbp.hosobenhanid='" + this.mecicalrecordCurrentDTO.hosobenhanid + "' and mbp.maubenhphamgrouptype=4 and mbp.isdeleted=0 and ser.bhyt_groupcode in ('06PTTT','07KTC') group by mbp.maubenhphamid, mbp.sophieu, mbp.maubenhphamdate, mbp.maubenhphamdate_sudung, mbp.maubenhphamdate_thuchien, mbp.maubenhphamfinishdate, degp.departmentgroupname, de.departmentname, nv.username, mbp.maubenhphamdatastatus; ";
                 gridControlDSPhieuPTTT.DataSource = condb.GetDataTable_HIS(sqlPhieuPTT);
 
             }
@@ -147,7 +147,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_PTTT
                 var rowHandle = gridViewChiTietPhieuPTTT.FocusedRowHandle;
                 long departmentid = Utilities.Util_TypeConvertParse.ToInt64(gridViewChiTietPhieuPTTT.GetRowCellValue(rowHandle, "departmentid").ToString());
 
-                if (this.mecicalrecordCurrentDTO.departmentid == departmentid && (this.mecicalrecordCurrentDTO.medicalrecordstatus == 0) || this.mecicalrecordCurrentDTO.medicalrecordstatus == 2)
+                if (this.mecicalrecordCurrentDTO.departmentid == departmentid && (this.mecicalrecordCurrentDTO.medicalrecordstatus == 0 || this.mecicalrecordCurrentDTO.medicalrecordstatus == 2))
                 {
                     btnNhapPhieuPTTT.Enabled = true;
                 }
@@ -196,7 +196,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_PTTT
                 long departmentid = Utilities.Util_TypeConvertParse.ToInt64(gridViewChiTietPhieuPTTT.GetRowCellValue(rowHandle, "departmentid").ToString());
                 long serviceprice_status = Utilities.Util_TypeConvertParse.ToInt64(gridViewChiTietPhieuPTTT.GetRowCellValue(rowHandle, "mrd_pttt_servicestatus").ToString());
 
-                if (this.mecicalrecordCurrentDTO.departmentid == departmentid && (this.mecicalrecordCurrentDTO.medicalrecordstatus == 0) || this.mecicalrecordCurrentDTO.medicalrecordstatus == 2)
+                if (this.mecicalrecordCurrentDTO.departmentid == departmentid && (this.mecicalrecordCurrentDTO.medicalrecordstatus == 0 || this.mecicalrecordCurrentDTO.medicalrecordstatus == 2))
                 {
                     hienthiform = 1;
                     if (serviceprice_status == 2)
@@ -231,6 +231,11 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_PTTT
                     frmNhapPhieuThucHienPTTT frmNhap = new frmNhapPhieuThucHienPTTT(mrdptttserviceDTO);
                     frmNhap.ShowDialog();
                     gridControlDSPhieuPTTT_Click(null, null);
+                }
+                if (btnNhapPhieuPTTT.Enabled == false)
+                {
+                    O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.PHIEU_DUOC_TAO_BOI_KHOA_PHONG_KHAC);
+                    frmthongbao.Show();
                 }
             }
             catch (Exception ex)

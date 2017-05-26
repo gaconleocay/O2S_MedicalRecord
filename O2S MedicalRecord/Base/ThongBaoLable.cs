@@ -41,6 +41,10 @@ namespace O2S_MedicalRecord.Base
         internal static string CHUA_CHON_LOAI_BENH_AN = "Chưa chọn loại bệnh án!";
         internal static string BENH_AN_DA_KET_THUC = "Bệnh án đã kết thúc!";
         internal static string BENH_NHAN_CHUA_DUOC_TIEP_NHAN_VAO_PHONG = "Bệnh nhân chưa được tiếp nhận vào phòng!";
+        internal static string PHIEU_DUOC_TAO_BOI_KHOA_PHONG_KHAC = "Phiếu được tạo bởi khoa/phòng khác!";
+
+
+
         internal static void HienThiThongBao(System.Windows.Forms.Timer timerThongBao, DevExpress.XtraEditors.LabelControl lblThongBao, string tenThongBao)
         {
             try

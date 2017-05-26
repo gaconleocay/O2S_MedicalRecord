@@ -158,5 +158,35 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
+
+        private void navBarItemDMThuocHoiChan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+        }
+
+        private void navBarItemHoiChanPTTT_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+        }
+
+        private void navBarItemHoiChanChuyenVien_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+        }
+
+        private void navBarItemDMDungChung_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            try
+            {
+                panelCaiDatChiTiet.Controls.Clear();
+                ucDanhMucDungChung frmResult = new ucDanhMucDungChung();
+                frmResult.Dock = System.Windows.Forms.DockStyle.Fill;
+                panelCaiDatChiTiet.Controls.Add(frmResult);
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
+        }
     }
 }
