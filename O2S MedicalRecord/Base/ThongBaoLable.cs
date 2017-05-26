@@ -42,6 +42,7 @@ namespace O2S_MedicalRecord.Base
         internal static string BENH_AN_DA_KET_THUC = "Bệnh án đã kết thúc!";
         internal static string BENH_NHAN_CHUA_DUOC_TIEP_NHAN_VAO_PHONG = "Bệnh nhân chưa được tiếp nhận vào phòng!";
         internal static string PHIEU_DUOC_TAO_BOI_KHOA_PHONG_KHAC = "Phiếu được tạo bởi khoa/phòng khác!";
+        internal static string KHONG_THE_SU_DUNG_MA_NAY = "Không thể sử dụng mã này!";
 
 
 

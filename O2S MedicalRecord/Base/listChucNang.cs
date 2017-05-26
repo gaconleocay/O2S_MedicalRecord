@@ -73,10 +73,44 @@ namespace O2S_MedicalRecord.Base
                 DTO.classPermission SYS_07 = new DTO.classPermission();
                 SYS_07.permissioncheck = false;
                 SYS_07.permissioncode = "SYS_07";
-                SYS_07.permissionname = "Danh mục dịch vụ bệnh án";
+                SYS_07.permissionname = "Danh mục bệnh án";
                 SYS_07.permissiontype = 1;
-                SYS_07.permissionnote = "Danh mục dịch vụ bệnh án";
+                SYS_07.permissionnote = "Danh mục bệnh án";
                 lstresult.Add(SYS_07);
+
+                DTO.classPermission SYS_08 = new DTO.classPermission();
+                SYS_08.permissioncheck = false;
+                SYS_08.permissioncode = "SYS_08";
+                SYS_08.permissionname = "Danh mục hội chẩn thuốc *";
+                SYS_08.permissiontype = 1;
+                SYS_08.permissionnote = "Danh mục hội chẩn thuốc *";
+                lstresult.Add(SYS_08);
+
+                DTO.classPermission SYS_09 = new DTO.classPermission();
+                SYS_09.permissioncheck = false;
+                SYS_09.permissioncode = "SYS_09";
+                SYS_09.permissionname = "Danh mục hội chẩn PTTT";
+                SYS_09.permissiontype = 1;
+                SYS_09.permissionnote = "Danh mục hội chẩn PTTT";
+                lstresult.Add(SYS_09);
+
+                DTO.classPermission SYS_10 = new DTO.classPermission();
+                SYS_10.permissioncheck = false;
+                SYS_10.permissioncode = "SYS_10";
+                SYS_10.permissionname = "Danh mục hội chẩn chuyển viện";
+                SYS_10.permissiontype = 1;
+                SYS_10.permissionnote = "Danh mục hội chẩn chuyển viện";
+                lstresult.Add(SYS_10);
+
+                DTO.classPermission SYS_11 = new DTO.classPermission();
+                SYS_11.permissioncheck = false;
+                SYS_11.permissioncode = "SYS_11";
+                SYS_11.permissionname = "Danh mục dùng chung";
+                SYS_11.permissiontype = 1;
+                SYS_11.permissionnote = "Danh mục dùng chung";
+                lstresult.Add(SYS_11);
+
+
 
 
 
