@@ -239,13 +239,26 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         {
             try
             {
-                //lấy giá trị tại dòng click chuột - chi can lay ID template
-                var rowHandle = gridViewHSBADSBenhAn.FocusedRowHandle;
-                MrdHsbaHosobenhanDTO rowHsbaHsba = new MrdHsbaHosobenhanDTO(); rowHsbaHsba.mrd_hsbatemid = Utilities.Util_TypeConvertParse.ToInt64(gridViewHSBADSBenhAn.GetRowCellValue(rowHandle, "mrd_hsbatemid").ToString());
-
-                //todo
-                //frmNhapBenhAn frmNhap = new frmNhapBenhAn(rowHsbaHsba);
-                //frmNhap.ShowDialog();
+                if (btnChonTaoBenhAn.Visible == true)
+                {
+                    var rowHandle = gridViewHSBADSBenhAn.FocusedRowHandle;
+                    MrdHsbaHosobenhanDTO rowHsbaHsba = new MrdHsbaHosobenhanDTO();
+                    rowHsbaHsba.mrd_hsbatemid = Utilities.Util_TypeConvertParse.ToInt64(gridViewHSBADSBenhAn.GetRowCellValue(rowHandle, "mrd_hsbatemid").ToString());
+                    rowHsbaHsba.hosobenhanid = Utilities.Util_TypeConvertParse.ToInt64(gridViewHSBADSBenhAn.GetRowCellValue(rowHandle, "hosobenhanid").ToString());
+                    cboMauBenhAn.EditValue = rowHsbaHsba.mrd_hsbatemid;
+                    string getdata_nd = "SELECT mrd_hsba_hosobenhanid, hosobenhanid, mrd_hsbatemid, mrd_hsba_hosobenhandata_nd FROM mrd_hsba_hosobenhan WHERE hosobenhanid=" + rowHsbaHsba.hosobenhanid + ";";
+                    DataTable databenhan_nd = condb.GetDataTable_HSBA(getdata_nd);
+                    if (databenhan_nd != null && databenhan_nd.Rows.Count > 0)
+                    {
+                        this.currentMrdHsbaHsba.mrd_hsba_hosobenhandata_nd = databenhan_nd.Rows[0]["mrd_hsba_hosobenhandata_nd"].ToString();
+                    }
+                    btnChonTaoBenhAn_Click(null, null);
+                }
+                else
+                {
+                    O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.BENH_AN_DA_DUOC_TAO);
+                    frmthongbao.Show();
+                }
             }
             catch (Exception ex)
             {

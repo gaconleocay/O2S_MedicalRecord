@@ -31,7 +31,6 @@
             this.panelControlThongTinDV = new DevExpress.XtraEditors.PanelControl();
             this.txtTuKhoaTimKiem = new System.Windows.Forms.TextBox();
             this.dropDownImportExport = new DevExpress.XtraEditors.DropDownButton();
-            this.chkDaKhoa = new DevExpress.XtraEditors.CheckEdit();
             this.btnTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.panelControlChucNang = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -77,9 +76,9 @@
             this.servicepricenamenuocngoai = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.openFileDialogSelect = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogImport = new System.Windows.Forms.OpenFileDialog();
+            this.chkDaKhoa = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlThongTinDV)).BeginInit();
             this.panelControlThongTinDV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDaKhoa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChucNang)).BeginInit();
             this.panelControlChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -89,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlData)).BeginInit();
             this.panelControlData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListDSDichVu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDaKhoa.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlThongTinDV
@@ -138,16 +138,6 @@
             this.dropDownImportExport.Size = new System.Drawing.Size(100, 30);
             this.dropDownImportExport.TabIndex = 8;
             this.dropDownImportExport.Text = "Nhập xuất";
-            // 
-            // chkDaKhoa
-            // 
-            this.chkDaKhoa.Location = new System.Drawing.Point(672, 19);
-            this.chkDaKhoa.Name = "chkDaKhoa";
-            this.chkDaKhoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.chkDaKhoa.Properties.Appearance.Options.UseFont = true;
-            this.chkDaKhoa.Properties.Caption = "Hiển thị đã khóa";
-            this.chkDaKhoa.Size = new System.Drawing.Size(158, 23);
-            this.chkDaKhoa.TabIndex = 6;
             // 
             // btnTimKiem
             // 
@@ -710,6 +700,16 @@
             this.openFileDialogImport.Filter = "Word 2007-2013|*.docx|Word 2003|*.doc";
             this.openFileDialogImport.Title = "Mở file Excel";
             // 
+            // chkDaKhoa
+            // 
+            this.chkDaKhoa.Location = new System.Drawing.Point(672, 19);
+            this.chkDaKhoa.Name = "chkDaKhoa";
+            this.chkDaKhoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.chkDaKhoa.Properties.Appearance.Options.UseFont = true;
+            this.chkDaKhoa.Properties.Caption = "Hiển thị đã khóa";
+            this.chkDaKhoa.Size = new System.Drawing.Size(158, 23);
+            this.chkDaKhoa.TabIndex = 6;
+            // 
             // ucUpdateTemplateDVPTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -723,7 +723,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlThongTinDV)).EndInit();
             this.panelControlThongTinDV.ResumeLayout(false);
             this.panelControlThongTinDV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chkDaKhoa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChucNang)).EndInit();
             this.panelControlChucNang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -734,6 +733,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlData)).EndInit();
             this.panelControlData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeListDSDichVu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkDaKhoa.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -769,7 +769,6 @@
         private System.Windows.Forms.TextBox txtmrd_templatename;
         private DevExpress.XtraEditors.SimpleButton btnTimFileKetQua;
         internal System.Windows.Forms.OpenFileDialog openFileDialogSelect;
-        private DevExpress.XtraEditors.CheckEdit chkDaKhoa;
         private System.Windows.Forms.TextBox txtservicepricegroupcode;
         private System.Windows.Forms.TextBox txtbhyt_groupcode;
         private System.Windows.Forms.Label label11;
@@ -789,5 +788,6 @@
         private System.Windows.Forms.TextBox txtservicepricenamepttt;
         private DevExpress.XtraTreeList.Columns.TreeListColumn servicepricenamebhyt;
         private DevExpress.XtraTreeList.Columns.TreeListColumn servicepricenamenuocngoai;
+        private DevExpress.XtraEditors.CheckEdit chkDaKhoa;
     }
 }

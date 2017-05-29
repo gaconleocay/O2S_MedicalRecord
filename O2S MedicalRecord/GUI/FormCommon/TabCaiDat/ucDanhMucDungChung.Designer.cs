@@ -34,6 +34,8 @@
             this.gridControlDM = new DevExpress.XtraGrid.GridControl();
             this.gridViewDM = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,11 +48,13 @@
             this.txtDM_Ma = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.cboDM_LoaiDMTen = new DevExpress.XtraEditors.LookUpEdit();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gridControlLoaiDM = new DevExpress.XtraGrid.GridControl();
             this.gridViewLoaiDM = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -61,10 +65,9 @@
             this.txtLoaiDM_Ma = new DevExpress.XtraEditors.TextEdit();
             this.lblUserId = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cboDM_LoaiDMTen = new DevExpress.XtraEditors.LookUpEdit();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtDM_GiaTri = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -73,6 +76,7 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ma.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboDM_LoaiDMTen.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlLoaiDM)).BeginInit();
@@ -80,7 +84,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ma.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboDM_LoaiDMTen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDM_GiaTri.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,9 +112,9 @@
             // 
             this.panel7.Controls.Add(this.gridControlDM);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 180);
+            this.panel7.Location = new System.Drawing.Point(0, 190);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(645, 431);
+            this.panel7.Size = new System.Drawing.Size(645, 421);
             this.panel7.TabIndex = 1;
             // 
             // gridControlDM
@@ -119,7 +123,7 @@
             this.gridControlDM.Location = new System.Drawing.Point(0, 0);
             this.gridControlDM.MainView = this.gridViewDM;
             this.gridControlDM.Name = "gridControlDM";
-            this.gridControlDM.Size = new System.Drawing.Size(645, 431);
+            this.gridControlDM.Size = new System.Drawing.Size(645, 421);
             this.gridControlDM.TabIndex = 1;
             this.gridControlDM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDM});
@@ -134,7 +138,8 @@
             this.gridColumn10,
             this.gridColumn7,
             this.gridColumn5,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.gridColumn11});
             this.gridViewDM.FooterPanelHeight = 25;
             this.gridViewDM.GridControl = this.gridControlDM;
             this.gridViewDM.GroupRowHeight = 25;
@@ -165,6 +170,18 @@
             this.gridColumn4.VisibleIndex = 0;
             this.gridColumn4.Width = 35;
             // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "mrd_otherlistid";
+            this.gridColumn9.FieldName = "mrd_otherlistid";
+            this.gridColumn9.Name = "gridColumn9";
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "mrd_othertypelistid";
+            this.gridColumn10.FieldName = "mrd_othertypelistid";
+            this.gridColumn10.Name = "gridColumn10";
+            // 
             // gridColumn7
             // 
             this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -180,7 +197,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 3;
+            this.gridColumn7.VisibleIndex = 4;
             this.gridColumn7.Width = 300;
             // 
             // gridColumn5
@@ -221,6 +238,8 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.txtDM_GiaTri);
+            this.panel6.Controls.Add(this.labelControl7);
             this.panel6.Controls.Add(this.labelControl6);
             this.panel6.Controls.Add(this.btnDM_Luu);
             this.panel6.Controls.Add(this.btnDM_Them);
@@ -233,14 +252,14 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(645, 180);
+            this.panel6.Size = new System.Drawing.Size(645, 190);
             this.panel6.TabIndex = 0;
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelControl6.Location = new System.Drawing.Point(312, 102);
+            this.labelControl6.Location = new System.Drawing.Point(293, 102);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(83, 16);
             this.labelControl6.TabIndex = 23;
@@ -253,7 +272,7 @@
             this.btnDM_Luu.Appearance.Options.UseFont = true;
             this.btnDM_Luu.Appearance.Options.UseForeColor = true;
             this.btnDM_Luu.Image = global::O2S_MedicalRecord.Properties.Resources.checkmark_16;
-            this.btnDM_Luu.Location = new System.Drawing.Point(194, 51);
+            this.btnDM_Luu.Location = new System.Drawing.Point(194, 40);
             this.btnDM_Luu.Name = "btnDM_Luu";
             this.btnDM_Luu.Size = new System.Drawing.Size(100, 30);
             this.btnDM_Luu.TabIndex = 22;
@@ -267,7 +286,7 @@
             this.btnDM_Them.Appearance.Options.UseFont = true;
             this.btnDM_Them.Appearance.Options.UseForeColor = true;
             this.btnDM_Them.Image = global::O2S_MedicalRecord.Properties.Resources.plus_2_16;
-            this.btnDM_Them.Location = new System.Drawing.Point(63, 51);
+            this.btnDM_Them.Location = new System.Drawing.Point(63, 40);
             this.btnDM_Them.Name = "btnDM_Them";
             this.btnDM_Them.Size = new System.Drawing.Size(100, 30);
             this.btnDM_Them.TabIndex = 21;
@@ -276,20 +295,21 @@
             // 
             // txtDM_Ten
             // 
-            this.txtDM_Ten.Location = new System.Drawing.Point(63, 137);
+            this.txtDM_Ten.Location = new System.Drawing.Point(47, 137);
             this.txtDM_Ten.Name = "txtDM_Ten";
             this.txtDM_Ten.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDM_Ten.Properties.Appearance.Options.UseFont = true;
+            this.txtDM_Ten.Properties.AutoHeight = false;
             this.txtDM_Ten.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtDM_Ten.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtDM_Ten.Size = new System.Drawing.Size(560, 22);
+            this.txtDM_Ten.Size = new System.Drawing.Size(230, 44);
             this.txtDM_Ten.TabIndex = 20;
             // 
             // labelControl3
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelControl3.Location = new System.Drawing.Point(28, 140);
+            this.labelControl3.Location = new System.Drawing.Point(13, 154);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(22, 16);
             this.labelControl3.TabIndex = 19;
@@ -297,18 +317,18 @@
             // 
             // txtDM_Ma
             // 
-            this.txtDM_Ma.Location = new System.Drawing.Point(63, 99);
+            this.txtDM_Ma.Location = new System.Drawing.Point(47, 99);
             this.txtDM_Ma.Name = "txtDM_Ma";
             this.txtDM_Ma.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDM_Ma.Properties.Appearance.Options.UseFont = true;
-            this.txtDM_Ma.Size = new System.Drawing.Size(219, 22);
+            this.txtDM_Ma.Size = new System.Drawing.Size(230, 22);
             this.txtDM_Ma.TabIndex = 18;
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelControl5.Location = new System.Drawing.Point(33, 102);
+            this.labelControl5.Location = new System.Drawing.Point(18, 102);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(17, 16);
             this.labelControl5.TabIndex = 17;
@@ -326,6 +346,21 @@
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "DANH MỤC";
             // 
+            // cboDM_LoaiDMTen
+            // 
+            this.cboDM_LoaiDMTen.Location = new System.Drawing.Point(388, 99);
+            this.cboDM_LoaiDMTen.Name = "cboDM_LoaiDMTen";
+            this.cboDM_LoaiDMTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboDM_LoaiDMTen.Properties.Appearance.Options.UseFont = true;
+            this.cboDM_LoaiDMTen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboDM_LoaiDMTen.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("mrd_othertypelistid", 35, "ID"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("mrd_othertypelistname", 100, "Tên")});
+            this.cboDM_LoaiDMTen.Properties.NullText = "";
+            this.cboDM_LoaiDMTen.Size = new System.Drawing.Size(230, 22);
+            this.cboDM_LoaiDMTen.TabIndex = 24;
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -341,9 +376,9 @@
             // 
             this.panel5.Controls.Add(this.gridControlLoaiDM);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 180);
+            this.panel5.Location = new System.Drawing.Point(0, 190);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(447, 431);
+            this.panel5.Size = new System.Drawing.Size(447, 421);
             this.panel5.TabIndex = 1;
             // 
             // gridControlLoaiDM
@@ -352,7 +387,7 @@
             this.gridControlLoaiDM.Location = new System.Drawing.Point(0, 0);
             this.gridControlLoaiDM.MainView = this.gridViewLoaiDM;
             this.gridControlLoaiDM.Name = "gridControlLoaiDM";
-            this.gridControlLoaiDM.Size = new System.Drawing.Size(447, 431);
+            this.gridControlLoaiDM.Size = new System.Drawing.Size(447, 421);
             this.gridControlLoaiDM.TabIndex = 0;
             this.gridControlLoaiDM.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLoaiDM});
@@ -393,6 +428,12 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 35;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "mrd_othertypelistid";
+            this.gridColumn8.FieldName = "mrd_othertypelistid";
+            this.gridColumn8.Name = "gridColumn8";
             // 
             // gridColumn2
             // 
@@ -442,7 +483,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(447, 180);
+            this.panel4.Size = new System.Drawing.Size(447, 190);
             this.panel4.TabIndex = 0;
             // 
             // btnLoaiDM_Luu
@@ -452,7 +493,7 @@
             this.btnLoaiDM_Luu.Appearance.Options.UseFont = true;
             this.btnLoaiDM_Luu.Appearance.Options.UseForeColor = true;
             this.btnLoaiDM_Luu.Image = global::O2S_MedicalRecord.Properties.Resources.checkmark_16;
-            this.btnLoaiDM_Luu.Location = new System.Drawing.Point(195, 51);
+            this.btnLoaiDM_Luu.Location = new System.Drawing.Point(195, 40);
             this.btnLoaiDM_Luu.Name = "btnLoaiDM_Luu";
             this.btnLoaiDM_Luu.Size = new System.Drawing.Size(100, 30);
             this.btnLoaiDM_Luu.TabIndex = 16;
@@ -466,7 +507,7 @@
             this.btnLoaiDM_Them.Appearance.Options.UseFont = true;
             this.btnLoaiDM_Them.Appearance.Options.UseForeColor = true;
             this.btnLoaiDM_Them.Image = global::O2S_MedicalRecord.Properties.Resources.plus_2_16;
-            this.btnLoaiDM_Them.Location = new System.Drawing.Point(61, 51);
+            this.btnLoaiDM_Them.Location = new System.Drawing.Point(61, 40);
             this.btnLoaiDM_Them.Name = "btnLoaiDM_Them";
             this.btnLoaiDM_Them.Size = new System.Drawing.Size(100, 30);
             this.btnLoaiDM_Them.TabIndex = 15;
@@ -525,38 +566,45 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "LOẠI DANH MỤC";
             // 
-            // gridColumn8
+            // gridColumn11
             // 
-            this.gridColumn8.Caption = "mrd_othertypelistid";
-            this.gridColumn8.FieldName = "mrd_othertypelistid";
-            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn11.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn11.AppearanceCell.Options.UseFont = true;
+            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn11.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.gridColumn11.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn11.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn11.Caption = "Giá trị";
+            this.gridColumn11.FieldName = "mrd_otherlistvalue";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 3;
+            this.gridColumn11.Width = 331;
             // 
-            // gridColumn9
+            // txtDM_GiaTri
             // 
-            this.gridColumn9.Caption = "mrd_otherlistid";
-            this.gridColumn9.FieldName = "mrd_otherlistid";
-            this.gridColumn9.Name = "gridColumn9";
+            this.txtDM_GiaTri.Location = new System.Drawing.Point(388, 137);
+            this.txtDM_GiaTri.Name = "txtDM_GiaTri";
+            this.txtDM_GiaTri.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDM_GiaTri.Properties.Appearance.Options.UseFont = true;
+            this.txtDM_GiaTri.Properties.AutoHeight = false;
+            this.txtDM_GiaTri.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDM_GiaTri.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDM_GiaTri.Size = new System.Drawing.Size(230, 44);
+            this.txtDM_GiaTri.TabIndex = 26;
             // 
-            // gridColumn10
+            // labelControl7
             // 
-            this.gridColumn10.Caption = "mrd_othertypelistid";
-            this.gridColumn10.FieldName = "mrd_othertypelistid";
-            this.gridColumn10.Name = "gridColumn10";
-            // 
-            // cboDM_LoaiDMTen
-            // 
-            this.cboDM_LoaiDMTen.Location = new System.Drawing.Point(404, 99);
-            this.cboDM_LoaiDMTen.Name = "cboDM_LoaiDMTen";
-            this.cboDM_LoaiDMTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboDM_LoaiDMTen.Properties.Appearance.Options.UseFont = true;
-            this.cboDM_LoaiDMTen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboDM_LoaiDMTen.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("mrd_othertypelistid", 35, "ID"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("mrd_othertypelistname", 100, "Tên")});
-            this.cboDM_LoaiDMTen.Properties.NullText = "";
-            this.cboDM_LoaiDMTen.Size = new System.Drawing.Size(219, 22);
-            this.cboDM_LoaiDMTen.TabIndex = 24;
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl7.Location = new System.Drawing.Point(342, 154);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(34, 16);
+            this.labelControl7.TabIndex = 25;
+            this.labelControl7.Text = "Giá trị";
             // 
             // ucDanhMucDungChung
             // 
@@ -575,6 +623,7 @@
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ten.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ma.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboDM_LoaiDMTen.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlLoaiDM)).EndInit();
@@ -583,7 +632,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ten.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ma.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboDM_LoaiDMTen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDM_GiaTri.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -627,5 +676,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.LookUpEdit cboDM_LoaiDMTen;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraEditors.TextEdit txtDM_GiaTri;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }

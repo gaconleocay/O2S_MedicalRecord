@@ -161,17 +161,47 @@ namespace O2S_MedicalRecord.GUI.FormCommon
 
         private void navBarItemDMThuocHoiChan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
+            try
+            {
+                panelCaiDatChiTiet.Controls.Clear();
+                ucDanhMucHoiChanThuoc frmResult = new ucDanhMucHoiChanThuoc();
+                frmResult.Dock = System.Windows.Forms.DockStyle.Fill;
+                panelCaiDatChiTiet.Controls.Add(frmResult);
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
         }
 
         private void navBarItemHoiChanPTTT_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
+            try
+            {
+                //panelCaiDatChiTiet.Controls.Clear();
+                //ucDanhMucBenhAn frmResult = new ucDanhMucBenhAn();
+                //frmResult.Dock = System.Windows.Forms.DockStyle.Fill;
+                //panelCaiDatChiTiet.Controls.Add(frmResult);
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
         }
 
         private void navBarItemHoiChanChuyenVien_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
+            try
+            {
+                //panelCaiDatChiTiet.Controls.Clear();
+                //ucDanhMucBenhAn frmResult = new ucDanhMucBenhAn();
+                //frmResult.Dock = System.Windows.Forms.DockStyle.Fill;
+                //panelCaiDatChiTiet.Controls.Add(frmResult);
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
         }
 
         private void navBarItemDMDungChung_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

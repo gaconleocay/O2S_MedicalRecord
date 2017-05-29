@@ -199,6 +199,7 @@
     <Compile Include="DTO\MrdHsbaHosobenhanDTO.cs" />
     <Compile Include="DTO\MrdHsbaTemplateDTO.cs" />
     <Compile Include="DTO\MrdPtttServiceDTO.cs" />
+    <Compile Include="DTO\MrdDMHoiChanThuocDTO.cs" />
     <Compile Include="DTO\MrdServicerefDTO.cs" />
     <Compile Include="DTO\classMedicineStore.cs">
       <SubType>Code</SubType>
@@ -289,6 +290,12 @@
     </Compile>
     <Compile Include="DAL\KetNoiSCDLProcess.cs" />
     <Compile Include="GUI\FormCommon\LoadDataSystems.cs" />
+    <Compile Include="GUI\FormCommon\TabCaiDat\frmChonThuocDauSao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormCommon\TabCaiDat\frmChonThuocDauSao.Designer.cs">
+      <DependentUpon>frmChonThuocDauSao.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormCommon\TabCaiDat\ucCauHinhHeThong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -326,6 +333,12 @@
       <DependentUpon>ucQuanLyNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="BUS\TabControlProcess.cs" />
+    <Compile Include="GUI\FormCommon\TabCaiDat\ucDanhMucHoiChanThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\FormCommon\TabCaiDat\ucDanhMucHoiChanThuoc.Designer.cs">
+      <DependentUpon>ucDanhMucHoiChanThuoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormCommon\TabCaiDat\ucUpdateTemplateDVPTTT.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -412,6 +425,9 @@
     <EmbeddedResource Include="GUI\FormCommon\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\frmChonThuocDauSao.resx">
+      <DependentUpon>frmChonThuocDauSao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucCauHinhHeThong.resx">
       <DependentUpon>ucCauHinhHeThong.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,6 +445,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucQuanLyNguoiDung.resx">
       <DependentUpon>ucQuanLyNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucDanhMucHoiChanThuoc.resx">
+      <DependentUpon>ucDanhMucHoiChanThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucUpdateTemplateDVPTTT.resx">
       <DependentUpon>ucUpdateTemplateDVPTTT.cs</DependentUpon>
@@ -515,6 +534,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Templates\PhieuPhauThuatThuThuat\Phieu phau thuat thu thuat chung.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\1_Mrd_DMHCThuoc__ExportTemplateKetQua.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

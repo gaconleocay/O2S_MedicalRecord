@@ -52,6 +52,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 btnDM_Luu.Enabled = false;
                 txtDM_Ma.ReadOnly = true;
                 txtDM_Ten.ReadOnly = true;
+                txtDM_GiaTri.ReadOnly = true;
                 cboDM_LoaiDMTen.ReadOnly = true;
                 cboDM_LoaiDMTen.EditValue = null;
             }
@@ -118,8 +119,10 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 btnDM_Luu.Enabled = false;
                 txtDM_Ma.ReadOnly = true;
                 txtDM_Ten.ReadOnly = true;
+                txtDM_GiaTri.ReadOnly = true;
                 txtDM_Ma.Text = "";
                 txtDM_Ten.Text = "";
+                txtDM_GiaTri.Text = "";
                 cboDM_LoaiDMTen.ReadOnly = true;
                 cboDM_LoaiDMTen.EditValue = null;
             }
@@ -196,8 +199,10 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     btnDM_Luu.Enabled = true;
                     txtDM_Ma.ReadOnly = true;
                     txtDM_Ten.ReadOnly = true;
+                    txtDM_GiaTri.ReadOnly = true;
                     txtDM_Ma.Text = "";
                     txtDM_Ten.Text = "";
+                    txtDM_GiaTri.Text = "";
                     cboDM_LoaiDMTen.ReadOnly = true;
                     cboDM_LoaiDMTen.EditValue = null;
                 }
@@ -227,8 +232,10 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 btnDM_Luu.Enabled = true;
                 txtDM_Ma.ReadOnly = false;
                 txtDM_Ten.ReadOnly = false;
+                txtDM_GiaTri.ReadOnly = false;
                 txtDM_Ma.Text = "";
                 txtDM_Ten.Text = "";
+                txtDM_GiaTri.Text = "";
                 cboDM_LoaiDMTen.ReadOnly = false;
                 cboDM_LoaiDMTen.EditValue = null;
             }
@@ -254,7 +261,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                         }
                         else //them moi
                         {
-                            string insert = "INSERT INTO mrd_otherlist(mrd_otherlistcode, mrd_otherlistname, mrd_othertypelistid) VALUES ('" + txtDM_Ma.Text.Trim().ToUpper() + "', '" + txtDM_Ten.Text.Trim() + "','" + cboDM_LoaiDMTen.EditValue.ToString() + "'); ";
+                            string insert = "INSERT INTO mrd_otherlist(mrd_otherlistcode, mrd_otherlistname, mrd_othertypelistid, mrd_otherlistvalue) VALUES ('" + txtDM_Ma.Text.Trim().ToUpper() + "', '" + txtDM_Ten.Text.Trim() + "','" + cboDM_LoaiDMTen.EditValue.ToString() + "', '" + txtDM_GiaTri.Text.Trim().ToUpper() + "'); ";
                             if (condb.ExecuteNonQuery_HSBA(insert))
                             {
                                 O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.THEM_MOI_THANH_CONG);
@@ -264,7 +271,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     }
                     else//cap nhat
                     {
-                        string insert = "UPDATE mrd_otherlist SET mrd_otherlistname='" + txtDM_Ten.Text.Trim() + "' WHERE mrd_otherlistid=" + this.selectmrd_otherlistid + "; ";
+                        string insert = "UPDATE mrd_otherlist SET mrd_otherlistname='" + txtDM_Ten.Text.Trim() + "', mrd_otherlistvalue='" + txtDM_GiaTri.Text.Trim() + "' WHERE mrd_otherlistid=" + this.selectmrd_otherlistid + "; ";
                         if (condb.ExecuteNonQuery_HSBA(insert))
                         {
                             O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.CAP_NHAT_THANH_CONG);
@@ -296,10 +303,12 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     txtDM_Ma.Text = gridViewDM.GetRowCellValue(rowHandle, "mrd_otherlistcode").ToString();
                     txtDM_Ten.Text = gridViewDM.GetRowCellValue(rowHandle, "mrd_otherlistname").ToString();
                     cboDM_LoaiDMTen.EditValue = gridViewDM.GetRowCellValue(rowHandle, "mrd_othertypelistid");
+                    txtDM_GiaTri.Text = gridViewDM.GetRowCellValue(rowHandle, "mrd_otherlistvalue").ToString();
                     btnDM_Them.Enabled = true;
                     btnDM_Luu.Enabled = true;
                     txtDM_Ma.ReadOnly = true;
                     txtDM_Ten.ReadOnly = false;
+                    txtDM_GiaTri.ReadOnly = false;
                     cboDM_LoaiDMTen.ReadOnly = true;
                 }
             }

@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucDSHoSoBenhAn));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -98,6 +98,12 @@
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelThongTin = new System.Windows.Forms.Panel();
+            this.txtHanTheTuDen = new DevExpress.XtraEditors.TextEdit();
+            this.txtThoiGianRaKhoa = new DevExpress.XtraEditors.TextEdit();
+            this.txtThoiGianVaoKhoa = new DevExpress.XtraEditors.TextEdit();
+            this.txtBhytCode = new DevExpress.XtraEditors.TextEdit();
+            this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
+            this.txtDoiTuongBenhNhan = new DevExpress.XtraEditors.TextEdit();
             this.txtGioiTinh = new DevExpress.XtraEditors.TextEdit();
             this.txtNgaySinh = new DevExpress.XtraEditors.TextEdit();
             this.txtMedicalRecord = new DevExpress.XtraEditors.TextEdit();
@@ -192,12 +198,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.imageListstatus = new System.Windows.Forms.ImageList(this.components);
             this.imMenu_HSBA = new DevExpress.Utils.ImageCollection(this.components);
-            this.txtDoiTuongBenhNhan = new DevExpress.XtraEditors.TextEdit();
-            this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
-            this.txtBhytCode = new DevExpress.XtraEditors.TextEdit();
-            this.txtThoiGianVaoKhoa = new DevExpress.XtraEditors.TextEdit();
-            this.txtThoiGianRaKhoa = new DevExpress.XtraEditors.TextEdit();
-            this.txtHanTheTuDen = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
@@ -232,6 +232,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlHSBALichSuIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewHSBALichSuIn)).BeginInit();
             this.panelThongTin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHanTheTuDen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThoiGianRaKhoa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThoiGianVaoKhoa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBhytCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDoiTuongBenhNhan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMedicalRecord.Properties)).BeginInit();
@@ -266,12 +272,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imMenu_HSBA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDoiTuongBenhNhan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBhytCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtThoiGianVaoKhoa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtThoiGianRaKhoa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHanTheTuDen.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -1086,6 +1086,90 @@
             this.panelThongTin.Size = new System.Drawing.Size(785, 340);
             this.panelThongTin.TabIndex = 1;
             // 
+            // txtHanTheTuDen
+            // 
+            this.txtHanTheTuDen.Location = new System.Drawing.Point(492, 225);
+            this.txtHanTheTuDen.Name = "txtHanTheTuDen";
+            this.txtHanTheTuDen.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtHanTheTuDen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHanTheTuDen.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtHanTheTuDen.Properties.Appearance.Options.UseBackColor = true;
+            this.txtHanTheTuDen.Properties.Appearance.Options.UseFont = true;
+            this.txtHanTheTuDen.Properties.Appearance.Options.UseForeColor = true;
+            this.txtHanTheTuDen.Properties.ReadOnly = true;
+            this.txtHanTheTuDen.Size = new System.Drawing.Size(279, 22);
+            this.txtHanTheTuDen.TabIndex = 41;
+            // 
+            // txtThoiGianRaKhoa
+            // 
+            this.txtThoiGianRaKhoa.Location = new System.Drawing.Point(152, 295);
+            this.txtThoiGianRaKhoa.Name = "txtThoiGianRaKhoa";
+            this.txtThoiGianRaKhoa.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtThoiGianRaKhoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThoiGianRaKhoa.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtThoiGianRaKhoa.Properties.Appearance.Options.UseBackColor = true;
+            this.txtThoiGianRaKhoa.Properties.Appearance.Options.UseFont = true;
+            this.txtThoiGianRaKhoa.Properties.Appearance.Options.UseForeColor = true;
+            this.txtThoiGianRaKhoa.Properties.ReadOnly = true;
+            this.txtThoiGianRaKhoa.Size = new System.Drawing.Size(216, 22);
+            this.txtThoiGianRaKhoa.TabIndex = 40;
+            // 
+            // txtThoiGianVaoKhoa
+            // 
+            this.txtThoiGianVaoKhoa.Location = new System.Drawing.Point(152, 260);
+            this.txtThoiGianVaoKhoa.Name = "txtThoiGianVaoKhoa";
+            this.txtThoiGianVaoKhoa.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtThoiGianVaoKhoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThoiGianVaoKhoa.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtThoiGianVaoKhoa.Properties.Appearance.Options.UseBackColor = true;
+            this.txtThoiGianVaoKhoa.Properties.Appearance.Options.UseFont = true;
+            this.txtThoiGianVaoKhoa.Properties.Appearance.Options.UseForeColor = true;
+            this.txtThoiGianVaoKhoa.Properties.ReadOnly = true;
+            this.txtThoiGianVaoKhoa.Size = new System.Drawing.Size(216, 22);
+            this.txtThoiGianVaoKhoa.TabIndex = 39;
+            // 
+            // txtBhytCode
+            // 
+            this.txtBhytCode.Location = new System.Drawing.Point(152, 225);
+            this.txtBhytCode.Name = "txtBhytCode";
+            this.txtBhytCode.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtBhytCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBhytCode.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtBhytCode.Properties.Appearance.Options.UseBackColor = true;
+            this.txtBhytCode.Properties.Appearance.Options.UseFont = true;
+            this.txtBhytCode.Properties.Appearance.Options.UseForeColor = true;
+            this.txtBhytCode.Properties.ReadOnly = true;
+            this.txtBhytCode.Size = new System.Drawing.Size(216, 22);
+            this.txtBhytCode.TabIndex = 38;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(152, 190);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtDiaChi.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
+            this.txtDiaChi.Properties.Appearance.Options.UseForeColor = true;
+            this.txtDiaChi.Properties.ReadOnly = true;
+            this.txtDiaChi.Size = new System.Drawing.Size(619, 22);
+            this.txtDiaChi.TabIndex = 37;
+            // 
+            // txtDoiTuongBenhNhan
+            // 
+            this.txtDoiTuongBenhNhan.Location = new System.Drawing.Point(152, 155);
+            this.txtDoiTuongBenhNhan.Name = "txtDoiTuongBenhNhan";
+            this.txtDoiTuongBenhNhan.Properties.Appearance.BackColor = System.Drawing.Color.White;
+            this.txtDoiTuongBenhNhan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDoiTuongBenhNhan.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtDoiTuongBenhNhan.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDoiTuongBenhNhan.Properties.Appearance.Options.UseFont = true;
+            this.txtDoiTuongBenhNhan.Properties.Appearance.Options.UseForeColor = true;
+            this.txtDoiTuongBenhNhan.Properties.ReadOnly = true;
+            this.txtDoiTuongBenhNhan.Size = new System.Drawing.Size(216, 22);
+            this.txtDoiTuongBenhNhan.TabIndex = 36;
+            // 
             // txtGioiTinh
             // 
             this.txtGioiTinh.Location = new System.Drawing.Point(492, 155);
@@ -1415,7 +1499,7 @@
             // 
             this.repositoryItemButtonView.AutoHeight = false;
             this.repositoryItemButtonView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::O2S_MedicalRecord.Properties.Resources.fast_forward_2_16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "Xem chi tiết Bệnh án", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::O2S_MedicalRecord.Properties.Resources.fast_forward_2_16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Xem chi tiết Bệnh án", null, null, true)});
             this.repositoryItemButtonView.Name = "repositoryItemButtonView";
             this.repositoryItemButtonView.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonView.Click += new System.EventHandler(this.repositoryItemButtonView_Click);
@@ -1433,7 +1517,6 @@
             this.gridColumn26.Caption = "Sử dụng mẫu";
             this.gridColumn26.ColumnEdit = this.repositoryItemButtonSuDungMau;
             this.gridColumn26.Name = "gridColumn26";
-            this.gridColumn26.OptionsColumn.AllowEdit = false;
             this.gridColumn26.OptionsColumn.FixedWidth = true;
             this.gridColumn26.OptionsColumn.ShowCaption = false;
             this.gridColumn26.Visible = true;
@@ -1444,7 +1527,7 @@
             // 
             this.repositoryItemButtonSuDungMau.AutoHeight = false;
             this.repositoryItemButtonSuDungMau.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::O2S_MedicalRecord.Properties.Resources.copy_16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "Copy mẫu này", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::O2S_MedicalRecord.Properties.Resources.copy_16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "Copy mẫu này", null, null, true)});
             this.repositoryItemButtonSuDungMau.Name = "repositoryItemButtonSuDungMau";
             this.repositoryItemButtonSuDungMau.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonSuDungMau.Click += new System.EventHandler(this.repositoryItemButtonSuDungMau_Click);
@@ -1834,7 +1917,7 @@
             // 
             this.repositoryItemButtonEditView.AutoHeight = false;
             this.repositoryItemButtonEditView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::O2S_MedicalRecord.Properties.Resources.edit_11_16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "Xem mô tả PTTT", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::O2S_MedicalRecord.Properties.Resources.edit_11_16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "Xem mô tả PTTT", null, null, true)});
             this.repositoryItemButtonEditView.Name = "repositoryItemButtonEditView";
             this.repositoryItemButtonEditView.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditView.Click += new System.EventHandler(this.repositoryItemButtonEditView_Click);
@@ -2375,90 +2458,6 @@
             this.imMenu_HSBA.Images.SetKeyName(0, "copy-16.png");
             this.imMenu_HSBA.Images.SetKeyName(1, "fast-forward-2-16.png");
             // 
-            // txtDoiTuongBenhNhan
-            // 
-            this.txtDoiTuongBenhNhan.Location = new System.Drawing.Point(152, 155);
-            this.txtDoiTuongBenhNhan.Name = "txtDoiTuongBenhNhan";
-            this.txtDoiTuongBenhNhan.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtDoiTuongBenhNhan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDoiTuongBenhNhan.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtDoiTuongBenhNhan.Properties.Appearance.Options.UseBackColor = true;
-            this.txtDoiTuongBenhNhan.Properties.Appearance.Options.UseFont = true;
-            this.txtDoiTuongBenhNhan.Properties.Appearance.Options.UseForeColor = true;
-            this.txtDoiTuongBenhNhan.Properties.ReadOnly = true;
-            this.txtDoiTuongBenhNhan.Size = new System.Drawing.Size(216, 22);
-            this.txtDoiTuongBenhNhan.TabIndex = 36;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Location = new System.Drawing.Point(152, 190);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtDiaChi.Properties.Appearance.Options.UseBackColor = true;
-            this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
-            this.txtDiaChi.Properties.Appearance.Options.UseForeColor = true;
-            this.txtDiaChi.Properties.ReadOnly = true;
-            this.txtDiaChi.Size = new System.Drawing.Size(619, 22);
-            this.txtDiaChi.TabIndex = 37;
-            // 
-            // txtBhytCode
-            // 
-            this.txtBhytCode.Location = new System.Drawing.Point(152, 225);
-            this.txtBhytCode.Name = "txtBhytCode";
-            this.txtBhytCode.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtBhytCode.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBhytCode.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtBhytCode.Properties.Appearance.Options.UseBackColor = true;
-            this.txtBhytCode.Properties.Appearance.Options.UseFont = true;
-            this.txtBhytCode.Properties.Appearance.Options.UseForeColor = true;
-            this.txtBhytCode.Properties.ReadOnly = true;
-            this.txtBhytCode.Size = new System.Drawing.Size(216, 22);
-            this.txtBhytCode.TabIndex = 38;
-            // 
-            // txtThoiGianVaoKhoa
-            // 
-            this.txtThoiGianVaoKhoa.Location = new System.Drawing.Point(152, 260);
-            this.txtThoiGianVaoKhoa.Name = "txtThoiGianVaoKhoa";
-            this.txtThoiGianVaoKhoa.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtThoiGianVaoKhoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThoiGianVaoKhoa.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtThoiGianVaoKhoa.Properties.Appearance.Options.UseBackColor = true;
-            this.txtThoiGianVaoKhoa.Properties.Appearance.Options.UseFont = true;
-            this.txtThoiGianVaoKhoa.Properties.Appearance.Options.UseForeColor = true;
-            this.txtThoiGianVaoKhoa.Properties.ReadOnly = true;
-            this.txtThoiGianVaoKhoa.Size = new System.Drawing.Size(216, 22);
-            this.txtThoiGianVaoKhoa.TabIndex = 39;
-            // 
-            // txtThoiGianRaKhoa
-            // 
-            this.txtThoiGianRaKhoa.Location = new System.Drawing.Point(152, 295);
-            this.txtThoiGianRaKhoa.Name = "txtThoiGianRaKhoa";
-            this.txtThoiGianRaKhoa.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtThoiGianRaKhoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThoiGianRaKhoa.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtThoiGianRaKhoa.Properties.Appearance.Options.UseBackColor = true;
-            this.txtThoiGianRaKhoa.Properties.Appearance.Options.UseFont = true;
-            this.txtThoiGianRaKhoa.Properties.Appearance.Options.UseForeColor = true;
-            this.txtThoiGianRaKhoa.Properties.ReadOnly = true;
-            this.txtThoiGianRaKhoa.Size = new System.Drawing.Size(216, 22);
-            this.txtThoiGianRaKhoa.TabIndex = 40;
-            // 
-            // txtHanTheTuDen
-            // 
-            this.txtHanTheTuDen.Location = new System.Drawing.Point(492, 225);
-            this.txtHanTheTuDen.Name = "txtHanTheTuDen";
-            this.txtHanTheTuDen.Properties.Appearance.BackColor = System.Drawing.Color.White;
-            this.txtHanTheTuDen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHanTheTuDen.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtHanTheTuDen.Properties.Appearance.Options.UseBackColor = true;
-            this.txtHanTheTuDen.Properties.Appearance.Options.UseFont = true;
-            this.txtHanTheTuDen.Properties.Appearance.Options.UseForeColor = true;
-            this.txtHanTheTuDen.Properties.ReadOnly = true;
-            this.txtHanTheTuDen.Size = new System.Drawing.Size(279, 22);
-            this.txtHanTheTuDen.TabIndex = 41;
-            // 
             // ucDSHoSoBenhAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2503,6 +2502,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewHSBALichSuIn)).EndInit();
             this.panelThongTin.ResumeLayout(false);
             this.panelThongTin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHanTheTuDen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThoiGianRaKhoa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtThoiGianVaoKhoa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBhytCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDoiTuongBenhNhan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMedicalRecord.Properties)).EndInit();
@@ -2538,12 +2543,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imMenu_HSBA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDoiTuongBenhNhan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBhytCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtThoiGianVaoKhoa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtThoiGianRaKhoa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtHanTheTuDen.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
