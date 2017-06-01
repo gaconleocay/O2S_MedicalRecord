@@ -506,30 +506,6 @@
     <Content Include="Templates\MauBenhAn\1.-Benh-an-Noi-khoa.doc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Templates\MauBenhAn\10.-Benh-an-HHTM.doc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\MauBenhAn\11.- Mẫu Benh-an-Ngoai-khoa.doc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\MauBenhAn\13.-Benh-an-Ung-buou.doc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\MauBenhAn\14.-Benh-an-RHM.doc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\MauBenhAn\15.-Benh-an-TMH.doc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\MauBenhAn\20.-Benh-an-Ngoai-tru.doc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\MauBenhAn\3.-Benh-an-Truyen-nhiem.doc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\MauBenhAn\8.-Benh-an-Da-lieu.doc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Templates\0_Mrd_DMDV__ExportTemplateKetQua.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -537,6 +513,36 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Templates\1_Mrd_DMHCThuoc__ExportTemplateKetQua.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\MauBenhAn\10.-Benh-an-HHTM.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\MauBenhAn\11.- Mẫu Benh-an-Ngoai-khoa.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\MauBenhAn\13.-Benh-an-Ung-buou.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\MauBenhAn\14.-Benh-an-RHM.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\MauBenhAn\15.-Benh-an-TMH.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\MauBenhAn\20.-Benh-an-Ngoai-tru.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\MauBenhAn\3.-Benh-an-Truyen-nhiem.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\MauBenhAn\8.-Benh-an-Da-lieu.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\BienBanHoiChan\40. Trich bien ban hoi chuan.DOC">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\BienBanHoiChan\So BB hoi chuan.DOC">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

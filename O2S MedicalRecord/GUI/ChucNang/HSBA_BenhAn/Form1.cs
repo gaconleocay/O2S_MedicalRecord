@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraRichEdit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,18 +19,19 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn
             InitializeComponent();
         }
 
-        static string GetTextFile(string textFile)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            string textBytes = null;
-            Console.WriteLine("Loading File: " + textFile);
+            richEditControlData.Unit = DevExpress.Office.DocumentUnit.Inch;
+            richEditControlData.Document.Sections[0].Page.PaperKind = System.Drawing.Printing.PaperKind.A5;
+            // richEditControlData.Document.Sections[0].Page.Landscape = true;
+            //richEditControlData.Document.Sections[0].Margins.Left = 0.2f;
+            //richEditControlData.Document.Sections[0].Margins.Right = 0.2f;
+            //richEditControlData.Document.Sections[0].Margins.Top = 0.2f;
+            //richEditControlData.Document.Sections[0].Margins.Bottom = 0.2f;
+           // richEditControlData.ActiveViewType = RichEditViewType.PrintLayout;
 
-            FileStream fs = new FileStream(textFile, FileMode.Open, FileAccess.Read);
-            StreamReader sr = new StreamReader(fs);
-            textBytes = sr.ReadToEnd();
-
-            Console.WriteLine("TextBytes has length {0} bytes.", textBytes.Length);
-            return textBytes;
         }
+
 
 
     }

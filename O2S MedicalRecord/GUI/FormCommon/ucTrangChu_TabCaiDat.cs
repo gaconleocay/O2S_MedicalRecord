@@ -197,6 +197,9 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 //ucDanhMucBenhAn frmResult = new ucDanhMucBenhAn();
                 //frmResult.Dock = System.Windows.Forms.DockStyle.Fill;
                 //panelCaiDatChiTiet.Controls.Add(frmResult);
+                ChucNang.HSBA_BenhAn.Form1 ffrmrom = new ChucNang.HSBA_BenhAn.Form1();
+                ffrmrom.ShowDialog();
+
             }
             catch (Exception ex)
             {

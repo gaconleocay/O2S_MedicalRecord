@@ -356,6 +356,7 @@
             // richEditControlData
             // 
             this.richEditControlData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richEditControlData.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Document;
             this.richEditControlData.Location = new System.Drawing.Point(0, 0);
             this.richEditControlData.MenuManager = this.ribbonControl1;
             this.richEditControlData.Name = "richEditControlData";
