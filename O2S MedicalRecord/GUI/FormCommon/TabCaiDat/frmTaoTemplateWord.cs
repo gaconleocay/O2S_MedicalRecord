@@ -10,16 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn
+namespace O2S_MedicalRecord.GUI.FormCommon
 {
-    public partial class Form1 : Form
+    public partial class frmTaoTemplateWord : Form
     {
-        public Form1()
+        public frmTaoTemplateWord()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void frmTaoTemplateWord_Load(object sender, EventArgs e)
         {
             richEditControlData.Unit = DevExpress.Office.DocumentUnit.Inch;
             richEditControlData.Document.Sections[0].Page.PaperKind = System.Drawing.Printing.PaperKind.A5;

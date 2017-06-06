@@ -17,7 +17,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn
     {
         private MrdHsbaHosobenhanDTO mrdHsbaHosobenhan { get; set; }
         private DAL.ConnectDatabase condb = new DAL.ConnectDatabase();
-
+        private string[] arrCode_Copy = new string[] { "{\\lang1043\\langfe1043\\b\\f1\\cf0 A- B\\u7878\\''3fNH \\u193\\''c1N}", "{\\lang1033\\langfe1033\\b\\f1\\cf0 \\page A- B\\u7878\\''3fNH \\u193\\''c1N}","{\\lang1033\\langfe1033\\b\\f1\\cf0 A- B\\u7878\\''3fNH \\u193\\''c1N}","{\\b\\f1\\cf0 \\page A- B\\u7878\\''3fNH \\u193\\''c1N}","{\\b\\f1\\cf0 A- B\\u7878\\''3fNH \\u193\\''c1N}" };
         public frmNhapBenhAn()
         {
             InitializeComponent();
@@ -112,16 +112,23 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn
                         Aspose.Words.Document documentWord = new Aspose.Words.Document();
                         documentWord = Utilities.Common.Word.WordMergeTemplateExport.ExportWordMailMergeFormat(templateFullPath, dataService, "PhieuBenhAn_Tmp.Rtf", Aspose.Words.SaveFormat.Rtf);
 
+
+                        //COPY MAU BENH AN
                         if (this.mrdHsbaHosobenhan.mrd_hsba_hosobenhandata_nd != null && this.mrdHsbaHosobenhan.mrd_hsba_hosobenhandata_nd != "") //copy mau
                         {
                             richEditControlData.LoadDocument(Environment.CurrentDirectory + Base.KeyTrongPhanMem.ReportTemps_Path + "\\PhieuBenhAn_Tmp.Rtf", DevExpress.XtraRichEdit.DocumentFormat.Rtf);
                             string mrd_hsba_hosobenhandata = "";
+                            int index_nd = 0;
                             string mrd_hsba_hosobenhandata_tmp = richEditControlData.Document.RtfText;
-                            int index_nd = mrd_hsba_hosobenhandata_tmp.IndexOf("{\\lang1043\\langfe1043\\b\\f1\\cf0 A- B\\u7878\\'3fNH \\u193\\'c1N}");
-                            if (index_nd > 0)
+                            foreach (var item in arrCode_Copy)
                             {
-                                mrd_hsba_hosobenhandata = mrd_hsba_hosobenhandata_tmp.Substring(0, index_nd) + this.mrdHsbaHosobenhan.mrd_hsba_hosobenhandata_nd;
-                                richEditControlData.Document.RtfText = mrd_hsba_hosobenhandata;
+                                index_nd = mrd_hsba_hosobenhandata_tmp.IndexOf(item.Replace("''", "'"));
+                                if (index_nd > 0)
+                                {
+                                    mrd_hsba_hosobenhandata = mrd_hsba_hosobenhandata_tmp.Substring(0, index_nd) + this.mrdHsbaHosobenhan.mrd_hsba_hosobenhandata_nd;
+                                    richEditControlData.Document.RtfText = mrd_hsba_hosobenhandata; 
+                                    break;
+                                }
                             }
                         }
                         else
@@ -184,12 +191,20 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn
             {
                 string sqlHSBA = "";
                 string mrd_hsba_hosobenhandata_nd = "";
+                int index_nd = 0;
                 string mrd_hsba_hosobenhandata = richEditControlData.Document.RtfText.Replace("'", "''");
-                int index_nd = mrd_hsba_hosobenhandata.IndexOf("{\\lang1043\\langfe1043\\b\\f1\\cf0 A- B\\u7878\\''3fNH \\u193\\''c1N}");
-                if (index_nd > 0)
+
+                foreach (var item in arrCode_Copy)
                 {
-                    mrd_hsba_hosobenhandata_nd = mrd_hsba_hosobenhandata.Substring(index_nd);
+                    index_nd = mrd_hsba_hosobenhandata.IndexOf(item);
+                    if (index_nd > 0)
+                    {
+                        mrd_hsba_hosobenhandata_nd = mrd_hsba_hosobenhandata.Substring(index_nd);
+                        break;
+                    }
                 }
+
+               
                 if (this.mrdHsbaHosobenhan.mrd_hsba_hosobenhanid == 0) //them moi
                 {
                     sqlHSBA = "INSERT INTO mrd_hsba_hosobenhan(hosobenhanid, medicalrecordid, patientid, vienphiid, mrd_hsbatemid, departmentgroupid, departmentid, mrd_hsba_hosobenhandata, mrd_hsba_hosobenhandata_nd, mrd_hsba_hosobenhanstatus, create_mrduserid, create_mrdusercode, create_date, note) VALUES (" + this.mrdHsbaHosobenhan.hosobenhanid + ", " + this.mrdHsbaHosobenhan.medicalrecordid + ", " + this.mrdHsbaHosobenhan.patientid + ", " + this.mrdHsbaHosobenhan.vienphiid + ", " + this.mrdHsbaHosobenhan.mrd_hsbatemid + ", " + this.mrdHsbaHosobenhan.departmentgroupid + ", " + this.mrdHsbaHosobenhan.departmentid + ", '" + mrd_hsba_hosobenhandata + "', '" + mrd_hsba_hosobenhandata_nd + "', " + mrd_hsba_hosobenhanstatus + ", '" + Base.SessionLogin.SessionUserID + "', '" + Base.SessionLogin.SessionUsercode + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "',''); ";

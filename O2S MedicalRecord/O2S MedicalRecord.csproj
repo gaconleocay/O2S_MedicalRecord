@@ -196,6 +196,7 @@
     <Compile Include="Base\ClassEncoding.cs" />
     <Compile Include="Base\HardwareInfo.cs" />
     <Compile Include="Base\KiemTraLicense.cs" />
+    <Compile Include="DTO\MrdDMHoiChanPTTTDTO.cs" />
     <Compile Include="DTO\MrdHsbaHosobenhanDTO.cs" />
     <Compile Include="DTO\MrdHsbaTemplateDTO.cs" />
     <Compile Include="DTO\MrdPtttServiceDTO.cs" />
@@ -224,11 +225,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DTO\serviceprice_ptttDTO.cs" />
-    <Compile Include="GUI\ChucNang\HSBA_BenhAn\Form1.cs">
+    <Compile Include="GUI\FormCommon\TabCaiDat\frmTaoTemplateWord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ChucNang\HSBA_BenhAn\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\FormCommon\TabCaiDat\frmTaoTemplateWord.Designer.cs">
+      <DependentUpon>frmTaoTemplateWord.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\ChucNang\HSBA_BenhAn\frmChonLoaiBenhAn.cs">
       <SubType>Form</SubType>
@@ -290,10 +291,16 @@
     </Compile>
     <Compile Include="DAL\KetNoiSCDLProcess.cs" />
     <Compile Include="GUI\FormCommon\LoadDataSystems.cs" />
-    <Compile Include="GUI\FormCommon\TabCaiDat\frmChonThuocDauSao.cs">
+    <Compile Include="GUI\FormCommon\TabCaiDat\HoiChan\frmChonDichVuPTTTHoiChan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FormCommon\TabCaiDat\frmChonThuocDauSao.Designer.cs">
+    <Compile Include="GUI\FormCommon\TabCaiDat\HoiChan\frmChonDichVuPTTTHoiChan.Designer.cs">
+      <DependentUpon>frmChonDichVuPTTTHoiChan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FormCommon\TabCaiDat\HoiChan\frmChonThuocDauSao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FormCommon\TabCaiDat\HoiChan\frmChonThuocDauSao.Designer.cs">
       <DependentUpon>frmChonThuocDauSao.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormCommon\TabCaiDat\ucCauHinhHeThong.cs">
@@ -314,6 +321,12 @@
     <Compile Include="GUI\FormCommon\TabCaiDat\ucDanhMucDungChung.Designer.cs">
       <DependentUpon>ucDanhMucDungChung.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FormCommon\TabCaiDat\HoiChan\ucDanhMucHoiChanPTTT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\FormCommon\TabCaiDat\HoiChan\ucDanhMucHoiChanPTTT.Designer.cs">
+      <DependentUpon>ucDanhMucHoiChanPTTT.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FormCommon\TabCaiDat\ucDanhSachNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -333,10 +346,10 @@
       <DependentUpon>ucQuanLyNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="BUS\TabControlProcess.cs" />
-    <Compile Include="GUI\FormCommon\TabCaiDat\ucDanhMucHoiChanThuoc.cs">
+    <Compile Include="GUI\FormCommon\TabCaiDat\HoiChan\ucDanhMucHoiChanThuoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\FormCommon\TabCaiDat\ucDanhMucHoiChanThuoc.Designer.cs">
+    <Compile Include="GUI\FormCommon\TabCaiDat\HoiChan\ucDanhMucHoiChanThuoc.Designer.cs">
       <DependentUpon>ucDanhMucHoiChanThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FormCommon\TabCaiDat\ucUpdateTemplateDVPTTT.cs">
@@ -401,8 +414,8 @@
     <Compile Include="Utilities\Util_DateTime.cs" />
     <Compile Include="Utilities\Util_NumberConvert.cs" />
     <Compile Include="Utilities\Util_TypeConvertParse.cs" />
-    <EmbeddedResource Include="GUI\ChucNang\HSBA_BenhAn\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\frmTaoTemplateWord.resx">
+      <DependentUpon>frmTaoTemplateWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChucNang\HSBA_BenhAn\frmChonLoaiBenhAn.resx">
       <DependentUpon>frmChonLoaiBenhAn.cs</DependentUpon>
@@ -425,7 +438,10 @@
     <EmbeddedResource Include="GUI\FormCommon\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\frmChonThuocDauSao.resx">
+    <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\HoiChan\frmChonDichVuPTTTHoiChan.resx">
+      <DependentUpon>frmChonDichVuPTTTHoiChan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\HoiChan\frmChonThuocDauSao.resx">
       <DependentUpon>frmChonThuocDauSao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucCauHinhHeThong.resx">
@@ -437,6 +453,9 @@
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucDanhMucDungChung.resx">
       <DependentUpon>ucDanhMucDungChung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\HoiChan\ucDanhMucHoiChanPTTT.resx">
+      <DependentUpon>ucDanhMucHoiChanPTTT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucDanhSachNhanVien.resx">
       <DependentUpon>ucDanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -446,7 +465,7 @@
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucQuanLyNguoiDung.resx">
       <DependentUpon>ucQuanLyNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucDanhMucHoiChanThuoc.resx">
+    <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\HoiChan\ucDanhMucHoiChanThuoc.resx">
       <DependentUpon>ucDanhMucHoiChanThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\ucUpdateTemplateDVPTTT.resx">

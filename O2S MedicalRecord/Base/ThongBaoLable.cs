@@ -44,7 +44,7 @@ namespace O2S_MedicalRecord.Base
         internal static string PHIEU_DUOC_TAO_BOI_KHOA_PHONG_KHAC = "Phiếu được tạo bởi khoa/phòng khác!";
         internal static string KHONG_THE_SU_DUNG_MA_NAY = "Không thể sử dụng mã này!";
         internal static string BENH_AN_DA_DUOC_TAO = "Bệnh án đã được tạo nên không thể sử dụng chức năng này!";
-
+        internal static string XOA_THANH_CONG = "Xóa thành công!";
 
 
         internal static void HienThiThongBao(System.Windows.Forms.Timer timerThongBao, DevExpress.XtraEditors.LabelControl lblThongBao, string tenThongBao)

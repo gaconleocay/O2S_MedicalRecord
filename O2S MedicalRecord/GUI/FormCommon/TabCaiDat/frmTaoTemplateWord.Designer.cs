@@ -1,6 +1,6 @@
-﻿namespace O2S_MedicalRecord.GUI.ChucNang.HSBA_BenhAn
+﻿namespace O2S_MedicalRecord.GUI.FormCommon
 {
-    partial class Form1
+    partial class frmTaoTemplateWord
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup7 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup8 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraRichEdit.Model.BorderInfo borderInfo2 = new DevExpress.XtraRichEdit.Model.BorderInfo();
-            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation4 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaoTemplateWord));
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraRichEdit.Model.BorderInfo borderInfo1 = new DevExpress.XtraRichEdit.Model.BorderInfo();
+            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation1 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
             this.stylesRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.StylesRibbonPageGroup();
             this.galleryChangeStyleItem1 = new DevExpress.XtraRichEdit.UI.GalleryChangeStyleItem();
             this.richEditControlData = new DevExpress.XtraRichEdit.RichEditControl();
@@ -243,7 +243,7 @@
             this.insertTableColumnToLeftItem1 = new DevExpress.XtraRichEdit.UI.InsertTableColumnToLeftItem();
             this.insertTableColumnToRightItem1 = new DevExpress.XtraRichEdit.UI.InsertTableColumnToRightItem();
             this.mergeTableCellsItem1 = new DevExpress.XtraRichEdit.UI.MergeTableCellsItem();
-            this.showSplitTableCellsForm1 = new DevExpress.XtraRichEdit.UI.ShowSplitTableCellsForm();
+            this.showSplitTableCellsfrmTaoTemplateWord = new DevExpress.XtraRichEdit.UI.ShowSplitTableCellsForm();
             this.splitTableItem1 = new DevExpress.XtraRichEdit.UI.SplitTableItem();
             this.toggleTableAutoFitItem1 = new DevExpress.XtraRichEdit.UI.ToggleTableAutoFitItem();
             this.toggleTableAutoFitContentsItem1 = new DevExpress.XtraRichEdit.UI.ToggleTableAutoFitContentsItem();
@@ -366,7 +366,7 @@
             // 
             this.galleryChangeStyleItem1.Gallery.ColumnCount = 10;
             this.galleryChangeStyleItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup7});
+            galleryItemGroup1});
             this.galleryChangeStyleItem1.Gallery.ImageSize = new System.Drawing.Size(65, 46);
             this.galleryChangeStyleItem1.Id = 61;
             this.galleryChangeStyleItem1.Name = "galleryChangeStyleItem1";
@@ -380,7 +380,6 @@
             this.richEditControlData.Name = "richEditControlData";
             this.richEditControlData.Size = new System.Drawing.Size(956, 371);
             this.richEditControlData.TabIndex = 0;
-            this.richEditControlData.Text = "richEditControl1";
             // 
             // ribbonControl1
             // 
@@ -587,7 +586,7 @@
             this.insertTableColumnToLeftItem1,
             this.insertTableColumnToRightItem1,
             this.mergeTableCellsItem1,
-            this.showSplitTableCellsForm1,
+            this.showSplitTableCellsfrmTaoTemplateWord,
             this.splitTableItem1,
             this.toggleTableAutoFitItem1,
             this.toggleTableAutoFitContentsItem1,
@@ -1648,7 +1647,7 @@
             // 
             this.galleryChangeTableStyleItem1.Gallery.ColumnCount = 3;
             this.galleryChangeTableStyleItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup8});
+            galleryItemGroup2});
             this.galleryChangeTableStyleItem1.Gallery.ImageSize = new System.Drawing.Size(65, 46);
             this.galleryChangeTableStyleItem1.Id = 167;
             this.galleryChangeTableStyleItem1.ModifyItemLink = null;
@@ -1659,13 +1658,13 @@
             // changeTableBorderLineStyleItem1
             // 
             this.changeTableBorderLineStyleItem1.Edit = this.repositoryItemBorderLineStyle1;
-            borderInfo2.Color = System.Drawing.Color.Black;
-            borderInfo2.Frame = false;
-            borderInfo2.Offset = 0;
-            borderInfo2.Shadow = false;
-            borderInfo2.Style = DevExpress.XtraRichEdit.Model.BorderLineStyle.Single;
-            borderInfo2.Width = 10;
-            this.changeTableBorderLineStyleItem1.EditValue = borderInfo2;
+            borderInfo1.Color = System.Drawing.Color.Black;
+            borderInfo1.Frame = false;
+            borderInfo1.Offset = 0;
+            borderInfo1.Shadow = false;
+            borderInfo1.Style = DevExpress.XtraRichEdit.Model.BorderLineStyle.Single;
+            borderInfo1.Width = 10;
+            this.changeTableBorderLineStyleItem1.EditValue = borderInfo1;
             this.changeTableBorderLineStyleItem1.EditWidth = 130;
             this.changeTableBorderLineStyleItem1.Id = 168;
             this.changeTableBorderLineStyleItem1.Name = "changeTableBorderLineStyleItem1";
@@ -1866,10 +1865,10 @@
             this.mergeTableCellsItem1.Id = 199;
             this.mergeTableCellsItem1.Name = "mergeTableCellsItem1";
             // 
-            // showSplitTableCellsForm1
+            // showSplitTableCellsfrmTaoTemplateWord
             // 
-            this.showSplitTableCellsForm1.Id = 200;
-            this.showSplitTableCellsForm1.Name = "showSplitTableCellsForm1";
+            this.showSplitTableCellsfrmTaoTemplateWord.Id = 200;
+            this.showSplitTableCellsfrmTaoTemplateWord.Name = "showSplitTableCellsfrmTaoTemplateWord";
             // 
             // splitTableItem1
             // 
@@ -2231,7 +2230,7 @@
             // tableMergeRibbonPageGroup1
             // 
             this.tableMergeRibbonPageGroup1.ItemLinks.Add(this.mergeTableCellsItem1);
-            this.tableMergeRibbonPageGroup1.ItemLinks.Add(this.showSplitTableCellsForm1);
+            this.tableMergeRibbonPageGroup1.ItemLinks.Add(this.showSplitTableCellsfrmTaoTemplateWord);
             this.tableMergeRibbonPageGroup1.ItemLinks.Add(this.splitTableItem1);
             this.tableMergeRibbonPageGroup1.Name = "tableMergeRibbonPageGroup1";
             // 
@@ -2314,12 +2313,12 @@
             this.stylesRibbonPageGroup1,
             this.editingRibbonPageGroup1});
             this.homeRibbonPage1.Name = "homeRibbonPage1";
-            reduceOperation4.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.UntilAvailable;
-            reduceOperation4.Group = this.stylesRibbonPageGroup1;
-            reduceOperation4.ItemLinkIndex = 0;
-            reduceOperation4.ItemLinksCount = 0;
-            reduceOperation4.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.Gallery;
-            this.homeRibbonPage1.ReduceOperations.Add(reduceOperation4);
+            reduceOperation1.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.UntilAvailable;
+            reduceOperation1.Group = this.stylesRibbonPageGroup1;
+            reduceOperation1.ItemLinkIndex = 0;
+            reduceOperation1.ItemLinksCount = 0;
+            reduceOperation1.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.Gallery;
+            this.homeRibbonPage1.ReduceOperations.Add(reduceOperation1);
             // 
             // clipboardRibbonPageGroup1
             // 
@@ -2731,7 +2730,7 @@
             this.richEditBarController1.BarItems.Add(this.insertTableColumnToLeftItem1);
             this.richEditBarController1.BarItems.Add(this.insertTableColumnToRightItem1);
             this.richEditBarController1.BarItems.Add(this.mergeTableCellsItem1);
-            this.richEditBarController1.BarItems.Add(this.showSplitTableCellsForm1);
+            this.richEditBarController1.BarItems.Add(this.showSplitTableCellsfrmTaoTemplateWord);
             this.richEditBarController1.BarItems.Add(this.splitTableItem1);
             this.richEditBarController1.BarItems.Add(this.toggleTableAutoFitItem1);
             this.richEditBarController1.BarItems.Add(this.toggleTableAutoFitContentsItem1);
@@ -2777,7 +2776,7 @@
             this.richEditBarController1.BarItems.Add(this.floatingObjectSendBehindTextItem1);
             this.richEditBarController1.Control = this.richEditControlData;
             // 
-            // Form1
+            // frmTaoTemplateWord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2786,10 +2785,10 @@
             this.Controls.Add(this.richEditControlData);
             this.Controls.Add(this.ribbonControl1);
             this.Controls.Add(this.backstageViewControl1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmTaoTemplateWord";
+            this.Text = "frmTaoTemplateWord";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.frmTaoTemplateWord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).EndInit();
             this.backstageViewControl1.ResumeLayout(false);
@@ -3012,7 +3011,7 @@
         private DevExpress.XtraRichEdit.UI.InsertTableColumnToLeftItem insertTableColumnToLeftItem1;
         private DevExpress.XtraRichEdit.UI.InsertTableColumnToRightItem insertTableColumnToRightItem1;
         private DevExpress.XtraRichEdit.UI.MergeTableCellsItem mergeTableCellsItem1;
-        private DevExpress.XtraRichEdit.UI.ShowSplitTableCellsForm showSplitTableCellsForm1;
+        private DevExpress.XtraRichEdit.UI.ShowSplitTableCellsForm showSplitTableCellsfrmTaoTemplateWord;
         private DevExpress.XtraRichEdit.UI.SplitTableItem splitTableItem1;
         private DevExpress.XtraRichEdit.UI.ToggleTableAutoFitItem toggleTableAutoFitItem1;
         private DevExpress.XtraRichEdit.UI.ToggleTableAutoFitContentsItem toggleTableAutoFitContentsItem1;

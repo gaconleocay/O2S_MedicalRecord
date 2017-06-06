@@ -178,10 +178,10 @@ namespace O2S_MedicalRecord.GUI.FormCommon
         {
             try
             {
-                //panelCaiDatChiTiet.Controls.Clear();
-                //ucDanhMucBenhAn frmResult = new ucDanhMucBenhAn();
-                //frmResult.Dock = System.Windows.Forms.DockStyle.Fill;
-                //panelCaiDatChiTiet.Controls.Add(frmResult);
+                panelCaiDatChiTiet.Controls.Clear();
+                ucDanhMucHoiChanPTTT frmResult = new ucDanhMucHoiChanPTTT();
+                frmResult.Dock = System.Windows.Forms.DockStyle.Fill;
+                panelCaiDatChiTiet.Controls.Add(frmResult);
             }
             catch (Exception ex)
             {
@@ -197,8 +197,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 //ucDanhMucBenhAn frmResult = new ucDanhMucBenhAn();
                 //frmResult.Dock = System.Windows.Forms.DockStyle.Fill;
                 //panelCaiDatChiTiet.Controls.Add(frmResult);
-                ChucNang.HSBA_BenhAn.Form1 ffrmrom = new ChucNang.HSBA_BenhAn.Form1();
-                ffrmrom.ShowDialog();
+       
 
             }
             catch (Exception ex)
@@ -220,6 +219,11 @@ namespace O2S_MedicalRecord.GUI.FormCommon
             {
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
+        }
+        private void navBarItemTaoTemplateWord_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            FormCommon.frmTaoTemplateWord ffrmrom = new frmTaoTemplateWord();
+            ffrmrom.ShowDialog();
         }
     }
 }
