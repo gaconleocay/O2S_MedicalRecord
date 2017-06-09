@@ -39,11 +39,12 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.btnDM_Luu = new DevExpress.XtraEditors.SimpleButton();
             this.btnDM_Them = new DevExpress.XtraEditors.SimpleButton();
-            this.txtDM_Ten = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtDM_Ma = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -65,16 +66,14 @@
             this.txtLoaiDM_Ma = new DevExpress.XtraEditors.TextEdit();
             this.lblUserId = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtDM_GiaTri = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.txtDM_Ten = new DevExpress.XtraEditors.MemoEdit();
+            this.txtDM_GiaTri = new DevExpress.XtraEditors.MemoEdit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDM)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ma.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDM_LoaiDMTen.Properties)).BeginInit();
             this.panel2.SuspendLayout();
@@ -84,6 +83,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ma.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDM_GiaTri.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -236,24 +236,52 @@
             this.gridColumn6.VisibleIndex = 2;
             this.gridColumn6.Width = 400;
             // 
+            // gridColumn11
+            // 
+            this.gridColumn11.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn11.AppearanceCell.Options.UseFont = true;
+            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            this.gridColumn11.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.gridColumn11.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn11.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn11.Caption = "Giá trị";
+            this.gridColumn11.FieldName = "mrd_otherlistvalue";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 3;
+            this.gridColumn11.Width = 331;
+            // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.txtDM_GiaTri);
             this.panel6.Controls.Add(this.labelControl7);
             this.panel6.Controls.Add(this.labelControl6);
             this.panel6.Controls.Add(this.btnDM_Luu);
             this.panel6.Controls.Add(this.btnDM_Them);
-            this.panel6.Controls.Add(this.txtDM_Ten);
             this.panel6.Controls.Add(this.labelControl3);
             this.panel6.Controls.Add(this.txtDM_Ma);
             this.panel6.Controls.Add(this.labelControl5);
             this.panel6.Controls.Add(this.labelControl2);
             this.panel6.Controls.Add(this.cboDM_LoaiDMTen);
+            this.panel6.Controls.Add(this.txtDM_Ten);
+            this.panel6.Controls.Add(this.txtDM_GiaTri);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(645, 190);
             this.panel6.TabIndex = 0;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl7.Location = new System.Drawing.Point(342, 154);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(34, 16);
+            this.labelControl7.TabIndex = 25;
+            this.labelControl7.Text = "Giá trị";
             // 
             // labelControl6
             // 
@@ -292,18 +320,6 @@
             this.btnDM_Them.TabIndex = 21;
             this.btnDM_Them.Text = "Thêm";
             this.btnDM_Them.Click += new System.EventHandler(this.btnDM_Them_Click);
-            // 
-            // txtDM_Ten
-            // 
-            this.txtDM_Ten.Location = new System.Drawing.Point(47, 137);
-            this.txtDM_Ten.Name = "txtDM_Ten";
-            this.txtDM_Ten.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDM_Ten.Properties.Appearance.Options.UseFont = true;
-            this.txtDM_Ten.Properties.AutoHeight = false;
-            this.txtDM_Ten.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtDM_Ten.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtDM_Ten.Size = new System.Drawing.Size(230, 44);
-            this.txtDM_Ten.TabIndex = 20;
             // 
             // labelControl3
             // 
@@ -566,23 +582,16 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "LOẠI DANH MỤC";
             // 
-            // gridColumn11
+            // txtDM_Ten
             // 
-            this.gridColumn11.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn11.AppearanceCell.Options.UseFont = true;
-            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.gridColumn11.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.gridColumn11.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn11.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn11.Caption = "Giá trị";
-            this.gridColumn11.FieldName = "mrd_otherlistvalue";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.OptionsColumn.AllowEdit = false;
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 3;
-            this.gridColumn11.Width = 331;
+            this.txtDM_Ten.Location = new System.Drawing.Point(47, 137);
+            this.txtDM_Ten.Name = "txtDM_Ten";
+            this.txtDM_Ten.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDM_Ten.Properties.Appearance.Options.UseFont = true;
+            this.txtDM_Ten.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDM_Ten.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDM_Ten.Size = new System.Drawing.Size(230, 44);
+            this.txtDM_Ten.TabIndex = 20;
             // 
             // txtDM_GiaTri
             // 
@@ -590,21 +599,10 @@
             this.txtDM_GiaTri.Name = "txtDM_GiaTri";
             this.txtDM_GiaTri.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDM_GiaTri.Properties.Appearance.Options.UseFont = true;
-            this.txtDM_GiaTri.Properties.AutoHeight = false;
             this.txtDM_GiaTri.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtDM_GiaTri.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtDM_GiaTri.Size = new System.Drawing.Size(230, 44);
             this.txtDM_GiaTri.TabIndex = 26;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.labelControl7.Location = new System.Drawing.Point(342, 154);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(34, 16);
-            this.labelControl7.TabIndex = 25;
-            this.labelControl7.Text = "Giá trị";
             // 
             // ucDanhMucDungChung
             // 
@@ -621,7 +619,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDM)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ten.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ma.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDM_LoaiDMTen.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -632,6 +629,7 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ten.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ma.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ten.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDM_GiaTri.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -663,7 +661,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.SimpleButton btnDM_Luu;
         private DevExpress.XtraEditors.SimpleButton btnDM_Them;
-        private DevExpress.XtraEditors.TextEdit txtDM_Ten;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtDM_Ma;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -677,7 +674,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.LookUpEdit cboDM_LoaiDMTen;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraEditors.TextEdit txtDM_GiaTri;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.MemoEdit txtDM_Ten;
+        private DevExpress.XtraEditors.MemoEdit txtDM_GiaTri;
     }
 }
