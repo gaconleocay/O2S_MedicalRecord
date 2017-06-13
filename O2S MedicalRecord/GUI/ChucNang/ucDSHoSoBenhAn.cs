@@ -206,11 +206,11 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                     }
                     else if (e.Page.Name == xtraTabHoiChan.Name)
                     {
-                        //if (tab_hoichan == 0)
-                        //{
-                        //    ucDSHoSoBenhAn_ThongTinChung_Load(this.SelectRowMedicalrecord);
-                        //    tab_hoichan = 1;
-                        //}
+                        if (tabload_hoichan == 0)
+                        {
+                            ucDSHoSoBenhAn_HoiChan_Load(this.SelectRowMedicalrecord);
+                            tabload_hoichan = 1;
+                        }
                     }
                 }
             }
@@ -323,7 +323,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 }
                 else if (xtraTabDSHSBA.SelectedTabPage.Name == xtraTabHoiChan.Name)
                 {
-                    //   ucDSHoSoBenhAn_HoiChan_Load(filterDTO);
+                       ucDSHoSoBenhAn_HoiChan_Load(filterDTO);
                     tabload_hoichan = 1;
                 }
             }
@@ -443,6 +443,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang
 
 
         #endregion
+
+
 
 
 
