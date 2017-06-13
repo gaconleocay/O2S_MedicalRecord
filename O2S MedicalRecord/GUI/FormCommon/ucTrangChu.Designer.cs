@@ -76,9 +76,9 @@
             this.navBarItemMaHoaGiaiMa = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemNhatKySuKien = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemQLMayTram = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItemTaoTemplateWord = new DevExpress.XtraNavBar.NavBarItem();
             this.panelCaiDatChiTiet = new DevExpress.XtraEditors.PanelControl();
             this.timerThongBao = new System.Windows.Forms.Timer(this.components);
-            this.navBarItemTaoTemplateWord = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlHome)).BeginInit();
             this.xtraTabControlHome.SuspendLayout();
             this.xtraTabTTCoBan.SuspendLayout();
@@ -658,6 +658,7 @@
             this.navBarItemDMHoiChanChuyenVien.AppearancePressed.Options.UseFont = true;
             this.navBarItemDMHoiChanChuyenVien.Caption = "DM hội chẩn chuyển viện";
             this.navBarItemDMHoiChanChuyenVien.Name = "navBarItemDMHoiChanChuyenVien";
+            this.navBarItemDMHoiChanChuyenVien.Visible = false;
             this.navBarItemDMHoiChanChuyenVien.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemHoiChanChuyenVien_LinkClicked);
             // 
             // navBarItemDMDungChung
@@ -739,19 +740,6 @@
             this.navBarItemQLMayTram.Name = "navBarItemQLMayTram";
             this.navBarItemQLMayTram.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemQLMayTram_LinkClicked);
             // 
-            // panelCaiDatChiTiet
-            // 
-            this.panelCaiDatChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCaiDatChiTiet.Location = new System.Drawing.Point(0, 0);
-            this.panelCaiDatChiTiet.Name = "panelCaiDatChiTiet";
-            this.panelCaiDatChiTiet.Size = new System.Drawing.Size(926, 582);
-            this.panelCaiDatChiTiet.TabIndex = 0;
-            // 
-            // timerThongBao
-            // 
-            this.timerThongBao.Interval = 2000;
-            this.timerThongBao.Tick += new System.EventHandler(this.timerThongBao_Tick);
-            // 
             // navBarItemTaoTemplateWord
             // 
             this.navBarItemTaoTemplateWord.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
@@ -767,6 +755,19 @@
             this.navBarItemTaoTemplateWord.Caption = "Tạo template Word";
             this.navBarItemTaoTemplateWord.Name = "navBarItemTaoTemplateWord";
             this.navBarItemTaoTemplateWord.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemTaoTemplateWord_LinkClicked);
+            // 
+            // panelCaiDatChiTiet
+            // 
+            this.panelCaiDatChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCaiDatChiTiet.Location = new System.Drawing.Point(0, 0);
+            this.panelCaiDatChiTiet.Name = "panelCaiDatChiTiet";
+            this.panelCaiDatChiTiet.Size = new System.Drawing.Size(926, 582);
+            this.panelCaiDatChiTiet.TabIndex = 0;
+            // 
+            // timerThongBao
+            // 
+            this.timerThongBao.Interval = 2000;
+            this.timerThongBao.Tick += new System.EventHandler(this.timerThongBao_Tick);
             // 
             // ucTrangChu
             // 
