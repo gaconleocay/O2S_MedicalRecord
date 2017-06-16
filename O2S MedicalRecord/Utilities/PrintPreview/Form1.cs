@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MeO2_MedicalRecord.Utilities.PrintPreview
+namespace O2S_MedicalRecord.Utilities.PrintPreview
 {
-    public partial class PrintPreviewDev : Form
+    public partial class Form1 : Form
     {
-        public PrintPreviewDev()
+        public Form1()
         {
             InitializeComponent();
         }

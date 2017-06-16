@@ -63,8 +63,8 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemText_Ten = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemText_Ten = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemText_ChucDanh = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -355,6 +355,7 @@
             this.btnInTatCa.Size = new System.Drawing.Size(120, 30);
             this.btnInTatCa.TabIndex = 82;
             this.btnInTatCa.Text = "In cả 2";
+            this.btnInTatCa.Visible = false;
             this.btnInTatCa.Click += new System.EventHandler(this.btnInTatCa_Click);
             // 
             // btnInSoBienBanHC
@@ -510,14 +511,6 @@
             this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 235;
             // 
-            // repositoryItemText_Ten
-            // 
-            this.repositoryItemText_Ten.AutoHeight = false;
-            this.repositoryItemText_Ten.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.repositoryItemText_Ten.Name = "repositoryItemText_Ten";
-            this.repositoryItemText_Ten.NullValuePrompt = "Họ và tên";
-            this.repositoryItemText_Ten.NullValuePromptShowForEmptyValue = true;
-            // 
             // gridColumn3
             // 
             this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -535,6 +528,14 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 236;
+            // 
+            // repositoryItemText_Ten
+            // 
+            this.repositoryItemText_Ten.AutoHeight = false;
+            this.repositoryItemText_Ten.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.repositoryItemText_Ten.Name = "repositoryItemText_Ten";
+            this.repositoryItemText_Ten.NullValuePrompt = "Họ và tên";
+            this.repositoryItemText_Ten.NullValuePromptShowForEmptyValue = true;
             // 
             // repositoryItemText_ChucDanh
             // 

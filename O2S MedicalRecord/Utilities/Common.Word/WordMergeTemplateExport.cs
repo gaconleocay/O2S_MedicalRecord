@@ -65,6 +65,7 @@ namespace O2S_MedicalRecord.Utilities.Common.Word
                 doc = docccc.Clone();
                 doc.MailMerge.Execute(dt);
                 doc.Save(strRoot + "\\Templates\\ReportTemps\\" + filetempname, format);
+                doc.Print();
             }
             catch (Exception ex)
             {

@@ -62,7 +62,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             SplashScreenManager.ShowForm(typeof(O2S_MedicalRecord.Utilities.ThongBao.WaitForm1));
             try
             {
-                lstHsbaHoiChan = new List<MrdHsbaHoiChanDTO>();
+                this.lstHsbaHoiChan = new List<MrdHsbaHoiChanDTO>();
                 string sqllstHoiChan = "select 1 as mrd_loaihc_id, 'Hội chẩn phẫu thuật' as mrd_loaihc_name, mrd_hsba_hcptttid as mrd_hsba_hcid, mrd_dmhc_ptttid as mrd_dmhc_id, 0 as his_chuyenvienid, 0 as medicinerefid_org, maubenhphamid, servicepriceid, servicepricecode, servicepricename, servicepricedate, hosobenhanid, medicalrecordid, patientid, vienphiid, departmentgroupid, departmentid, thoigianhoichan, yeucauhoichan, diadiemhoichan, dbb_tomtattiensubenh, dbb_tinhtranglucvaovien, dbb_chandoantuyenduoi, dbb_tomtatdienbienbenh, yk_chandoantienluong, yk_phuongphapdieutri, yk_chamsoc, kl_ketluan, tvtg_chutoa_ten, tvtg_chutoa_cdcv, tvtg_thuky_ten, tvtg_thuky_cdcv, tvtg_thanhvien1_ten, tvtg_thanhvien1_cdcv, tvtg_thanhvien2_ten, tvtg_thanhvien2_cdcv, tvtg_thanhvien3_ten, tvtg_thanhvien3_cdcv, tvtg_thanhvien4_ten, tvtg_thanhvien4_cdcv, tvtg_thanhvien5_ten, tvtg_thanhvien5_cdcv, tvtg_thanhvien6_ten, tvtg_thanhvien6_cdcv, mrd_hsba_hcptttstatus as mrd_hsba_hcstatus, create_mrduserid, create_mrdusercode, create_date from mrd_hsba_hcpttt where hosobenhanid='" + rowMecicalrecord.hosobenhanid + "' union all select 2 as mrd_loaihc_id, 'Hội chẩn thuốc dấu *' as mrd_loaihc_name, mrd_hsba_hcthuocid as mrd_hsba_hcid, mrd_dmhc_thuocid as mrd_dmhc_id, 0 as his_chuyenvienid, medicinerefid_org, maubenhphamid, servicepriceid, servicepricecode, servicepricename, servicepricedate, hosobenhanid, medicalrecordid, patientid, vienphiid, departmentgroupid, departmentid, thoigianhoichan, yeucauhoichan, diadiemhoichan, dbb_tomtattiensubenh, dbb_tinhtranglucvaovien, dbb_chandoantuyenduoi, dbb_tomtatdienbienbenh, yk_chandoantienluong, yk_phuongphapdieutri, yk_chamsoc, kl_ketluan, tvtg_chutoa_ten, tvtg_chutoa_cdcv, tvtg_thuky_ten, tvtg_thuky_cdcv, tvtg_thanhvien1_ten, tvtg_thanhvien1_cdcv, tvtg_thanhvien2_ten, tvtg_thanhvien2_cdcv, tvtg_thanhvien3_ten, tvtg_thanhvien3_cdcv, tvtg_thanhvien4_ten, tvtg_thanhvien4_cdcv, tvtg_thanhvien5_ten, tvtg_thanhvien5_cdcv, tvtg_thanhvien6_ten, tvtg_thanhvien6_cdcv, mrd_hsba_hcthuocstatus as mrd_hsba_hcstatus, create_mrduserid, create_mrdusercode, create_date from mrd_hsba_hcthuoc where hosobenhanid='" + rowMecicalrecord.hosobenhanid + "' union all select 3 as mrd_loaihc_id, 'Hội chẩn chuyển viện' as mrd_loaihc_name, mrd_hsba_hccvienid as mrd_hsba_hcid, mrd_dmhc_cvienid as mrd_dmhc_id, his_chuyenvienid, 0 as medicinerefid_org, 0 as maubenhphamid, 0 as servicepriceid, '' as servicepricecode, '' as servicepricename, '' as servicepricedate, hosobenhanid, medicalrecordid, patientid, vienphiid, departmentgroupid, departmentid, thoigianhoichan, yeucauhoichan, diadiemhoichan, dbb_tomtattiensubenh, dbb_tinhtranglucvaovien, dbb_chandoantuyenduoi, dbb_tomtatdienbienbenh, yk_chandoantienluong, yk_phuongphapdieutri, yk_chamsoc, kl_ketluan, tvtg_chutoa_ten, tvtg_chutoa_cdcv, tvtg_thuky_ten, tvtg_thuky_cdcv, tvtg_thanhvien1_ten, tvtg_thanhvien1_cdcv, tvtg_thanhvien2_ten, tvtg_thanhvien2_cdcv, tvtg_thanhvien3_ten, tvtg_thanhvien3_cdcv, tvtg_thanhvien4_ten, tvtg_thanhvien4_cdcv, tvtg_thanhvien5_ten, tvtg_thanhvien5_cdcv, tvtg_thanhvien6_ten, tvtg_thanhvien6_cdcv, mrd_hsba_hccvienstatus as mrd_hsba_hcstatus, create_mrduserid, create_mrdusercode, create_date from mrd_hsba_hccvien where hosobenhanid='" + rowMecicalrecord.hosobenhanid + "';";
                 DataTable datalstHoiChan = condb.GetDataTable_HSBA(sqllstHoiChan);
                 if (datalstHoiChan != null && datalstHoiChan.Rows.Count > 0)
@@ -118,9 +118,9 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                         hsbaHoiChan.create_mrduserid = Utilities.Util_TypeConvertParse.ToInt64(datalstHoiChan.Rows[i]["create_mrduserid"].ToString());
                         hsbaHoiChan.create_mrdusercode = datalstHoiChan.Rows[i]["create_mrdusercode"].ToString();
                         hsbaHoiChan.create_date = Utilities.Util_TypeConvertParse.ToDateTime(datalstHoiChan.Rows[i]["create_date"].ToString());
-                        lstHsbaHoiChan.Add(hsbaHoiChan);
+                        this.lstHsbaHoiChan.Add(hsbaHoiChan);
                     }
-                    gridControlHoiChanDSHC.DataSource = lstHsbaHoiChan;
+                    gridControlHoiChanDSHC.DataSource = this.lstHsbaHoiChan;
                 }
             }
             catch (Exception ex)
@@ -199,7 +199,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 if (rowMecicalrecord.medicalrecordstatus == 2) //BN dang dieu tri thi duoc tao
                 {
                     lstHsbaHoiChanService_Thuoc = new List<MrdHsbaHoiChan_ServiceDTO>();
-                    string sqlHoiChan_Thuoc = "select ROW_NUMBER () OVER (ORDER BY ser.servicepricename) as stt, pt.medicinerefid, ser.servicepriceid, ser.medicalrecordid, ser.vienphiid, ser.hosobenhanid, ser.maubenhphamid, ser.departmentid, ser.departmentgroupid, ser.servicepricecode, ser.servicepricename, ser.servicepricename_bhyt, ser.servicepricename_nuocngoai, ser.servicepricedate, ser.soluong from mrd_dmhc_thuoc pt inner join dblink('myconn','select me.medicinerefid_org, ser.servicepriceid, ser.medicalrecordid, ser.vienphiid, ser.hosobenhanid, ser.maubenhphamid, ser.departmentid, ser.departmentgroupid, ser.servicepricecode, ser.servicepricename, ser.servicepricename_bhyt, ser.servicepricename_nuocngoai, ser.servicepricedate, ser.soluong FROM serviceprice ser inner join (select medicinecode, medicinerefid_org from medicine_ref where datatype=0) me on me.medicinecode=ser.servicepricecode where bhyt_groupcode in (''09TDT'',''091TDTtrongDM'',''092TDTngoaiDM'',''093TDTUngthu'',''094TDTTyle'') and hosobenhanid=" + rowMecicalrecord.hosobenhanid + "') AS ser(medicinerefid_org integer, servicepriceid integer, medicalrecordid integer, vienphiid integer, hosobenhanid integer, maubenhphamid integer, departmentid integer, departmentgroupid integer, servicepricecode text, servicepricename text, servicepricename_bhyt text, servicepricename_nuocngoai text, servicepricedate timestamp without time zone, soluong double precision) on pt.medicinerefid=ser.medicinerefid_org;";
+                    string sqlHoiChan_Thuoc = "select ROW_NUMBER () OVER (ORDER BY ser.servicepricename) as stt, pt.medicinerefid, ser.medicinerefid_org, ser.servicepriceid, ser.medicalrecordid, ser.vienphiid, ser.hosobenhanid, ser.maubenhphamid, ser.departmentid, ser.departmentgroupid, ser.servicepricecode, ser.servicepricename, ser.servicepricename_bhyt, ser.servicepricename_nuocngoai, ser.servicepricedate, ser.soluong from mrd_dmhc_thuoc pt inner join dblink('myconn','select me.medicinerefid_org, ser.servicepriceid, ser.medicalrecordid, ser.vienphiid, ser.hosobenhanid, ser.maubenhphamid, ser.departmentid, ser.departmentgroupid, ser.servicepricecode, ser.servicepricename, ser.servicepricename_bhyt, ser.servicepricename_nuocngoai, ser.servicepricedate, ser.soluong FROM serviceprice ser inner join (select medicinecode, medicinerefid_org from medicine_ref where datatype=0) me on me.medicinecode=ser.servicepricecode where bhyt_groupcode in (''09TDT'',''091TDTtrongDM'',''092TDTngoaiDM'',''093TDTUngthu'',''094TDTTyle'') and hosobenhanid=" + rowMecicalrecord.hosobenhanid + "') AS ser(medicinerefid_org integer, servicepriceid integer, medicalrecordid integer, vienphiid integer, hosobenhanid integer, maubenhphamid integer, departmentid integer, departmentgroupid integer, servicepricecode text, servicepricename text, servicepricename_bhyt text, servicepricename_nuocngoai text, servicepricedate timestamp without time zone, soluong double precision) on pt.medicinerefid=ser.medicinerefid_org;";
                     DataTable dataHoiChan_Thuoc = condb.GetDataTable_Dblink(sqlHoiChan_Thuoc);
                     if (dataHoiChan_Thuoc != null && dataHoiChan_Thuoc.Rows.Count > 0)
                     {
@@ -212,6 +212,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                                 if (hsba_HoiChan.Count == 0)
                                 {
                                     MrdHsbaHoiChan_ServiceDTO hsbaService = new MrdHsbaHoiChan_ServiceDTO();
+                                    hsbaService.medicinerefid_org = Utilities.Util_TypeConvertParse.ToInt64(dataHoiChan_Thuoc.Rows[i]["medicinerefid_org"].ToString());
                                     hsbaService.servicepriceid = Utilities.Util_TypeConvertParse.ToInt64(dataHoiChan_Thuoc.Rows[i]["servicepriceid"].ToString());
                                     hsbaService.servicepricecode = dataHoiChan_Thuoc.Rows[i]["servicepricecode"].ToString();
                                     hsbaService.servicepricename = dataHoiChan_Thuoc.Rows[i]["servicepricename"].ToString();
@@ -262,11 +263,11 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 this.dataHoiChan_CV = condb.GetDataTable_HIS(sqlHoiChan_CV);
                 if (this.dataHoiChan_CV != null && this.dataHoiChan_CV.Rows.Count > 0)
                 {
-                    if (lstHsbaHoiChan != null && lstHsbaHoiChan.Count > 0)
+                    if (this.lstHsbaHoiChan != null && this.lstHsbaHoiChan.Count > 0)
                     {
                         for (int i = 0; i < this.dataHoiChan_CV.Rows.Count; i++)
                         {
-                            List<MrdHsbaHoiChanDTO> hsba_HoiChan = lstHsbaHoiChan.Where(o => o.medicalrecordid == rowMecicalrecord.medicalrecordid && o.mrd_loaihc_id == 3).ToList();
+                            List<MrdHsbaHoiChanDTO> hsba_HoiChan = this.lstHsbaHoiChan.Where(o => o.medicalrecordid == rowMecicalrecord.medicalrecordid && o.mrd_loaihc_id == 3).ToList();
                             if (hsba_HoiChan != null && hsba_HoiChan.Count > 0)
                             {
                                 btnHoiChan_ChuyenVien.Enabled = false;
@@ -360,6 +361,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 }
                 HoiChan.frmHoiChan_NhapDuLieu frmHoiChan = new HoiChan.frmHoiChan_NhapDuLieu(3, this.SelectRowMedicalrecord, rowHsbaHoiChan);
                 frmHoiChan.ShowDialog();
+                ucDSHoSoBenhAn_HoiChan_Load(this.SelectRowMedicalrecord);
             }
             catch (Exception ex)
             {
@@ -424,6 +426,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 {
                     MrdHsbaHoiChan_ServiceDTO item_select = cboHoiChan_ChonDVThuoc.GetSelectedDataRow() as MrdHsbaHoiChan_ServiceDTO;
                     MrdHsbaHoiChanDTO rowHsbaHoiChan = new MrdHsbaHoiChanDTO();
+                    rowHsbaHoiChan.medicinerefid_org = item_select.medicinerefid_org;
                     rowHsbaHoiChan.servicepriceid = item_select.servicepriceid;
                     rowHsbaHoiChan.servicepricecode = item_select.servicepricecode;
                     rowHsbaHoiChan.servicepricename = item_select.servicepricename;
@@ -432,6 +435,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
 
                     HoiChan.frmHoiChan_NhapDuLieu frmHoiChan = new HoiChan.frmHoiChan_NhapDuLieu(this.mrd_loaihc_id, this.SelectRowMedicalrecord, rowHsbaHoiChan);
                     frmHoiChan.ShowDialog();
+                    ucDSHoSoBenhAn_HoiChan_Load(this.SelectRowMedicalrecord);
                 }
             }
             catch (Exception ex)
@@ -456,6 +460,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                     {
                         HoiChan.frmHoiChan_NhapDuLieu frmHoiChan = new HoiChan.frmHoiChan_NhapDuLieu(mrd_loaihc_id, this.SelectRowMedicalrecord, rowHsbaHoiChanClick);
                         frmHoiChan.ShowDialog();
+                        ucDSHoSoBenhAn_HoiChan_Load(this.SelectRowMedicalrecord);
                     }
                 }
             }

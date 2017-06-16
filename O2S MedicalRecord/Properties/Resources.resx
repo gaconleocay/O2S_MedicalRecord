@@ -121,9 +121,6 @@
   <data name="plus_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\plus-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow_32_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\arrow-32-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="unlock_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\unlock-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,17 +145,17 @@
   <data name="edit_11_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\edit-11-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="info-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="book-stack-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book-stack-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="question-mark-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\question-mark-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pie_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\pie-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inbox_5_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\inbox-5-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="star_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\star-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="copy-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\copy-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,8 +205,8 @@
   <data name="list_rich_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\list-rich-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings_11_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\settings-11-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pie_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\pie-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="microsoft_word_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\microsoft-word-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -222,6 +219,9 @@
   </data>
   <data name="house_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\house-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\folder-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pages_4_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\pages-4-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,14 +244,17 @@
   <data name="zoom_out_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\zoom-out-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="edit_5_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\edit-5-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="delete_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\delete-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="star_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\star-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow_32_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\arrow-32-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="folder_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\folder-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings_11_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\settings-11-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user_2_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\user-2-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -271,13 +274,13 @@
   <data name="minus_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\minus-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit_5_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\edit-5-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="inbox_5_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\inbox-5-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add-user-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-user-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="info-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="printer-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

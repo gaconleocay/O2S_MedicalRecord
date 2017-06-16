@@ -22,7 +22,7 @@ namespace O2S_MedicalRecord.Base
         internal static string ReportTemps_Path = "\\Templates\\ReportTemps";
         internal static string Templates_Path = "\\Templates";
         internal static string PhieuMauBenhAn_Path = "\\Templates\\MauBenhAn";
-
+        internal static string BienBanHoiChan_Path = "\\Templates\\BienBanHoiChan";
 
     }
 }

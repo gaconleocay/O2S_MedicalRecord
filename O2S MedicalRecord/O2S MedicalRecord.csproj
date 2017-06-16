@@ -196,7 +196,10 @@
     <Compile Include="Base\ClassEncoding.cs" />
     <Compile Include="Base\HardwareInfo.cs" />
     <Compile Include="Base\KiemTraLicense.cs" />
+    <Compile Include="DTO\HoiChan_ThanhVienThamGiaDTO.cs" />
     <Compile Include="DTO\MrdDMHoiChanPTTTDTO.cs" />
+    <Compile Include="DTO\MrdHsbaHoiChanDTO.cs" />
+    <Compile Include="DTO\MrdHsbaHoiChan_ServiceDTO.cs" />
     <Compile Include="DTO\MrdHsbaHosobenhanDTO.cs" />
     <Compile Include="DTO\MrdHsbaTemplateDTO.cs" />
     <Compile Include="DTO\MrdPtttServiceDTO.cs" />
@@ -225,6 +228,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DTO\serviceprice_ptttDTO.cs" />
+    <Compile Include="GUI\ChucNang\HoiChan\frmHoiChan_NhapDuLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChucNang\HoiChan\frmHoiChan_NhapDuLieu.Designer.cs">
+      <DependentUpon>frmHoiChan_NhapDuLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChucNang\ucDSHoSoBenhAn_HoiChan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="GUI\FormCommon\TabCaiDat\frmTaoTemplateWord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -386,12 +398,39 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GlobalStore.cs" />
+    <Compile Include="PrintRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Common.String\Convert.cs" />
     <Compile Include="Utilities\Common.Word\WordMergeTemplateExport.cs" />
     <Compile Include="Utilities\Common.Word\WordOpenFile.cs" />
     <Compile Include="Utilities\GUIGridView\Util_GUIGridView.cs" />
+    <Compile Include="Utilities\PrintPreview\CoolPrintPreviewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utilities\PrintPreview\CoolPrintPreviewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\PrintPreview\CoolPrintPreviewDialog.designer.cs">
+      <DependentUpon>CoolPrintPreviewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\PrintPreview\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\PrintPreview\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\PrintPreview\frmDevPrintPreviewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\PrintPreview\frmDevPrintPreviewDialog.Designer.cs">
+      <DependentUpon>frmDevPrintPreviewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\PrintPreview\PageImageList.cs" />
     <Compile Include="Utilities\ThongBao\frmThongBao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -414,6 +453,9 @@
     <Compile Include="Utilities\Util_DateTime.cs" />
     <Compile Include="Utilities\Util_NumberConvert.cs" />
     <Compile Include="Utilities\Util_TypeConvertParse.cs" />
+    <EmbeddedResource Include="GUI\ChucNang\HoiChan\frmHoiChan_NhapDuLieu.resx">
+      <DependentUpon>frmHoiChan_NhapDuLieu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\frmTaoTemplateWord.resx">
       <DependentUpon>frmTaoTemplateWord.cs</DependentUpon>
     </EmbeddedResource>
@@ -483,6 +525,10 @@
     <EmbeddedResource Include="GUI\FormCommon\ucTrangChu.resx">
       <DependentUpon>ucTrangChu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -494,6 +540,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Utilities\PrintPreview\CoolPrintPreviewDialog.resx">
+      <DependentUpon>CoolPrintPreviewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\PrintPreview\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utilities\PrintPreview\frmDevPrintPreviewDialog.resx">
+      <DependentUpon>frmDevPrintPreviewDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Utilities\ThongBao\frmThongBao.resx">
       <DependentUpon>frmThongBao.cs</DependentUpon>
     </EmbeddedResource>
@@ -522,6 +577,7 @@
     <None Include="Resources\book-stack-16.png" />
     <None Include="Resources\copy-16.png" />
     <None Include="Resources\info-16.png" />
+    <None Include="Resources\printer-16.png" />
     <Content Include="Templates\MauBenhAn\1.-Benh-an-Noi-khoa.doc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -684,7 +740,6 @@
   <ItemGroup>
     <Folder Include="GUI\ChucNang\HSBA_ThongTinChung\" />
     <Folder Include="Templates\ReportTemps\" />
-    <Folder Include="Utilities\PrintPreview\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
