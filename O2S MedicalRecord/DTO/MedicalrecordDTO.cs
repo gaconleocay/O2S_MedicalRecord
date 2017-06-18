@@ -20,11 +20,15 @@ namespace O2S_MedicalRecord.DTO
        public long medicalrecordstatus { get; set; }
        public long hosobenhanid { get; set; }
        public long departmentid { get; set; }
+       public string departmentname { get; set; }
        public long departmentgroupid { get; set; }
+       public string departmentgroupname { get; set; }
+       public string giuong { get; set; }
        public long servicepriceid { get; set; }
        public string servicepricecode { get; set; }
        public long mrd_pttt_serviceid { get; set; }
        public long hosobenhanstatus { get; set; }
+       public string chandoanbandau { get; set; }
 
     }
 }

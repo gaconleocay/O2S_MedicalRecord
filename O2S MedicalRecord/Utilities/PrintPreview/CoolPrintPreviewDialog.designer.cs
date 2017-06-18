@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoolPrintPreviewDialog));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this._ZoomLable = new DevExpress.XtraBars.BarStaticItem();
             this._Zoom = new DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem();
@@ -154,7 +154,7 @@
             this.barStaticItem1,
             this._lblPageCount});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 24;
+            this.ribbonControl1.MaxItemId = 1;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -166,6 +166,7 @@
             this.repositoryItemZoomTrackBar2,
             this.repositoryItemRangeTrackBar3,
             this.repositoryItemTextEdit2});
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl1.Size = new System.Drawing.Size(1008, 141);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
@@ -189,7 +190,7 @@
             // 
             // _btnCancel
             // 
-            this._btnCancel.Caption = "Close";
+            this._btnCancel.Caption = "Đóng lại";
             this._btnCancel.Glyph = ((System.Drawing.Image)(resources.GetObject("_btnCancel.Glyph")));
             this._btnCancel.Id = 3;
             this._btnCancel.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("_btnCancel.LargeGlyph")));
@@ -376,7 +377,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this._btnNext);
             this.ribbonPageGroup3.ItemLinks.Add(this._btnLast);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Navigation";
+            this.ribbonPageGroup3.Text = "Điều hướng";
             // 
             // ribbonPageGroup4
             // 
@@ -387,13 +388,13 @@
             this.ribbonPageGroup4.ItemLinks.Add(this._itemPageWidth);
             this.ribbonPageGroup4.ItemLinks.Add(this._itemTwoPages);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "Zoom";
+            this.ribbonPageGroup4.Text = "Xem";
             // 
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this._btnCancel);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "Close";
+            this.ribbonPageGroup5.Text = "Đóng";
             // 
             // repositoryItemRangeTrackBar1
             // 
@@ -427,14 +428,14 @@
             this.printPreviewBarItem6.Id = 6;
             this.printPreviewBarItem6.LargeGlyph = global::O2S_MedicalRecord.PrintRibbonControllerResources.RibbonPrintPreview_PrintLarge;
             this.printPreviewBarItem6.Name = "printPreviewBarItem6";
-            superToolTip1.FixedTooltipWidth = true;
-            toolTipTitleItem1.Text = "Print (Ctrl+P)";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Select a printer, number of copies and other printing options before printing.";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            superToolTip1.MaxWidth = 210;
-            this.printPreviewBarItem6.SuperTip = superToolTip1;
+            superToolTip2.FixedTooltipWidth = true;
+            toolTipTitleItem2.Text = "Print (Ctrl+P)";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "Select a printer, number of copies and other printing options before printing.";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
+            superToolTip2.MaxWidth = 210;
+            this.printPreviewBarItem6.SuperTip = superToolTip2;
             // 
             // CoolPrintPreviewDialog
             // 

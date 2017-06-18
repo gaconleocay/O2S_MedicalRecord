@@ -379,7 +379,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                 int dem_update = 0;
                 string mrd_dmhc_ptttnamepath = "";
                 //kiemtra so sanh trong danh sach DM PTTT .
-                string sql_kiemtra = "select servicepricerefid, servicepricecode, servicepricegroupcode, servicegrouptype, servicepricetype, servicepricename, servicepricenamebhyt, servicepricenamenuocngoai, servicepriceunit, servicepricefee, servicepricefeenhandan, servicepricefeebhyt, servicepricefeenuocngoai, bhyt_groupcode, pttt_hangid, pttt_loaiid, servicepricecodeuser, servicepricesttuser from servicepriceref where servicegrouptype = 4 and bhyt_groupcode in ('06PTTT','07KTC') and pttt_loaiid<>0;   ";
+                string sql_kiemtra = "select servicepricerefid, servicepricecode, servicepricegroupcode, servicegrouptype, servicepricetype, servicepricename, servicepricenamebhyt, servicepricenamenuocngoai, servicepriceunit, servicepricefee, servicepricefeenhandan, servicepricefeebhyt, servicepricefeenuocngoai, bhyt_groupcode, pttt_hangid, pttt_loaiid, servicepricecodeuser, servicepricesttuser from servicepriceref where servicegrouptype = 4 and bhyt_groupcode in ('06PTTT','07KTC') and pttt_loaiid in (1,2,3,4);   ";
                 DataView dv_DanhMucPTTTHIS = new DataView(condb.GetDataTable_HIS(sql_kiemtra));
                 if (dv_DanhMucPTTTHIS != null && dv_DanhMucPTTTHIS.Count > 0)
                 {

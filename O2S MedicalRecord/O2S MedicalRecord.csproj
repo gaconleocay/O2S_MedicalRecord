@@ -405,6 +405,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Common.TableConvert\ConvertDataTable.cs" />
     <Compile Include="Utilities\Common.String\Convert.cs" />
     <Compile Include="Utilities\Common.Word\WordMergeTemplateExport.cs" />
     <Compile Include="Utilities\Common.Word\WordOpenFile.cs" />

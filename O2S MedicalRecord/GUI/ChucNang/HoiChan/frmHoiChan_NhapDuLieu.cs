@@ -50,13 +50,15 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
         {
             try
             {
-                LoadControlDefault();
+                LoadControlDefault(false);
+                LoadDanhMucYeuCauHoiChan();
                 if (this.currentHsbaHoiChan.mrd_loaihc_id != 0) //chinh sua
                 {
                     LoadThongTinVeHoiChan_ChinhSua();
                 }
                 else // them moi
                 {
+                    // LoadControlDefault(false);
                     LoadThongTinVeHoiChan_ThemMoi();
                 }
             }
@@ -65,13 +67,32 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 Base.Logging.Warn(ex);
             }
         }
-        private void LoadControlDefault()
+        private void LoadControlDefault(bool result)
         {
             try
             {
-                btnInTrichBienBanHC.Enabled = false;
-                btnInSoBienBanHC.Enabled = false;
-                btnInTatCa.Enabled = false;
+                btnInTrichBienBanHC.Enabled = result;
+                btnInSoBienBanHC.Enabled = result;
+                btnInTatCa.Enabled = result;
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Warn(ex);
+            }
+        }
+        private void LoadDanhMucYeuCauHoiChan()
+        {
+            try
+            {
+                string getdanhmuc = "select o.mrd_otherlistid, o.mrd_otherlistcode, o.mrd_otherlistname from mrd_otherlist o inner join mrd_othertypelist ot on ot.mrd_othertypelistid=o.mrd_othertypelistid where ot.mrd_othertypelistcode='HC_YCHC' order by o.mrd_otherlistname; ";
+                DataTable dataYCHC = condb.GetDataTable_HSBA(getdanhmuc);
+                if (dataYCHC != null && dataYCHC.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dataYCHC.Rows.Count; i++)
+                    {
+                        cboYCHoiChan.Properties.Items.Add(dataYCHC.Rows[i]["mrd_otherlistname"].ToString());
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -84,7 +105,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
             {
                 if (this.currentHsbaHoiChan != null)
                 {
-                    txtYCHoiChan.Text = this.currentHsbaHoiChan.yeucauhoichan;
+                    cboYCHoiChan.Text = this.currentHsbaHoiChan.yeucauhoichan;
                     txtHopTai.Text = this.currentHsbaHoiChan.diadiemhoichan;
                     txtTomTatTienSuBenh.Text = this.currentHsbaHoiChan.dbb_tomtattiensubenh;
                     txtTinhTrangLucVaoVien.Text = this.currentHsbaHoiChan.dbb_tinhtranglucvaovien;
@@ -162,7 +183,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     lstThanhVienThamGia.Add(thanhvien_6);
 
                     gridControlThanhVienThamGia.DataSource = lstThanhVienThamGia;
-
+                    LoadDanhSachVeThanhVienThamGia();
                 }
             }
             catch (Exception ex)
@@ -175,28 +196,47 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
             try
             {
                 LoadThongTinVeThanhVienThamGia_Default();
-                switch (this.currentloaihoichan)
+                LoadDanhSachVeThanhVienThamGia();
+                if (this.currentMedicalrecord.departmentgroupname == null || this.currentMedicalrecord.departmentgroupname == "")
                 {
-                    case 1: //Hoi chan PTTT
-                        {
-                            txtYCHoiChan.Text = "Hội chẩn phẫu thuật";
-                            break;
-                        }
-                    case 2: //Hoi CHan THuoc
-                        {
-                            txtYCHoiChan.Text = "Hội chẩn thuốc hoạt chất *";
+                    string gettenkhoa = "select mrd.giuong, de.departmentname, degp.departmentgroupname from medicalrecord mrd inner join department de on de.departmentid=mrd.departmentid inner join departmentgroup degp on degp.departmentgroupid=mrd.departmentgroupid where mrd.medicalrecordid=" + this.currentMedicalrecord.medicalrecordid + ";";
 
-                            break;
-                        }
-                    case 3://Hoi chan chuyen vien
-                        {
-                            txtYCHoiChan.Text = "Hội chẩn chuyển viện";
-
-                            break;
-                        }
-                    default:
-                        break;
+                    DataTable datakhoa = condb.GetDataTable_HIS(gettenkhoa);
+                    if (datakhoa != null && datakhoa.Rows.Count > 0)
+                    {
+                        txtHopTai.Text = datakhoa.Rows[0]["departmentgroupname"].ToString();
+                        this.currentMedicalrecord.giuong = datakhoa.Rows[0]["giuong"].ToString();
+                        this.currentMedicalrecord.departmentname = datakhoa.Rows[0]["departmentname"].ToString();
+                        this.currentMedicalrecord.departmentgroupname = datakhoa.Rows[0]["departmentgroupname"].ToString();
+                    }
                 }
+                else
+                {
+                    txtHopTai.Text = this.currentMedicalrecord.departmentgroupname;
+                }
+
+                //switch (this.currentloaihoichan)
+                //{
+                //    case 1: //Hoi chan PTTT
+                //        {
+                //            txtYCHoiChan.Text = "Hội chẩn phẫu thuật";
+                //            break;
+                //        }
+                //    case 2: //Hoi CHan THuoc
+                //        {
+                //            txtYCHoiChan.Text = "Hội chẩn thuốc hoạt chất *";
+
+                //            break;
+                //        }
+                //    case 3://Hoi chan chuyen vien
+                //        {
+                //            txtYCHoiChan.Text = "Hội chẩn chuyển viện";
+
+                //            break;
+                //        }
+                //    default:
+                //        break;
+                //}
             }
             catch (Exception ex)
             {
@@ -243,6 +283,27 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 Base.Logging.Warn(ex);
             }
         }
+        private void LoadDanhSachVeThanhVienThamGia()
+        {
+            try
+            {
+                string layDSNhanVienBenhVien = "SELECT username FROM tools_tblnhanvien WHERE username<>'' GROUP BY username ORDER BY username";
+                DataTable dataDSNVBenhVien = condb.GetDataTable_HIS(layDSNhanVienBenhVien);
+                if (dataDSNVBenhVien != null && dataDSNVBenhVien.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dataDSNVBenhVien.Rows.Count; i++)
+                    {
+                        repositoryItemComboBox_HoTen.Items.Add(dataDSNVBenhVien.Rows[i]["username"].ToString());
+                    }
+                    //gridControlThanhVienThamGia.ForceInitialize();
+                    //gridViewThanhVienThamGia.Columns["hovaten"].ColumnEdit = repositoryItemComboBox_HoTen;
+                }
+            }
+            catch (Exception ex)
+            {
+                Base.Logging.Error(ex);
+            }
+        }
 
         #endregion
 
@@ -252,7 +313,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
             try
             {
                 string sql_saveHoichan = "";
-                 HsbaHoiChanSave = new MrdHsbaHoiChanDTO();
+                HsbaHoiChanSave = new MrdHsbaHoiChanDTO();
 
                 //thong tin chung BN
 
@@ -266,7 +327,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 HsbaHoiChanSave.thoigianhoichan = this.currentHsbaHoiChan.thoigianhoichan;
 
                 //thong tin
-                HsbaHoiChanSave.yeucauhoichan = txtYCHoiChan.Text;
+                HsbaHoiChanSave.yeucauhoichan = cboYCHoiChan.Text;
                 HsbaHoiChanSave.diadiemhoichan = txtHopTai.Text;
                 HsbaHoiChanSave.dbb_tomtattiensubenh = txtTomTatTienSuBenh.Text;
                 HsbaHoiChanSave.dbb_tinhtranglucvaovien = txtTinhTrangLucVaoVien.Text;
@@ -359,9 +420,36 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 {
                     O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.LUU_THANH_CONG);
                     frmthongbao.Show();
-                    btnInTrichBienBanHC.Enabled = false;
-                    btnInSoBienBanHC.Enabled = false;
-                    btnInTatCa.Enabled = false;
+                    btnInTrichBienBanHC.Enabled = true;
+                    btnInSoBienBanHC.Enabled = true;
+                    btnInTatCa.Enabled = true;
+
+                    string layIDhoichan = "";
+                    switch (this.currentloaihoichan)
+                    {
+                        case 1: //Hoi chan PTTT
+                            {
+                                layIDhoichan = "select mrd_hsba_hcptttid as mrd_hsba_hcid from mrd_hsba_hcpttt where servicepriceid=" + this.currentHsbaHoiChan.servicepriceid + "; ";
+                                break;
+                            }
+                        case 2: //Hoi chan thuoc
+                            {
+                                layIDhoichan = "select mrd_hsba_hcthuocid as mrd_hsba_hcid from mrd_hsba_hcthuoc where servicepriceid=" + this.currentHsbaHoiChan.servicepriceid + "; ";
+                                break;
+                            }
+                        case 3: //Hoi chan chuyen vien
+                            {
+                                layIDhoichan = "select mrd_hsba_hccvienid as mrd_hsba_hcid from mrd_hsba_hccvien where medicalrecordid=" + this.HsbaHoiChanSave.medicalrecordid + "; ";
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                    DataTable dataLayIDhoichan = condb.GetDataTable_HSBA(layIDhoichan);
+                    if (dataLayIDhoichan != null && dataLayIDhoichan.Rows.Count > 0)
+                    {
+                        this.currentHsbaHoiChan.mrd_hsba_hcid = Utilities.Util_TypeConvertParse.ToInt64(dataLayIDhoichan.Rows[0]["mrd_hsba_hcid"].ToString());
+                    }
                 }
             }
             catch (Exception ex)
@@ -375,7 +463,19 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
             try
             {
                 string templateFullPath = Environment.CurrentDirectory + Base.KeyTrongPhanMem.BienBanHoiChan_Path + "\\40. Trich bien ban hoi chuan.DOC";
-                string thongtinbn = "";
+
+                string hoichan_fulltime2 = ".......giờ .......phút, ngày....../..../.....";
+                if (this.currentloaihoichan == 1 || this.currentloaihoichan == 2)//hoi chan PTTT
+                {
+                    hoichan_fulltime2 = this.currentHsbaHoiChan.servicepricedate.Hour + " giờ " + this.currentHsbaHoiChan.servicepricedate.Minute + " phút, ngày " + this.currentHsbaHoiChan.servicepricedate.Day + "/" + this.currentHsbaHoiChan.servicepricedate.Month + "/" + this.currentHsbaHoiChan.servicepricedate.Year;
+                }
+                else //hoi chan chuyen vien
+                {
+                    hoichan_fulltime2 = this.HsbaHoiChanSave.thoigianhoichan.Hour + " giờ " + this.HsbaHoiChanSave.thoigianhoichan.Minute + " phút, ngày " + this.HsbaHoiChanSave.thoigianhoichan.Day + "/" + this.HsbaHoiChanSave.thoigianhoichan.Month + "/" + this.HsbaHoiChanSave.thoigianhoichan.Year;
+                }
+
+                string thongtinbn = "select hsba.sovaovien as sovaovien, hsba.patientname as patientname, cast((cast(to_char(hsba.hosobenhandate, 'yyyy') as integer) - cast(to_char(hsba.birthday, 'yyyy') as integer)) as text) as tuoi, hsba.gioitinhname as gioitinh, (select to_char(thoigianvaovien, 'dd/mm/yyyy') from medicalrecord where loaibenhanid=1 and hosobenhanid=hsba.hosobenhanid order by medicalrecordid limit 1) as tg_vaovien_fulltime2, (select (case when thoigianravien <> '0001-01-01 00:00:00' then to_char(thoigianravien, 'dd/mm/yyyy') end) from medicalrecord where loaibenhanid=1 and hosobenhanid=hsba.hosobenhanid order by medicalrecordid limit 1) as tg_ravien_fulltime1, '" + this.currentMedicalrecord.giuong + "' as giuong, '" + this.currentMedicalrecord.departmentname + "' as buong, '" + this.currentMedicalrecord.departmentgroupname + "' as khoa, '" + this.currentMedicalrecord.chandoanbandau + "' as chandoan, '" + hoichan_fulltime2 + "' as hoichan_fulltime2, '" + this.HsbaHoiChanSave.tvtg_chutoa_ten + "' as tvtg_chutoa_ten, '" + this.HsbaHoiChanSave.tvtg_chutoa_cdcv + "' as tvtg_chutoa_cdcv, '" + this.HsbaHoiChanSave.tvtg_thuky_ten + "' as tvtg_thuky_ten, '" + this.HsbaHoiChanSave.tvtg_thuky_cdcv + "' as tvtg_thuky_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_ten + "' as tvtg_thanhvien1_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "' as tvtg_thanhvien1_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_ten + "' as tvtg_thanhvien2_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "' as tvtg_thanhvien2_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_ten + "' as tvtg_thanhvien3_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "' as tvtg_thanhvien3_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_ten + "' as tvtg_thanhvien4_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "' as tvtg_thanhvien4_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_ten + "' as tvtg_thanhvien5_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "' as tvtg_thanhvien5_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_ten + "' as tvtg_thanhvien6_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "' as tvtg_thanhvien6_cdcv, '" + this.HsbaHoiChanSave.dbb_tomtatdienbienbenh + "' as dbb_tomtatdienbienbenh, '" + this.HsbaHoiChanSave.kl_ketluan + "' as kl_ketluan, '" + this.HsbaHoiChanSave.yk_phuongphapdieutri + "' as yk_phuongphapdieutri from hosobenhan hsba where hsba.hosobenhanid=" + this.HsbaHoiChanSave.hosobenhanid + "; ";
+
                 DataTable dataTTBenhNhan = condb.GetDataTable_HIS(thongtinbn);
                 Aspose.Words.Document documentWord = new Aspose.Words.Document();
                 documentWord = Utilities.Common.Word.WordMergeTemplateExport.ExportWordMailMerge(templateFullPath, dataTTBenhNhan, "40. Trich bien ban hoi chuan.doc");
@@ -409,7 +509,19 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
             try
             {
                 string templateFullPath = Environment.CurrentDirectory + Base.KeyTrongPhanMem.BienBanHoiChan_Path + "\\So BB hoi chuan.DOC";
-                string thongtinbn = "";
+
+                string hoichan_fulltime1 = "ngày ...... tháng ...... năm ..........; lúc ........ giờ ........ phút";
+                if (this.currentloaihoichan == 1 || this.currentloaihoichan == 2)//hoi chan PTTT
+                {
+                    hoichan_fulltime1 = "ngày " + this.currentHsbaHoiChan.servicepricedate.Day + " tháng " + this.currentHsbaHoiChan.servicepricedate.Month + " năm " + this.currentHsbaHoiChan.servicepricedate.Year + "; lúc " + this.currentHsbaHoiChan.servicepricedate.Hour + " giờ " + this.currentHsbaHoiChan.servicepricedate.Minute + " phút";
+                }
+                else //hoi chan chuyen vien
+                {
+                    hoichan_fulltime1 = "ngày " + this.HsbaHoiChanSave.thoigianhoichan.Day + " tháng " + this.HsbaHoiChanSave.thoigianhoichan.Month + " năm " + this.HsbaHoiChanSave.thoigianhoichan.Year + "; lúc " + this.HsbaHoiChanSave.thoigianhoichan.Hour + " giờ " + this.HsbaHoiChanSave.thoigianhoichan.Minute + " phút";
+                }
+
+                string thongtinbn = "select '" + hoichan_fulltime1 + "' as hoichan_fulltime1, '" + this.HsbaHoiChanSave.tvtg_chutoa_ten + "' as tvtg_chutoa_ten, '" + this.HsbaHoiChanSave.tvtg_chutoa_cdcv + "' as tvtg_chutoa_cdcv, '" + this.HsbaHoiChanSave.tvtg_thuky_ten + "' as tvtg_thuky_ten, '" + this.HsbaHoiChanSave.tvtg_thuky_cdcv + "' as tvtg_thuky_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_ten + "' as tvtg_thanhvien1_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "' as tvtg_thanhvien1_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_ten + "' as tvtg_thanhvien2_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "' as tvtg_thanhvien2_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_ten + "' as tvtg_thanhvien3_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "' as tvtg_thanhvien3_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_ten + "' as tvtg_thanhvien4_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "' as tvtg_thanhvien4_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_ten + "' as tvtg_thanhvien5_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "' as tvtg_thanhvien5_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_ten + "' as tvtg_thanhvien6_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "' as tvtg_thanhvien6_cdcv, '" + this.HsbaHoiChanSave.diadiemhoichan + "' as diadiemhoichan, hsba.patientname as patientname, cast((cast(to_char(hsba.hosobenhandate, 'yyyy') as integer) - cast(to_char(hsba.birthday, 'yyyy') as integer)) as text) as tuoi, hsba.gioitinhname as gioitinh, hsba.hc_dantocname as dantoc, hsba.hc_quocgianame as ngoaikieu, '' as sohochieu, '' as ngay_noicap, hsba.nghenghiepname as nghenghiep, hsba.noilamviec as noilamviec, ((case when hsba.hc_sonha<>'' then hsba.hc_sonha || ', ' else '' end) || (case when hsba.hc_thon<>'' then hsba.hc_thon || ' - ' else '' end) || (case when hsba.hc_xacode<>'00' then hsba.hc_xaname || ' - ' else '' end) || (case when hsba.hc_huyencode<>'00' then hsba.hc_huyenname || ' - ' else '' end) || (case when hsba.hc_tinhcode<>'00' then hsba.hc_tinhname || ' - ' else '' end) || hc_quocgianame) as diachi, hsba.sovaovien as sovaovien, substr(hsba.bhytcode,1,2) as bhyt_1, substr(hsba.bhytcode,3,1) as bhyt_2, substr(hsba.bhytcode,4,2) as bhyt_3, substr(hsba.bhytcode,6,2) as bhyt_4, substr(hsba.bhytcode,8,8) as bhyt_5, (select to_char(thoigianvaovien, 'hh g\"i\"ờ mi phút, ngà\"y\" dd tháng mm năm yyyy') from medicalrecord where loaibenhanid=1 and hosobenhanid=hsba.hosobenhanid order by medicalrecordid limit 1) as tg_vaovien_fulltime1, '" + this.currentMedicalrecord.departmentgroupname + "' as khoa, '" + this.HsbaHoiChanSave.yeucauhoichan + "' as yeucauhoichan, '" + this.HsbaHoiChanSave.dbb_tomtattiensubenh + "' as dbb_tomtattiensubenh, '" + this.HsbaHoiChanSave.dbb_tinhtranglucvaovien + "' as dbb_tinhtranglucvaovien, '" + this.HsbaHoiChanSave.dbb_chandoantuyenduoi + "' as dbb_chandoantuyenduoi, '" + this.HsbaHoiChanSave.dbb_tomtatdienbienbenh + "' as dbb_tomtatdienbienbenh, '" + this.HsbaHoiChanSave.yk_chandoantienluong + "' as yk_chandoantienluong, '" + this.HsbaHoiChanSave.yk_phuongphapdieutri + "' as yk_phuongphapdieutri, '" + this.HsbaHoiChanSave.yk_chamsoc + "' as yk_chamsoc, '" + this.HsbaHoiChanSave.kl_ketluan + "' as kl_ketluan from hosobenhan hsba where hsba.hosobenhanid=" + this.HsbaHoiChanSave.hosobenhanid + ";";
+
                 DataTable dataTTBenhNhan = condb.GetDataTable_HIS(thongtinbn);
                 Aspose.Words.Document documentWord = new Aspose.Words.Document();
                 documentWord = Utilities.Common.Word.WordMergeTemplateExport.ExportWordMailMerge(templateFullPath, dataTTBenhNhan, "So BB hoi chuan.doc");
@@ -438,6 +550,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
             }
         }
 
+        //Chua su dung
         private void btnInTatCa_Click(object sender, EventArgs e)
         {
             try

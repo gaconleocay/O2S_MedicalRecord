@@ -83,10 +83,10 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.openFileDialogSelect = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialogImport = new System.Windows.Forms.OpenFileDialog();
             this.imMenu = new DevExpress.Utils.ImageCollection(this.components);
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlThongTinDV)).BeginInit();
             this.panelControlThongTinDV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChucNang)).BeginInit();
@@ -127,6 +127,7 @@
             this.btnRefreshDS.Size = new System.Drawing.Size(100, 30);
             this.btnRefreshDS.TabIndex = 41;
             this.btnRefreshDS.Text = "Làm mới DS";
+            this.btnRefreshDS.ToolTip = "Tự động thêm thuốc có hoạt chất dấu * vào danh sách";
             this.btnRefreshDS.Click += new System.EventHandler(this.btnRefreshDS_Click);
             // 
             // btnThem
@@ -808,21 +809,6 @@
             this.gridColumn11.VisibleIndex = 9;
             this.gridColumn11.Width = 130;
             // 
-            // openFileDialogSelect
-            // 
-            this.openFileDialogSelect.Filter = "Word 2007-2013|*.docx|Word 2003|*.doc";
-            this.openFileDialogSelect.Title = "Mở file Excel";
-            // 
-            // openFileDialogImport
-            // 
-            this.openFileDialogImport.Filter = "Word 2007-2013|*.docx|Word 2003|*.doc";
-            this.openFileDialogImport.Title = "Mở file Excel";
-            // 
-            // imMenu
-            // 
-            this.imMenu.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imMenu.ImageStream")));
-            this.imMenu.Images.SetKeyName(0, "delete-2-16.png");
-            // 
             // gridColumn14
             // 
             this.gridColumn14.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F);
@@ -840,6 +826,21 @@
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 10;
             this.gridColumn14.Width = 200;
+            // 
+            // openFileDialogSelect
+            // 
+            this.openFileDialogSelect.Filter = "Word 2007-2013|*.docx|Word 2003|*.doc";
+            this.openFileDialogSelect.Title = "Mở file Excel";
+            // 
+            // openFileDialogImport
+            // 
+            this.openFileDialogImport.Filter = "Word 2007-2013|*.docx|Word 2003|*.doc";
+            this.openFileDialogImport.Title = "Mở file Excel";
+            // 
+            // imMenu
+            // 
+            this.imMenu.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imMenu.ImageStream")));
+            this.imMenu.Images.SetKeyName(0, "delete-2-16.png");
             // 
             // ucDanhMucHoiChanThuoc
             // 

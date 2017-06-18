@@ -94,13 +94,13 @@ namespace O2S_MedicalRecord.Base
                 SYS_09.permissionnote = "Danh mục hội chẩn PTTT";
                 lstresult.Add(SYS_09);
 
-                DTO.classPermission SYS_10 = new DTO.classPermission();
-                SYS_10.permissioncheck = false;
-                SYS_10.permissioncode = "SYS_10";
-                SYS_10.permissionname = "Danh mục hội chẩn chuyển viện";
-                SYS_10.permissiontype = 1;
-                SYS_10.permissionnote = "Danh mục hội chẩn chuyển viện";
-                lstresult.Add(SYS_10);
+                //DTO.classPermission SYS_10 = new DTO.classPermission();
+                //SYS_10.permissioncheck = false;
+                //SYS_10.permissioncode = "SYS_10";
+                //SYS_10.permissionname = "Danh mục hội chẩn chuyển viện";
+                //SYS_10.permissiontype = 1;
+                //SYS_10.permissionnote = "Danh mục hội chẩn chuyển viện";
+                //lstresult.Add(SYS_10);
 
                 DTO.classPermission SYS_11 = new DTO.classPermission();
                 SYS_11.permissioncheck = false;

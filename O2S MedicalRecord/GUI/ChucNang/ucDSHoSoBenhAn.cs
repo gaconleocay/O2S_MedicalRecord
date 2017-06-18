@@ -159,7 +159,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                         medicalrecordstatus = " and mrd.medicalrecordstatus=99";
                     }
 
-                    string getdsbenhnhan = "SELECT ROW_NUMBER () OVER (ORDER BY medicalrecordstatus, mrd.thoigianvaovien desc) as stt, hsba.patientid, hsba.patientcode, hsba.patientname, mrd.medicalrecordid, mrd.medicalrecordcode, hsba.bhytcode, mrd.thoigianvaovien, mrd.medicalrecordstatus, hsba.hosobenhanid, hsba.hosobenhanstatus, mrd.departmentgroupid, mrd.departmentid, mrd.vienphiid FROM medicalrecord mrd inner join hosobenhan hsba on mrd.hosobenhanid=hsba.hosobenhanid WHERE mrd.thoigianvaovien>='" + thoiGianTu + "' and mrd.thoigianvaovien<='" + thoiGianDen + "'" + medicalrecordstatus + " and mrd.departmentid='" + cboPhong.EditValue.ToString() + "'; ";
+                    string getdsbenhnhan = "SELECT ROW_NUMBER () OVER (ORDER BY medicalrecordstatus, mrd.thoigianvaovien desc) as stt, hsba.patientid, hsba.patientcode, hsba.patientname, mrd.medicalrecordid, mrd.medicalrecordcode, hsba.bhytcode, mrd.thoigianvaovien, mrd.medicalrecordstatus, hsba.hosobenhanid, hsba.hosobenhanstatus, mrd.departmentgroupid, mrd.departmentid, mrd.vienphiid, mrd.chandoanbandau FROM medicalrecord mrd inner join hosobenhan hsba on mrd.hosobenhanid=hsba.hosobenhanid WHERE mrd.thoigianvaovien>='" + thoiGianTu + "' and mrd.thoigianvaovien<='" + thoiGianDen + "'" + medicalrecordstatus + " and mrd.departmentid='" + cboPhong.EditValue.ToString() + "'; ";
                     gridControlDSHSBA.DataSource = condb.GetDataTable_HIS(getdsbenhnhan);
                     if (gridViewDSHSBA.RowCount > 0)
                     {
@@ -288,8 +288,9 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 SelectRowMedicalrecord.vienphiid = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "vienphiid").ToString());
                 SelectRowMedicalrecord.departmentgroupid = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "departmentgroupid").ToString());
                 SelectRowMedicalrecord.departmentid = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSHSBA.GetRowCellValue(rowHandle, "departmentid").ToString());
+                SelectRowMedicalrecord.chandoanbandau = gridViewDSHSBA.GetRowCellValue(rowHandle, "chandoanbandau").ToString();
 
-                LoadDataTabChucNangClickRow(SelectRowMedicalrecord);
+                LoadDataTabChucNangClickRow(this.SelectRowMedicalrecord);
             }
             catch (Exception ex)
             {
@@ -443,6 +444,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
 
 
         #endregion
+
 
 
 
