@@ -131,7 +131,7 @@ namespace O2S_MedicalRecordUpdate
             try
             {
                 //TODO...
-                CopyFileLenServer(txtFilePath.Text.Trim(), txtUpdateLinkFile.Text.Trim());
+              //  CopyFileLenServer(txtFilePath.Text.Trim(), txtUpdateLinkFile.Text.Trim());
                 string sqlcommit = "update mrd_version set app_link= '" + txtUpdateLinkFile.Text.Trim() + "';";
                 condb.ExecuteNonQuery_HSBA(sqlcommit);
                 MessageBox.Show("Update file lên server thành công.", "Thông báo");
