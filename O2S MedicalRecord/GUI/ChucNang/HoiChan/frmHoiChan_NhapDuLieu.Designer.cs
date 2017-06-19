@@ -537,7 +537,9 @@
             this.repositoryItemComboBox_HoTen.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, true)});
             this.repositoryItemComboBox_HoTen.DropDownRows = 15;
+            this.repositoryItemComboBox_HoTen.ImmediatePopup = true;
             this.repositoryItemComboBox_HoTen.Name = "repositoryItemComboBox_HoTen";
+            this.repositoryItemComboBox_HoTen.PopupSizeable = true;
             // 
             // gridColumn3
             // 
@@ -624,6 +626,8 @@
             this.cboYCHoiChan.Properties.AppearanceReadOnly.Options.UseFont = true;
             this.cboYCHoiChan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboYCHoiChan.Properties.ImmediatePopup = true;
+            this.cboYCHoiChan.Properties.PopupSizeable = true;
             this.cboYCHoiChan.Size = new System.Drawing.Size(503, 22);
             this.cboYCHoiChan.TabIndex = 33;
             // 
@@ -709,7 +713,7 @@
         private DevExpress.XtraEditors.SimpleButton btnLuuLai;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemText_ChucDanh;
-        private DevExpress.XtraEditors.ComboBoxEdit cboYCHoiChan;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox_HoTen;
+        private DevExpress.XtraEditors.ComboBoxEdit cboYCHoiChan;
     }
 }

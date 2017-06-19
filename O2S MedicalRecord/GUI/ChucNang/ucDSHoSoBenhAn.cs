@@ -35,6 +35,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         private DAL.ConnectDatabase condb = new DAL.ConnectDatabase();
 
         private int tabload_thongtinbenhan = 0, tabload_benhan = 0, tabload_pttt = 0, tabload_hoichan = 0;
+        private bool highlight_tabBenhAn { get; set; }
         #endregion
 
         public ucDSHoSoBenhAn()
@@ -311,22 +312,39 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 {
                     ucDSHoSoBenhAn_ThongTinChung_Load(filterDTO);
                     tabload_thongtinbenhan = 1;
+
+                    BenhAn_LoadBenhAnCuaBenhNhan(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_PT(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_Thuoc(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_CV(filterDTO);
                 }
                 else if (xtraTabDSHSBA.SelectedTabPage.Name == xtraTabBenhAn.Name)
                 {
                     ucDSHoSoBenhAn_BenhAn_Load(filterDTO);
                     tabload_benhan = 1;
+
+                    HoiChan_KiemTraTaoPhieuHoiChan_PT(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_Thuoc(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_CV(filterDTO);
                 }
                 else if (xtraTabDSHSBA.SelectedTabPage.Name == xtraTabPTTT.Name)
                 {
                     ucDSHoSoBenhAn_PTTT_Load(filterDTO);
                     tabload_pttt = 1;
+
+                    BenhAn_LoadBenhAnCuaBenhNhan(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_PT(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_Thuoc(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_CV(filterDTO);
                 }
                 else if (xtraTabDSHSBA.SelectedTabPage.Name == xtraTabHoiChan.Name)
                 {
-                       ucDSHoSoBenhAn_HoiChan_Load(filterDTO);
+                    ucDSHoSoBenhAn_HoiChan_Load(filterDTO);
                     tabload_hoichan = 1;
+
+                    BenhAn_LoadBenhAnCuaBenhNhan(filterDTO);
                 }
+                KiemTraHienThiHighLightTab();
             }
             catch (Exception ex)
             {
@@ -439,9 +457,56 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             }
         }
 
+        private void KiemTraHienThiHighLightTab()
+        {
+            try
+            {
+                //Tab Benh an
+                if (this.highlight_tabBenhAn)
+                {
+                    xtraTabBenhAn.Appearance.Header.BackColor = System.Drawing.Color.Tomato; //set mau sac cho tab
+                }
+                else
+                {
+                    xtraTabBenhAn.Appearance.Header.BackColor = System.Drawing.Color.Transparent;
+                }
+
+                //Tab Hoi chan
+                if (btnHoiChan_PhauThuat.Enabled == false && btnHoiChan_Thuoc.Enabled == false && btnHoiChan_ChuyenVien.Enabled == false)
+                {
+                    xtraTabHoiChan.Appearance.Header.BackColor = System.Drawing.Color.Transparent;
+                }
+                else
+                {
+                    xtraTabHoiChan.Appearance.Header.BackColor = System.Drawing.Color.Tomato; //set mau sac cho tab
+                }
 
 
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
+        }
 
+        private bool KiemTraHighLightTab_PTTT()
+        {
+            bool result = false;
+            try
+            {
+                string sqlKiemtra = "";
+                DataTable dataPTTT = condb.GetDataTable_Dblink(sqlKiemtra);
+                if (dataPTTT != null && dataPTTT.Rows.Count > 0)
+                {
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
+            return result;
+        }
 
         #endregion
 

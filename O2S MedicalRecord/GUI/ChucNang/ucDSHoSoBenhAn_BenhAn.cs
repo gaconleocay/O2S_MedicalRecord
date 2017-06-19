@@ -80,6 +80,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         {
             try
             {
+                this.highlight_tabBenhAn = false;
                 this.currentMrdHsbaHsba = new MrdHsbaHosobenhanDTO();
                 if (rowMecicalrecord.medicalrecordstatus != 2)
                 {
@@ -108,6 +109,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                         btnChonTaoBenhAn.Visible = true;
                         btnXemBenhAn.Visible = false;
                         cboMauBenhAn.ReadOnly = false;
+                        this.highlight_tabBenhAn = true;
                     }
                 }
             }

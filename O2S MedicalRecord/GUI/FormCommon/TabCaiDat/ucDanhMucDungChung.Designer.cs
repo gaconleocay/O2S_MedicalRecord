@@ -50,6 +50,8 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cboDM_LoaiDMTen = new DevExpress.XtraEditors.LookUpEdit();
+            this.txtDM_Ten = new DevExpress.XtraEditors.MemoEdit();
+            this.txtDM_GiaTri = new DevExpress.XtraEditors.MemoEdit();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gridControlLoaiDM = new DevExpress.XtraGrid.GridControl();
@@ -66,8 +68,6 @@
             this.txtLoaiDM_Ma = new DevExpress.XtraEditors.TextEdit();
             this.lblUserId = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtDM_Ten = new DevExpress.XtraEditors.MemoEdit();
-            this.txtDM_GiaTri = new DevExpress.XtraEditors.MemoEdit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -76,6 +76,8 @@
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ma.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDM_LoaiDMTen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ten.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDM_GiaTri.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlLoaiDM)).BeginInit();
@@ -83,8 +85,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ma.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ten.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDM_GiaTri.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -272,6 +272,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(645, 190);
             this.panel6.TabIndex = 0;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // labelControl7
             // 
@@ -376,6 +377,28 @@
             this.cboDM_LoaiDMTen.Properties.NullText = "";
             this.cboDM_LoaiDMTen.Size = new System.Drawing.Size(230, 22);
             this.cboDM_LoaiDMTen.TabIndex = 24;
+            // 
+            // txtDM_Ten
+            // 
+            this.txtDM_Ten.Location = new System.Drawing.Point(47, 137);
+            this.txtDM_Ten.Name = "txtDM_Ten";
+            this.txtDM_Ten.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDM_Ten.Properties.Appearance.Options.UseFont = true;
+            this.txtDM_Ten.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDM_Ten.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDM_Ten.Size = new System.Drawing.Size(230, 44);
+            this.txtDM_Ten.TabIndex = 20;
+            // 
+            // txtDM_GiaTri
+            // 
+            this.txtDM_GiaTri.Location = new System.Drawing.Point(388, 137);
+            this.txtDM_GiaTri.Name = "txtDM_GiaTri";
+            this.txtDM_GiaTri.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDM_GiaTri.Properties.Appearance.Options.UseFont = true;
+            this.txtDM_GiaTri.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDM_GiaTri.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDM_GiaTri.Size = new System.Drawing.Size(230, 44);
+            this.txtDM_GiaTri.TabIndex = 26;
             // 
             // panel2
             // 
@@ -582,28 +605,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "LOẠI DANH MỤC";
             // 
-            // txtDM_Ten
-            // 
-            this.txtDM_Ten.Location = new System.Drawing.Point(47, 137);
-            this.txtDM_Ten.Name = "txtDM_Ten";
-            this.txtDM_Ten.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDM_Ten.Properties.Appearance.Options.UseFont = true;
-            this.txtDM_Ten.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtDM_Ten.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtDM_Ten.Size = new System.Drawing.Size(230, 44);
-            this.txtDM_Ten.TabIndex = 20;
-            // 
-            // txtDM_GiaTri
-            // 
-            this.txtDM_GiaTri.Location = new System.Drawing.Point(388, 137);
-            this.txtDM_GiaTri.Name = "txtDM_GiaTri";
-            this.txtDM_GiaTri.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDM_GiaTri.Properties.Appearance.Options.UseFont = true;
-            this.txtDM_GiaTri.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtDM_GiaTri.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtDM_GiaTri.Size = new System.Drawing.Size(230, 44);
-            this.txtDM_GiaTri.TabIndex = 26;
-            // 
             // ucDanhMucDungChung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,6 +622,8 @@
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ma.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboDM_LoaiDMTen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ten.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDM_GiaTri.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlLoaiDM)).EndInit();
@@ -629,8 +632,6 @@
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ten.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiDM_Ma.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDM_Ten.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDM_GiaTri.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

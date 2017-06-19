@@ -54,14 +54,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 cboHoiChan_ChonDVThuoc.Enabled = false;
                 cboHoiChan_ChonDVThuoc.Properties.DataSource = null;
                 gridControlHoiChanDSHC.DataSource = null;
-
-                if (rowMecicalrecord.medicalrecordstatus == 2) //BN dang dieu tri thi duoc tao
-                {
-                }
-                else
-                {
-                    gridHoiChanColumn_Sua.OptionsColumn.AllowEdit = false;
-                }
             }
             catch (Exception ex)
             {
