@@ -23,7 +23,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
         private MrdHsbaHoiChanDTO currentHsbaHoiChan { get; set; }
         private DAL.ConnectDatabase condb = new DAL.ConnectDatabase();
         private MrdHsbaHoiChanDTO HsbaHoiChanSave { get; set; }
-
+        private List<HoiChan_ThanhVienThamGiaDTO> lstdataDSNVBenhVien { get; set; }
         #endregion
         public frmHoiChan_NhapDuLieu()
         {
@@ -89,6 +89,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 {
                     btnLuuLai.Enabled = true;
                 }
+               // repositoryItemGridLookUp_HoTen.ImmediatePopup = true;
             }
             catch (Exception ex)
             {
@@ -103,16 +104,16 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 DataTable dataYCHC = condb.GetDataTable_HSBA(getdanhmuc);
                 if (dataYCHC != null && dataYCHC.Rows.Count > 0)
                 {
-                    for (int i = 0; i < dataYCHC.Rows.Count; i++)
-                    {
-                        cboYCHoiChan.Properties.Items.Add(dataYCHC.Rows[i]["mrd_otherlistname"].ToString());
-                    }
-                    //cboYCHoiChan.Properties.DataSource = dataYCHC;
-                    //cboYCHoiChan.Properties.DisplayMember = "mrd_otherlistname";
-                    //cboYCHoiChan.Properties.ValueMember = "mrd_otherlistid";
+                    //for (int i = 0; i < dataYCHC.Rows.Count; i++)
+                    //{
+                    //    cboYCHoiChan.Properties.Items.Add(dataYCHC.Rows[i]["mrd_otherlistname"].ToString());
+                    //}
+                    cboYCHoiChan.Properties.DataSource = dataYCHC;
+                    cboYCHoiChan.Properties.DisplayMember = "mrd_otherlistname";
+                    cboYCHoiChan.Properties.ValueMember = "mrd_otherlistid";
                     //cboYCHoiChan.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup; //dòng này để gridcontrol trong GridlookupEdit tự động resize các column để không thừa không thiếu nội dung 
                     //cboYCHoiChan.Properties.ImmediatePopup = true; // dòng này tự động mở popup khi search có kết quả
-                   // cboYCHoiChan.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard; //Setup dòng này để có thể nhập vào gridlookup
+                    //cboYCHoiChan.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard; //Setup dòng này để có thể nhập vào gridlookup
                 }
             }
             catch (Exception ex)
@@ -126,8 +127,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
             {
                 if (this.currentHsbaHoiChan != null)
                 {
-                   // cboYCHoiChan.EditValue = 1;
-                    cboYCHoiChan.Text = this.currentHsbaHoiChan.yeucauhoichan;
+                    cboYCHoiChan.EditValue = this.currentHsbaHoiChan.yeucauhoichanid;
+                   // cboYCHoiChan.Text = this.currentHsbaHoiChan.yeucauhoichanname;
                     txtHopTai.Text = this.currentHsbaHoiChan.diadiemhoichan;
                     txtTomTatTienSuBenh.Text = this.currentHsbaHoiChan.dbb_tomtattiensubenh;
                     txtTinhTrangLucVaoVien.Text = this.currentHsbaHoiChan.dbb_tinhtranglucvaovien;
@@ -144,7 +145,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     thanhvien_chutich.stt = 1;
                     thanhvien_chutich.loaidoituong_id = 1;
                     thanhvien_chutich.loaidoituong_ten = "Chủ tịch";
-                    thanhvien_chutich.hovaten = this.currentHsbaHoiChan.tvtg_chutoa_ten;
+                    thanhvien_chutich.hovaten_code = this.currentHsbaHoiChan.tvtg_chutoa_code;
+                    thanhvien_chutich.hovaten = this.currentHsbaHoiChan.tvtg_chutoa_code;
                     thanhvien_chutich.chucdanhchucvu = this.currentHsbaHoiChan.tvtg_chutoa_cdcv;
                     lstThanhVienThamGia.Add(thanhvien_chutich);
 
@@ -152,7 +154,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     thanhvien_thuky.stt = 2;
                     thanhvien_thuky.loaidoituong_id = 2;
                     thanhvien_thuky.loaidoituong_ten = "Thư ký";
-                    thanhvien_thuky.hovaten = this.currentHsbaHoiChan.tvtg_thuky_ten;
+                    thanhvien_thuky.hovaten_code = this.currentHsbaHoiChan.tvtg_thuky_code;
+                    thanhvien_thuky.hovaten = this.currentHsbaHoiChan.tvtg_thuky_code;
                     thanhvien_thuky.chucdanhchucvu = this.currentHsbaHoiChan.tvtg_thuky_cdcv;
                     lstThanhVienThamGia.Add(thanhvien_thuky);
 
@@ -160,7 +163,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     thanhvien_1.stt = 3;
                     thanhvien_1.loaidoituong_id = 3;
                     thanhvien_1.loaidoituong_ten = "Thành viên";
-                    thanhvien_1.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien1_ten;
+                    thanhvien_1.hovaten_code = this.currentHsbaHoiChan.tvtg_thanhvien1_code;
+                    thanhvien_1.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien1_code;
                     thanhvien_1.chucdanhchucvu = this.currentHsbaHoiChan.tvtg_thanhvien1_cdcv;
                     lstThanhVienThamGia.Add(thanhvien_1);
 
@@ -168,7 +172,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     thanhvien_2.stt = 4;
                     thanhvien_2.loaidoituong_id = 3;
                     thanhvien_2.loaidoituong_ten = "Thành viên";
-                    thanhvien_2.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien2_ten;
+                    thanhvien_2.hovaten_code = this.currentHsbaHoiChan.tvtg_thanhvien2_code;
+                    thanhvien_2.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien2_code;
                     thanhvien_2.chucdanhchucvu = this.currentHsbaHoiChan.tvtg_thanhvien2_cdcv;
                     lstThanhVienThamGia.Add(thanhvien_2);
 
@@ -176,7 +181,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     thanhvien_3.stt = 5;
                     thanhvien_3.loaidoituong_id = 3;
                     thanhvien_3.loaidoituong_ten = "Thành viên";
-                    thanhvien_3.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien3_ten;
+                    thanhvien_3.hovaten_code = this.currentHsbaHoiChan.tvtg_thanhvien3_code;
+                    thanhvien_3.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien3_code;
                     thanhvien_3.chucdanhchucvu = this.currentHsbaHoiChan.tvtg_thanhvien3_cdcv;
                     lstThanhVienThamGia.Add(thanhvien_3);
 
@@ -184,7 +190,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     thanhvien_4.stt = 6;
                     thanhvien_4.loaidoituong_id = 3;
                     thanhvien_4.loaidoituong_ten = "Thành viên";
-                    thanhvien_4.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien4_ten;
+                    thanhvien_4.hovaten_code = this.currentHsbaHoiChan.tvtg_thanhvien4_code;
+                    thanhvien_4.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien4_code;
                     thanhvien_4.chucdanhchucvu = this.currentHsbaHoiChan.tvtg_thanhvien4_cdcv;
                     lstThanhVienThamGia.Add(thanhvien_4);
 
@@ -192,7 +199,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     thanhvien_5.stt = 7;
                     thanhvien_5.loaidoituong_id = 3;
                     thanhvien_5.loaidoituong_ten = "Thành viên";
-                    thanhvien_5.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien5_ten;
+                    thanhvien_5.hovaten_code = this.currentHsbaHoiChan.tvtg_thanhvien5_code;
+                    thanhvien_5.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien5_code;
                     thanhvien_5.chucdanhchucvu = this.currentHsbaHoiChan.tvtg_thanhvien5_cdcv;
                     lstThanhVienThamGia.Add(thanhvien_5);
 
@@ -200,12 +208,14 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     thanhvien_6.stt = 8;
                     thanhvien_6.loaidoituong_id = 3;
                     thanhvien_6.loaidoituong_ten = "Thành viên";
-                    thanhvien_6.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien6_ten;
+                    thanhvien_6.hovaten_code = this.currentHsbaHoiChan.tvtg_thanhvien6_code;
+                    thanhvien_6.hovaten = this.currentHsbaHoiChan.tvtg_thanhvien6_code;
                     thanhvien_6.chucdanhchucvu = this.currentHsbaHoiChan.tvtg_thanhvien6_cdcv;
                     lstThanhVienThamGia.Add(thanhvien_6);
 
-                    gridControlThanhVienThamGia.DataSource = lstThanhVienThamGia;
                     LoadDanhSachVeThanhVienThamGia();
+                    gridControlThanhVienThamGia.DataSource = lstThanhVienThamGia;
+                    //LoadDanhSachVeThanhVienThamGia();
                 }
             }
             catch (Exception ex)
@@ -236,29 +246,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 {
                     txtHopTai.Text = this.currentMedicalrecord.departmentgroupname;
                 }
-
-                //switch (this.currentloaihoichan)
-                //{
-                //    case 1: //Hoi chan PTTT
-                //        {
-                //            txtYCHoiChan.Text = "Hội chẩn phẫu thuật";
-                //            break;
-                //        }
-                //    case 2: //Hoi CHan THuoc
-                //        {
-                //            txtYCHoiChan.Text = "Hội chẩn thuốc hoạt chất *";
-
-                //            break;
-                //        }
-                //    case 3://Hoi chan chuyen vien
-                //        {
-                //            txtYCHoiChan.Text = "Hội chẩn chuyển viện";
-
-                //            break;
-                //        }
-                //    default:
-                //        break;
-                //}
             }
             catch (Exception ex)
             {
@@ -275,6 +262,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 thanhvien_chutich.stt = 1;
                 thanhvien_chutich.loaidoituong_id = 1;
                 thanhvien_chutich.loaidoituong_ten = "Chủ tịch";
+                thanhvien_chutich.hovaten_code = "";
                 thanhvien_chutich.hovaten = "";
                 thanhvien_chutich.chucdanhchucvu = "";
                 lstThanhVienThamGia.Add(thanhvien_chutich);
@@ -283,6 +271,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 thanhvien_thuky.stt = 2;
                 thanhvien_thuky.loaidoituong_id = 2;
                 thanhvien_thuky.loaidoituong_ten = "Thư ký";
+                thanhvien_thuky.hovaten_code = "";
                 thanhvien_thuky.hovaten = "";
                 thanhvien_thuky.chucdanhchucvu = "";
                 lstThanhVienThamGia.Add(thanhvien_thuky);
@@ -293,6 +282,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     thanhvien.stt = i;
                     thanhvien.loaidoituong_id = 3;
                     thanhvien.loaidoituong_ten = "Thành viên";
+                    thanhvien.hovaten_code = "";
                     thanhvien.hovaten = "";
                     thanhvien.chucdanhchucvu = "";
                     lstThanhVienThamGia.Add(thanhvien);
@@ -309,16 +299,21 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
         {
             try
             {
-                string layDSNhanVienBenhVien = "SELECT username FROM tools_tblnhanvien WHERE username<>'' GROUP BY username ORDER BY username";
+                string layDSNhanVienBenhVien = "SELECT usercode, username FROM tools_tblnhanvien WHERE username<>'' GROUP BY usercode, username ORDER BY username";
                 DataTable dataDSNVBenhVien = condb.GetDataTable_HIS(layDSNhanVienBenhVien);
                 if (dataDSNVBenhVien != null && dataDSNVBenhVien.Rows.Count > 0)
                 {
+                    this.lstdataDSNVBenhVien = new List<HoiChan_ThanhVienThamGiaDTO>();
+                    repositoryItemGridLookUp_HoTen.DataSource = dataDSNVBenhVien;
+                    repositoryItemGridLookUp_HoTen.DisplayMember = "username";
+                    repositoryItemGridLookUp_HoTen.ValueMember = "usercode";
                     for (int i = 0; i < dataDSNVBenhVien.Rows.Count; i++)
                     {
-                        repositoryItemComboBox_HoTen.Items.Add(dataDSNVBenhVien.Rows[i]["username"].ToString());
+                        HoiChan_ThanhVienThamGiaDTO dataThanhVien = new HoiChan_ThanhVienThamGiaDTO();
+                        dataThanhVien.hovaten_code = dataDSNVBenhVien.Rows[i]["usercode"].ToString();
+                        dataThanhVien.hovaten = dataDSNVBenhVien.Rows[i]["username"].ToString();
+                        this.lstdataDSNVBenhVien.Add(dataThanhVien);
                     }
-                    //gridControlThanhVienThamGia.ForceInitialize();
-                    //gridViewThanhVienThamGia.Columns["hovaten"].ColumnEdit = repositoryItemComboBox_HoTen;
                 }
             }
             catch (Exception ex)
@@ -349,8 +344,12 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 HsbaHoiChanSave.thoigianhoichan = this.currentHsbaHoiChan.thoigianhoichan;
 
                 //thong tin
-                HsbaHoiChanSave.yeucauhoichan = cboYCHoiChan.Text;
-                HsbaHoiChanSave.diadiemhoichan = txtHopTai.Text.Replace("'","''");
+                if (cboYCHoiChan.EditValue != null)
+                {
+                    HsbaHoiChanSave.yeucauhoichanid = Utilities.Util_TypeConvertParse.ToInt64(cboYCHoiChan.EditValue.ToString());
+                }
+                HsbaHoiChanSave.yeucauhoichanname = cboYCHoiChan.Text;
+                HsbaHoiChanSave.diadiemhoichan = txtHopTai.Text.Replace("'", "''");
                 HsbaHoiChanSave.dbb_tomtattiensubenh = txtTomTatTienSuBenh.Text.Replace("'", "''");
                 HsbaHoiChanSave.dbb_tinhtranglucvaovien = txtTinhTrangLucVaoVien.Text.Replace("'", "''");
                 HsbaHoiChanSave.dbb_chandoantuyenduoi = txtChanDoanTuyenDuoi.Text.Replace("'", "''");
@@ -361,21 +360,53 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                 HsbaHoiChanSave.kl_ketluan = txtKetLuan.Text.Replace("'", "''");
 
                 //Thanh vien
-                HsbaHoiChanSave.tvtg_chutoa_ten = gridViewThanhVienThamGia.GetRowCellValue(0, "hovaten").ToString();
+                HsbaHoiChanSave.tvtg_chutoa_code = gridViewThanhVienThamGia.GetRowCellValue(0, "hovaten").ToString();
+                if (HsbaHoiChanSave.tvtg_chutoa_code != "")
+                {
+                    HsbaHoiChanSave.tvtg_chutoa_ten = this.lstdataDSNVBenhVien.Where(o => o.hovaten_code == HsbaHoiChanSave.tvtg_chutoa_code).Single().hovaten;
+                }
                 HsbaHoiChanSave.tvtg_chutoa_cdcv = gridViewThanhVienThamGia.GetRowCellValue(0, "chucdanhchucvu").ToString();
-                HsbaHoiChanSave.tvtg_thuky_ten = gridViewThanhVienThamGia.GetRowCellValue(1, "hovaten").ToString();
+                HsbaHoiChanSave.tvtg_thuky_code = gridViewThanhVienThamGia.GetRowCellValue(1, "hovaten").ToString();
+                if (HsbaHoiChanSave.tvtg_thuky_code != "")
+                {
+                    HsbaHoiChanSave.tvtg_thuky_ten = this.lstdataDSNVBenhVien.Where(o => o.hovaten_code == HsbaHoiChanSave.tvtg_thuky_code).Single().hovaten;
+                }
                 HsbaHoiChanSave.tvtg_thuky_cdcv = gridViewThanhVienThamGia.GetRowCellValue(1, "chucdanhchucvu").ToString();
-                HsbaHoiChanSave.tvtg_thanhvien1_ten = gridViewThanhVienThamGia.GetRowCellValue(2, "hovaten").ToString();
+                HsbaHoiChanSave.tvtg_thanhvien1_code = gridViewThanhVienThamGia.GetRowCellValue(2, "hovaten").ToString();
+                if (HsbaHoiChanSave.tvtg_thanhvien1_code != "")
+                {
+                    HsbaHoiChanSave.tvtg_thanhvien1_ten = this.lstdataDSNVBenhVien.Where(o => o.hovaten_code == HsbaHoiChanSave.tvtg_thanhvien1_code).Single().hovaten;
+                }
                 HsbaHoiChanSave.tvtg_thanhvien1_cdcv = gridViewThanhVienThamGia.GetRowCellValue(2, "chucdanhchucvu").ToString();
-                HsbaHoiChanSave.tvtg_thanhvien2_ten = gridViewThanhVienThamGia.GetRowCellValue(3, "hovaten").ToString();
+                HsbaHoiChanSave.tvtg_thanhvien2_code = gridViewThanhVienThamGia.GetRowCellValue(3, "hovaten").ToString();
+                if (HsbaHoiChanSave.tvtg_thanhvien2_code != "")
+                {
+                    HsbaHoiChanSave.tvtg_thanhvien2_ten = this.lstdataDSNVBenhVien.Where(o => o.hovaten_code == HsbaHoiChanSave.tvtg_thanhvien2_code).Single().hovaten;
+                }
                 HsbaHoiChanSave.tvtg_thanhvien2_cdcv = gridViewThanhVienThamGia.GetRowCellValue(3, "chucdanhchucvu").ToString();
-                HsbaHoiChanSave.tvtg_thanhvien3_ten = gridViewThanhVienThamGia.GetRowCellValue(4, "hovaten").ToString();
+                HsbaHoiChanSave.tvtg_thanhvien3_code = gridViewThanhVienThamGia.GetRowCellValue(4, "hovaten").ToString();
+                if (HsbaHoiChanSave.tvtg_thanhvien3_code != "")
+                {
+                    HsbaHoiChanSave.tvtg_thanhvien3_ten = this.lstdataDSNVBenhVien.Where(o => o.hovaten_code == HsbaHoiChanSave.tvtg_thanhvien3_code).Single().hovaten;
+                }
                 HsbaHoiChanSave.tvtg_thanhvien3_cdcv = gridViewThanhVienThamGia.GetRowCellValue(4, "chucdanhchucvu").ToString();
-                HsbaHoiChanSave.tvtg_thanhvien4_ten = gridViewThanhVienThamGia.GetRowCellValue(5, "hovaten").ToString();
+                HsbaHoiChanSave.tvtg_thanhvien4_code = gridViewThanhVienThamGia.GetRowCellValue(5, "hovaten").ToString();
+                if (HsbaHoiChanSave.tvtg_thanhvien4_code != "")
+                {
+                    HsbaHoiChanSave.tvtg_thanhvien4_ten = this.lstdataDSNVBenhVien.Where(o => o.hovaten_code == HsbaHoiChanSave.tvtg_thanhvien4_code).Single().hovaten;
+                }
                 HsbaHoiChanSave.tvtg_thanhvien4_cdcv = gridViewThanhVienThamGia.GetRowCellValue(5, "chucdanhchucvu").ToString();
-                HsbaHoiChanSave.tvtg_thanhvien5_ten = gridViewThanhVienThamGia.GetRowCellValue(6, "hovaten").ToString();
+                HsbaHoiChanSave.tvtg_thanhvien5_code = gridViewThanhVienThamGia.GetRowCellValue(6, "hovaten").ToString();
+                if (HsbaHoiChanSave.tvtg_thanhvien5_code != "")
+                {
+                    HsbaHoiChanSave.tvtg_thanhvien5_ten = this.lstdataDSNVBenhVien.Where(o => o.hovaten_code == HsbaHoiChanSave.tvtg_thanhvien5_code).Single().hovaten;
+                }
                 HsbaHoiChanSave.tvtg_thanhvien5_cdcv = gridViewThanhVienThamGia.GetRowCellValue(6, "chucdanhchucvu").ToString();
-                HsbaHoiChanSave.tvtg_thanhvien6_ten = gridViewThanhVienThamGia.GetRowCellValue(7, "hovaten").ToString();
+                HsbaHoiChanSave.tvtg_thanhvien6_code = gridViewThanhVienThamGia.GetRowCellValue(7, "hovaten").ToString();
+                if (HsbaHoiChanSave.tvtg_thanhvien6_code != "")
+                {
+                    HsbaHoiChanSave.tvtg_thanhvien6_ten = this.lstdataDSNVBenhVien.Where(o => o.hovaten_code == HsbaHoiChanSave.tvtg_thanhvien6_code).Single().hovaten;
+                }
                 HsbaHoiChanSave.tvtg_thanhvien6_cdcv = gridViewThanhVienThamGia.GetRowCellValue(7, "chucdanhchucvu").ToString();
 
                 if (this.currentHsbaHoiChan.mrd_hsba_hcid == 0)//them moi
@@ -390,7 +421,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                                 HsbaHoiChanSave.servicepricename = this.currentHsbaHoiChan.servicepricename;
                                 HsbaHoiChanSave.servicepricedate = this.currentHsbaHoiChan.servicepricedate;
 
-                                sql_saveHoichan = "INSERT INTO mrd_hsba_hcpttt(mrd_dmhc_ptttid, maubenhphamid, servicepriceid, servicepricecode, servicepricename, servicepricedate, hosobenhanid, medicalrecordid, patientid, vienphiid, departmentgroupid, departmentid, thoigianhoichan, yeucauhoichan, diadiemhoichan, dbb_tomtattiensubenh, dbb_tinhtranglucvaovien, dbb_chandoantuyenduoi, dbb_tomtatdienbienbenh, yk_chandoantienluong, yk_phuongphapdieutri, yk_chamsoc, kl_ketluan, tvtg_chutoa_ten, tvtg_chutoa_cdcv, tvtg_thuky_ten, tvtg_thuky_cdcv, tvtg_thanhvien1_ten, tvtg_thanhvien1_cdcv, tvtg_thanhvien2_ten, tvtg_thanhvien2_cdcv, tvtg_thanhvien3_ten, tvtg_thanhvien3_cdcv, tvtg_thanhvien4_ten, tvtg_thanhvien4_cdcv, tvtg_thanhvien5_ten, tvtg_thanhvien5_cdcv, tvtg_thanhvien6_ten, tvtg_thanhvien6_cdcv, mrd_hsba_hcptttstatus, create_mrduserid, create_mrdusercode, create_date) VALUES (0, '" + this.currentHsbaHoiChan.maubenhphamid + "', '" + this.currentHsbaHoiChan.servicepriceid + "', '" + this.currentHsbaHoiChan.servicepricecode + "', '" + this.currentHsbaHoiChan.servicepricename + "', '" + this.currentHsbaHoiChan.servicepricedate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + HsbaHoiChanSave.hosobenhanid + "', '" + HsbaHoiChanSave.medicalrecordid + "', '" + HsbaHoiChanSave.patientid + "', '" + HsbaHoiChanSave.vienphiid + "', '" + HsbaHoiChanSave.departmentgroupid + "', '" + HsbaHoiChanSave.departmentid + "', '" + HsbaHoiChanSave.servicepricedate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + HsbaHoiChanSave.yeucauhoichan + "', '" + HsbaHoiChanSave.diadiemhoichan + "', '" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', '" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', '" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', '" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', '" + HsbaHoiChanSave.yk_chandoantienluong + "', '" + HsbaHoiChanSave.yk_phuongphapdieutri + "', '" + HsbaHoiChanSave.yk_chamsoc + "', '" + HsbaHoiChanSave.kl_ketluan + "', '" + HsbaHoiChanSave.tvtg_chutoa_ten + "', '" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', '" + HsbaHoiChanSave.tvtg_thuky_ten + "', '" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', '" + 1 + "', '" + Base.SessionLogin.SessionUserID + "', '" + Base.SessionLogin.SessionUsercode + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'); ";
+                                sql_saveHoichan = "INSERT INTO mrd_hsba_hcpttt(mrd_dmhc_ptttid, maubenhphamid, servicepriceid, servicepricecode, servicepricename, servicepricedate, hosobenhanid, medicalrecordid, patientid, vienphiid, departmentgroupid, departmentid, thoigianhoichan, yeucauhoichanid, yeucauhoichanname, diadiemhoichan, dbb_tomtattiensubenh, dbb_tinhtranglucvaovien, dbb_chandoantuyenduoi, dbb_tomtatdienbienbenh, yk_chandoantienluong, yk_phuongphapdieutri, yk_chamsoc, kl_ketluan, tvtg_chutoa_code, tvtg_chutoa_ten, tvtg_chutoa_cdcv, tvtg_thuky_code, tvtg_thuky_ten, tvtg_thuky_cdcv, tvtg_thanhvien1_code, tvtg_thanhvien1_ten, tvtg_thanhvien1_cdcv, tvtg_thanhvien2_code, tvtg_thanhvien2_ten, tvtg_thanhvien2_cdcv, tvtg_thanhvien3_code, tvtg_thanhvien3_ten, tvtg_thanhvien3_cdcv, tvtg_thanhvien4_code, tvtg_thanhvien4_ten, tvtg_thanhvien4_cdcv, tvtg_thanhvien5_code, tvtg_thanhvien5_ten, tvtg_thanhvien5_cdcv, tvtg_thanhvien6_code, tvtg_thanhvien6_ten, tvtg_thanhvien6_cdcv, mrd_hsba_hcptttstatus, create_mrduserid, create_mrdusercode, create_date) VALUES (0, '" + this.currentHsbaHoiChan.maubenhphamid + "', '" + this.currentHsbaHoiChan.servicepriceid + "', '" + this.currentHsbaHoiChan.servicepricecode + "', '" + this.currentHsbaHoiChan.servicepricename + "', '" + this.currentHsbaHoiChan.servicepricedate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + HsbaHoiChanSave.hosobenhanid + "', '" + HsbaHoiChanSave.medicalrecordid + "', '" + HsbaHoiChanSave.patientid + "', '" + HsbaHoiChanSave.vienphiid + "', '" + HsbaHoiChanSave.departmentgroupid + "', '" + HsbaHoiChanSave.departmentid + "', '" + HsbaHoiChanSave.servicepricedate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + HsbaHoiChanSave.yeucauhoichanid + "', '" + HsbaHoiChanSave.yeucauhoichanname + "', '" + HsbaHoiChanSave.diadiemhoichan + "', '" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', '" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', '" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', '" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', '" + HsbaHoiChanSave.yk_chandoantienluong + "', '" + HsbaHoiChanSave.yk_phuongphapdieutri + "', '" + HsbaHoiChanSave.yk_chamsoc + "', '" + HsbaHoiChanSave.kl_ketluan + "', '" + HsbaHoiChanSave.tvtg_chutoa_code + "', '" + HsbaHoiChanSave.tvtg_chutoa_ten + "', '" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', '" + HsbaHoiChanSave.tvtg_thuky_code + "', '" + HsbaHoiChanSave.tvtg_thuky_ten + "', '" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', '" + 1 + "', '" + Base.SessionLogin.SessionUserID + "', '" + Base.SessionLogin.SessionUsercode + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'); ";
                                 break;
                             }
                         case 2: //Hoi CHan THuoc
@@ -402,12 +433,12 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                                 HsbaHoiChanSave.servicepricename = this.currentHsbaHoiChan.servicepricename;
                                 HsbaHoiChanSave.servicepricedate = this.currentHsbaHoiChan.servicepricedate;
 
-                                sql_saveHoichan = "INSERT INTO mrd_hsba_hcthuoc(mrd_dmhc_thuocid, maubenhphamid, medicinerefid_org, servicepriceid, servicepricecode, servicepricename, servicepricedate, hosobenhanid, medicalrecordid, patientid, vienphiid, departmentgroupid, departmentid, thoigianhoichan, yeucauhoichan, diadiemhoichan, dbb_tomtattiensubenh, dbb_tinhtranglucvaovien, dbb_chandoantuyenduoi, dbb_tomtatdienbienbenh, yk_chandoantienluong, yk_phuongphapdieutri, yk_chamsoc, kl_ketluan, tvtg_chutoa_ten, tvtg_chutoa_cdcv, tvtg_thuky_ten, tvtg_thuky_cdcv, tvtg_thanhvien1_ten, tvtg_thanhvien1_cdcv, tvtg_thanhvien2_ten, tvtg_thanhvien2_cdcv, tvtg_thanhvien3_ten, tvtg_thanhvien3_cdcv, tvtg_thanhvien4_ten, tvtg_thanhvien4_cdcv, tvtg_thanhvien5_ten, tvtg_thanhvien5_cdcv, tvtg_thanhvien6_ten, tvtg_thanhvien6_cdcv, mrd_hsba_hcthuocstatus, create_mrduserid, create_mrdusercode, create_date) VALUES (0, '" + this.currentHsbaHoiChan.maubenhphamid + "', '" + HsbaHoiChanSave.medicinerefid_org + "', '" + this.currentHsbaHoiChan.servicepriceid + "', '" + this.currentHsbaHoiChan.servicepricecode + "', '" + this.currentHsbaHoiChan.servicepricename + "', '" + this.currentHsbaHoiChan.servicepricedate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + HsbaHoiChanSave.hosobenhanid + "', '" + HsbaHoiChanSave.medicalrecordid + "', '" + HsbaHoiChanSave.patientid + "', '" + HsbaHoiChanSave.vienphiid + "', '" + HsbaHoiChanSave.departmentgroupid + "', '" + HsbaHoiChanSave.departmentid + "', '" + HsbaHoiChanSave.servicepricedate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + HsbaHoiChanSave.yeucauhoichan + "', '" + HsbaHoiChanSave.diadiemhoichan + "', '" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', '" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', '" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', '" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', '" + HsbaHoiChanSave.yk_chandoantienluong + "', '" + HsbaHoiChanSave.yk_phuongphapdieutri + "', '" + HsbaHoiChanSave.yk_chamsoc + "', '" + HsbaHoiChanSave.kl_ketluan + "', '" + HsbaHoiChanSave.tvtg_chutoa_ten + "', '" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', '" + HsbaHoiChanSave.tvtg_thuky_ten + "', '" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', '" + 1 + "', '" + Base.SessionLogin.SessionUserID + "', '" + Base.SessionLogin.SessionUsercode + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'); ";
+                                sql_saveHoichan = "INSERT INTO mrd_hsba_hcthuoc(mrd_dmhc_thuocid, maubenhphamid, medicinerefid_org, servicepriceid, servicepricecode, servicepricename, servicepricedate, hosobenhanid, medicalrecordid, patientid, vienphiid, departmentgroupid, departmentid, thoigianhoichan, yeucauhoichanid, yeucauhoichanname, diadiemhoichan, dbb_tomtattiensubenh, dbb_tinhtranglucvaovien, dbb_chandoantuyenduoi, dbb_tomtatdienbienbenh, yk_chandoantienluong, yk_phuongphapdieutri, yk_chamsoc, kl_ketluan, tvtg_chutoa_code, tvtg_chutoa_ten, tvtg_chutoa_cdcv, tvtg_thuky_code, tvtg_thuky_ten, tvtg_thuky_cdcv, tvtg_thanhvien1_code, tvtg_thanhvien1_ten, tvtg_thanhvien1_cdcv, tvtg_thanhvien2_code, tvtg_thanhvien2_ten, tvtg_thanhvien2_cdcv, tvtg_thanhvien3_code, tvtg_thanhvien3_ten, tvtg_thanhvien3_cdcv, tvtg_thanhvien4_code, tvtg_thanhvien4_ten, tvtg_thanhvien4_cdcv, tvtg_thanhvien5_code, tvtg_thanhvien5_ten, tvtg_thanhvien5_cdcv, tvtg_thanhvien6_code, tvtg_thanhvien6_ten, tvtg_thanhvien6_cdcv, mrd_hsba_hcthuocstatus, create_mrduserid, create_mrdusercode, create_date) VALUES (0, '" + this.currentHsbaHoiChan.maubenhphamid + "', '" + HsbaHoiChanSave.medicinerefid_org + "', '" + this.currentHsbaHoiChan.servicepriceid + "', '" + this.currentHsbaHoiChan.servicepricecode + "', '" + this.currentHsbaHoiChan.servicepricename + "', '" + this.currentHsbaHoiChan.servicepricedate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + HsbaHoiChanSave.hosobenhanid + "', '" + HsbaHoiChanSave.medicalrecordid + "', '" + HsbaHoiChanSave.patientid + "', '" + HsbaHoiChanSave.vienphiid + "', '" + HsbaHoiChanSave.departmentgroupid + "', '" + HsbaHoiChanSave.departmentid + "', '" + HsbaHoiChanSave.servicepricedate.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + HsbaHoiChanSave.yeucauhoichanid + "', '" + HsbaHoiChanSave.yeucauhoichanname + "', '" + HsbaHoiChanSave.diadiemhoichan + "', '" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', '" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', '" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', '" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', '" + HsbaHoiChanSave.yk_chandoantienluong + "', '" + HsbaHoiChanSave.yk_phuongphapdieutri + "', '" + HsbaHoiChanSave.yk_chamsoc + "', '" + HsbaHoiChanSave.kl_ketluan + "', '" + HsbaHoiChanSave.tvtg_chutoa_code + "', '" + HsbaHoiChanSave.tvtg_chutoa_ten + "', '" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', '" + HsbaHoiChanSave.tvtg_thuky_code + "', '" + HsbaHoiChanSave.tvtg_thuky_ten + "', '" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', '" + 1 + "', '" + Base.SessionLogin.SessionUserID + "', '" + Base.SessionLogin.SessionUsercode + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'); ";
                                 break;
                             }
                         case 3://Hoi chan chuyen vien
                             {
-                                sql_saveHoichan = "INSERT INTO mrd_hsba_hccvien(mrd_dmhc_cvienid, his_chuyenvienid, hosobenhanid, medicalrecordid, patientid, vienphiid, departmentgroupid, departmentid, thoigianhoichan, yeucauhoichan, diadiemhoichan, dbb_tomtattiensubenh, dbb_tinhtranglucvaovien, dbb_chandoantuyenduoi, dbb_tomtatdienbienbenh, yk_chandoantienluong, yk_phuongphapdieutri, yk_chamsoc, kl_ketluan, tvtg_chutoa_ten, tvtg_chutoa_cdcv, tvtg_thuky_ten, tvtg_thuky_cdcv, tvtg_thanhvien1_ten, tvtg_thanhvien1_cdcv, tvtg_thanhvien2_ten, tvtg_thanhvien2_cdcv, tvtg_thanhvien3_ten, tvtg_thanhvien3_cdcv, tvtg_thanhvien4_ten, tvtg_thanhvien4_cdcv, tvtg_thanhvien5_ten, tvtg_thanhvien5_cdcv, tvtg_thanhvien6_ten, tvtg_thanhvien6_cdcv, mrd_hsba_hccvienstatus, create_mrduserid, create_mrdusercode, create_date) VALUES (0, '" + this.currentHsbaHoiChan.his_chuyenvienid + "', '" + HsbaHoiChanSave.hosobenhanid + "', '" + HsbaHoiChanSave.medicalrecordid + "', '" + HsbaHoiChanSave.patientid + "', '" + HsbaHoiChanSave.vienphiid + "', '" + HsbaHoiChanSave.departmentgroupid + "', '" + HsbaHoiChanSave.departmentid + "', '" + HsbaHoiChanSave.thoigianhoichan.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + HsbaHoiChanSave.yeucauhoichan + "', '" + HsbaHoiChanSave.diadiemhoichan + "', '" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', '" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', '" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', '" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', '" + HsbaHoiChanSave.yk_chandoantienluong + "', '" + HsbaHoiChanSave.yk_phuongphapdieutri + "', '" + HsbaHoiChanSave.yk_chamsoc + "', '" + HsbaHoiChanSave.kl_ketluan + "', '" + HsbaHoiChanSave.tvtg_chutoa_ten + "', '" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', '" + HsbaHoiChanSave.tvtg_thuky_ten + "', '" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', '" + 1 + "', '" + Base.SessionLogin.SessionUserID + "', '" + Base.SessionLogin.SessionUsercode + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'); ";
+                                sql_saveHoichan = "INSERT INTO mrd_hsba_hccvien(mrd_dmhc_cvienid, his_chuyenvienid, hosobenhanid, medicalrecordid, patientid, vienphiid, departmentgroupid, departmentid, thoigianhoichan, yeucauhoichanid, yeucauhoichanname, diadiemhoichan, dbb_tomtattiensubenh, dbb_tinhtranglucvaovien, dbb_chandoantuyenduoi, dbb_tomtatdienbienbenh, yk_chandoantienluong, yk_phuongphapdieutri, yk_chamsoc, kl_ketluan, tvtg_chutoa_code, tvtg_chutoa_ten, tvtg_chutoa_cdcv, tvtg_thuky_code, tvtg_thuky_ten, tvtg_thuky_cdcv, tvtg_thanhvien1_code, tvtg_thanhvien1_ten, tvtg_thanhvien1_cdcv, tvtg_thanhvien2_code, tvtg_thanhvien2_ten, tvtg_thanhvien2_cdcv, tvtg_thanhvien3_code, tvtg_thanhvien3_ten, tvtg_thanhvien3_cdcv, tvtg_thanhvien4_code, tvtg_thanhvien4_ten, tvtg_thanhvien4_cdcv, tvtg_thanhvien5_code, tvtg_thanhvien5_ten, tvtg_thanhvien5_cdcv, tvtg_thanhvien6_code, tvtg_thanhvien6_ten, tvtg_thanhvien6_cdcv, mrd_hsba_hccvienstatus, create_mrduserid, create_mrdusercode, create_date) VALUES (0, '" + this.currentHsbaHoiChan.his_chuyenvienid + "', '" + HsbaHoiChanSave.hosobenhanid + "', '" + HsbaHoiChanSave.medicalrecordid + "', '" + HsbaHoiChanSave.patientid + "', '" + HsbaHoiChanSave.vienphiid + "', '" + HsbaHoiChanSave.departmentgroupid + "', '" + HsbaHoiChanSave.departmentid + "', '" + HsbaHoiChanSave.thoigianhoichan.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + HsbaHoiChanSave.yeucauhoichanid + "', '" + HsbaHoiChanSave.yeucauhoichanname + "', '" + HsbaHoiChanSave.diadiemhoichan + "', '" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', '" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', '" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', '" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', '" + HsbaHoiChanSave.yk_chandoantienluong + "', '" + HsbaHoiChanSave.yk_phuongphapdieutri + "', '" + HsbaHoiChanSave.yk_chamsoc + "', '" + HsbaHoiChanSave.kl_ketluan + "', '" + HsbaHoiChanSave.tvtg_chutoa_code + "', '" + HsbaHoiChanSave.tvtg_chutoa_ten + "', '" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', '" + HsbaHoiChanSave.tvtg_thuky_code + "', '" + HsbaHoiChanSave.tvtg_thuky_ten + "', '" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_code + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', '" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', '" + 1 + "', '" + Base.SessionLogin.SessionUserID + "', '" + Base.SessionLogin.SessionUsercode + "', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'); ";
                                 break;
                             }
                         default:
@@ -420,17 +451,17 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     {
                         case 1: //Hoi chan PTTT
                             {
-                                sql_saveHoichan = "UPDATE mrd_hsba_hcpttt SET yeucauhoichan='" + HsbaHoiChanSave.yeucauhoichan + "', diadiemhoichan='" + HsbaHoiChanSave.diadiemhoichan + "', dbb_tomtattiensubenh='" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', dbb_tinhtranglucvaovien='" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', dbb_chandoantuyenduoi='" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', dbb_tomtatdienbienbenh='" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', yk_chandoantienluong='" + HsbaHoiChanSave.yk_chandoantienluong + "', yk_phuongphapdieutri='" + HsbaHoiChanSave.yk_phuongphapdieutri + "', yk_chamsoc='" + HsbaHoiChanSave.yk_chamsoc + "', kl_ketluan='" + HsbaHoiChanSave.kl_ketluan + "', tvtg_chutoa_ten='" + HsbaHoiChanSave.tvtg_chutoa_ten + "', tvtg_chutoa_cdcv='" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', tvtg_thuky_ten='" + HsbaHoiChanSave.tvtg_thuky_ten + "', tvtg_thuky_cdcv='" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', tvtg_thanhvien1_ten='" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', tvtg_thanhvien1_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', tvtg_thanhvien2_ten='" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', tvtg_thanhvien2_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', tvtg_thanhvien3_ten='" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', tvtg_thanhvien3_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', tvtg_thanhvien4_ten='" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', tvtg_thanhvien4_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', tvtg_thanhvien5_ten='" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', tvtg_thanhvien5_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', tvtg_thanhvien6_ten='" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', tvtg_thanhvien6_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', modify_mrduserid='" + Base.SessionLogin.SessionUserID + "', modify_mrdusercode='" + Base.SessionLogin.SessionUsercode + "', modify_date='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE mrd_hsba_hcptttid=" + this.currentHsbaHoiChan.mrd_hsba_hcid + ";  ";
+                                sql_saveHoichan = "UPDATE mrd_hsba_hcpttt SET yeucauhoichanid='" + HsbaHoiChanSave.yeucauhoichanid + "', yeucauhoichanname='" + HsbaHoiChanSave.yeucauhoichanname + "', diadiemhoichan='" + HsbaHoiChanSave.diadiemhoichan + "', dbb_tomtattiensubenh='" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', dbb_tinhtranglucvaovien='" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', dbb_chandoantuyenduoi='" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', dbb_tomtatdienbienbenh='" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', yk_chandoantienluong='" + HsbaHoiChanSave.yk_chandoantienluong + "', yk_phuongphapdieutri='" + HsbaHoiChanSave.yk_phuongphapdieutri + "', yk_chamsoc='" + HsbaHoiChanSave.yk_chamsoc + "', kl_ketluan='" + HsbaHoiChanSave.kl_ketluan + "', tvtg_chutoa_code='" + HsbaHoiChanSave.tvtg_chutoa_code + "', tvtg_chutoa_ten='" + HsbaHoiChanSave.tvtg_chutoa_ten + "', tvtg_chutoa_cdcv='" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', tvtg_thuky_code='" + HsbaHoiChanSave.tvtg_thuky_code + "', tvtg_thuky_ten='" + HsbaHoiChanSave.tvtg_thuky_ten + "', tvtg_thuky_cdcv='" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', tvtg_thanhvien1_code='" + HsbaHoiChanSave.tvtg_thanhvien1_code + "', tvtg_thanhvien1_ten='" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', tvtg_thanhvien1_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', tvtg_thanhvien2_code='" + HsbaHoiChanSave.tvtg_thanhvien2_code + "', tvtg_thanhvien2_ten='" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', tvtg_thanhvien2_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', tvtg_thanhvien3_code='" + HsbaHoiChanSave.tvtg_thanhvien3_code + "', tvtg_thanhvien3_ten='" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', tvtg_thanhvien3_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', tvtg_thanhvien4_code='" + HsbaHoiChanSave.tvtg_thanhvien4_code + "', tvtg_thanhvien4_ten='" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', tvtg_thanhvien4_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', tvtg_thanhvien5_code='" + HsbaHoiChanSave.tvtg_thanhvien5_code + "', tvtg_thanhvien5_ten='" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', tvtg_thanhvien5_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', tvtg_thanhvien6_code='" + HsbaHoiChanSave.tvtg_thanhvien6_code + "', tvtg_thanhvien6_ten='" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', tvtg_thanhvien6_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', modify_mrduserid='" + Base.SessionLogin.SessionUserID + "', modify_mrdusercode='" + Base.SessionLogin.SessionUsercode + "', modify_date='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE mrd_hsba_hcptttid=" + this.currentHsbaHoiChan.mrd_hsba_hcid + ";  ";
                                 break;
                             }
                         case 2: //Hoi CHan THuoc
                             {
-                                sql_saveHoichan = "UPDATE mrd_hsba_hcthuoc SET yeucauhoichan='" + HsbaHoiChanSave.yeucauhoichan + "', diadiemhoichan='" + HsbaHoiChanSave.diadiemhoichan + "', dbb_tomtattiensubenh='" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', dbb_tinhtranglucvaovien='" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', dbb_chandoantuyenduoi='" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', dbb_tomtatdienbienbenh='" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', yk_chandoantienluong='" + HsbaHoiChanSave.yk_chandoantienluong + "', yk_phuongphapdieutri='" + HsbaHoiChanSave.yk_phuongphapdieutri + "', yk_chamsoc='" + HsbaHoiChanSave.yk_chamsoc + "', kl_ketluan='" + HsbaHoiChanSave.kl_ketluan + "', tvtg_chutoa_ten='" + HsbaHoiChanSave.tvtg_chutoa_ten + "', tvtg_chutoa_cdcv='" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', tvtg_thuky_ten='" + HsbaHoiChanSave.tvtg_thuky_ten + "', tvtg_thuky_cdcv='" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', tvtg_thanhvien1_ten='" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', tvtg_thanhvien1_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', tvtg_thanhvien2_ten='" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', tvtg_thanhvien2_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', tvtg_thanhvien3_ten='" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', tvtg_thanhvien3_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', tvtg_thanhvien4_ten='" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', tvtg_thanhvien4_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', tvtg_thanhvien5_ten='" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', tvtg_thanhvien5_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', tvtg_thanhvien6_ten='" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', tvtg_thanhvien6_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', modify_mrduserid='" + Base.SessionLogin.SessionUserID + "', modify_mrdusercode='" + Base.SessionLogin.SessionUsercode + "', modify_date='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE mrd_hsba_hcthuocid=" + this.currentHsbaHoiChan.mrd_hsba_hcid + "; ";
+                                sql_saveHoichan = "UPDATE mrd_hsba_hcthuoc SET yeucauhoichanid='" + HsbaHoiChanSave.yeucauhoichanid + "', yeucauhoichanname='" + HsbaHoiChanSave.yeucauhoichanname + "', diadiemhoichan='" + HsbaHoiChanSave.diadiemhoichan + "', dbb_tomtattiensubenh='" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', dbb_tinhtranglucvaovien='" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', dbb_chandoantuyenduoi='" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', dbb_tomtatdienbienbenh='" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', yk_chandoantienluong='" + HsbaHoiChanSave.yk_chandoantienluong + "', yk_phuongphapdieutri='" + HsbaHoiChanSave.yk_phuongphapdieutri + "', yk_chamsoc='" + HsbaHoiChanSave.yk_chamsoc + "', kl_ketluan='" + HsbaHoiChanSave.kl_ketluan + "', tvtg_chutoa_code='" + HsbaHoiChanSave.tvtg_chutoa_code + "', tvtg_chutoa_ten='" + HsbaHoiChanSave.tvtg_chutoa_ten + "', tvtg_chutoa_cdcv='" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', tvtg_thuky_code='" + HsbaHoiChanSave.tvtg_thuky_code + "', tvtg_thuky_ten='" + HsbaHoiChanSave.tvtg_thuky_ten + "', tvtg_thuky_cdcv='" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', tvtg_thanhvien1_code='" + HsbaHoiChanSave.tvtg_thanhvien1_code + "', tvtg_thanhvien1_ten='" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', tvtg_thanhvien1_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', tvtg_thanhvien2_code='" + HsbaHoiChanSave.tvtg_thanhvien2_code + "', tvtg_thanhvien2_ten='" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', tvtg_thanhvien2_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', tvtg_thanhvien3_code='" + HsbaHoiChanSave.tvtg_thanhvien3_code + "', tvtg_thanhvien3_ten='" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', tvtg_thanhvien3_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', tvtg_thanhvien4_code='" + HsbaHoiChanSave.tvtg_thanhvien4_code + "', tvtg_thanhvien4_ten='" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', tvtg_thanhvien4_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', tvtg_thanhvien5_code='" + HsbaHoiChanSave.tvtg_thanhvien5_code + "', tvtg_thanhvien5_ten='" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', tvtg_thanhvien5_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', tvtg_thanhvien6_code='" + HsbaHoiChanSave.tvtg_thanhvien6_code + "', tvtg_thanhvien6_ten='" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', tvtg_thanhvien6_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', modify_mrduserid='" + Base.SessionLogin.SessionUserID + "', modify_mrdusercode='" + Base.SessionLogin.SessionUsercode + "', modify_date='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE mrd_hsba_hcthuocid=" + this.currentHsbaHoiChan.mrd_hsba_hcid + "; ";
                                 break;
                             }
                         case 3://Hoi chan chuyen vien
                             {
-                                sql_saveHoichan = "UPDATE mrd_hsba_hccvien SET yeucauhoichan='" + HsbaHoiChanSave.yeucauhoichan + "', diadiemhoichan='" + HsbaHoiChanSave.diadiemhoichan + "', dbb_tomtattiensubenh='" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', dbb_tinhtranglucvaovien='" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', dbb_chandoantuyenduoi='" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', dbb_tomtatdienbienbenh='" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', yk_chandoantienluong='" + HsbaHoiChanSave.yk_chandoantienluong + "', yk_phuongphapdieutri='" + HsbaHoiChanSave.yk_phuongphapdieutri + "', yk_chamsoc='" + HsbaHoiChanSave.yk_chamsoc + "', kl_ketluan='" + HsbaHoiChanSave.kl_ketluan + "', tvtg_chutoa_ten='" + HsbaHoiChanSave.tvtg_chutoa_ten + "', tvtg_chutoa_cdcv='" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', tvtg_thuky_ten='" + HsbaHoiChanSave.tvtg_thuky_ten + "', tvtg_thuky_cdcv='" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', tvtg_thanhvien1_ten='" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', tvtg_thanhvien1_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', tvtg_thanhvien2_ten='" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', tvtg_thanhvien2_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', tvtg_thanhvien3_ten='" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', tvtg_thanhvien3_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', tvtg_thanhvien4_ten='" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', tvtg_thanhvien4_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', tvtg_thanhvien5_ten='" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', tvtg_thanhvien5_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', tvtg_thanhvien6_ten='" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', tvtg_thanhvien6_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', modify_mrduserid='" + Base.SessionLogin.SessionUserID + "', modify_mrdusercode='" + Base.SessionLogin.SessionUsercode + "', modify_date='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE mrd_hsba_hccvienid=" + this.currentHsbaHoiChan.mrd_hsba_hcid + "; ";
+                                sql_saveHoichan = "UPDATE mrd_hsba_hccvien SET yeucauhoichanid='" + HsbaHoiChanSave.yeucauhoichanid + "', yeucauhoichanname='" + HsbaHoiChanSave.yeucauhoichanname + "', diadiemhoichan='" + HsbaHoiChanSave.diadiemhoichan + "', dbb_tomtattiensubenh='" + HsbaHoiChanSave.dbb_tomtattiensubenh + "', dbb_tinhtranglucvaovien='" + HsbaHoiChanSave.dbb_tinhtranglucvaovien + "', dbb_chandoantuyenduoi='" + HsbaHoiChanSave.dbb_chandoantuyenduoi + "', dbb_tomtatdienbienbenh='" + HsbaHoiChanSave.dbb_tomtatdienbienbenh + "', yk_chandoantienluong='" + HsbaHoiChanSave.yk_chandoantienluong + "', yk_phuongphapdieutri='" + HsbaHoiChanSave.yk_phuongphapdieutri + "', yk_chamsoc='" + HsbaHoiChanSave.yk_chamsoc + "', kl_ketluan='" + HsbaHoiChanSave.kl_ketluan + "', tvtg_chutoa_code='" + HsbaHoiChanSave.tvtg_chutoa_code + "', tvtg_chutoa_ten='" + HsbaHoiChanSave.tvtg_chutoa_ten + "', tvtg_chutoa_cdcv='" + HsbaHoiChanSave.tvtg_chutoa_cdcv + "', tvtg_thuky_code='" + HsbaHoiChanSave.tvtg_thuky_code + "', tvtg_thuky_ten='" + HsbaHoiChanSave.tvtg_thuky_ten + "', tvtg_thuky_cdcv='" + HsbaHoiChanSave.tvtg_thuky_cdcv + "', tvtg_thanhvien1_code='" + HsbaHoiChanSave.tvtg_thanhvien1_code + "', tvtg_thanhvien1_ten='" + HsbaHoiChanSave.tvtg_thanhvien1_ten + "', tvtg_thanhvien1_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "', tvtg_thanhvien2_code='" + HsbaHoiChanSave.tvtg_thanhvien2_code + "', tvtg_thanhvien2_ten='" + HsbaHoiChanSave.tvtg_thanhvien2_ten + "', tvtg_thanhvien2_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "', tvtg_thanhvien3_code='" + HsbaHoiChanSave.tvtg_thanhvien3_code + "', tvtg_thanhvien3_ten='" + HsbaHoiChanSave.tvtg_thanhvien3_ten + "', tvtg_thanhvien3_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "', tvtg_thanhvien4_code='" + HsbaHoiChanSave.tvtg_thanhvien4_code + "', tvtg_thanhvien4_ten='" + HsbaHoiChanSave.tvtg_thanhvien4_ten + "', tvtg_thanhvien4_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "', tvtg_thanhvien5_code='" + HsbaHoiChanSave.tvtg_thanhvien5_code + "', tvtg_thanhvien5_ten='" + HsbaHoiChanSave.tvtg_thanhvien5_ten + "', tvtg_thanhvien5_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "', tvtg_thanhvien6_code='" + HsbaHoiChanSave.tvtg_thanhvien6_code + "', tvtg_thanhvien6_ten='" + HsbaHoiChanSave.tvtg_thanhvien6_ten + "', tvtg_thanhvien6_cdcv='" + HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "', modify_mrduserid='" + Base.SessionLogin.SessionUserID + "', modify_mrdusercode='" + Base.SessionLogin.SessionUsercode + "', modify_date='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE mrd_hsba_hccvienid=" + this.currentHsbaHoiChan.mrd_hsba_hcid + "; ";
                                 break;
                             }
                         default:
@@ -496,7 +527,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     hoichan_fulltime2 = this.HsbaHoiChanSave.thoigianhoichan.Hour + " giờ " + this.HsbaHoiChanSave.thoigianhoichan.Minute + " phút, ngày " + this.HsbaHoiChanSave.thoigianhoichan.Day + "/" + this.HsbaHoiChanSave.thoigianhoichan.Month + "/" + this.HsbaHoiChanSave.thoigianhoichan.Year;
                 }
 
-                string thongtinbn = "select hsba.sovaovien as sovaovien, hsba.patientname as patientname, cast((cast(to_char(hsba.hosobenhandate, 'yyyy') as integer) - cast(to_char(hsba.birthday, 'yyyy') as integer)) as text) as tuoi, hsba.gioitinhname as gioitinh, (select to_char(thoigianvaovien, 'dd/mm/yyyy') from medicalrecord where loaibenhanid=1 and hosobenhanid=hsba.hosobenhanid order by medicalrecordid limit 1) as tg_vaovien_fulltime2, (select (case when thoigianravien <> '0001-01-01 00:00:00' then to_char(thoigianravien, 'dd/mm/yyyy') end) from medicalrecord where loaibenhanid=1 and hosobenhanid=hsba.hosobenhanid order by medicalrecordid limit 1) as tg_ravien_fulltime1, '" + this.currentMedicalrecord.giuong + "' as giuong, '" + this.currentMedicalrecord.departmentname + "' as buong, '" + this.currentMedicalrecord.departmentgroupname + "' as khoa, '" + this.currentMedicalrecord.chandoanbandau + "' as chandoan, '" + hoichan_fulltime2 + "' as hoichan_fulltime2, '" + this.HsbaHoiChanSave.tvtg_chutoa_ten + "' as tvtg_chutoa_ten, '" + this.HsbaHoiChanSave.tvtg_chutoa_cdcv + "' as tvtg_chutoa_cdcv, '" + this.HsbaHoiChanSave.tvtg_thuky_ten + "' as tvtg_thuky_ten, '" + this.HsbaHoiChanSave.tvtg_thuky_cdcv + "' as tvtg_thuky_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_ten + "' as tvtg_thanhvien1_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "' as tvtg_thanhvien1_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_ten + "' as tvtg_thanhvien2_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "' as tvtg_thanhvien2_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_ten + "' as tvtg_thanhvien3_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "' as tvtg_thanhvien3_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_ten + "' as tvtg_thanhvien4_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "' as tvtg_thanhvien4_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_ten + "' as tvtg_thanhvien5_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "' as tvtg_thanhvien5_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_ten + "' as tvtg_thanhvien6_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "' as tvtg_thanhvien6_cdcv, '" + this.HsbaHoiChanSave.dbb_tomtatdienbienbenh + "' as dbb_tomtatdienbienbenh, '" + this.HsbaHoiChanSave.kl_ketluan + "' as kl_ketluan, '" + this.HsbaHoiChanSave.yk_phuongphapdieutri + "' as yk_phuongphapdieutri from hosobenhan hsba where hsba.hosobenhanid=" + this.HsbaHoiChanSave.hosobenhanid + "; ";
+                string thongtinbn = "select '" + this.currentHsbaHoiChan.servicepricename.ToString() + "' as servicepricename, hsba.sovaovien as sovaovien, hsba.patientname as patientname, cast((cast(to_char(hsba.hosobenhandate, 'yyyy') as integer) - cast(to_char(hsba.birthday, 'yyyy') as integer)) as text) as tuoi, hsba.gioitinhname as gioitinh, (select to_char(thoigianvaovien, 'dd/mm/yyyy') from medicalrecord where loaibenhanid=1 and hosobenhanid=hsba.hosobenhanid order by medicalrecordid limit 1) as tg_vaovien_fulltime2, (select (case when thoigianravien <> '0001-01-01 00:00:00' then to_char(thoigianravien, 'dd/mm/yyyy') end) from medicalrecord where loaibenhanid=1 and hosobenhanid=hsba.hosobenhanid order by medicalrecordid limit 1) as tg_ravien_fulltime1, '" + this.currentMedicalrecord.giuong + "' as giuong, '" + this.currentMedicalrecord.departmentname + "' as buong, '" + this.currentMedicalrecord.departmentgroupname + "' as khoa, '" + this.currentMedicalrecord.chandoanbandau + "' as chandoan, '" + hoichan_fulltime2 + "' as hoichan_fulltime2, '" + this.HsbaHoiChanSave.tvtg_chutoa_ten + "' as tvtg_chutoa_ten, '" + this.HsbaHoiChanSave.tvtg_chutoa_cdcv + "' as tvtg_chutoa_cdcv, '" + this.HsbaHoiChanSave.tvtg_thuky_ten + "' as tvtg_thuky_ten, '" + this.HsbaHoiChanSave.tvtg_thuky_cdcv + "' as tvtg_thuky_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_ten + "' as tvtg_thanhvien1_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "' as tvtg_thanhvien1_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_ten + "' as tvtg_thanhvien2_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "' as tvtg_thanhvien2_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_ten + "' as tvtg_thanhvien3_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "' as tvtg_thanhvien3_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_ten + "' as tvtg_thanhvien4_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "' as tvtg_thanhvien4_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_ten + "' as tvtg_thanhvien5_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "' as tvtg_thanhvien5_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_ten + "' as tvtg_thanhvien6_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "' as tvtg_thanhvien6_cdcv, '" + this.HsbaHoiChanSave.dbb_tomtatdienbienbenh + "' as dbb_tomtatdienbienbenh, '" + this.HsbaHoiChanSave.kl_ketluan + "' as kl_ketluan, '" + this.HsbaHoiChanSave.yk_phuongphapdieutri + "' as yk_phuongphapdieutri from hosobenhan hsba where hsba.hosobenhanid=" + this.HsbaHoiChanSave.hosobenhanid + "; ";
 
                 DataTable dataTTBenhNhan = condb.GetDataTable_HIS(thongtinbn);
                 Aspose.Words.Document documentWord = new Aspose.Words.Document();
@@ -542,7 +573,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
                     hoichan_fulltime1 = "ngày " + this.HsbaHoiChanSave.thoigianhoichan.Day + " tháng " + this.HsbaHoiChanSave.thoigianhoichan.Month + " năm " + this.HsbaHoiChanSave.thoigianhoichan.Year + "; lúc " + this.HsbaHoiChanSave.thoigianhoichan.Hour + " giờ " + this.HsbaHoiChanSave.thoigianhoichan.Minute + " phút";
                 }
 
-                string thongtinbn = "select '" + hoichan_fulltime1 + "' as hoichan_fulltime1, '" + this.HsbaHoiChanSave.tvtg_chutoa_ten + "' as tvtg_chutoa_ten, '" + this.HsbaHoiChanSave.tvtg_chutoa_cdcv + "' as tvtg_chutoa_cdcv, '" + this.HsbaHoiChanSave.tvtg_thuky_ten + "' as tvtg_thuky_ten, '" + this.HsbaHoiChanSave.tvtg_thuky_cdcv + "' as tvtg_thuky_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_ten + "' as tvtg_thanhvien1_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "' as tvtg_thanhvien1_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_ten + "' as tvtg_thanhvien2_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "' as tvtg_thanhvien2_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_ten + "' as tvtg_thanhvien3_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "' as tvtg_thanhvien3_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_ten + "' as tvtg_thanhvien4_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "' as tvtg_thanhvien4_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_ten + "' as tvtg_thanhvien5_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "' as tvtg_thanhvien5_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_ten + "' as tvtg_thanhvien6_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "' as tvtg_thanhvien6_cdcv, '" + this.HsbaHoiChanSave.diadiemhoichan + "' as diadiemhoichan, hsba.patientname as patientname, cast((cast(to_char(hsba.hosobenhandate, 'yyyy') as integer) - cast(to_char(hsba.birthday, 'yyyy') as integer)) as text) as tuoi, hsba.gioitinhname as gioitinh, hsba.hc_dantocname as dantoc, hsba.hc_quocgianame as ngoaikieu, '' as sohochieu, '' as ngay_noicap, hsba.nghenghiepname as nghenghiep, hsba.noilamviec as noilamviec, ((case when hsba.hc_sonha<>'' then hsba.hc_sonha || ', ' else '' end) || (case when hsba.hc_thon<>'' then hsba.hc_thon || ' - ' else '' end) || (case when hsba.hc_xacode<>'00' then hsba.hc_xaname || ' - ' else '' end) || (case when hsba.hc_huyencode<>'00' then hsba.hc_huyenname || ' - ' else '' end) || (case when hsba.hc_tinhcode<>'00' then hsba.hc_tinhname || ' - ' else '' end) || hc_quocgianame) as diachi, hsba.sovaovien as sovaovien, substr(hsba.bhytcode,1,2) as bhyt_1, substr(hsba.bhytcode,3,1) as bhyt_2, substr(hsba.bhytcode,4,2) as bhyt_3, substr(hsba.bhytcode,6,2) as bhyt_4, substr(hsba.bhytcode,8,8) as bhyt_5, (select to_char(thoigianvaovien, 'hh g\"i\"ờ mi phút, ngà\"y\" dd tháng mm năm yyyy') from medicalrecord where loaibenhanid=1 and hosobenhanid=hsba.hosobenhanid order by medicalrecordid limit 1) as tg_vaovien_fulltime1, '" + this.currentMedicalrecord.departmentgroupname + "' as khoa, '" + this.HsbaHoiChanSave.yeucauhoichan + "' as yeucauhoichan, '" + this.HsbaHoiChanSave.dbb_tomtattiensubenh + "' as dbb_tomtattiensubenh, '" + this.HsbaHoiChanSave.dbb_tinhtranglucvaovien + "' as dbb_tinhtranglucvaovien, '" + this.HsbaHoiChanSave.dbb_chandoantuyenduoi + "' as dbb_chandoantuyenduoi, '" + this.HsbaHoiChanSave.dbb_tomtatdienbienbenh + "' as dbb_tomtatdienbienbenh, '" + this.HsbaHoiChanSave.yk_chandoantienluong + "' as yk_chandoantienluong, '" + this.HsbaHoiChanSave.yk_phuongphapdieutri + "' as yk_phuongphapdieutri, '" + this.HsbaHoiChanSave.yk_chamsoc + "' as yk_chamsoc, '" + this.HsbaHoiChanSave.kl_ketluan + "' as kl_ketluan from hosobenhan hsba where hsba.hosobenhanid=" + this.HsbaHoiChanSave.hosobenhanid + ";";
+                string thongtinbn = "select '" + hoichan_fulltime1 + "' as hoichan_fulltime1, '" + this.HsbaHoiChanSave.tvtg_chutoa_ten + "' as tvtg_chutoa_ten, '" + this.HsbaHoiChanSave.tvtg_chutoa_cdcv + "' as tvtg_chutoa_cdcv, '" + this.HsbaHoiChanSave.tvtg_thuky_ten + "' as tvtg_thuky_ten, '" + this.HsbaHoiChanSave.tvtg_thuky_cdcv + "' as tvtg_thuky_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_ten + "' as tvtg_thanhvien1_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien1_cdcv + "' as tvtg_thanhvien1_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_ten + "' as tvtg_thanhvien2_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien2_cdcv + "' as tvtg_thanhvien2_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_ten + "' as tvtg_thanhvien3_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien3_cdcv + "' as tvtg_thanhvien3_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_ten + "' as tvtg_thanhvien4_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien4_cdcv + "' as tvtg_thanhvien4_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_ten + "' as tvtg_thanhvien5_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien5_cdcv + "' as tvtg_thanhvien5_cdcv, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_ten + "' as tvtg_thanhvien6_ten, '" + this.HsbaHoiChanSave.tvtg_thanhvien6_cdcv + "' as tvtg_thanhvien6_cdcv, '" + this.HsbaHoiChanSave.diadiemhoichan + "' as diadiemhoichan, hsba.patientname as patientname, cast((cast(to_char(hsba.hosobenhandate, 'yyyy') as integer) - cast(to_char(hsba.birthday, 'yyyy') as integer)) as text) as tuoi, hsba.gioitinhname as gioitinh, hsba.hc_dantocname as dantoc, hsba.hc_quocgianame as ngoaikieu, '' as sohochieu, '' as ngay_noicap, hsba.nghenghiepname as nghenghiep, hsba.noilamviec as noilamviec, ((case when hsba.hc_sonha<>'' then hsba.hc_sonha || ', ' else '' end) || (case when hsba.hc_thon<>'' then hsba.hc_thon || ' - ' else '' end) || (case when hsba.hc_xacode<>'00' then hsba.hc_xaname || ' - ' else '' end) || (case when hsba.hc_huyencode<>'00' then hsba.hc_huyenname || ' - ' else '' end) || (case when hsba.hc_tinhcode<>'00' then hsba.hc_tinhname || ' - ' else '' end) || hc_quocgianame) as diachi, hsba.sovaovien as sovaovien, substr(hsba.bhytcode,1,2) as bhyt_1, substr(hsba.bhytcode,3,1) as bhyt_2, substr(hsba.bhytcode,4,2) as bhyt_3, substr(hsba.bhytcode,6,2) as bhyt_4, substr(hsba.bhytcode,8,8) as bhyt_5, (select to_char(thoigianvaovien, 'hh g\"i\"ờ mi phút, ngà\"y\" dd tháng mm năm yyyy') from medicalrecord where loaibenhanid=1 and hosobenhanid=hsba.hosobenhanid order by medicalrecordid limit 1) as tg_vaovien_fulltime1, '" + this.currentMedicalrecord.departmentgroupname + "' as khoa, '" + this.HsbaHoiChanSave.yeucauhoichanname + "' as yeucauhoichanname, '" + this.HsbaHoiChanSave.dbb_tomtattiensubenh + "' as dbb_tomtattiensubenh, '" + this.HsbaHoiChanSave.dbb_tinhtranglucvaovien + "' as dbb_tinhtranglucvaovien, '" + this.HsbaHoiChanSave.dbb_chandoantuyenduoi + "' as dbb_chandoantuyenduoi, '" + this.HsbaHoiChanSave.dbb_tomtatdienbienbenh + "' as dbb_tomtatdienbienbenh, '" + this.HsbaHoiChanSave.yk_chandoantienluong + "' as yk_chandoantienluong, '" + this.HsbaHoiChanSave.yk_phuongphapdieutri + "' as yk_phuongphapdieutri, '" + this.HsbaHoiChanSave.yk_chamsoc + "' as yk_chamsoc, '" + this.HsbaHoiChanSave.kl_ketluan + "' as kl_ketluan from hosobenhan hsba where hsba.hosobenhanid=" + this.HsbaHoiChanSave.hosobenhanid + ";";
 
                 DataTable dataTTBenhNhan = condb.GetDataTable_HIS(thongtinbn);
                 Aspose.Words.Document documentWord = new Aspose.Words.Document();
