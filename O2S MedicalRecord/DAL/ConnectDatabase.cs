@@ -26,7 +26,7 @@ namespace O2S_MedicalRecord.DAL
 
         #endregion
         #region Database HIS
-        public void connect()
+        public void Connect()
         {
             try
             {
@@ -43,7 +43,7 @@ namespace O2S_MedicalRecord.DAL
                 Logging.Error("Loi ket noi den CSDL: " + ex.ToString());
             }
         }
-        public void disconnect()
+        public void Disconnect()
         {
             try
             {
@@ -61,7 +61,7 @@ namespace O2S_MedicalRecord.DAL
         }
         public DataTable GetDataTable_HIS(string sql)
         {
-            connect();
+            Connect();
             NpgsqlDataAdapter da = new NpgsqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
             try
@@ -69,7 +69,7 @@ namespace O2S_MedicalRecord.DAL
                 if (kiemtraketnoi == true)
                 {
                     da.Fill(dt);
-                    disconnect();
+                    Disconnect();
                 }
             }
             catch (Exception ex)
@@ -84,12 +84,12 @@ namespace O2S_MedicalRecord.DAL
             bool result = false;
             try
             {
-                connect();
+                Connect();
                 if (kiemtraketnoi == true)
                 {
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-                    disconnect();
+                    Disconnect();
                     result = true;
                 }
             }
@@ -105,12 +105,12 @@ namespace O2S_MedicalRecord.DAL
             bool result = false;
             try
             {
-                connect();
+                Connect();
                 if (kiemtraketnoi == true)
                 {
                     NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
-                    disconnect();
+                    Disconnect();
                     result = true;
                 }
             }
@@ -124,11 +124,11 @@ namespace O2S_MedicalRecord.DAL
         {
             try
             {
-                connect();
+                Connect();
                 NpgsqlCommand com = new NpgsqlCommand(sql, conn);
                 NpgsqlDataReader dr = com.ExecuteReader();
                 //dr.Read();
-                disconnect();
+                Disconnect();
                 return dr;
             }
             catch (Exception ex)
