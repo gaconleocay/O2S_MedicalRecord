@@ -21,6 +21,7 @@ namespace O2S_MedicalRecordUpdate
         internal static string ReportTemps_Path = "\\Templates\\ReportTemps";
         internal static string Templates_Path = "\\Templates";
         internal static string PhieuMauBenhAn_Path = "\\Templates\\MauBenhAn";
+        internal static string Key_UpdatePhanMem = "123$";
 
 
 

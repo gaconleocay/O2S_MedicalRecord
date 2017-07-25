@@ -19,7 +19,7 @@ namespace O2S_MedicalRecordLauncher
         private const string TEMP_DIR = "O2S MedicalRecordUpdate_File";
         // private const string UPDATE_FILE_NAME = "MedicalLinkUpdate.zip";
         private static ConnectDatabase condb = new ConnectDatabase();
-        private static string versionDatabase = "";
+        //private static string versionDatabase = "";
         private static string tempDirectory = "";
 
         /// <summary>
@@ -34,17 +34,16 @@ namespace O2S_MedicalRecordLauncher
                 Application.SetCompatibleTextRenderingDefault(false);
                 if (CheckVersionUpdate()) //update
                 {
-                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật lên phiên bản mới? \n Hãy tắt phần mềm đang chạy trước khi cập nhật.", "Thông báo có phiên bản mới.", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                    DialogResult dialogResult = MessageBox.Show("Bạn có muốn cập nhật lên phiên bản mới? \nHãy tắt phần mềm đang chạy trước khi cập nhật.", "Thông báo có phiên bản mới.", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        try
-                        {
-                            CopyFolder(tempDirectory, Environment.CurrentDirectory);
-                        }
-                        catch (Exception ex)
-                        {
-                        }
+                        KillProcess_MedicalLink();
+                        CopyFolder_CheckSum(tempDirectory, Environment.CurrentDirectory);
                     }
+                }
+                else //khong co ban cap nhat moi thi cung checksum file de tu dong cap nhat
+                {
+                    CopyFolder_CheckSum(tempDirectory, Environment.CurrentDirectory);
                 }
                 //sau khi copy đè tất cả các file xong, ta sẽ tiến hành gọi lại chương trình chính (O2S MedicalRecord.exe) để chạy lại chương trình
                 System.Diagnostics.Process.Start(@"O2S MedicalRecord.exe");
@@ -65,13 +64,16 @@ namespace O2S_MedicalRecordLauncher
                 DataView dataVer = new DataView(condb.GetDataTable_HSBA("SELECT appversion,app_link from mrd_version where app_type=0 LIMIT 1;"));
                 if (dataVer != null && dataVer.Count > 0)
                 {
-                    versionDatabase = dataVer[0]["appversion"].ToString();
+                    //versionDatabase = dataVer[0]["appversion"].ToString();
                     tempDirectory = dataVer[0]["app_link"].ToString();
                 }
                 //lấy thông tin version của phần mềm O2S MedicalRecord.exe
                 FileVersionInfo.GetVersionInfo(Path.Combine(Environment.CurrentDirectory, "O2S MedicalRecord.exe"));
                 FileVersionInfo myFileVersionInfo = FileVersionInfo.GetVersionInfo(Environment.CurrentDirectory + "\\O2S MedicalRecord.exe");
-                if (myFileVersionInfo.FileVersion.ToString() != versionDatabase)
+                //thong tin version tren server
+                FileVersionInfo.GetVersionInfo(Path.Combine(tempDirectory, "O2S MedicalRecord.exe"));
+                FileVersionInfo myFileVersionInfo_Server = FileVersionInfo.GetVersionInfo(tempDirectory + "\\O2S MedicalRecord.exe");
+                if (myFileVersionInfo.FileVersion.ToString() != myFileVersionInfo_Server.FileVersion.ToString())
                 {
                     result = true;
                 }
@@ -83,7 +85,22 @@ namespace O2S_MedicalRecordLauncher
             return result;
         }
 
-        private static void CopyFolder(string SourceFolder, string DestFolder)
+        private static void KillProcess_MedicalLink()
+        {
+            try
+            {
+                Process[] pProcess = System.Diagnostics.Process.GetProcessesByName("O2S MedicalRecord");
+                foreach (Process p in pProcess)
+                {
+                    p.Kill();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        private static void CopyFolder_CheckSum(string SourceFolder, string DestFolder)
         {
             Directory.CreateDirectory(DestFolder); //Tao folder moi
             string[] files = Directory.GetFiles(SourceFolder);
@@ -94,7 +111,12 @@ namespace O2S_MedicalRecordLauncher
                 {
                     string name = Path.GetFileName(file);
                     string dest = Path.Combine(DestFolder, name);
-                    File.Copy(file, dest, true);
+
+                    //Check file
+                    if (Util_FileCheckSum.GetMD5HashFromFile(file) != Util_FileCheckSum.GetMD5HashFromFile(dest))
+                    {
+                        File.Copy(file, dest, true);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -107,10 +129,9 @@ namespace O2S_MedicalRecordLauncher
             {
                 string name = Path.GetFileName(folder);
                 string dest = Path.Combine(DestFolder, name);
-                CopyFolder(folder, dest);
+                CopyFolder_CheckSum(folder, dest);
             }
         }
-
     }
 
 }

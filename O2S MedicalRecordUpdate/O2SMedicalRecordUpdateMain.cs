@@ -199,11 +199,11 @@ namespace O2S_MedicalRecordUpdate
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtKeyDangNhap.Text.Trim() == KeyTrongPhanMem.AdminPass_key)
+                if (txtKeyDangNhap.Text.Trim() == KeyTrongPhanMem.Key_UpdatePhanMem)
                 {
                     btnUpdateLink.Enabled = true;
                     btnUpdateMedicalLink.Enabled = true;
@@ -226,7 +226,7 @@ namespace O2S_MedicalRecordUpdate
         {
             if (e.KeyCode == Keys.Enter)
             {
-                button1_Click(null,null);
+                btnLogin_Click(null,null);
             }
         }
        

@@ -68,6 +68,7 @@
             this.label2.Size = new System.Drawing.Size(162, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Version MedicalRecord.exe";
+            this.label2.Visible = false;
             // 
             // txtFilePath
             // 
@@ -84,6 +85,7 @@
             this.txtVersionMecicalRecord.Name = "txtVersionMecicalRecord";
             this.txtVersionMecicalRecord.Size = new System.Drawing.Size(243, 26);
             this.txtVersionMecicalRecord.TabIndex = 3;
+            this.txtVersionMecicalRecord.Visible = false;
             // 
             // btnBrowse
             // 
@@ -140,6 +142,7 @@
             this.btnUpdateMedicalLink.TabIndex = 9;
             this.btnUpdateMedicalLink.Text = "Update";
             this.btnUpdateMedicalLink.UseVisualStyleBackColor = true;
+            this.btnUpdateMedicalLink.Visible = false;
             this.btnUpdateMedicalLink.Click += new System.EventHandler(this.btnUpdateMedicalLink_Click);
             // 
             // btnUpdateLauncher
@@ -153,6 +156,7 @@
             this.btnUpdateLauncher.TabIndex = 12;
             this.btnUpdateLauncher.Text = "Update";
             this.btnUpdateLauncher.UseVisualStyleBackColor = true;
+            this.btnUpdateLauncher.Visible = false;
             this.btnUpdateLauncher.Click += new System.EventHandler(this.btnUpdateLauncher_Click);
             // 
             // txtVersionLauncher
@@ -162,6 +166,7 @@
             this.txtVersionLauncher.Name = "txtVersionLauncher";
             this.txtVersionLauncher.Size = new System.Drawing.Size(243, 26);
             this.txtVersionLauncher.TabIndex = 11;
+            this.txtVersionLauncher.Visible = false;
             // 
             // label4
             // 
@@ -173,6 +178,7 @@
             this.label4.Size = new System.Drawing.Size(107, 16);
             this.label4.TabIndex = 10;
             this.label4.Text = "Version Launcher";
+            this.label4.Visible = false;
             // 
             // btnLogin
             // 
@@ -184,7 +190,7 @@
             this.btnLogin.TabIndex = 15;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtKeyDangNhap
             // 
