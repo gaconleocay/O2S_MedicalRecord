@@ -1,11 +1,10 @@
-﻿ ---   CREATE EXTENSION dblink;
+﻿ ---Chạy khởi tạo Add-on Dlink trước
+ CREATE EXTENSION dblink;
 
 --Connect
 SELECT dblink_connect('dbname=test_viettiep port=5432 host=localhost user=postgres password=1234');       
 SELECT dblink_connect('myconn', 'dbname=test_viettiep port=5432 host=localhost user=postgres password=1234');
 
-select dblink_connect_u('dbname=test_viettiep port=5432 host=localhost user=postgres password=1234');
-select dblink_connect_u('myconn', 'dbname=test_viettiep port=5432 host=localhost user=postgres password=1234');
 
 --Disconnect
 SELECT dblink_disconnect();
