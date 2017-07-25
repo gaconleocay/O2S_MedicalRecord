@@ -54,8 +54,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblTenCSYT = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.xtraTabCaiDat = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControlCaiDat = new DevExpress.XtraEditors.SplitContainerControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
@@ -79,6 +77,7 @@
             this.navBarItemTaoTemplateWord = new DevExpress.XtraNavBar.NavBarItem();
             this.panelCaiDatChiTiet = new DevExpress.XtraEditors.PanelControl();
             this.timerThongBao = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlHome)).BeginInit();
             this.xtraTabControlHome.SuspendLayout();
             this.xtraTabTTCoBan.SuspendLayout();
@@ -384,33 +383,11 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 482);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(340, 100);
             this.panel3.TabIndex = 58;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(49, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Copiright 2016, Hồng Minh Nhất";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(37, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(219, 32);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "E-mail: hongminhnhat15@gmail.com\r\nPhone: 0868-915-456\r\n\r\n\r\n\r\n";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // xtraTabCaiDat
             // 
@@ -769,6 +746,17 @@
             this.timerThongBao.Interval = 2000;
             this.timerThongBao.Tick += new System.EventHandler(this.timerThongBao_Tick);
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label2.Location = new System.Drawing.Point(5, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(331, 26);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Copiright 2016, OneOne solution co.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ucTrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -816,8 +804,6 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.PictureEdit pictureLogo;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblGiamDocBV;
         private System.Windows.Forms.Label label4;
@@ -849,5 +835,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemDMHoiChanChuyenVien;
         private DevExpress.XtraNavBar.NavBarItem navBarItemDMDungChung;
         private DevExpress.XtraNavBar.NavBarItem navBarItemTaoTemplateWord;
+        private System.Windows.Forms.Label label2;
     }
 }

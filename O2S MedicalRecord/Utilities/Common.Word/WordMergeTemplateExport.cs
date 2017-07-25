@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace O2S_MedicalRecord.Utilities.Common.Word
 {
@@ -65,13 +66,36 @@ namespace O2S_MedicalRecord.Utilities.Common.Word
                 doc = docccc.Clone();
                 doc.MailMerge.Execute(dt);
                 doc.Save(strRoot + "\\Templates\\ReportTemps\\" + filetempname, format);
-                doc.Print();
+                //doc.Print();
             }
             catch (Exception ex)
             {
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
             return doc;
+        }
+
+        public static MemoryStream ExportWordMailMerge_ToStream(string fileFullPath, DataTable dt)
+        {
+            MemoryStream result = new MemoryStream();
+            try
+            {
+                Aspose.Words.Document doc = new Document();
+                string strRoot = Environment.CurrentDirectory;
+                // Aspose.Words.License l = new Aspose.Words.License();
+                //string strLicense = strRoot + "\\Library\\Aspose.Words.lic";
+                // l.SetLicense(strLicense);
+                Aspose.Words.Document docccc = new Aspose.Words.Document(fileFullPath);
+                doc = docccc.Clone();
+                doc.MailMerge.Execute(dt);
+                doc.Save(result, SaveFormat.Docx);
+               // doc.Save(strRoot + "\\Templates\\ReportTemps\\" + filetempname, SaveFormat.Docx);
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
+            return result;
         }
 
     }

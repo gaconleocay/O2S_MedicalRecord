@@ -66,7 +66,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
             try
             {
                 loaiDanhMuc = new DataView();
-                string sqlgetdanhsach = "select ROW_NUMBER() OVER (ORDER BY mrd_othertypelistname) as stt, mrd_othertypelistid, mrd_othertypelistcode, mrd_othertypelistname, mrd_othertypeliststatus from mrd_othertypelist; ";
+                string sqlgetdanhsach = "select ROW_NUMBER() OVER (ORDER BY mrd_othertypelistid) as stt, mrd_othertypelistid, mrd_othertypelistcode, mrd_othertypelistname, mrd_othertypeliststatus from mrd_othertypelist; ";
                 DataView dataDanhSach = new DataView(condb.GetDataTable_HSBA(sqlgetdanhsach));
                 gridControlLoaiDM.DataSource = dataDanhSach;
                 cboDM_LoaiDMTen.Properties.DataSource = dataDanhSach;

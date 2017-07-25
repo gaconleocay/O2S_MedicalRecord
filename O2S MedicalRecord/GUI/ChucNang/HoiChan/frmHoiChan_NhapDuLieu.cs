@@ -299,7 +299,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang.HoiChan
         {
             try
             {
-                string layDSNhanVienBenhVien = "SELECT usercode, username FROM tools_tblnhanvien WHERE username<>'' GROUP BY usercode, username ORDER BY username";
+                string layDSNhanVienBenhVien = "SELECT usercode, username FROM nhompersonnel WHERE username<>'' GROUP BY usercode, username ORDER BY username";
                 DataTable dataDSNVBenhVien = condb.GetDataTable_HIS(layDSNhanVienBenhVien);
                 if (dataDSNVBenhVien != null && dataDSNVBenhVien.Rows.Count > 0)
                 {

@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("O2S MedicalRecord")]
 [assembly: AssemblyDescription("Phần mềm quản lý Hồ sơ bệnh án điện tử")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("One One Sulution company")]
+[assembly: AssemblyCompany("OneOne solution co.")]
 [assembly: AssemblyProduct("O2S_MedicalRecord")]
-[assembly: AssemblyCopyright("Copyright © 2017 Medical Sulution One One Co.")]
+[assembly: AssemblyCopyright("Copyright © 2017 OneOne solution co.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
@@ -33,5 +33,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.3.7")]
-[assembly: AssemblyFileVersion("1.0.3.7")]
+[assembly: AssemblyVersion("1.0.3.10")]
+[assembly: AssemblyFileVersion("1.0.3.10")]

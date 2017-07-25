@@ -1892,6 +1892,10 @@
             // 
             // gridViewHoiChanDSHC
             // 
+            this.gridViewHoiChanDSHC.Appearance.GroupFooter.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewHoiChanDSHC.Appearance.GroupFooter.Options.UseFont = true;
+            this.gridViewHoiChanDSHC.Appearance.GroupRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewHoiChanDSHC.Appearance.GroupRow.Options.UseFont = true;
             this.gridViewHoiChanDSHC.ColumnPanelRowHeight = 25;
             this.gridViewHoiChanDSHC.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridHoiChanColumn_Sua,
@@ -1913,6 +1917,7 @@
             this.gridColumn78});
             this.gridViewHoiChanDSHC.GridControl = this.gridControlHoiChanDSHC;
             this.gridViewHoiChanDSHC.GroupCount = 1;
+            this.gridViewHoiChanDSHC.GroupRowHeight = 25;
             this.gridViewHoiChanDSHC.Name = "gridViewHoiChanDSHC";
             this.gridViewHoiChanDSHC.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridViewHoiChanDSHC.OptionsView.ColumnAutoWidth = false;

@@ -14,6 +14,7 @@ using System.Diagnostics;
 using O2S_MedicalRecord.Base;
 using System.IO;
 using O2S_MedicalRecord.DTO;
+using O2S_MedicalRecord.Utilities;
 
 namespace O2S_MedicalRecord.GUI.FormCommon
 {
@@ -38,7 +39,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 KiemTraInsertMayTram();
                 LoadDataFromDatabase();
                 LoadDefaultValue();
-                //  KiemTraVaCopyFileLaucherNew(); chua co Lanucher
+                KiemTraVaCopyFileLaucherNew();
             }
             catch (Exception ex)
             {
@@ -126,27 +127,17 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
+
+        #region Kiem tra va copy Lanucher
         private void KiemTraVaCopyFileLaucherNew()
         {
             try
             {
-                string versionDatabase = "";
-                DataView dataVer = new DataView(condb.GetDataTable_HSBA("SELECT appversion from mrd_version where app_type=1 LIMIT 1;"));
-                if (dataVer != null && dataVer.Count > 0)
+                DataView dataurlfile = new DataView(condb.GetDataTable_HSBA("select app_link from mrd_version where app_type=1 limit 1;"));
+                if (dataurlfile != null && dataurlfile.Count > 0)
                 {
-                    versionDatabase = dataVer[0]["appversion"].ToString();
-                }
-                //lấy thông tin version của phần mềm MSO2 MedicalRecord Launcher.exe
-                FileVersionInfo.GetVersionInfo(Path.Combine(Environment.CurrentDirectory, "MSO2 MedicalRecord Launcher.exe"));
-                FileVersionInfo myFileVersionInfo = FileVersionInfo.GetVersionInfo(Environment.CurrentDirectory + "\\MSO2 MedicalRecord Launcher.exe");
-                if (myFileVersionInfo.FileVersion.ToString() != versionDatabase)
-                {
-                    DataView dataurlfile = new DataView(condb.GetDataTable_HSBA("select app_link from mrd_version where app_type=1 limit 1;"));
-                    if (dataurlfile != null && dataurlfile.Count > 0)
-                    {
-                        string tempDirectory = dataurlfile[0]["app_link"].ToString();
-                        CopyFolder(tempDirectory, Environment.CurrentDirectory);
-                    }
+                    string tempDirectory = dataurlfile[0]["app_link"].ToString();
+                    CopyFolder_CheckSum(tempDirectory, Environment.CurrentDirectory);
                 }
             }
             catch (Exception ex)
@@ -154,33 +145,42 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 Base.Logging.Error(ex);
             }
         }
-        private static void CopyFolder(string SourceFolder, string DestFolder)
+        private static void CopyFolder_CheckSum(string SourceFolder, string DestFolder)
         {
-            try
+            Directory.CreateDirectory(DestFolder); //Tao folder moi
+            string[] files = Directory.GetFiles(SourceFolder);
+            //Neu co file thi phai copy file
+            foreach (string file in files)
             {
-                Directory.CreateDirectory(DestFolder); //Tao folder moi
-                string[] files = Directory.GetFiles(SourceFolder);
-                //Neu co file thi phai copy file
-                foreach (string file in files)
+                try
                 {
-                    try
+                    string name = Path.GetFileName(file);
+                    string dest = Path.Combine(DestFolder, name);
+                    if (name.Contains("O2S MedicalRecordLauncher"))
                     {
-                        string name = Path.GetFileName(file);
-                        string dest = Path.Combine(DestFolder, name);
-                        File.Copy(file, dest, true);
-                    }
-                    catch (Exception ex)
-                    {
-                        continue;
+                        //Check file
+                        if (Util_FileCheckSum.GetMD5HashFromFile(file) != Util_FileCheckSum.GetMD5HashFromFile(dest))
+                        {
+                            File.Copy(file, dest, true);
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    continue;
+                    Base.Logging.Error("Lỗi copy file check_sum" + ex.ToString());
+                }
             }
-            catch (Exception ex)
+
+            string[] folders = Directory.GetDirectories(SourceFolder);
+            foreach (string folder in folders)
             {
-                Base.Logging.Error(ex);
+                string name = Path.GetFileName(folder);
+                string dest = Path.Combine(DestFolder, name);
+                CopyFolder_CheckSum(folder, dest);
             }
         }
-
+        #endregion
         private void LoadDefaultValue()
         {
             try
