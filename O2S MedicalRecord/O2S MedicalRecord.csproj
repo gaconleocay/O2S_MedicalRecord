@@ -554,6 +554,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="AppSettings.config" />
     <None Include="bin\Library\Aspose.Cells.lic" />
     <None Include="bin\Library\Aspose.Words.lic" />
     <None Include="packages.config" />

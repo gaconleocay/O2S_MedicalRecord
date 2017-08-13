@@ -216,7 +216,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     servicegrouptype_code = "G3";
                     servicegrouptype_name = "CÁC DỊCH VỤ CHUYÊN KHOA, KHÁC";
                     TreeListNode rootNode_0 = treeListDSDichVu.AppendNode(
-new object[] { "0", servicegrouptype_code, servicegrouptype_name, null, null, null, null,null,null },
+new object[] { "0", servicegrouptype_code, servicegrouptype_name, null, null, null, null,null,null,1 },
 parentForRootNodes, null);
                     CreateChildNodeServiceType(parentForRootNodes, servicegrouptype_code, lstmrd_serviceref_hienthi);
                     treeListDSDichVu.ExpandAll();
@@ -245,14 +245,15 @@ parentForRootNodes, null);
                         if (serviceTypeObj != null && serviceTypeObj.Count() > 0)
                         {
                             TreeListNode childNode = treeListDSDichVu.AppendNode(
-                    new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, null, null, null, null, null, null },
+                    new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, null, null, null, null, null, null,1 },
                     rootNode, null);
+
                             CreateChildNodeServiceType(childNode, serviceTypeId.servicepricecode, lstmrd_serviceref_hienthi);
                         }
                         else //là lá
                         {
                             TreeListNode childChildNode = treeListDSDichVu.AppendNode(
-                                new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, serviceTypeId.servicepriceunit, serviceTypeId.servicepricefeebhyt, serviceTypeId.servicepricefeenhandan, serviceTypeId.mrd_templatename, serviceTypeId.servicepricenamebhyt, serviceTypeId.servicepricenamenuocngoai },
+                                new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, serviceTypeId.servicepriceunit, serviceTypeId.servicepricefeebhyt, serviceTypeId.servicepricefeenhandan, serviceTypeId.mrd_templatename, serviceTypeId.servicepricenamebhyt, serviceTypeId.servicepricenamenuocngoai,0 },
                                 rootNode, serviceTypeId);
                         }
                     }
@@ -275,7 +276,7 @@ parentForRootNodes, null);
                     foreach (var serviceTypeId in lstmrd_serviceref_hienthi)
                     {
                         TreeListNode childChildNode = treeListDSDichVu.AppendNode(
-                                 new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, serviceTypeId.servicepriceunit, serviceTypeId.servicepricefeebhyt, serviceTypeId.servicepricefeenhandan, serviceTypeId.mrd_templatename, serviceTypeId.servicepricenamebhyt, serviceTypeId.servicepricenamenuocngoai },
+                                 new object[] { serviceTypeId.mrd_servicerefid, serviceTypeId.servicepricecode, serviceTypeId.servicepricename, serviceTypeId.servicepriceunit, serviceTypeId.servicepricefeebhyt, serviceTypeId.servicepricefeenhandan, serviceTypeId.mrd_templatename, serviceTypeId.servicepricenamebhyt, serviceTypeId.servicepricenamenuocngoai,0 },
                                  parentForRootNodes, serviceTypeId);
                     }
                 }
@@ -404,6 +405,13 @@ parentForRootNodes, null);
                 {
                     e.Appearance.BackColor = Color.LightGreen;
                     e.Appearance.ForeColor = Color.Black;
+                }
+
+                if (Convert.ToInt32(e.Node.GetValue(treeListColumn_isgroup)) ==1)
+                {
+                    //e.Appearance.BackColor = Color.FromArgb(80, 255, 0, 255);
+                    //e.Appearance.ForeColor = Color.White;
+                    e.Appearance.Font = new System.Drawing.Font(e.Appearance.Font, FontStyle.Bold);
                 }
             }
             catch (Exception ex)

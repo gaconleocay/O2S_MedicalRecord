@@ -420,7 +420,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                     CreateNewUserMedicinePhongLuu(en_txtUserID);
                     O2S_MedicalRecord.Utilities.ThongBao.frmThongBao frmthongbao = new O2S_MedicalRecord.Utilities.ThongBao.frmThongBao(O2S_MedicalRecord.Base.ThongBaoLable.THEM_MOI_THANH_CONG);
                     frmthongbao.Show();
-                    LoadDanhSachNguoiDung();
+                    //LoadDanhSachNguoiDung();
+                    ucQuanLyNguoiDung_Load(null, null);
                 }
                 else //Update 
                 {
@@ -798,6 +799,10 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
 
         void itemXoaNguoiDung_Click(object sender, EventArgs e)
         {
+            if (currentUserCode == null)
+            {
+                return;
+            }
             String datetime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn xóa tài khoản: " + currentUserCode + " không?", "Thông báo !!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (dialogResult == DialogResult.Yes)
