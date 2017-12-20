@@ -2341,7 +2341,7 @@
             this.cboHoiChan_ChonDVThuoc.Name = "cboHoiChan_ChonDVThuoc";
             this.cboHoiChan_ChonDVThuoc.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboHoiChan_ChonDVThuoc.Properties.Appearance.Options.UseFont = true;
-            this.cboHoiChan_ChonDVThuoc.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboHoiChan_ChonDVThuoc.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboHoiChan_ChonDVThuoc.Properties.AppearanceDropDown.Options.UseFont = true;
             this.cboHoiChan_ChonDVThuoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
