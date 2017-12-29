@@ -268,7 +268,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         }
         private void HoiChan_KiemTraTaoPhieuHoiChan_CV(MedicalrecordDTO rowMecicalrecord)
         {
-            SplashScreenManager.ShowForm(typeof(O2S_MedicalRecord.Utilities.ThongBao.WaitForm1));
             try
             {
                 string sqlHoiChan_CV = "select medicalrecordid, patientid, chuyenvienid, thoigianchuyenvien from chuyenvien where medicalrecordid=" + rowMecicalrecord.medicalrecordid + ";";
@@ -304,7 +303,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             {
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
-            SplashScreenManager.CloseForm();
         }
 
         #endregion
@@ -448,6 +446,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                     HoiChan.frmHoiChan_NhapDuLieu frmHoiChan = new HoiChan.frmHoiChan_NhapDuLieu(this.mrd_loaihc_id, this.SelectRowMedicalrecord, rowHsbaHoiChan);
                     frmHoiChan.ShowDialog();
                     ucDSHoSoBenhAn_HoiChan_Load(this.SelectRowMedicalrecord);
+                    cboHoiChan_ChonDVThuoc.EditValue = null;
                 }
             }
             catch (Exception ex)

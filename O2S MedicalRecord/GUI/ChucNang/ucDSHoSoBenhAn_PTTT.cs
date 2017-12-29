@@ -49,7 +49,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         }
         private void PTTT_LoadThongTinVePTTT(MedicalrecordDTO rowMecicalrecord)
         {
-            SplashScreenManager.ShowForm(typeof(O2S_MedicalRecord.Utilities.ThongBao.WaitForm1));
             try
             {
                 string sqlPhieuPTT = "select ROW_NUMBER () OVER (ORDER BY mbp.maubenhphamdate) as stt, mbp.maubenhphamid, mbp.sophieu, mbp.maubenhphamdate, mbp.maubenhphamdate_sudung, mbp.maubenhphamdate_thuchien, mbp.maubenhphamfinishdate, degp.departmentgroupname, de.departmentname, nv.username as nguoichidinh, mbp.maubenhphamdatastatus, mbp.chandoan from maubenhpham mbp inner join departmentgroup degp on degp.departmentgroupid=mbp.departmentgroupid left join department de on de.departmentid=mbp.departmentid left join nhompersonnel nv on nv.userhisid=mbp.userid inner join serviceprice ser on ser.maubenhphamid=mbp.maubenhphamid where mbp.hosobenhanid='" + rowMecicalrecord.hosobenhanid + "' and mbp.maubenhphamgrouptype=4 and mbp.isdeleted=0 and ser.bhyt_groupcode in ('06PTTT','07KTC') group by mbp.maubenhphamid, mbp.sophieu, mbp.maubenhphamdate, mbp.maubenhphamdate_sudung, mbp.maubenhphamdate_thuchien, mbp.maubenhphamfinishdate, degp.departmentgroupname, de.departmentname, nv.username, mbp.maubenhphamdatastatus; ";
@@ -59,7 +58,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             {
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
-            SplashScreenManager.CloseForm();
         }
 
         #endregion
@@ -112,15 +110,15 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         }
         #endregion
 
+        #region Events
         private void gridControlDSPhieuPTTT_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(O2S_MedicalRecord.Utilities.ThongBao.WaitForm1));
             try
             {
                 var rowHandle = gridViewDSPhieuPTTT.FocusedRowHandle;
                 long maubenhphamid = Utilities.Util_TypeConvertParse.ToInt64(gridViewDSPhieuPTTT.GetRowCellValue(rowHandle, "maubenhphamid").ToString());
 
-                if (maubenhphamid != null && maubenhphamid != 0)
+                if (maubenhphamid != 0)
                 {
                     string sqlgetdichvu = "select ROW_NUMBER () OVER (ORDER BY his_ser.servicepricename) as stt, his_ser.servicepriceid, his_ser.servicepricecode, his_ser.servicepricename, his_ser.soluong, his_ser.soluongbacsi, his_ser.departmentid, his_ser.departmentgroupid, his_ser.maubenhphamid, COALESCE(mps.mrd_pttt_serviceid,0) as mrd_pttt_serviceid, mps.mrd_pttttemid, COALESCE(mps.mrd_pttt_servicestatus,-1) as mrd_pttt_servicestatus from dblink('myconn','select servicepriceid, servicepricecode, servicepricename, soluong, soluongbacsi, departmentid, departmentgroupid, maubenhphamid FROM serviceprice where maubenhphamid=" + maubenhphamid + " and bhyt_groupcode in (''06PTTT'',''07KTC'')') AS his_ser(servicepriceid integer, servicepricecode text, servicepricename text, soluong double precision, soluongbacsi double precision, departmentid integer, departmentgroupid integer, maubenhphamid integer) left join mrd_pttt_service mps on mps.servicepriceid=his_ser.servicepriceid; ";
                     gridControlChiTietPhieuPTTT.DataSource = condb.GetDataTable_Dblink(sqlgetdichvu);
@@ -130,7 +128,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             {
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
-            SplashScreenManager.CloseForm();
         }
         private void gridControlChiTietPhieuPTTT_Click(object sender, EventArgs e)
         {
@@ -153,6 +150,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
+
+        #endregion
 
         #region Lay du lieu de mo form nhap ket qua
         private void btnNhapPhieuPTTT_Click(object sender, EventArgs e)
@@ -180,6 +179,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
 
         private void ClickSelectRow_ChiTietPTTT()
         {
+            SplashScreenManager.ShowForm(typeof(O2S_MedicalRecord.Utilities.ThongBao.WaitForm1));
             try
             {
                 int hienthiform = 0; //0=khong hien thi form
@@ -234,9 +234,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             {
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
+            SplashScreenManager.CloseForm();
         }
-        #endregion
-
         private void repositoryItemButtonEditView_Click(object sender, EventArgs e)
         {
             try
@@ -248,5 +247,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
         }
+
+        #endregion
+
     }
 }

@@ -64,7 +64,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         }
         private void BenhAn_LoadDanhSachLichSuBenhAn(MedicalrecordDTO rowMecicalrecord)
         {
-            SplashScreenManager.ShowForm(typeof(O2S_MedicalRecord.Utilities.ThongBao.WaitForm1));
             try
             {
                 string sqlLichSuBA = "Select ROW_NUMBER() OVER (ORDER BY mba.hosobenhanid desc) as stt, mba.mrd_hsba_hosobenhanid, mba.mrd_hsbatemid, mht.mrd_hsbatemname, mba.patientid, mba.hosobenhanid, mba.vienphiid, hosobenhan.hosobenhandate, (case when hosobenhan.hosobenhandate_ravien<>'0001-01-01 00:00:00' then hosobenhan.hosobenhandate_ravien end) as hosobenhandate_ravien, mba.create_date, mus.username as create_mrdusername from mrd_hsba_hosobenhan mba inner join dblink('myconn','select hosobenhanid, hosobenhandate, hosobenhandate_ravien from hosobenhan where patientid=" + rowMecicalrecord.patientid + "') as hosobenhan(hosobenhanid integer, hosobenhandate timestamp without time zone, hosobenhandate_ravien timestamp without time zone) on hosobenhan.hosobenhanid=mba.hosobenhanid left join mrd_tbluser mus on mus.userid=mba.create_mrduserid inner join mrd_hsba_template mht on mht.mrd_hsbatemid=mba.mrd_hsbatemid where mba.patientid=" + rowMecicalrecord.patientid + " ; ";
@@ -74,10 +73,10 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             {
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
-            SplashScreenManager.CloseForm();
         }
         private void BenhAn_LoadBenhAnCuaBenhNhan(MedicalrecordDTO rowMecicalrecord)
         {
+            SplashScreenManager.ShowForm(typeof(O2S_MedicalRecord.Utilities.ThongBao.WaitForm1));
             try
             {
                 this.highlight_tabBenhAn = false;
@@ -117,6 +116,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             {
                 O2S_MedicalRecord.Base.Logging.Warn(ex);
             }
+            SplashScreenManager.CloseForm();
         }
         #endregion
 

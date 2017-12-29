@@ -135,10 +135,11 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             SplashScreenManager.ShowForm(typeof(O2S_MedicalRecord.Utilities.ThongBao.WaitForm1));
             try
             {
-                if (cboKhoa.EditValue == null || cboPhong.EditValue == null)
+                if (cboKhoa.EditValue == null || cboPhong.Text == "")
                 {
                     frmThongBao frmthongbao = new frmThongBao(Base.ThongBaoLable.CHUA_CHON_KHOA_PHONG);
                     frmthongbao.Show();
+                    SplashScreenManager.CloseForm();
                 }
                 else
                 {
@@ -164,6 +165,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                     gridControlDSHSBA.DataSource = condb.GetDataTable_HIS(getdsbenhnhan);
                     if (gridViewDSHSBA.RowCount > 0)
                     {
+                        SplashScreenManager.CloseForm(false);
                         gridViewDSHSBA.FocusedRowHandle = 0;
                         gridControlDSHSBA_Click(null, null);
                     }
@@ -171,9 +173,10 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             }
             catch (Exception ex)
             {
+                SplashScreenManager.CloseForm(false);
                 Base.Logging.Warn(ex);
             }
-            SplashScreenManager.CloseForm();
+            //SplashScreenManager.CloseForm();
         }
         private void xtraTabTTHSBA_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {

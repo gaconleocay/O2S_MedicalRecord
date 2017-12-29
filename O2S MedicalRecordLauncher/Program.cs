@@ -64,7 +64,6 @@ namespace O2S_MedicalRecordLauncher
                 DataView dataVer = new DataView(condb.GetDataTable_HSBA("SELECT appversion,app_link from mrd_version where app_type=0 LIMIT 1;"));
                 if (dataVer != null && dataVer.Count > 0)
                 {
-                    //versionDatabase = dataVer[0]["appversion"].ToString();
                     tempDirectory = dataVer[0]["app_link"].ToString();
                 }
                 //lấy thông tin version của phần mềm O2S MedicalRecord.exe
@@ -73,6 +72,7 @@ namespace O2S_MedicalRecordLauncher
                 //thong tin version tren server
                 FileVersionInfo.GetVersionInfo(Path.Combine(tempDirectory, "O2S MedicalRecord.exe"));
                 FileVersionInfo myFileVersionInfo_Server = FileVersionInfo.GetVersionInfo(tempDirectory + "\\O2S MedicalRecord.exe");
+
                 if (myFileVersionInfo.FileVersion.ToString() != myFileVersionInfo_Server.FileVersion.ToString())
                 {
                     result = true;

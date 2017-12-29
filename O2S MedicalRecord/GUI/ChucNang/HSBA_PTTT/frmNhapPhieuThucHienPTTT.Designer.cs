@@ -35,6 +35,7 @@
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
             DevExpress.XtraRichEdit.Model.BorderInfo borderInfo1 = new DevExpress.XtraRichEdit.Model.BorderInfo();
             DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation1 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
@@ -341,6 +342,9 @@
             this.documentProtectionRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.DocumentProtectionRibbonPageGroup();
             this.documentProofingRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.DocumentProofingRibbonPageGroup();
             this.reviewRibbonPage1 = new DevExpress.XtraRichEdit.UI.ReviewRibbonPage();
+            this.quickPrintItem = new DevExpress.XtraBars.BarButtonItem();
+            this.printItem = new DevExpress.XtraBars.BarButtonItem();
+            this.printPreviewItem = new DevExpress.XtraBars.BarButtonItem();
             this.panelMain.SuspendLayout();
             this.panel_content.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -650,7 +654,10 @@
             this.floatingObjectSendBackwardSubItem1,
             this.floatingObjectSendBackwardItem1,
             this.floatingObjectSendToBackItem1,
-            this.floatingObjectSendBehindTextItem1});
+            this.floatingObjectSendBehindTextItem1,
+            this.quickPrintItem,
+            this.printItem,
+            this.printPreviewItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 1;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -704,22 +711,30 @@
             this.fileSaveAsItem1.Caption = "Xuất file Word";
             this.fileSaveAsItem1.Id = 6;
             this.fileSaveAsItem1.Name = "fileSaveAsItem1";
-            this.fileSaveAsItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // quickPrintItem1
             // 
+            this.quickPrintItem1.Caption = "&In nhanh";
             this.quickPrintItem1.Id = 7;
             this.quickPrintItem1.Name = "quickPrintItem1";
+            this.quickPrintItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.quickPrintItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.quickPrintItem1_ItemClick);
             // 
             // printItem1
             // 
+            this.printItem1.Caption = "&In";
             this.printItem1.Id = 8;
             this.printItem1.Name = "printItem1";
+            this.printItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.printItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printItem1_ItemClick);
             // 
             // printPreviewItem1
             // 
+            this.printPreviewItem1.Caption = "Xem trước khi in";
             this.printPreviewItem1.Id = 9;
             this.printPreviewItem1.Name = "printPreviewItem1";
+            this.printPreviewItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.printPreviewItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewItem1_ItemClick);
             // 
             // insertPageBreakItem21
             // 
@@ -1315,6 +1330,7 @@
             this.LuuMauItem1.Id = 120;
             this.LuuMauItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("LuuMauItem1.LargeGlyph")));
             this.LuuMauItem1.Name = "LuuMauItem1";
+            this.LuuMauItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.LuuMauItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.LuuMauItem1_ItemClick);
             // 
             // LuuNhapItem1
@@ -1339,7 +1355,10 @@
             this.fileSaveItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("fileSaveItem.LargeGlyph")));
             this.fileSaveItem.Name = "fileSaveItem";
             toolTipTitleItem2.Text = "Lưu lại (Ctrl+S)";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Lưu lại tài liệu";
             superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem1);
             this.fileSaveItem.SuperTip = superToolTip2;
             this.fileSaveItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.fileSaveItem_ItemClick);
             // 
@@ -2354,9 +2373,9 @@
             this.commonRibbonPageGroup1.ItemLinks.Add(this.fileSaveItem);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.LuuMauItem1);
             this.commonRibbonPageGroup1.ItemLinks.Add(this.fileSaveAsItem1);
-            this.commonRibbonPageGroup1.ItemLinks.Add(this.quickPrintItem1);
-            this.commonRibbonPageGroup1.ItemLinks.Add(this.printItem1);
-            this.commonRibbonPageGroup1.ItemLinks.Add(this.printPreviewItem1);
+            this.commonRibbonPageGroup1.ItemLinks.Add(this.quickPrintItem);
+            this.commonRibbonPageGroup1.ItemLinks.Add(this.printItem);
+            this.commonRibbonPageGroup1.ItemLinks.Add(this.printPreviewItem);
             this.commonRibbonPageGroup1.Name = "commonRibbonPageGroup1";
             // 
             // homeRibbonPage1
@@ -2775,6 +2794,33 @@
             this.documentTrackingRibbonPageGroup1});
             this.reviewRibbonPage1.Name = "reviewRibbonPage1";
             // 
+            // quickPrintItem
+            // 
+            this.quickPrintItem.Caption = "In nhanh";
+            this.quickPrintItem.Glyph = ((System.Drawing.Image)(resources.GetObject("quickPrintItem.Glyph")));
+            this.quickPrintItem.Id = 1;
+            this.quickPrintItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("quickPrintItem.LargeGlyph")));
+            this.quickPrintItem.Name = "quickPrintItem";
+            this.quickPrintItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.quickPrintItem1_ItemClick);
+            // 
+            // printItem
+            // 
+            this.printItem.Caption = "In";
+            this.printItem.Glyph = ((System.Drawing.Image)(resources.GetObject("printItem.Glyph")));
+            this.printItem.Id = 2;
+            this.printItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printItem.LargeGlyph")));
+            this.printItem.Name = "printItem";
+            this.printItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printItem1_ItemClick);
+            // 
+            // printPreviewItem
+            // 
+            this.printPreviewItem.Caption = "Xem trước khi in";
+            this.printPreviewItem.Glyph = ((System.Drawing.Image)(resources.GetObject("printPreviewItem.Glyph")));
+            this.printPreviewItem.Id = 3;
+            this.printPreviewItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printPreviewItem.LargeGlyph")));
+            this.printPreviewItem.Name = "printPreviewItem";
+            this.printPreviewItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewItem1_ItemClick);
+            // 
             // frmNhapPhieuThucHienPTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3106,5 +3152,8 @@
         private DevExpress.XtraRichEdit.UI.DocumentProtectionRibbonPageGroup documentProtectionRibbonPageGroup1;
         private DevExpress.XtraRichEdit.UI.DocumentProofingRibbonPageGroup documentProofingRibbonPageGroup1;
         private DevExpress.XtraRichEdit.UI.ReviewRibbonPage reviewRibbonPage1;
+        private DevExpress.XtraBars.BarButtonItem quickPrintItem;
+        private DevExpress.XtraBars.BarButtonItem printItem;
+        private DevExpress.XtraBars.BarButtonItem printPreviewItem;
     }
 }

@@ -529,7 +529,7 @@ parentForRootNodes, null);
                         reportitem.name = Base.bienTrongBaoCao.THOIGIANBAOCAO;
                         reportitem.value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                         thongTinThem.Add(reportitem);
-                        string fileTemplatePath = "0_Mrd_DMDV__ExportTemplateKetQua.xlsx";
+                        string fileTemplatePath = "0_Mrd_DMDV_ExportTemplateKetQua.xlsx";
                         Utilities.Common.Excel.ExcelExport export = new Utilities.Common.Excel.ExcelExport();
                         export.ExportExcelTemplate("", fileTemplatePath, thongTinThem, dv_dataserviceref);
                     }

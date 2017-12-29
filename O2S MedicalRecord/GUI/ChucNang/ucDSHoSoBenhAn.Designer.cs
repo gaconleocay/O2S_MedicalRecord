@@ -2713,6 +2713,8 @@
             this.gridColumn49});
             this.gridViewDSPhieuPTTT.GridControl = this.gridControlDSPhieuPTTT;
             this.gridViewDSPhieuPTTT.Name = "gridViewDSPhieuPTTT";
+            this.gridViewDSPhieuPTTT.OptionsFind.AlwaysVisible = true;
+            this.gridViewDSPhieuPTTT.OptionsFind.FindNullPrompt = "Từ khóa tìm kiếm...";
             this.gridViewDSPhieuPTTT.OptionsView.ColumnAutoWidth = false;
             this.gridViewDSPhieuPTTT.OptionsView.ShowGroupPanel = false;
             this.gridViewDSPhieuPTTT.OptionsView.ShowIndicator = false;

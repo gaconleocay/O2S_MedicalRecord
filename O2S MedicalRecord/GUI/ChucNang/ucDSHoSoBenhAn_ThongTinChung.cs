@@ -94,10 +94,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         }
         #endregion
 
-        private void gridControlHSBALichSuIn_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void gridViewHSBALichSuIn_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {

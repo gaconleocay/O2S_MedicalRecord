@@ -419,12 +419,6 @@
     <Compile Include="Utilities\PrintPreview\CoolPrintPreviewDialog.designer.cs">
       <DependentUpon>CoolPrintPreviewDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\PrintPreview\frmDevPrintPreviewDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Utilities\PrintPreview\frmDevPrintPreviewDialog.Designer.cs">
-      <DependentUpon>frmDevPrintPreviewDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\PrintPreview\PageImageList.cs" />
     <Compile Include="Utilities\ThongBao\frmThongBao.cs">
       <SubType>Form</SubType>
@@ -539,9 +533,6 @@
     <EmbeddedResource Include="Utilities\PrintPreview\CoolPrintPreviewDialog.resx">
       <DependentUpon>CoolPrintPreviewDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Utilities\PrintPreview\frmDevPrintPreviewDialog.resx">
-      <DependentUpon>frmDevPrintPreviewDialog.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Utilities\ThongBao\frmThongBao.resx">
       <DependentUpon>frmThongBao.cs</DependentUpon>
     </EmbeddedResource>
@@ -573,15 +564,6 @@
     <None Include="Resources\info-16.png" />
     <None Include="Resources\printer-16.png" />
     <Content Include="Templates\MauBenhAn\1.-Benh-an-Noi-khoa.doc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\0_Mrd_DMDV__ExportTemplateKetQua.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Phieu phau thuat thu thuat chung.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\1_Mrd_DMHCThuoc__ExportTemplateKetQua.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Templates\MauBenhAn\10.-Benh-an-HHTM.rtf">
@@ -617,6 +599,60 @@
     <Content Include="Templates\MauKhangSinh\PhieuYeuCauSuDungKhangSinh_772BYT.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Catheter TM bẹn.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Catheter TMTT.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Catheter động mạch quay.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Chọc DMP.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Chọc DNT.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Chọc dịch ổ bụng.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Cấp cứu ngừng tuần hoàn.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Dẫn lưu DMP1.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Lọc máu cấp cứu CVVH.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\MKQ.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Phieu phau thuat thu thuat chung.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Rút NKQ.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Thận nhân tạo.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Đặt NKQ mới.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Đặt sonde dạ dày.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuPhauThuatThuThuat\Đặt sonde niệu đạo bàng quang.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\0_Mrd_DMDV_ExportTemplateKetQua.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\1_Mrd_DMHCThuoc_ExportTemplateKetQua.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Library\Aspose.Cells.dll" />
@@ -624,51 +660,6 @@
     <Content Include="medical-records_2.ico" />
     <None Include="Resources\question-mark-16.png" />
     <None Include="Resources\add-user-16.png" />
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Catheter TM bẹn.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Catheter TMTT.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Catheter động mạch quay.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Chọc DMP.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Chọc DNT.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Chọc dịch ổ bụng.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Cấp cứu ngừng tuần hoàn.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Dẫn lưu DMP1.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Lọc máu cấp cứu CVVH.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\MKQ.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Rút NKQ.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Thận nhân tạo.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Đặt NKQ mới.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Đặt sonde dạ dày.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Templates\PhieuPhauThuatThuThuat\Đặt sonde niệu đạo bàng quang.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\delete-2-16.png" />
     <None Include="Resources\arrow-32-16.png" />
     <None Include="Resources\edit-5-161.png" />

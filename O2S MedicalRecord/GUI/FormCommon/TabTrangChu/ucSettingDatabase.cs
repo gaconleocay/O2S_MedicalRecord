@@ -15,6 +15,11 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabTrangChu
 {
     public partial class ucSettingDatabase : UserControl
     {
+        #region Khai bao
+        private DAL.ConnectDatabase condb = new DAL.ConnectDatabase();
+
+        #endregion
+
         public ucSettingDatabase()
         {
             InitializeComponent();
@@ -26,6 +31,41 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabTrangChu
             try
             {
                 LoadKetNoiDatabase();
+                KiemTraTonTaiVaInsertLinkVersion();
+                LoadCauHinhUpdateVersion();
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
+        }
+        private void KiemTraTonTaiVaInsertLinkVersion()
+        {
+            try
+            {
+                string kiemtraApp = "SELECT * FROM mrd_version WHERE app_type=0;";
+                DataTable dataApp = condb.GetDataTable_HSBA(kiemtraApp);
+                if (dataApp == null || dataApp.Rows.Count != 1)
+                {
+                    string insertApp = "INSERT INTO mrd_version(appversion,app_type) values('1.0.0.0','0') ;";
+                    condb.ExecuteNonQuery_HSBA(insertApp);
+                }
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Warn(ex);
+            }
+        }
+        private void LoadCauHinhUpdateVersion()
+        {
+            try
+            {
+                string kiemtraApp = "SELECT app_link FROM mrd_version WHERE app_type=0;";
+                DataTable dataApp = condb.GetDataTable_HSBA(kiemtraApp);
+                if (dataApp != null || dataApp.Rows.Count > 0)
+                {
+                    txtUpdateVersionLink.Text = dataApp.Rows[0]["app_link"].ToString();
+                }
             }
             catch (Exception ex)
             {
@@ -107,7 +147,21 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabTrangChu
             }
         }
 
+        #region Luu
         private void btnDBLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LuuLaiCauHinhFileConfig();
+                LuuLaiDuongDanUpdateVersion();
+                MessageBox.Show("Lưu dữ liệu thành công", "Thông báo");
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Error(ex);
+            }
+        }
+        private void LuuLaiCauHinhFileConfig()
         {
             try
             {
@@ -124,7 +178,18 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabTrangChu
                 _config.AppSettings.Settings["Database_HSBA"].Value = O2S_MedicalRecord.Base.EncryptAndDecrypt.Encrypt(txtDBName_HSBA.Text.Trim(), true);
                 _config.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("appSettings");
-                MessageBox.Show("Lưu dữ liệu thành công", "Thông báo");
+            }
+            catch (Exception ex)
+            {
+                O2S_MedicalRecord.Base.Logging.Error(ex);
+            }
+        }
+        private void LuuLaiDuongDanUpdateVersion()
+        {
+            try
+            {
+                string sqlcommit = "update mrd_version set app_link= '" + txtUpdateVersionLink.Text.Trim() + "';";
+                condb.ExecuteNonQuery_HSBA(sqlcommit);
             }
             catch (Exception ex)
             {
@@ -132,6 +197,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabTrangChu
             }
         }
 
+        #endregion
         private void btnDBUpdate_Click(object sender, EventArgs e)
         {
             SplashScreenManager.ShowForm(typeof(O2S_MedicalRecord.Utilities.ThongBao.WaitForm1));

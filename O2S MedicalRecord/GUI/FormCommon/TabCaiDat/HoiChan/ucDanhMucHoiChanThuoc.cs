@@ -252,7 +252,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon.TabCaiDat
                         reportitem.name = Base.bienTrongBaoCao.THOIGIANBAOCAO;
                         reportitem.value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                         thongTinThem.Add(reportitem);
-                        string fileTemplatePath = "1_Mrd_DMHCThuoc__ExportTemplateKetQua.xlsx";
+                        string fileTemplatePath = "1_Mrd_DMHCThuoc_ExportTemplateKetQua.xlsx";
                         Utilities.Common.Excel.ExcelExport export = new Utilities.Common.Excel.ExcelExport();
                         export.ExportExcelTemplate("", fileTemplatePath, thongTinThem, dv_dataserviceref);
                     }

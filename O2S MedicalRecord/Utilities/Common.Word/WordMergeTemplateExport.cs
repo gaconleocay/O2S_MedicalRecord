@@ -88,8 +88,10 @@ namespace O2S_MedicalRecord.Utilities.Common.Word
                 Aspose.Words.Document docccc = new Aspose.Words.Document(fileFullPath);
                 doc = docccc.Clone();
                 doc.MailMerge.Execute(dt);
-                doc.Save(result, SaveFormat.Docx);
-               // doc.Save(strRoot + "\\Templates\\ReportTemps\\" + filetempname, SaveFormat.Docx);
+                //Aspose.Words.Saving.DocSaveOptions lSaveOptions = new Aspose.Words.Saving.DocSaveOptions(SaveFormat.Docx);
+                //lSaveOptions.PrettyFormat = true;
+
+                doc.Save(result, SaveFormat.Doc);
             }
             catch (Exception ex)
             {

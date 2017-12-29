@@ -76,8 +76,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon
         {
             try
             {
-                string serverhost = EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost"].ToString(), true);
-                string serverdb = EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database"].ToString(), true);
+                string serverhost = EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["ServerHost_HSBA"].ToString(), true);
+                string serverdb = EncryptAndDecrypt.Decrypt(ConfigurationManager.AppSettings["Database_HSBA"].ToString(), true);
                 System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
                 FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
                 string version = fvi.FileVersion;
@@ -229,7 +229,8 @@ namespace O2S_MedicalRecord.GUI.FormCommon
                 {
                     hoi = DialogResult.Retry;
                     Application.Restart();
-                    Application.ExitThread();
+                    System.Diagnostics.Process.Start(@"O2S MedicalRecordLauncher.exe");
+                    Application.Exit();
                 }
             }
             catch (Exception ex)

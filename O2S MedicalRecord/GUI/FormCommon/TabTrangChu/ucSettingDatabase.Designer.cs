@@ -53,6 +53,9 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtUpdateVersionLink = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.groupBoxDatabase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDBPort.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDBName.Properties)).BeginInit();
@@ -65,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDBPass_HSBA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDBUser_HSBA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDBHost_HSBA.Properties)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUpdateVersionLink.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxDatabase
@@ -197,7 +202,7 @@
             this.btnDBUpdate.Appearance.Options.UseFont = true;
             this.btnDBUpdate.Appearance.Options.UseForeColor = true;
             this.btnDBUpdate.Image = global::O2S_MedicalRecord.Properties.Resources.sinchronize_16;
-            this.btnDBUpdate.Location = new System.Drawing.Point(439, 389);
+            this.btnDBUpdate.Location = new System.Drawing.Point(445, 487);
             this.btnDBUpdate.Name = "btnDBUpdate";
             this.btnDBUpdate.Size = new System.Drawing.Size(100, 30);
             this.btnDBUpdate.TabIndex = 30;
@@ -211,7 +216,7 @@
             this.btnDBLuu.Appearance.Options.UseFont = true;
             this.btnDBLuu.Appearance.Options.UseForeColor = true;
             this.btnDBLuu.Image = global::O2S_MedicalRecord.Properties.Resources.save_16;
-            this.btnDBLuu.Location = new System.Drawing.Point(286, 389);
+            this.btnDBLuu.Location = new System.Drawing.Point(292, 487);
             this.btnDBLuu.Name = "btnDBLuu";
             this.btnDBLuu.Size = new System.Drawing.Size(100, 30);
             this.btnDBLuu.TabIndex = 17;
@@ -225,7 +230,7 @@
             this.btnDBKiemTra.Appearance.Options.UseFont = true;
             this.btnDBKiemTra.Appearance.Options.UseForeColor = true;
             this.btnDBKiemTra.Image = global::O2S_MedicalRecord.Properties.Resources.question_mark_16;
-            this.btnDBKiemTra.Location = new System.Drawing.Point(117, 389);
+            this.btnDBKiemTra.Location = new System.Drawing.Point(123, 487);
             this.btnDBKiemTra.Name = "btnDBKiemTra";
             this.btnDBKiemTra.Size = new System.Drawing.Size(100, 30);
             this.btnDBKiemTra.TabIndex = 16;
@@ -245,7 +250,7 @@
             this.groupBox1.Controls.Add(this.labelControl9);
             this.groupBox1.Controls.Add(this.labelControl10);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1, 168);
+            this.groupBox1.Location = new System.Drawing.Point(0, 168);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(768, 162);
             this.groupBox1.TabIndex = 31;
@@ -355,17 +360,50 @@
             this.labelControl10.TabIndex = 18;
             this.labelControl10.Text = "Port";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtUpdateVersionLink);
+            this.groupBox3.Controls.Add(this.labelControl14);
+            this.groupBox3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(0, 336);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1090, 116);
+            this.groupBox3.TabIndex = 34;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Đường dẫn cập nhật phiên bản phần mềm";
+            // 
+            // txtUpdateVersionLink
+            // 
+            this.txtUpdateVersionLink.EditValue = "";
+            this.txtUpdateVersionLink.Location = new System.Drawing.Point(135, 31);
+            this.txtUpdateVersionLink.Name = "txtUpdateVersionLink";
+            this.txtUpdateVersionLink.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpdateVersionLink.Properties.Appearance.Options.UseFont = true;
+            this.txtUpdateVersionLink.Size = new System.Drawing.Size(633, 26);
+            this.txtUpdateVersionLink.TabIndex = 27;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl14.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl14.Location = new System.Drawing.Point(21, 37);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(107, 16);
+            this.labelControl14.TabIndex = 26;
+            this.labelControl14.Text = "Link version server";
+            // 
             // ucSettingDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDBUpdate);
             this.Controls.Add(this.groupBoxDatabase);
             this.Controls.Add(this.btnDBLuu);
             this.Controls.Add(this.btnDBKiemTra);
             this.Name = "ucSettingDatabase";
-            this.Size = new System.Drawing.Size(771, 582);
+            this.Size = new System.Drawing.Size(1100, 600);
             this.Load += new System.EventHandler(this.ucSettingDatabase_Load);
             this.groupBoxDatabase.ResumeLayout(false);
             this.groupBoxDatabase.PerformLayout();
@@ -381,6 +419,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDBPass_HSBA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDBUser_HSBA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDBHost_HSBA.Properties)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUpdateVersionLink.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,5 +453,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private DevExpress.XtraEditors.TextEdit txtUpdateVersionLink;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
     }
 }

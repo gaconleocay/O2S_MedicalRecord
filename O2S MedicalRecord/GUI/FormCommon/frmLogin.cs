@@ -133,7 +133,7 @@ namespace O2S_MedicalRecord.GUI.FormCommon
         {
             try
             {
-                DataView dataurlfile = new DataView(condb.GetDataTable_HSBA("select app_link from mrd_version where app_type=1 limit 1;"));
+                DataView dataurlfile = new DataView(condb.GetDataTable_HSBA("select app_link from mrd_version where app_type=0 limit 1;"));
                 if (dataurlfile != null && dataurlfile.Count > 0)
                 {
                     string tempDirectory = dataurlfile[0]["app_link"].ToString();
