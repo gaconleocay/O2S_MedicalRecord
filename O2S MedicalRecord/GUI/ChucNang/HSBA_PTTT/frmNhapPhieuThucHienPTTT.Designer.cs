@@ -295,6 +295,9 @@
             this.floatingObjectSendBackwardItem1 = new DevExpress.XtraRichEdit.UI.FloatingObjectSendBackwardItem();
             this.floatingObjectSendToBackItem1 = new DevExpress.XtraRichEdit.UI.FloatingObjectSendToBackItem();
             this.floatingObjectSendBehindTextItem1 = new DevExpress.XtraRichEdit.UI.FloatingObjectSendBehindTextItem();
+            this.quickPrintItem = new DevExpress.XtraBars.BarButtonItem();
+            this.printItem = new DevExpress.XtraBars.BarButtonItem();
+            this.printPreviewItem = new DevExpress.XtraBars.BarButtonItem();
             this.headerFooterToolsRibbonPageCategory1 = new DevExpress.XtraRichEdit.UI.HeaderFooterToolsRibbonPageCategory();
             this.headerFooterToolsDesignRibbonPage1 = new DevExpress.XtraRichEdit.UI.HeaderFooterToolsDesignRibbonPage();
             this.headerFooterToolsDesignNavigationRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.HeaderFooterToolsDesignNavigationRibbonPageGroup();
@@ -342,9 +345,6 @@
             this.documentProtectionRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.DocumentProtectionRibbonPageGroup();
             this.documentProofingRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.DocumentProofingRibbonPageGroup();
             this.reviewRibbonPage1 = new DevExpress.XtraRichEdit.UI.ReviewRibbonPage();
-            this.quickPrintItem = new DevExpress.XtraBars.BarButtonItem();
-            this.printItem = new DevExpress.XtraBars.BarButtonItem();
-            this.printPreviewItem = new DevExpress.XtraBars.BarButtonItem();
             this.panelMain.SuspendLayout();
             this.panel_content.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -2199,6 +2199,33 @@
             this.floatingObjectSendBehindTextItem1.Id = 141;
             this.floatingObjectSendBehindTextItem1.Name = "floatingObjectSendBehindTextItem1";
             // 
+            // quickPrintItem
+            // 
+            this.quickPrintItem.Caption = "In nhanh";
+            this.quickPrintItem.Glyph = ((System.Drawing.Image)(resources.GetObject("quickPrintItem.Glyph")));
+            this.quickPrintItem.Id = 1;
+            this.quickPrintItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("quickPrintItem.LargeGlyph")));
+            this.quickPrintItem.Name = "quickPrintItem";
+            this.quickPrintItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.quickPrintItem1_ItemClick);
+            // 
+            // printItem
+            // 
+            this.printItem.Caption = "In";
+            this.printItem.Glyph = ((System.Drawing.Image)(resources.GetObject("printItem.Glyph")));
+            this.printItem.Id = 2;
+            this.printItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printItem.LargeGlyph")));
+            this.printItem.Name = "printItem";
+            this.printItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printItem1_ItemClick);
+            // 
+            // printPreviewItem
+            // 
+            this.printPreviewItem.Caption = "Xem trước khi in";
+            this.printPreviewItem.Glyph = ((System.Drawing.Image)(resources.GetObject("printPreviewItem.Glyph")));
+            this.printPreviewItem.Id = 3;
+            this.printPreviewItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printPreviewItem.LargeGlyph")));
+            this.printPreviewItem.Name = "printPreviewItem";
+            this.printPreviewItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewItem1_ItemClick);
+            // 
             // headerFooterToolsRibbonPageCategory1
             // 
             this.headerFooterToolsRibbonPageCategory1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(176)))), ((int)(((byte)(35)))));
@@ -2794,33 +2821,6 @@
             this.documentTrackingRibbonPageGroup1});
             this.reviewRibbonPage1.Name = "reviewRibbonPage1";
             // 
-            // quickPrintItem
-            // 
-            this.quickPrintItem.Caption = "In nhanh";
-            this.quickPrintItem.Glyph = ((System.Drawing.Image)(resources.GetObject("quickPrintItem.Glyph")));
-            this.quickPrintItem.Id = 1;
-            this.quickPrintItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("quickPrintItem.LargeGlyph")));
-            this.quickPrintItem.Name = "quickPrintItem";
-            this.quickPrintItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.quickPrintItem1_ItemClick);
-            // 
-            // printItem
-            // 
-            this.printItem.Caption = "In";
-            this.printItem.Glyph = ((System.Drawing.Image)(resources.GetObject("printItem.Glyph")));
-            this.printItem.Id = 2;
-            this.printItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printItem.LargeGlyph")));
-            this.printItem.Name = "printItem";
-            this.printItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printItem1_ItemClick);
-            // 
-            // printPreviewItem
-            // 
-            this.printPreviewItem.Caption = "Xem trước khi in";
-            this.printPreviewItem.Glyph = ((System.Drawing.Image)(resources.GetObject("printPreviewItem.Glyph")));
-            this.printPreviewItem.Id = 3;
-            this.printPreviewItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printPreviewItem.LargeGlyph")));
-            this.printPreviewItem.Name = "printPreviewItem";
-            this.printPreviewItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printPreviewItem1_ItemClick);
-            // 
             // frmNhapPhieuThucHienPTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2828,6 +2828,7 @@
             this.ClientSize = new System.Drawing.Size(1234, 742);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.ribbonControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNhapPhieuThucHienPTTT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập phiếu Phẫu thuật thủ thuật";

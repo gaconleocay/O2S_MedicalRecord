@@ -830,6 +830,113 @@ CREATE TABLE IF NOT EXISTS mrd_dmhc_pttt
   (mrd_dmhc_cvienid); 
 
   
+--=======
+-- Table: mrd_cdha_service
+-- DROP TABLE mrd_cdha_service;
+
+CREATE TABLE mrd_cdha_service
+(
+  mrd_cdha_serviceid serial NOT NULL,
+  servicepriceid integer,
+  servicepricecode text,
+  maubenhphamid integer,
+  patientid integer,
+  vienphiid integer,
+  hosobenhanid integer,
+  medicalrecordid integer,
+  mrd_cdhatemid integer,
+  departmentgroupid integer,
+  departmentid integer,
+  mrd_cdha_servicedata text,
+  mrd_cdha_servicedata_nd text,
+  mrd_cdha_servicestatus integer,
+  create_mrduserid integer,
+  create_mrdusercode text,
+  create_hisuserid integer,
+  create_hisusercode text,
+  create_date timestamp without time zone,
+  modify_mrduserid integer,
+  modify_mrdusercode text,
+  modify_date timestamp without time zone,
+  note text,
+  CONSTRAINT mrd_cdha_serviceid_pkey PRIMARY KEY (mrd_cdha_serviceid)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE mrd_cdha_service
+  OWNER TO postgres;
+
+-- Index: mrd_hsba_hsbamedicalrecordid_idx
+-- DROP INDEX mrd_hsba_hsbamedicalrecordid_idx;
+
+CREATE INDEX mrd_cdha_hsbamedicalrecordid_idx
+  ON mrd_cdha_service
+  USING btree
+  (medicalrecordid);
+
+-- Index: mrd_cdha_service_departmentgroupid_idx
+-- DROP INDEX mrd_cdha_service_departmentgroupid_idx;
+
+CREATE INDEX mrd_cdha_service_departmentgroupid_idx
+  ON mrd_cdha_service
+  USING btree
+  (departmentgroupid);
+
+-- Index: mrd_cdha_service_departmentid_idx
+
+-- DROP INDEX mrd_cdha_service_departmentid_idx;
+
+CREATE INDEX mrd_cdha_service_departmentid_idx
+  ON mrd_cdha_service
+  USING btree
+  (departmentid);
+
+-- Index: mrd_cdha_service_maubenhphamid_idx
+
+-- DROP INDEX mrd_cdha_service_maubenhphamid_idx;
+
+CREATE INDEX mrd_cdha_service_maubenhphamid_idx
+  ON mrd_cdha_service
+  USING btree
+  (maubenhphamid);
+
+-- Index: mrd_cdha_service_patientid_idx
+
+-- DROP INDEX mrd_cdha_service_patientid_idx;
+
+CREATE INDEX mrd_cdha_service_patientid_idx
+  ON mrd_cdha_service
+  USING btree
+  (patientid);
+
+-- Index: mrd_cdha_service_servicepricecode_idx
+
+-- DROP INDEX mrd_cdha_service_servicepricecode_idx;
+
+CREATE INDEX mrd_cdha_service_servicepricecode_idx
+  ON mrd_cdha_service
+  USING btree
+  (servicepricecode COLLATE pg_catalog."default");
+
+-- Index: mrd_cdha_service_servicepriceid_idx
+
+-- DROP INDEX mrd_cdha_service_servicepriceid_idx;
+
+CREATE INDEX mrd_cdha_service_servicepriceid_idx
+  ON mrd_cdha_service
+  USING btree
+  (servicepriceid);
+
+-- Index: mrd_cdha_service_vienphiid_idx
+
+-- DROP INDEX mrd_cdha_service_vienphiid_idx;
+
+CREATE INDEX mrd_cdha_service_vienphiid_idx
+  ON mrd_cdha_service
+  USING btree
+  (vienphiid);
+
 
 
 

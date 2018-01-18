@@ -34,7 +34,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         private MedicalrecordDTO SelectRowMedicalrecord { get; set; }
         private DAL.ConnectDatabase condb = new DAL.ConnectDatabase();
 
-        private int tabload_thongtinbenhan = 0, tabload_benhan = 0, tabload_pttt = 0, tabload_hoichan = 0;
+        private int tabload_thongtinbenhan = 0, tabload_benhan = 0, tabload_pttt = 0, tabload_hoichan = 0, tabload_cdha=0, tabload_xetnghiem=0;
         private bool highlight_tabBenhAn { get; set; }
         #endregion
 
@@ -178,6 +178,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             }
             //SplashScreenManager.CloseForm();
         }
+
+        #region Tab control
         private void xtraTabTTHSBA_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
             try
@@ -200,6 +202,14 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                             tabload_benhan = 1;
                         }
                     }
+                    else if (e.Page.Name == xtraTabHoiChan.Name)
+                    {
+                        if (tabload_hoichan == 0)
+                        {
+                            ucDSHoSoBenhAn_HoiChan_Load(this.SelectRowMedicalrecord);
+                            tabload_hoichan = 1;
+                        }
+                    }
                     else if (e.Page.Name == xtraTabPTTT.Name)
                     {
                         if (tabload_pttt == 0)
@@ -208,12 +218,20 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                             tabload_pttt = 1;
                         }
                     }
-                    else if (e.Page.Name == xtraTabHoiChan.Name)
+                    else if (e.Page.Name == xtraTabCDHA.Name)
                     {
-                        if (tabload_hoichan == 0)
+                        if (tabload_cdha == 0)
                         {
-                            ucDSHoSoBenhAn_HoiChan_Load(this.SelectRowMedicalrecord);
-                            tabload_hoichan = 1;
+                            ucDSHoSoBenhAn_CDHA_Load(this.SelectRowMedicalrecord);
+                            tabload_cdha = 1;
+                        }
+                    }
+                    else if (e.Page.Name == xtraTabXN.Name)
+                    {
+                        if (tabload_xetnghiem == 0)
+                        {
+                            ucDSHoSoBenhAn_XetNghiem_Load(this.SelectRowMedicalrecord);
+                            tabload_xetnghiem = 1;
                         }
                     }
                 }
@@ -223,6 +241,9 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 Base.Logging.Warn(ex);
             }
         }
+        #endregion
+
+        #region Events
         private void gridViewDSHSBA_PopupMenuShowing(object sender, PopupMenuShowingEventArgs e)
         {
             try
@@ -276,6 +297,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang
             }
         }
 
+        #endregion
+
         #region Click row Benh Nhan
         private void gridControlDSHSBA_Click(object sender, EventArgs e)
         {
@@ -301,7 +324,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 Base.Logging.Warn(ex);
             }
         }
-
         private void LoadDataTabChucNangClickRow(MedicalrecordDTO filterDTO)
         {
             try
@@ -310,6 +332,8 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 tabload_benhan = 0;
                 tabload_pttt = 0;
                 tabload_hoichan = 0;
+                tabload_cdha = 0;
+                tabload_xetnghiem = 0;
 
                 if (xtraTabDSHSBA.SelectedTabPage.Name == xtraTabThongTinChung.Name)
                 {
@@ -330,6 +354,13 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                     HoiChan_KiemTraTaoPhieuHoiChan_Thuoc(filterDTO);
                     HoiChan_KiemTraTaoPhieuHoiChan_CV(filterDTO);
                 }
+                else if (xtraTabDSHSBA.SelectedTabPage.Name == xtraTabHoiChan.Name)
+                {
+                    ucDSHoSoBenhAn_HoiChan_Load(filterDTO);
+                    tabload_hoichan = 1;
+
+                    BenhAn_LoadBenhAnCuaBenhNhan(filterDTO);
+                }
                 else if (xtraTabDSHSBA.SelectedTabPage.Name == xtraTabPTTT.Name)
                 {
                     ucDSHoSoBenhAn_PTTT_Load(filterDTO);
@@ -340,12 +371,25 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                     HoiChan_KiemTraTaoPhieuHoiChan_Thuoc(filterDTO);
                     HoiChan_KiemTraTaoPhieuHoiChan_CV(filterDTO);
                 }
-                else if (xtraTabDSHSBA.SelectedTabPage.Name == xtraTabHoiChan.Name)
+                else if (xtraTabDSHSBA.SelectedTabPage.Name == xtraTabCDHA.Name)
                 {
-                    ucDSHoSoBenhAn_HoiChan_Load(filterDTO);
-                    tabload_hoichan = 1;
+                    ucDSHoSoBenhAn_CDHA_Load(filterDTO);
+                    tabload_cdha = 1;
 
                     BenhAn_LoadBenhAnCuaBenhNhan(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_PT(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_Thuoc(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_CV(filterDTO);
+                }
+                else if (xtraTabDSHSBA.SelectedTabPage.Name == xtraTabXN.Name)
+                {
+                    ucDSHoSoBenhAn_XetNghiem_Load(filterDTO);
+                    tabload_xetnghiem = 1;
+
+                    BenhAn_LoadBenhAnCuaBenhNhan(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_PT(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_Thuoc(filterDTO);
+                    HoiChan_KiemTraTaoPhieuHoiChan_CV(filterDTO);
                 }
                 KiemTraHienThiHighLightTab();
             }
@@ -354,7 +398,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 Base.Logging.Warn(ex);
             }
         }
-
 
         #endregion
 
@@ -398,6 +441,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 Base.Logging.Warn(ex);
             }
         }
+
         private void gridViewDSHSBA_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView view = sender as GridView;
@@ -407,6 +451,7 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 e.Appearance.ForeColor = Color.Black;
             }
         }
+
         private void gridViewDSHSBA_CustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
         {
             try
@@ -434,6 +479,9 @@ namespace O2S_MedicalRecord.GUI.ChucNang
                 Base.Logging.Warn(ex);
             }
         }
+
+
+
         private void cboKhoa_EditValueChanged(object sender, EventArgs e)
         {
             try
@@ -512,7 +560,6 @@ namespace O2S_MedicalRecord.GUI.ChucNang
         }
 
         #endregion
-
 
 
 

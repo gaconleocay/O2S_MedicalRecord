@@ -202,6 +202,8 @@
     <Compile Include="DTO\MrdHsbaHoiChan_ServiceDTO.cs" />
     <Compile Include="DTO\MrdHsbaHosobenhanDTO.cs" />
     <Compile Include="DTO\MrdHsbaTemplateDTO.cs" />
+    <Compile Include="DTO\MrdXetNghiemServiceDTO.cs" />
+    <Compile Include="DTO\MrdCDHAServiceDTO.cs" />
     <Compile Include="DTO\MrdPtttServiceDTO.cs" />
     <Compile Include="DTO\MrdDMHoiChanThuocDTO.cs" />
     <Compile Include="DTO\MrdServicerefDTO.cs" />
@@ -234,7 +236,25 @@
     <Compile Include="GUI\ChucNang\HoiChan\frmHoiChan_NhapDuLieu.Designer.cs">
       <DependentUpon>frmHoiChan_NhapDuLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ChucNang\HSBA_CDHA\frmNhapPhieuThucHienCDHA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChucNang\HSBA_CDHA\frmNhapPhieuThucHienCDHA.Designer.cs">
+      <DependentUpon>frmNhapPhieuThucHienCDHA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChucNang\HSBA_XetNghiem\frmNhapPhieuThucHienXN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChucNang\HSBA_XetNghiem\frmNhapPhieuThucHienXN.Designer.cs">
+      <DependentUpon>frmNhapPhieuThucHienXN.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ChucNang\ucDSHoSoBenhAn_HoiChan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChucNang\ucDSHoSoBenhAn_CDHA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ChucNang\ucDSHoSoBenhAn_XetNghiem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\FormCommon\TabCaiDat\frmTaoTemplateWord.cs">
@@ -446,6 +466,12 @@
     <EmbeddedResource Include="GUI\ChucNang\HoiChan\frmHoiChan_NhapDuLieu.resx">
       <DependentUpon>frmHoiChan_NhapDuLieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChucNang\HSBA_CDHA\frmNhapPhieuThucHienCDHA.resx">
+      <DependentUpon>frmNhapPhieuThucHienCDHA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChucNang\HSBA_XetNghiem\frmNhapPhieuThucHienXN.resx">
+      <DependentUpon>frmNhapPhieuThucHienXN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FormCommon\TabCaiDat\frmTaoTemplateWord.resx">
       <DependentUpon>frmTaoTemplateWord.cs</DependentUpon>
     </EmbeddedResource>
@@ -651,6 +677,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Templates\1_Mrd_DMHCThuoc_ExportTemplateKetQua.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuChuanDoanHinhAnh\Phieu chuan doan hinh anh chung.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\PhieuXetNghiem\Phieu xet nghiem chung.doc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
